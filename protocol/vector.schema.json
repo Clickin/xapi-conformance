@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["id", "operation", "profile", "input", "expect"],
+  "properties": {
+    "id": {"type": "string"},
+    "operation": {"enum": ["decode", "encode", "roundtrip"]},
+    "profile": {"type": "string"},
+    "input": {"type": "object"},
+    "options": {"type": "object"},
+    "expect": {"type": "object"},
+    "source": {"type": "object"}
+  },
+  "additionalProperties": false
+}
