@@ -32,6 +32,7 @@ jobs:
   npm-publish:
     needs: verify
     runs-on: ubuntu-latest
+    if: github.ref_name != 'v0.1.0'
     steps:
       - uses: actions/checkout@v4
       - uses: pnpm/action-setup@v4
