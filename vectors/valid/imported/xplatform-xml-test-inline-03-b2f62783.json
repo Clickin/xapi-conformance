@@ -1,0 +1,82 @@
+{
+  "id": "xplatform-xml.test.inline-03-b2f62783.imported",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgICAgICA8Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcnNpb249IjQwMDAiPgogICAgICAgICAgPERhdGFzZXRzPgogICAgICAgICAgICA8RGF0YXNldCBpZD0iZHNfY29tbWVudHMiPgogICAgICAgICAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgICAgICAgICAgPENvbHVtbiBpZD0iY29tbWVudElkIiBzaXplPSIxMCIgdHlwZT0iU1RSSU5HIi8+CiAgICAgICAgICAgICAgICA8Q29sdW1uIGlkPSJjb250ZW50IiBzaXplPSI1MDAiIHR5cGU9IlNUUklORyIvPgogICAgICAgICAgICAgIDwvQ29sdW1uSW5mbz4KICAgICAgICAgICAgICA8Um93cz4KICAgICAgICAgICAgICAgIDxSb3c+CiAgICAgICAgICAgICAgICAgIDxDb2wgaWQ9ImNvbW1lbnRJZCI+QzAwMTwvQ29sPgogICAgICAgICAgICAgICAgICA8Q29sIGlkPSJjb250ZW50Ij48IVtDREFUQVtUaGlzIGlzIGEgY29tbWVudCB3aXRoIDxzcGVjaWFsPiBjaGFyYWN0ZXJzICYgc3ltYm9sc11dPjwvQ29sPgogICAgICAgICAgICAgICAgPC9Sb3c+CiAgICAgICAgICAgICAgICA8Um93PgogICAgICAgICAgICAgICAgICA8Q29sIGlkPSJjb21tZW50SWQiPkMwMDI8L0NvbD4KICAgICAgICAgICAgICAgICAgPENvbCBpZD0iY29udGVudCI+PCFbQ0RBVEFbTGluZSAxCiAgICAgICAgTGluZSAyCiAgICAgICAgTGluZSAzXV0+PC9Db2w+CiAgICAgICAgICAgICAgICA8L1Jvdz4KICAgICAgICAgICAgICA8L1Jvd3M+CiAgICAgICAgICAgIDwvRGF0YXNldD4KICAgICAgICAgIDwvRGF0YXNldHM+CiAgICAgICAgPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "ds_comments",
+          "columns": [
+            {
+              "id": "commentId",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "content",
+              "type": "STRING",
+              "index": 1,
+              "size": "500"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "commentId": {
+                  "state": "value",
+                  "lexical": "C001"
+                },
+                "content": {
+                  "state": "value",
+                  "lexical": "This is a comment with \u003cspecial\u003e characters \u0026 symbols"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "commentId": {
+                  "state": "value",
+                  "lexical": "C002"
+                },
+                "content": {
+                  "state": "value",
+                  "lexical": "Line 1\n        Line 2\n        Line 3"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xplatform-xml",
+    "commit": "cda8b6b31f64511ff9d22f64539c4b78e862455d",
+    "license": "upstream-no-license-file",
+    "path": "xplatform-xml-micronaut/src/test/java/io/clickin/xplatform/xml/runtime/examples/XplatformXmlSerdeTest.java",
+    "repository": "Clickin/xplatform-xml"
+  },
+  "required": true
+}

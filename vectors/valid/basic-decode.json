@@ -1,0 +1,9 @@
+{
+  "id": "json.empty-dataset.decode",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "input": {"encoding": "base64", "data": "eyJwYXJhbWV0ZXJzIjpbXSwiZGF0YXNldHMiOltdfQ=="},
+  "expect": {"kind": "canonical", "value": {"parameters": [], "datasets": []}},
+  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/valid/basic-decode.json", "license": "repository"},
+  "required": true
+}

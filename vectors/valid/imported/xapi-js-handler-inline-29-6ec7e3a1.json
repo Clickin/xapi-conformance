@@ -1,0 +1,67 @@
+{
+  "id": "xapi-js.handler.inline-29-6ec7e3a1.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgICAgPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgICAgICAgPERhdGFzZXQgaWQ9InRlc3QiPgogICAgICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgICAgIDxDb2x1bW4gaWQ9InRlc3RDb2wiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciIC8+CiAgICAgICAgICA8L0NvbHVtbkluZm8+CiAgICAgICAgICA8Um93cz4KICAgICAgICAgICAgPFJvdz48L1Jvdz4KICAgICAgICAgICAgPFJvdz4KICAgICAgICAgICAgICA8Q29sIGlkPSJ0ZXN0Q29sIj52YWx1ZTwvQ29sPgogICAgICAgICAgICA8L1Jvdz4KICAgICAgICAgIDwvUm93cz4KICAgICAgICA8L0RhdGFzZXQ+CiAgICAgIDwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "test",
+          "columns": [
+            {
+              "id": "testCol",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "testCol": {
+                  "state": "missing"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "testCol": {
+                  "state": "value",
+                  "lexical": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

@@ -1,0 +1,17 @@
+{
+  "id": "xapi-xml.sample-orgrow.decode",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfcHJvZHVjdCI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9InByb2R1Y3RJZCIgc2l6ZT0iMTAiIHR5cGU9IlNUUklORyIvPgogICAgICAgIDxDb2x1bW4gaWQ9InByb2R1Y3ROYW1lIiBzaXplPSIxMDAiIHR5cGU9IlNUUklORyIvPgogICAgICAgIDxDb2x1bW4gaWQ9InByaWNlIiBzaXplPSIxMCIgdHlwZT0iREVDSU1BTCIvPgogICAgICAgIDxDb2x1bW4gaWQ9InN0b2NrIiBzaXplPSI1IiB0eXBlPSJJTlQiLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93IHR5cGU9InVwZGF0ZSI+CiAgICAgICAgICA8Q29sIGlkPSJwcm9kdWN0SWQiPlAwMDE8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9InByb2R1Y3ROYW1lIj5VcGRhdGVkIFByb2R1Y3QgTmFtZTwvQ29sPgogICAgICAgICAgPENvbCBpZD0icHJpY2UiPjE5OS45OTwvQ29sPgogICAgICAgICAgPENvbCBpZD0ic3RvY2siPjUwPC9Db2w+CiAgICAgICAgICA8T3JnUm93PgogICAgICAgICAgICA8Q29sIGlkPSJwcm9kdWN0SWQiPlAwMDE8L0NvbD4KICAgICAgICAgICAgPENvbCBpZD0icHJvZHVjdE5hbWUiPk9yaWdpbmFsIFByb2R1Y3QgTmFtZTwvQ29sPgogICAgICAgICAgICA8Q29sIGlkPSJwcmljZSI+MTQ5Ljk5PC9Db2w+CiAgICAgICAgICAgIDxDb2wgaWQ9InN0b2NrIj4xMDA8L0NvbD4KICAgICAgICAgIDwvT3JnUm93PgogICAgICAgIDwvUm93PgogICAgICAgIDxSb3cgdHlwZT0iZGVsZXRlIj4KICAgICAgICAgIDxDb2wgaWQ9InByb2R1Y3RJZCI+UDAwMjwvQ29sPgogICAgICAgICAgPENvbCBpZD0icHJvZHVjdE5hbWUiPkRlbGV0ZWQgUHJvZHVjdDwvQ29sPgogICAgICAgICAgPENvbCBpZD0icHJpY2UiPjk5Ljk5PC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJzdG9jayI+MDwvQ29sPgogICAgICAgIDwvUm93PgogICAgICA8L1Jvd3M+CiAgICA8L0RhdGFzZXQ+CiAgPC9EYXRhc2V0cz4KPC9Sb290Pgo="},
+  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[{"id":"ds_product","columns":[
+    {"id":"productId","type":"STRING","index":0,"size":"10"},
+    {"id":"productName","type":"STRING","index":1,"size":"100"},
+    {"id":"price","type":"DECIMAL","index":2,"size":"10"},
+    {"id":"stock","type":"INT","index":3,"size":"5"}
+  ],"constColumns":[],"rows":[
+    {"type":"U","orgRow":{"type":"O","orgRow":null,"values":{"productId":{"state":"value","lexical":"P001"},"productName":{"state":"value","lexical":"Original Product Name"},"price":{"state":"value","lexical":"149.99"},"stock":{"state":"value","lexical":"100"}}},"values":{"productId":{"state":"value","lexical":"P001"},"productName":{"state":"value","lexical":"Updated Product Name"},"price":{"state":"value","lexical":"199.99"},"stock":{"state":"value","lexical":"50"}}},
+    {"type":"D","orgRow":null,"values":{"productId":{"state":"value","lexical":"P002"},"productName":{"state":"value","lexical":"Deleted Product"},"price":{"state":"value","lexical":"99.99"},"stock":{"state":"value","lexical":"0"}}}
+  ]}],"wire":{"root":{"namespace":"http://www.nexacroplatform.com/platform/dataset","version":"4000"}}}},
+  "source":{"repository":"Clickin/xapi","commit":"e0d54759162bbb06aef8a1bc4c557f9fe7336991","path":"xapi-xml/src/test/resources/xapi/sample-orgrow.xml","license":"Apache-2.0","attribution":"Clickin/xapi"},
+  "required":true
+}

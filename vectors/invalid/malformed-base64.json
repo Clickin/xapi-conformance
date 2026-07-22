@@ -1,0 +1,9 @@
+{
+  "id": "security.invalid-base64",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "input": {"encoding": "base64", "data": "%%%"},
+  "expect": {"kind": "error", "error": {"class": "malformed-input", "path": "input.data"}},
+  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/invalid/malformed-base64.json", "license": "repository"},
+  "required": true
+}

@@ -1,0 +1,53 @@
+{
+  "id": "xapi-js.fetch.inline-02-57c7303f.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgPFBhcmFtZXRlcnM+CiAgICA8UGFyYW1ldGVyIGlkPSJyZXNwb25zZTEiIHR5cGU9IlNUUklORyIgc2l6ZT0iMjU1Ij5zdWNjZXNzMTwvUGFyYW1ldGVyPgogICAgPFBhcmFtZXRlciBpZD0icmVzcG9uc2UyIiB0eXBlPSJTVFJJTkciIHNpemU9IjI1NSI+c3VjY2VzczI8L1BhcmFtZXRlcj4KICA8L1BhcmFtZXRlcnM+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "response1",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "success1",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "response2",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "success2",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/adaptor-fetch/test/index.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

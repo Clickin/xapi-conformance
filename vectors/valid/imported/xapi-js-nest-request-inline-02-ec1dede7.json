@@ -1,0 +1,52 @@
+{
+  "id": "xapi-js.nest-request.inline-02-ec1dede7.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIj8+PFJvb3Q+PERhdGFzZXQgaWQ9InRlc3QiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImlkIiB0eXBlPSJJTlQiIHNpemU9IjEwIi8+PC9Db2x1bW5JbmZvPjxSb3dzPjxSb3c+PENvbCBpZD0iaWQiPjc8L0NvbD48L1Jvdz48L1Jvd3M+PC9EYXRhc2V0PjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "test",
+          "columns": [
+            {
+              "id": "id",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "id": {
+                  "state": "value",
+                  "lexical": "7"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/adaptor-nestjs/test/xapi-request-interceptor.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

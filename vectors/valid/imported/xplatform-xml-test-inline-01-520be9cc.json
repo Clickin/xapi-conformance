@@ -1,0 +1,116 @@
+{
+  "id": "xplatform-xml.test.inline-01-520be9cc.imported",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgICAgICA8Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcnNpb249IjQwMDAiPgogICAgICAgICAgPFBhcmFtZXRlcnM+CiAgICAgICAgICAgIDxQYXJhbWV0ZXIgaWQ9InNlcnZpY2UiIHR5cGU9IlNUUklORyI+Z2V0VXNlckxpc3Q8L1BhcmFtZXRlcj4KICAgICAgICAgICAgPFBhcmFtZXRlciBpZD0icGFnZSIgdHlwZT0iSU5UIj4xPC9QYXJhbWV0ZXI+CiAgICAgICAgICA8L1BhcmFtZXRlcnM+CiAgICAgICAgICA8RGF0YXNldHM+CiAgICAgICAgICAgIDxEYXRhc2V0IGlkPSJkc191c2VyIj4KICAgICAgICAgICAgICA8Q29sdW1uSW5mbz4KICAgICAgICAgICAgICAgIDxDb2x1bW4gaWQ9InVzZXJJZCIgc2l6ZT0iMTAiIHR5cGU9IlNUUklORyIvPgogICAgICAgICAgICAgICAgPENvbHVtbiBpZD0idXNlck5hbWUiIHNpemU9IjUwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgICAgICAgICAgIDxDb2x1bW4gaWQ9ImFnZSIgc2l6ZT0iMyIgdHlwZT0iSU5UIi8+CiAgICAgICAgICAgICAgPC9Db2x1bW5JbmZvPgogICAgICAgICAgICAgIDxSb3dzPgogICAgICAgICAgICAgICAgPFJvdz4KICAgICAgICAgICAgICAgICAgPENvbCBpZD0idXNlcklkIj51c2VyMDAxPC9Db2w+CiAgICAgICAgICAgICAgICAgIDxDb2wgaWQ9InVzZXJOYW1lIj5Kb2huIERvZTwvQ29sPgogICAgICAgICAgICAgICAgICA8Q29sIGlkPSJhZ2UiPjMwPC9Db2w+CiAgICAgICAgICAgICAgICA8L1Jvdz4KICAgICAgICAgICAgICAgIDxSb3c+CiAgICAgICAgICAgICAgICAgIDxDb2wgaWQ9InVzZXJJZCI+dXNlcjAwMjwvQ29sPgogICAgICAgICAgICAgICAgICA8Q29sIGlkPSJ1c2VyTmFtZSI+SmFuZSBTbWl0aDwvQ29sPgogICAgICAgICAgICAgICAgICA8Q29sIGlkPSJhZ2UiPjI1PC9Db2w+CiAgICAgICAgICAgICAgICA8L1Jvdz4KICAgICAgICAgICAgICA8L1Jvd3M+CiAgICAgICAgICAgIDwvRGF0YXNldD4KICAgICAgICAgIDwvRGF0YXNldHM+CiAgICAgICAgPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "service",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "getUserList",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "page",
+          "type": "INT",
+          "state": "value",
+          "lexical": "1",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ds_user",
+          "columns": [
+            {
+              "id": "userId",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "userName",
+              "type": "STRING",
+              "index": 1,
+              "size": "50"
+            },
+            {
+              "id": "age",
+              "type": "INT",
+              "index": 2,
+              "size": "3"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "age": {
+                  "state": "value",
+                  "lexical": "30"
+                },
+                "userId": {
+                  "state": "value",
+                  "lexical": "user001"
+                },
+                "userName": {
+                  "state": "value",
+                  "lexical": "John Doe"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "age": {
+                  "state": "value",
+                  "lexical": "25"
+                },
+                "userId": {
+                  "state": "value",
+                  "lexical": "user002"
+                },
+                "userName": {
+                  "state": "value",
+                  "lexical": "Jane Smith"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xplatform-xml",
+    "commit": "cda8b6b31f64511ff9d22f64539c4b78e862455d",
+    "license": "upstream-no-license-file",
+    "path": "xplatform-xml-micronaut/src/test/java/io/clickin/xplatform/xml/runtime/examples/XplatformXmlSerdeTest.java",
+    "repository": "Clickin/xplatform-xml"
+  },
+  "required": true
+}

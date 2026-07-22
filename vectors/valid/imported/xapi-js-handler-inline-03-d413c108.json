@@ -1,0 +1,40 @@
+{
+  "id": "xapi-js.handler.inline-03-d413c108.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgPERhdGFzZXQgaWQ9ImVtcHR5Ij4KICAgIDxDb2x1bW5JbmZvPgogICAgPC9Db2x1bW5JbmZvPgogICAgPFJvd3M+CiAgICA8L1Jvd3M+CiAgPC9EYXRhc2V0Pgo8L1Jvb3Q+"
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "empty",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

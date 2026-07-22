@@ -1,0 +1,8 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object","required":["operation","profile"],"properties":{
+    "case":{"type":"string"},"operation":{"enum":["decode","encode","roundtrip"]},"profile":{"type":"string"},
+    "input":{"type":"object","required":["encoding","data"],"properties":{"encoding":{"const":"base64"},"data":{"type":"string"}},"additionalProperties":false},
+    "value":{"$ref":"canonical.schema.json"},"options":{"type":"object"}
+  },"additionalProperties":false
+}

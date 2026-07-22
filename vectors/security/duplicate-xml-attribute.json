@@ -1,0 +1,9 @@
+{
+  "id":"security.duplicate-xml-attribute",
+  "operation":"decode",
+  "profile":"nexacro-xml-4000",
+  "input":{"encoding":"base64","data":"PFJvb3Q+PERhdGFzZXRzPjxEYXRhc2V0IGlkPSJkIiBhPSIxIiBhPSIyIi8+PC9EYXRhc2V0cz48L1Jvb3Q+"},
+  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/security/duplicate-xml-attribute.json","license":"repository"},
+  "required":true
+}

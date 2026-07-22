@@ -1,0 +1,68 @@
+{
+  "id": "xapi-js.fetch.inline-03-2f25080f.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgPERhdGFzZXQgaWQ9ImRhdGFzZXQxIj4KICAgIDxDb2x1bW5JbmZvPgogICAgICA8Q29sdW1uIGlkPSJyZXNwb25zZSIgdHlwZT0iU1RSSU5HIiBzaXplPSIyNTUiLz4KICAgICAgPENvbHVtbiBpZD0iYWRkaXRpb25hbEluZm8iIHR5cGU9IlNUUklORyIgc2l6ZT0iMjU1Ii8+CiAgICA8L0NvbHVtbkluZm8+CiAgICA8Um93cz4KICAgICAgPFJvdz4KICAgICAgICA8Q29sIGlkPSJyZXNwb25zZSI+c3VjY2VzczwvQ29sPgogICAgICAgIDxDb2wgaWQ9ImFkZGl0aW9uYWxJbmZvIj5pbmZvPC9Db2w+CiAgICAgIDwvUm93PgogICAgPC9Sb3dzPgogIDwvRGF0YXNldD4KPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "dataset1",
+          "columns": [
+            {
+              "id": "response",
+              "type": "STRING",
+              "index": 0,
+              "size": "255"
+            },
+            {
+              "id": "additionalInfo",
+              "type": "STRING",
+              "index": 1,
+              "size": "255"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "additionalInfo": {
+                  "state": "value",
+                  "lexical": "info"
+                },
+                "response": {
+                  "state": "value",
+                  "lexical": "success"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/adaptor-fetch/test/index.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

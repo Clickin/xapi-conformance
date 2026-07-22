@@ -1,0 +1,105 @@
+{
+  "id": "xplatform-xml.test.inline-04-fee7c5f6.imported",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgICAgICA8Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcnNpb249IjQwMDAiPgogICAgICAgICAgPFBhcmFtZXRlcnM+CiAgICAgICAgICAgIDxQYXJhbWV0ZXIgaWQ9InBhZ2UiIHR5cGU9IklOVCI+MzwvUGFyYW1ldGVyPgogICAgICAgICAgPC9QYXJhbWV0ZXJzPgogICAgICAgICAgPERhdGFzZXRzPgogICAgICAgICAgICA8RGF0YXNldCBpZD0iZHNfcHJpY2VzIj4KICAgICAgICAgICAgICA8Q29sdW1uSW5mbz4KICAgICAgICAgICAgICAgIDxDb2x1bW4gaWQ9Im5hbWUiIHNpemU9IjUwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgICAgICAgICAgIDxDb2x1bW4gaWQ9InByaWNlIiBzaXplPSI4IiB0eXBlPSJERUNJTUFMIi8+CiAgICAgICAgICAgICAgICA8Q29sdW1uIGlkPSJxdWFudGl0eSIgc2l6ZT0iNCIgdHlwZT0iSU5UIi8+CiAgICAgICAgICAgICAgPC9Db2x1bW5JbmZvPgogICAgICAgICAgICAgIDxSb3dzPgogICAgICAgICAgICAgICAgPFJvdz4KICAgICAgICAgICAgICAgICAgPENvbCBpZD0ibmFtZSI+V2lkZ2V0PC9Db2w+CiAgICAgICAgICAgICAgICAgIDxDb2wgaWQ9InByaWNlIj42NS43NzwvQ29sPgogICAgICAgICAgICAgICAgICA8Q29sIGlkPSJxdWFudGl0eSI+MTI8L0NvbD4KICAgICAgICAgICAgICAgICAgPE9yZ1Jvdz4KICAgICAgICAgICAgICAgICAgICA8Q29sIGlkPSJuYW1lIj5PbGQgV2lkZ2V0PC9Db2w+CiAgICAgICAgICAgICAgICAgICAgPENvbCBpZD0icHJpY2UiPjY0LjAwPC9Db2w+CiAgICAgICAgICAgICAgICAgICAgPENvbCBpZD0icXVhbnRpdHkiPjExPC9Db2w+CiAgICAgICAgICAgICAgICAgIDwvT3JnUm93PgogICAgICAgICAgICAgICAgPC9Sb3c+CiAgICAgICAgICAgICAgPC9Sb3dzPgogICAgICAgICAgICA8L0RhdGFzZXQ+CiAgICAgICAgICA8L0RhdGFzZXRzPgogICAgICAgIDwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "page",
+          "type": "INT",
+          "state": "value",
+          "lexical": "3",
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ds_prices",
+          "columns": [
+            {
+              "id": "name",
+              "type": "STRING",
+              "index": 0,
+              "size": "50"
+            },
+            {
+              "id": "price",
+              "type": "DECIMAL",
+              "index": 1,
+              "size": "8"
+            },
+            {
+              "id": "quantity",
+              "type": "INT",
+              "index": 2,
+              "size": "4"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": {
+                "type": "O",
+                "orgRow": null,
+                "values": {
+                  "name": {
+                    "state": "value",
+                    "lexical": "Old Widget"
+                  },
+                  "price": {
+                    "state": "value",
+                    "lexical": "64.00"
+                  },
+                  "quantity": {
+                    "state": "value",
+                    "lexical": "11"
+                  }
+                }
+              },
+              "values": {
+                "name": {
+                  "state": "value",
+                  "lexical": "Widget"
+                },
+                "price": {
+                  "state": "value",
+                  "lexical": "65.77"
+                },
+                "quantity": {
+                  "state": "value",
+                  "lexical": "12"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xplatform-xml",
+    "commit": "cda8b6b31f64511ff9d22f64539c4b78e862455d",
+    "license": "upstream-no-license-file",
+    "path": "xplatform-xml-micronaut/src/test/java/io/clickin/xplatform/xml/runtime/examples/XplatformXmlSerdeTest.java",
+    "repository": "Clickin/xplatform-xml"
+  },
+  "required": true
+}

@@ -1,0 +1,68 @@
+{
+  "id": "xapi-js.fetch.inline-04-c61ac621.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgPERhdGFzZXQgaWQ9Im91dHB1dCI+PENvbHVtbkluZm8+CiAgICA8Q29sdW1uIGlkPSJpZCIgdHlwZT0iSU5UIiBzaXplPSIxMCIvPjxDb2x1bW4gaWQ9ImFtb3VudCIgdHlwZT0iQklHREVDSU1BTCIgc2l6ZT0iMzAiLz4KICA8L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJpZCI+MTwvQ29sPjxDb2wgaWQ9ImFtb3VudCI+MTIuNTwvQ29sPjwvUm93PjwvUm93cz48L0RhdGFzZXQ+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "output",
+          "columns": [
+            {
+              "id": "id",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "amount",
+              "type": "BIGDECIMAL",
+              "index": 1,
+              "size": "30"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "amount": {
+                  "state": "value",
+                  "lexical": "12.5"
+                },
+                "id": {
+                  "state": "value",
+                  "lexical": "1"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/adaptor-fetch/test/index.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

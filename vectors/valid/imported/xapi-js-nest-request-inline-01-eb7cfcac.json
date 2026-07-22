@@ -1,0 +1,82 @@
+{
+  "id": "xapi-js.nest-request.inline-01-eb7cfcac.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgPERhdGFzZXQgaWQ9InRlc3QiPgogICAgPENvbHVtbkluZm8+CiAgICAgIDxDb2x1bW4gaWQ9ImludENvbCIgc2l6ZT0iMTAiIHR5cGU9IklOVCIgLz4KICAgICAgPENvbHVtbiBpZD0ic3RyaW5nQ29sIiBzaXplPSI1MCIgdHlwZT0iU1RSSU5HIiAvPgogICAgPC9Db2x1bW5JbmZvPgogICAgPFJvd3M+CiAgICAgIDxSb3c+CiAgICAgICAgPENvbCBpZD0iaW50Q29sIj4xMjM8L0NvbD4KICAgICAgICA8Q29sIGlkPSJzdHJpbmdDb2wiPmhlbGxvPC9Db2w+CiAgICAgIDwvUm93PgogICAgICA8Um93PgogICAgICAgIDxDb2wgaWQ9ImludENvbCI+NDU2PC9Db2w+CiAgICAgICAgPENvbCBpZD0ic3RyaW5nQ29sIj53b3JsZDwvQ29sPgogICAgICA8L1Jvdz4KICAgIDwvUm93cz4KICA8L0RhdGFzZXQ+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "test",
+          "columns": [
+            {
+              "id": "intCol",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "stringCol",
+              "type": "STRING",
+              "index": 1,
+              "size": "50"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "intCol": {
+                  "state": "value",
+                  "lexical": "123"
+                },
+                "stringCol": {
+                  "state": "value",
+                  "lexical": "hello"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "intCol": {
+                  "state": "value",
+                  "lexical": "456"
+                },
+                "stringCol": {
+                  "state": "value",
+                  "lexical": "world"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/adaptor-nestjs/test/xapi-request-interceptor.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

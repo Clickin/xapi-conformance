@@ -1,15 +1,29 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "type": "object",
-  "required": ["id", "operation", "profile", "input", "expect"],
+  "required": ["id", "operation", "profile", "expect", "source"],
   "properties": {
-    "id": {"type": "string"},
+    "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
     "operation": {"enum": ["decode", "encode", "roundtrip"]},
     "profile": {"type": "string"},
-    "input": {"type": "object"},
+    "input": {"type": "object", "required": ["encoding", "data"], "properties": {
+      "encoding": {"const": "base64"}, "data": {"type": "string"},
+      "path": {"type": "string"}
+    }, "additionalProperties": false},
+    "value": {"type": "object"},
     "options": {"type": "object"},
-    "expect": {"type": "object"},
-    "source": {"type": "object"}
+    "expect": {"type": "object", "required": ["kind"], "properties": {
+      "kind": {"enum": ["canonical", "wire", "error"]},
+      "value": {"type": "object"}, "output": {"type": "object"},
+      "error": {"type": "object", "required": ["class"], "properties": {
+        "class": {"type": "string"}, "path": {"type": "string"}
+      }, "additionalProperties": false}
+    }, "additionalProperties": false},
+    "source": {"type": "object", "required": ["repository", "commit", "path", "license"],
+      "properties": {"repository":{"type":"string"},"commit":{"type":"string"},
+        "path":{"type":"string"},"license":{"type":"string"},"attribution":{"type":"string"}},
+      "additionalProperties": false},
+    "required": {"type": "boolean", "default": true}
   },
   "additionalProperties": false
 }

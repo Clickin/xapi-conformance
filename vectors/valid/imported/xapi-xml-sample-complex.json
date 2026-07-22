@@ -1,0 +1,227 @@
+{
+  "id": "xapi-xml.sample-complex.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8UGFyYW1ldGVycz4KICAgIDxQYXJhbWV0ZXIgaWQ9InRlc3RTdHJpbmciIHR5cGU9IlNUUklORyI+SGVsbG8gV29ybGQ8L1BhcmFtZXRlcj4KICAgIDxQYXJhbWV0ZXIgaWQ9InRlc3RJbnQiIHR5cGU9IklOVCI+MTIzNDU8L1BhcmFtZXRlcj4KICAgIDxQYXJhbWV0ZXIgaWQ9InRlc3RCaWdEZWNpbWFsIiB0eXBlPSJCSUdERUNJTUFMIj45ODc2NTQzMjEwPC9QYXJhbWV0ZXI+CiAgICA8UGFyYW1ldGVyIGlkPSJ0ZXN0RmxvYXQiIHR5cGU9IkZMT0FUIj4zLjE0PC9QYXJhbWV0ZXI+CiAgICA8UGFyYW1ldGVyIGlkPSJ0ZXN0RGVjaW1hbCIgdHlwZT0iREVDSU1BTCI+OTkuOTk8L1BhcmFtZXRlcj4KICAgIDxQYXJhbWV0ZXIgaWQ9InRlc3REYXRlIiB0eXBlPSJEQVRFIj4yMDI1MTAwNDwvUGFyYW1ldGVyPgogICAgPFBhcmFtZXRlciBpZD0idGVzdERhdGVUaW1lIiB0eXBlPSJEQVRFVElNRSI+MjAyNTEwMDQxNDMwMDA8L1BhcmFtZXRlcj4KICAgIDxQYXJhbWV0ZXIgaWQ9InRlc3REYXRlVGltZU1zIiB0eXBlPSJEQVRFVElNRSI+MjAyNTEwMDQxNDMwMDA1MDA8L1BhcmFtZXRlcj4KICAgIDxQYXJhbWV0ZXIgaWQ9InRlc3RUaW1lIiB0eXBlPSJUSU1FIj4xNDMwMDA8L1BhcmFtZXRlcj4KICA8L1BhcmFtZXRlcnM+CiAgPERhdGFzZXRzPgogICAgPERhdGFzZXQgaWQ9ImRzX2FsbFR5cGVzIj4KICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgPENvbHVtbiBpZD0iY29sU3RyaW5nIiBzaXplPSI1MCIgdHlwZT0iU1RSSU5HIi8+CiAgICAgICAgPENvbHVtbiBpZD0iY29sSW50IiBzaXplPSIxMCIgdHlwZT0iSU5UIi8+CiAgICAgICAgPENvbHVtbiBpZD0iY29sQmlnRGVjaW1hbCIgc2l6ZT0iMjAiIHR5cGU9IkJJR0RFQ0lNQUwiLz4KICAgICAgICA8Q29sdW1uIGlkPSJjb2xGbG9hdCIgc2l6ZT0iMTAiIHR5cGU9IkZMT0FUIi8+CiAgICAgICAgPENvbHVtbiBpZD0iY29sRGVjaW1hbCIgc2l6ZT0iMTUiIHR5cGU9IkRFQ0lNQUwiLz4KICAgICAgICA8Q29sdW1uIGlkPSJjb2xEYXRlIiBzaXplPSI4IiB0eXBlPSJEQVRFIi8+CiAgICAgICAgPENvbHVtbiBpZD0iY29sRGF0ZVRpbWUiIHNpemU9IjE0IiB0eXBlPSJEQVRFVElNRSIvPgogICAgICAgIDxDb2x1bW4gaWQ9ImNvbFRpbWUiIHNpemU9IjYiIHR5cGU9IlRJTUUiLz4KICAgICAgICA8Q29sdW1uIGlkPSJjb2xCbG9iIiBzaXplPSIxMDAwIiB0eXBlPSJCTE9CIiBlbmM9ImJhc2U2NCIvPgogICAgICA8L0NvbHVtbkluZm8+CiAgICAgIDxSb3dzPgogICAgICAgIDxSb3cgdHlwZT0iaW5zZXJ0Ij4KICAgICAgICAgIDxDb2wgaWQ9ImNvbFN0cmluZyI+VGVzdCBWYWx1ZTwvQ29sPgogICAgICAgICAgPENvbCBpZD0iY29sSW50Ij4xMDA8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9ImNvbEJpZ0RlY2ltYWwiPjEyMzQ1Njc4OTAxMjM0NTwvQ29sPgogICAgICAgICAgPENvbCBpZD0iY29sRmxvYXQiPjEuMjM0PC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJjb2xEZWNpbWFsIj41NjcuODk8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9ImNvbERhdGUiPjIwMjUxMDA0PC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJjb2xEYXRlVGltZSI+MjAyNTEwMDQxNDMwMDA8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9ImNvbFRpbWUiPjE0MzAwMDwvQ29sPgogICAgICAgICAgPENvbCBpZD0iY29sQmxvYiI+U0dWc2JHOGdWMjl5YkdRPTwvQ29sPgogICAgICAgIDwvUm93PgogICAgICA8L1Jvd3M+CiAgICA8L0RhdGFzZXQ+CiAgPC9EYXRhc2V0cz4KPC9Sb290Pgo="
+  },
+  "options": {},
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "testString",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "Hello World",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "testInt",
+          "type": "INT",
+          "state": "value",
+          "lexical": "12345",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "testBigDecimal",
+          "type": "BIGDECIMAL",
+          "state": "value",
+          "lexical": "9876543210",
+          "index": 2,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "testFloat",
+          "type": "FLOAT",
+          "state": "value",
+          "lexical": "3.14",
+          "index": 3,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "testDecimal",
+          "type": "DECIMAL",
+          "state": "value",
+          "lexical": "99.99",
+          "index": 4,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "testDate",
+          "type": "DATE",
+          "state": "value",
+          "lexical": "20251004",
+          "index": 5,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "testDateTime",
+          "type": "DATETIME",
+          "state": "value",
+          "lexical": "20251004143000",
+          "index": 6,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "testDateTimeMs",
+          "type": "DATETIME",
+          "state": "value",
+          "lexical": "20251004143000500",
+          "index": 7,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "testTime",
+          "type": "TIME",
+          "state": "value",
+          "lexical": "143000",
+          "index": 8,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ds_allTypes",
+          "columns": [
+            {
+              "id": "colString",
+              "type": "STRING",
+              "index": 0,
+              "size": "50"
+            },
+            {
+              "id": "colInt",
+              "type": "INT",
+              "index": 1,
+              "size": "10"
+            },
+            {
+              "id": "colBigDecimal",
+              "type": "BIGDECIMAL",
+              "index": 2,
+              "size": "20"
+            },
+            {
+              "id": "colFloat",
+              "type": "FLOAT",
+              "index": 3,
+              "size": "10"
+            },
+            {
+              "id": "colDecimal",
+              "type": "DECIMAL",
+              "index": 4,
+              "size": "15"
+            },
+            {
+              "id": "colDate",
+              "type": "DATE",
+              "index": 5,
+              "size": "8"
+            },
+            {
+              "id": "colDateTime",
+              "type": "DATETIME",
+              "index": 6,
+              "size": "14"
+            },
+            {
+              "id": "colTime",
+              "type": "TIME",
+              "index": 7,
+              "size": "6"
+            },
+            {
+              "id": "colBlob",
+              "type": "BLOB",
+              "index": 8,
+              "size": "1000",
+              "encoding": "base64"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "I",
+              "orgRow": null,
+              "values": {
+                "colBigDecimal": {
+                  "state": "value",
+                  "lexical": "123456789012345"
+                },
+                "colBlob": {
+                  "state": "value",
+                  "lexical": "SGVsbG8gV29ybGQ="
+                },
+                "colDate": {
+                  "state": "value",
+                  "lexical": "20251004"
+                },
+                "colDateTime": {
+                  "state": "value",
+                  "lexical": "20251004143000"
+                },
+                "colDecimal": {
+                  "state": "value",
+                  "lexical": "567.89"
+                },
+                "colFloat": {
+                  "state": "value",
+                  "lexical": "1.234"
+                },
+                "colInt": {
+                  "state": "value",
+                  "lexical": "100"
+                },
+                "colString": {
+                  "state": "value",
+                  "lexical": "Test Value"
+                },
+                "colTime": {
+                  "state": "value",
+                  "lexical": "143000"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/resources/xapi/sample-complex.xml",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

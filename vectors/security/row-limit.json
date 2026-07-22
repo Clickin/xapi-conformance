@@ -1,0 +1,10 @@
+{
+  "id":"security.row-limit",
+  "operation":"encode",
+  "profile":"nexacro-json-1.0",
+  "options":{"strict":true,"limits":{"rows":0}},
+  "value":{"parameters":[],"datasets":[{"id":"d","columns":[],"constColumns":[],"rows":[{"type":"N","orgRow":null,"values":{}}]}]},
+  "expect":{"kind":"error","error":{"class":"limit-exceeded","path":"value.datasets[0].rows"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/security/row-limit.json","license":"repository"},
+  "required":true
+}

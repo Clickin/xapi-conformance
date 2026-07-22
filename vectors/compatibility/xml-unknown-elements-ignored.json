@@ -1,0 +1,9 @@
+{
+  "id":"compatibility.xml-unknown-elements-ignored",
+  "operation":"decode","profile":"nexacro-xml-4000",
+  "options":{"strict":false},
+  "input":{"encoding":"base64","data":"PFJvb3Q+PElnbm9yZWQvPjxEYXRhc2V0cz48RGF0YXNldCBpZD0iZCI+PElnbm9yZWQvPjxDb2x1bW5JbmZvPjxJZ25vcmVkLz48Q29sdW1uIGlkPSJhIiB0eXBlPSJTVFJJTkciLz48L0NvbHVtbkluZm8+PFJvd3M+PElnbm9yZWQvPjxSb3c+PElnbm9yZWQvPjxDb2wgaWQ9ImEiPng8L0NvbD48T3JnUm93PjxJZ25vcmVkLz48L09yZ1Jvdz48L1Jvdz48L1Jvd3M+PC9EYXRhc2V0PjwvRGF0YXNldHM+PC9Sb290Pg=="},
+  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0}],"constColumns":[],"rows":[{"type":"N","orgRow":{"type":"O","orgRow":null,"values":{"a":{"state":"missing"}}},"values":{"a":{"state":"value","lexical":"x"}}}]}]}},
+  "source":{"repository":"Clickin/xapi-js","commit":"244339098838d098d7087588d039a24d26448b5e","path":"packages/core/test/handler.test.ts","license":"MIT","attribution":"Clickin/xapi-js"},
+  "required":true
+}

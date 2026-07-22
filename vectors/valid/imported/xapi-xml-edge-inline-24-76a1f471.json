@@ -1,0 +1,149 @@
+{
+  "id": "xapi-xml.edge.inline-24-76a1f471.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8UGFyYW1ldGVycz4KICAgIDxQYXJhbWV0ZXIgaWQ9InVzZXJJZCIgdHlwZT0iU1RSSU5HIj51c2VyMTIzPC9QYXJhbWV0ZXI+CiAgICA8UGFyYW1ldGVyIGlkPSJzZXNzaW9uSWQiIHR5cGU9IklOVCI+OTk5PC9QYXJhbWV0ZXI+CiAgPC9QYXJhbWV0ZXJzPgogIDxEYXRhc2V0cz4KICAgIDxEYXRhc2V0IGlkPSJkc191c2VycyI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9ImlkIiBzaXplPSIxMCIgdHlwZT0iSU5UIi8+CiAgICAgICAgPENvbHVtbiBpZD0ibmFtZSIgc2l6ZT0iNTAiIHR5cGU9IlNUUklORyIvPgogICAgICAgIDxDb25zdENvbHVtbiBpZD0ic3RhdHVzIiBzaXplPSIxMCIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0iYWN0aXZlIi8+CiAgICAgIDwvQ29sdW1uSW5mbz4KICAgICAgPFJvd3M+CiAgICAgICAgPFJvdyB0eXBlPSJpbnNlcnQiPjxDb2wgaWQ9ImlkIj4xPC9Db2w+PENvbCBpZD0ibmFtZSI+QWxpY2U8L0NvbD48L1Jvdz4KICAgICAgICA8Um93IHR5cGU9InVwZGF0ZSI+CiAgICAgICAgICA8Q29sIGlkPSJpZCI+MjwvQ29sPjxDb2wgaWQ9Im5hbWUiPkJvYiBVcGRhdGVkPC9Db2w+CiAgICAgICAgICA8T3JnUm93PjxDb2wgaWQ9ImlkIj4yPC9Db2w+PENvbCBpZD0ibmFtZSI+Qm9iPC9Db2w+PC9PcmdSb3c+CiAgICAgICAgPC9Sb3c+CiAgICAgIDwvUm93cz4KICAgIDwvRGF0YXNldD4KICA8L0RhdGFzZXRzPgogIDxEYXRhc2V0IGlkPSJkc19kaXJlY3QiPgogICAgPENvbHVtbkluZm8+CiAgICAgIDxDb2x1bW4gaWQ9ImtleSIgc2l6ZT0iMjAiIHR5cGU9IlNUUklORyIvPgogICAgPC9Db2x1bW5JbmZvPgogICAgPFJvd3M+CiAgICAgIDxSb3c+PENvbCBpZD0ia2V5Ij5kaXJlY3RfZGF0YXNldDwvQ29sPjwvUm93PgogICAgPC9Sb3dzPgogIDwvRGF0YXNldD4KPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "userId",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "user123",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "sessionId",
+          "type": "INT",
+          "state": "value",
+          "lexical": "999",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ds_users",
+          "columns": [
+            {
+              "id": "id",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "name",
+              "type": "STRING",
+              "index": 1,
+              "size": "50"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "status",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "active"
+              },
+              "size": "10"
+            }
+          ],
+          "rows": [
+            {
+              "type": "I",
+              "orgRow": null,
+              "values": {
+                "id": {
+                  "state": "value",
+                  "lexical": "1"
+                },
+                "name": {
+                  "state": "value",
+                  "lexical": "Alice"
+                }
+              }
+            },
+            {
+              "type": "U",
+              "orgRow": {
+                "type": "O",
+                "orgRow": null,
+                "values": {
+                  "id": {
+                    "state": "value",
+                    "lexical": "2"
+                  },
+                  "name": {
+                    "state": "value",
+                    "lexical": "Bob"
+                  }
+                }
+              },
+              "values": {
+                "id": {
+                  "state": "value",
+                  "lexical": "2"
+                },
+                "name": {
+                  "state": "value",
+                  "lexical": "Bob Updated"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "ds_direct",
+          "columns": [
+            {
+              "id": "key",
+              "type": "STRING",
+              "index": 0,
+              "size": "20"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "key": {
+                  "state": "value",
+                  "lexical": "direct_dataset"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/java/io/github/clickin/xapi/XapiEdgeCasesTest.java",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

@@ -1,0 +1,82 @@
+{
+  "id": "xapi-xml.value-handler.inline-02-d4ebca3d.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZW1wbG95ZWVzIj4KICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgPENvbHVtbiBpZD0iaWQiIHNpemU9IjEwIiB0eXBlPSJJTlQiLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PjxDb2wgaWQ9ImlkIj4xPC9Db2w+PC9Sb3c+CiAgICAgIDwvUm93cz4KICAgIDwvRGF0YXNldD4KICAgIDxEYXRhc2V0IGlkPSJwcm9kdWN0cyI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9ImNvZGUiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PjxDb2wgaWQ9ImNvZGUiPkEwMDE8L0NvbD48L1Jvdz4KICAgICAgPC9Sb3dzPgogICAgPC9EYXRhc2V0PgogIDwvRGF0YXNldHM+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "employees",
+          "columns": [
+            {
+              "id": "id",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "id": {
+                  "state": "value",
+                  "lexical": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "products",
+          "columns": [
+            {
+              "id": "code",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "code": {
+                  "state": "value",
+                  "lexical": "A001"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/java/io/github/clickin/xapi/adapter/ValueObjectHandlerTest.java",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

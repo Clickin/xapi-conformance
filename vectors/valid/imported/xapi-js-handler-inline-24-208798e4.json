@@ -1,0 +1,192 @@
+{
+  "id": "xapi-js.handler.inline-24-208798e4.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgPERhdGFzZXQgaWQ9InRlc3QiPgogICAgPENvbHVtbkluZm8+CiAgICAgIDxDb2x1bW4gaWQ9ImludENvbCIgc2l6ZT0iMTAiIHR5cGU9IklOVCIgLz4KICAgICAgPENvbHVtbiBpZD0iYmlnZGVjaW1hbENvbCIgc2l6ZT0iMTAiIHR5cGU9IkJJR0RFQ0lNQUwiIC8+CiAgICAgIDxDb2x1bW4gaWQ9ImZsb2F0Q29sIiBzaXplPSIxMCIgdHlwZT0iRkxPQVQiIC8+CiAgICAgIDxDb2x1bW4gaWQ9ImRlY2ltYWxDb2wiIHNpemU9IjEwIiB0eXBlPSJERUNJTUFMIiAvPgogICAgICA8Q29sdW1uIGlkPSJkYXRlQ29sIiBzaXplPSI4IiB0eXBlPSJEQVRFIiAvPgogICAgICA8Q29sdW1uIGlkPSJkYXRldGltZUNvbCIgc2l6ZT0iMTQiIHR5cGU9IkRBVEVUSU1FIiAvPgogICAgICA8Q29sdW1uIGlkPSJ0aW1lQ29sIiBzaXplPSI2IiB0eXBlPSJUSU1FIiAvPgogICAgICA8Q29sdW1uIGlkPSJibG9iQ29sIiBzaXplPSIxMDAiIHR5cGU9IkJMT0IiIC8+CiAgICAgIDxDb2x1bW4gaWQ9InN0cmluZ0NvbCIgc2l6ZT0iNTAiIHR5cGU9IlNUUklORyIgLz4KICAgICAgPENvbHVtbiBpZD0iZGVmYXVsdENvbCIgc2l6ZT0iMjU1IiAvPgogICAgPC9Db2x1bW5JbmZvPgogICAgPFJvd3M+CiAgICAgIDxSb3c+CiAgICAgICAgPENvbCBpZD0iaW50Q29sIj4xMjM8L0NvbD4KICAgICAgICA8Q29sIGlkPSJiaWdkZWNpbWFsQ29sIj4xMjM0NTY3ODkwPC9Db2w+CiAgICAgICAgPENvbCBpZD0iZmxvYXRDb2wiPjMuMTQ8L0NvbD4KICAgICAgICA8Q29sIGlkPSJkZWNpbWFsQ29sIj45OS45OTwvQ29sPgogICAgICAgIDxDb2wgaWQ9ImRhdGVDb2wiPjIwMjMwNjE1PC9Db2w+CiAgICAgICAgPENvbCBpZD0iZGF0ZXRpbWVDb2wiPjIwMjMwNjE1MTIwMDAwPC9Db2w+CiAgICAgICAgPENvbCBpZD0idGltZUNvbCI+MTIwMDAwPC9Db2w+CiAgICAgICAgPENvbCBpZD0iYmxvYkNvbCI+ZEdWemRBPT08L0NvbD4KICAgICAgICA8Q29sIGlkPSJzdHJpbmdDb2wiPnRlc3Q8L0NvbD4KICAgICAgICA8Q29sIGlkPSJkZWZhdWx0Q29sIj5kZWZhdWx0IHZhbHVlPC9Db2w+CiAgICAgIDwvUm93PgogICAgICA8Um93PgogICAgICAgIDxDb2wgaWQ9ImludENvbCI+TmFOPC9Db2w+CiAgICAgICAgPENvbCBpZD0iYmlnZGVjaW1hbENvbCI+TmFOPC9Db2w+CiAgICAgICAgPENvbCBpZD0iZmxvYXRDb2wiPk5hTjwvQ29sPgogICAgICAgIDxDb2wgaWQ9ImRlY2ltYWxDb2wiPk5hTjwvQ29sPgogICAgICAgIDxDb2wgaWQ9ImRhdGVDb2wiPm5vdC1hLWRhdGU8L0NvbD4KICAgICAgICA8Q29sIGlkPSJkYXRldGltZUNvbCI+bm90LWEtZGF0ZXRpbWU8L0NvbD4KICAgICAgICA8Q29sIGlkPSJ0aW1lQ29sIj5ub3QtYS10aW1lPC9Db2w+CiAgICAgICAgPENvbCBpZD0iYmxvYkNvbCI+Y2Fubm90LWRlY29kZTwvQ29sPgogICAgICAgIDxDb2wgaWQ9InN0cmluZ0NvbCI+PC9Db2w+CiAgICAgICAgPENvbCBpZD0iZGVmYXVsdENvbCI+PC9Db2w+CiAgICAgIDwvUm93PgogICAgPC9Sb3dzPgogIDwvRGF0YXNldD4KPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "test",
+          "columns": [
+            {
+              "id": "intCol",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "bigdecimalCol",
+              "type": "BIGDECIMAL",
+              "index": 1,
+              "size": "10"
+            },
+            {
+              "id": "floatCol",
+              "type": "FLOAT",
+              "index": 2,
+              "size": "10"
+            },
+            {
+              "id": "decimalCol",
+              "type": "DECIMAL",
+              "index": 3,
+              "size": "10"
+            },
+            {
+              "id": "dateCol",
+              "type": "DATE",
+              "index": 4,
+              "size": "8"
+            },
+            {
+              "id": "datetimeCol",
+              "type": "DATETIME",
+              "index": 5,
+              "size": "14"
+            },
+            {
+              "id": "timeCol",
+              "type": "TIME",
+              "index": 6,
+              "size": "6"
+            },
+            {
+              "id": "blobCol",
+              "type": "BLOB",
+              "index": 7,
+              "size": "100"
+            },
+            {
+              "id": "stringCol",
+              "type": "STRING",
+              "index": 8,
+              "size": "50"
+            },
+            {
+              "id": "defaultCol",
+              "type": "",
+              "index": 9,
+              "size": "255"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "bigdecimalCol": {
+                  "state": "value",
+                  "lexical": "1234567890"
+                },
+                "blobCol": {
+                  "state": "value",
+                  "lexical": "dGVzdA=="
+                },
+                "dateCol": {
+                  "state": "value",
+                  "lexical": "20230615"
+                },
+                "datetimeCol": {
+                  "state": "value",
+                  "lexical": "20230615120000"
+                },
+                "decimalCol": {
+                  "state": "value",
+                  "lexical": "99.99"
+                },
+                "defaultCol": {
+                  "state": "value",
+                  "lexical": "default value"
+                },
+                "floatCol": {
+                  "state": "value",
+                  "lexical": "3.14"
+                },
+                "intCol": {
+                  "state": "value",
+                  "lexical": "123"
+                },
+                "stringCol": {
+                  "state": "value",
+                  "lexical": "test"
+                },
+                "timeCol": {
+                  "state": "value",
+                  "lexical": "120000"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "bigdecimalCol": {
+                  "state": "value",
+                  "lexical": "NaN"
+                },
+                "blobCol": {
+                  "state": "value",
+                  "lexical": "cannot-decode"
+                },
+                "dateCol": {
+                  "state": "value",
+                  "lexical": "not-a-date"
+                },
+                "datetimeCol": {
+                  "state": "value",
+                  "lexical": "not-a-datetime"
+                },
+                "decimalCol": {
+                  "state": "value",
+                  "lexical": "NaN"
+                },
+                "defaultCol": {
+                  "state": "empty"
+                },
+                "floatCol": {
+                  "state": "value",
+                  "lexical": "NaN"
+                },
+                "intCol": {
+                  "state": "value",
+                  "lexical": "NaN"
+                },
+                "stringCol": {
+                  "state": "empty"
+                },
+                "timeCol": {
+                  "state": "value",
+                  "lexical": "not-a-time"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

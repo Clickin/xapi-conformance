@@ -1,0 +1,31 @@
+{
+  "name": "@clickin/xapi-conformance",
+  "version": "0.1.0",
+  "description": "CLI wrapper for the xapi-conformance HTTP test runner",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Clickin/xapi-conformance.git"
+  },
+  "homepage": "https://github.com/Clickin/xapi-conformance#readme",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "xapi-conformance": "cli/index.js"
+  },
+  "files": [
+    "cli/",
+    "vectors/",
+    "README.md",
+    "package.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "check": "node --check cli/index.js",
+    "pack:check": "pnpm pack --dry-run"
+  },
+  "packageManager": "pnpm@11.12.0"
+}

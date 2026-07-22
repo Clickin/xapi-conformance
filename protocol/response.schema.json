@@ -1,0 +1,8 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object","required":["ok"],"properties":{
+    "ok":{"type":"boolean"},"value":{"$ref":"canonical.schema.json"},
+    "output":{"type":"object","required":["encoding","data"],"properties":{"encoding":{"const":"base64"},"data":{"type":"string"}},"additionalProperties":false},
+    "error":{"type":"object","required":["class"],"properties":{"class":{"type":"string"},"path":{"type":"string"},"message":{"type":"string"}},"additionalProperties":false}
+  },"additionalProperties":false
+}

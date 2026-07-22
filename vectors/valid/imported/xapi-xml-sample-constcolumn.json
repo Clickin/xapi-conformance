@@ -1,0 +1,108 @@
+{
+  "id": "xapi-xml.sample-constcolumn.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfY29uZmlnIj4KICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgPENvbnN0Q29sdW1uIGlkPSJhcHBWZXJzaW9uIiBzaXplPSIxMCIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0iMS4wLjAiLz4KICAgICAgICA8Q29uc3RDb2x1bW4gaWQ9Im1heFVzZXJzIiBzaXplPSI1IiB0eXBlPSJJTlQiIHZhbHVlPSIxMDAiLz4KICAgICAgICA8Q29uc3RDb2x1bW4gaWQ9ImRlYnVnTW9kZSIgc2l6ZT0iNSIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0iZmFsc2UiLz4KICAgICAgICA8Q29sdW1uIGlkPSJzZXR0aW5nSWQiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgICA8Q29sdW1uIGlkPSJzZXR0aW5nVmFsdWUiIHNpemU9IjEwMCIgdHlwZT0iU1RSSU5HIi8+CiAgICAgIDwvQ29sdW1uSW5mbz4KICAgICAgPFJvd3M+CiAgICAgICAgPFJvdz4KICAgICAgICAgIDxDb2wgaWQ9InNldHRpbmdJZCI+UzAwMTwvQ29sPgogICAgICAgICAgPENvbCBpZD0ic2V0dGluZ1ZhbHVlIj5TYW1wbGUgVmFsdWUgMTwvQ29sPgogICAgICAgIDwvUm93PgogICAgICAgIDxSb3c+CiAgICAgICAgICA8Q29sIGlkPSJzZXR0aW5nSWQiPlMwMDI8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9InNldHRpbmdWYWx1ZSI+U2FtcGxlIFZhbHVlIDI8L0NvbD4KICAgICAgICA8L1Jvdz4KICAgICAgPC9Sb3dzPgogICAgPC9EYXRhc2V0PgogIDwvRGF0YXNldHM+CjwvUm9vdD4K"
+  },
+  "options": {},
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "ds_config",
+          "columns": [
+            {
+              "id": "settingId",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "settingValue",
+              "type": "STRING",
+              "index": 1,
+              "size": "100"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "appVersion",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "1.0.0"
+              },
+              "size": "10"
+            },
+            {
+              "id": "maxUsers",
+              "type": "INT",
+              "value": {
+                "state": "value",
+                "lexical": "100"
+              },
+              "size": "5"
+            },
+            {
+              "id": "debugMode",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "false"
+              },
+              "size": "5"
+            }
+          ],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "settingId": {
+                  "state": "value",
+                  "lexical": "S001"
+                },
+                "settingValue": {
+                  "state": "value",
+                  "lexical": "Sample Value 1"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "settingId": {
+                  "state": "value",
+                  "lexical": "S002"
+                },
+                "settingValue": {
+                  "state": "value",
+                  "lexical": "Sample Value 2"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/resources/xapi/sample-constcolumn.xml",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

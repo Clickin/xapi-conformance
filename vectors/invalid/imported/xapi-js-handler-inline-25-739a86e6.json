@@ -1,0 +1,27 @@
+{
+  "id": "xapi-js.handler.inline-25-739a86e6.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QiKTsKICAgIGV4cGVjdChyZXN1bHQpLnRvQ29udGFpbigiPC9Sb290PiIpOwogIH0pOwogIGl0KCJzaG91bGQgaGFuZGxlIGVtcHR5IENvbnN0Q29sdW1uIiwgYXN5bmMgKCkgPT4gewogICAgY29uc3QgeGFwaVJvb3QgPSBuZXcgWGFwaVJvb3QoKTsKICAgIGNvbnN0IGRhdGFzZXQgPSBuZXcgRGF0YXNldCgidGVzdCIpOwogICAgZGF0YXNldC5hZGRDb25zdENvbHVtbih7CiAgICAgIGlkOiAiZW1wdHlDb25zdENvbCIsIHR5cGU6ICJTVFJJTkciLCB2YWx1ZTogdW5kZWZpbmVkLCBzaXplOiAwCiAgICB9KTsgLy8gTm8gdmFsdWUgcHJvdmlkZWQKICAgIHhhcGlSb290LmFkZERhdGFzZXQoZGF0YXNldCk7CgogICAgY29uc3QgcmVzdWx0ID0gd3JpdGUoeGFwaVJvb3QpOwogICAgZXhwZWN0KHJlc3VsdCkudG9Db250YWluKCc8Q29uc3RDb2x1bW4gaWQ9ImVtcHR5Q29uc3RDb2wiIHNpemU9IjAiIHR5cGU9IlNUUklORyIgdmFsdWU9IiIvPicpOwogIH0pCiAgZGVzY3JpYmUoInBhcnNlIiwgYXN5bmMgKCkgPT4gewogICAgaXQoInNob3VsZCB0aHJvdyB3aGVuIG5vIGRhdGFzZXQgaWQgaXMgcHJvdmlkZWQiLCBhc3luYyAoKSA9PiB7CiAgICAgIGNvbnN0IHhtbFdpdGhvdXRJZCA9"
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

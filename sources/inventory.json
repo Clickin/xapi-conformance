@@ -1,0 +1,30 @@
+{
+  "generatedOn":"2026-07-21",
+  "repositories":[
+    {
+      "name":"Clickin/xapi-js",
+      "commit":"244339098838d098d7087588d039a24d26448b5e",
+      "license":"MIT",
+      "testFileCount":17,
+      "fixtureLikeFileCount":11,
+      "relevantTests":["packages/core/test/codec.test.ts","packages/core/test/schema.test.ts","packages/core/test/xapi-data.test.ts","packages/core/test/handler.test.ts"]
+    },
+    {
+      "name":"Clickin/xplatform-xml",
+      "commit":"cda8b6b31f64511ff9d22f64539c4b78e862455d",
+      "license":"no LICENSE/COPYING/NOTICE file in pinned checkout",
+      "testFileCount":2,
+      "fixtureLikeFileCount":0,
+      "relevantTests":["xplatform-xml-micronaut/src/test/java/io/clickin/xplatform/xml/runtime/examples/XplatformXmlSerdeTest.java","xplatform-xml-processor/src/test/java/io/clickin/xplatform/xml/processor/XplatformSerdeProcessorFrameworkGenerationTest.java"]
+    },
+    {
+      "name":"Clickin/xapi",
+      "commit":"e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+      "license":"Apache-2.0",
+      "testFileCount":18,
+      "fixtureLikeFileCount":15,
+      "relevantTests":["xapi-json/src/test/java/io/github/clickin/xapi/json/XapiJsonReaderTest.java","xapi-json/src/test/java/io/github/clickin/xapi/json/XapiJsonWriterTest.java","xapi-xml/src/test/java/io/github/clickin/xapi/XapiEdgeCasesTest.java","xapi-xml/src/test/java/io/github/clickin/xapi/XapiErrorHandlingTest.java"]
+    }
+  ],
+  "conversionStatus":{"sourceDerivedVectors":101,"representativeVectors":123,"remainingUpstreamFixtureConversion":false,"nonWireAssertionsExcluded":true}
+}

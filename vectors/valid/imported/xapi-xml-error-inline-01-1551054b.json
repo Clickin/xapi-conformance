@@ -1,0 +1,47 @@
+{
+  "id": "xapi-xml.error.inline-01-1551054b.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldD4KICAgICAgPENvbHVtbkluZm8+PENvbHVtbiBpZD0iY29sMSIgc2l6ZT0iMTAiIHR5cGU9IlNUUklORyIvPjwvQ29sdW1uSW5mbz4KICAgICAgPFJvd3MvPgogICAgPC9EYXRhc2V0PgogIDwvRGF0YXNldHM+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "",
+          "columns": [
+            {
+              "id": "col1",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            }
+          ],
+          "constColumns": [],
+          "rows": []
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/java/io/github/clickin/xapi/XapiErrorHandlingTest.java",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

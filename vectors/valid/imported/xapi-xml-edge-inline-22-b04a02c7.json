@@ -1,0 +1,88 @@
+{
+  "id": "xapi-xml.edge.inline-22-b04a02c7.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfbXVsdGlfY29scyI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9ImNvbDEiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgICA8Q29sdW1uIGlkPSJjb2wyIiBzaXplPSIxMCIgdHlwZT0iSU5UIi8+CiAgICAgICAgPENvbHVtbiBpZD0iY29sMyIgc2l6ZT0iMTAiIHR5cGU9IkRFQ0lNQUwiLz4KICAgICAgICA8Q29uc3RDb2x1bW4gaWQ9ImNvbnN0MSIgc2l6ZT0iNSIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0iY29uc3RhbnQiLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PgogICAgICAgICAgPENvbCBpZD0iY29sMSI+dGVzdDwvQ29sPgogICAgICAgICAgPENvbCBpZD0iY29sMiI+NDI8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9ImNvbDMiPjMuMTQ8L0NvbD4KICAgICAgICA8L1Jvdz4KICAgICAgPC9Sb3dzPgogICAgPC9EYXRhc2V0PgogIDwvRGF0YXNldHM+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "ds_multi_cols",
+          "columns": [
+            {
+              "id": "col1",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "col2",
+              "type": "INT",
+              "index": 1,
+              "size": "10"
+            },
+            {
+              "id": "col3",
+              "type": "DECIMAL",
+              "index": 2,
+              "size": "10"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "const1",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "constant"
+              },
+              "size": "5"
+            }
+          ],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "col1": {
+                  "state": "value",
+                  "lexical": "test"
+                },
+                "col2": {
+                  "state": "value",
+                  "lexical": "42"
+                },
+                "col3": {
+                  "state": "value",
+                  "lexical": "3.14"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/java/io/github/clickin/xapi/XapiEdgeCasesTest.java",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

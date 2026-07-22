@@ -1,0 +1,42 @@
+{
+  "id": "xapi-xml.edge.inline-03-5ece0802.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8UGFyYW1ldGVycz4KICAgIDxQYXJhbWV0ZXIgaWQ9InRlc3QiIHR5cGU9IlNUUklORyIvPgogIDwvUGFyYW1ldGVycz4KPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "test",
+          "type": "STRING",
+          "state": "empty",
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/java/io/github/clickin/xapi/XapiEdgeCasesTest.java",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

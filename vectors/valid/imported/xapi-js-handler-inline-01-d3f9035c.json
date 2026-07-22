@@ -1,0 +1,121 @@
+{
+  "id": "xapi-js.handler.inline-01-d3f9035c.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgPFBhcmFtZXRlcnM+CiAgICA8UGFyYW1ldGVyIGlkPSJzZXJ2aWNlIj5zdG9jazwvUGFyYW1ldGVyPgogICAgPFBhcmFtZXRlciBpZD0ibWV0aG9kIj5zZWFyY2g8L1BhcmFtZXRlcj4KICA8L1BhcmFtZXRlcnM+CiAgPERhdGFzZXQgaWQ9Im91dHB1dCI+CiAgICA8Q29sdW1uSW5mbz4KICAgICAgPENvbnN0Q29sdW1uIGlkPSJtYXJrZXQiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciIHZhbHVlPSJrc2UiIC8+CiAgICAgIDxDb25zdENvbHVtbiBpZD0ib3BlbnByaWNlIiBzaXplPSIxMCIgdHlwZT0iSU5UIiB2YWx1ZT0iMTUwMDAiIC8+CiAgICAgIDxDb2x1bW4gaWQ9InN0b2NrQ29kZSIgc2l6ZT0iNSIgdHlwZT0iU1RSSU5HIiAvPgogICAgICA8Q29sdW1uIGlkPSJjdXJyZW50cHJpY2UiIHNpemU9IjEwIiB0eXBlPSJJTlQiIC8+CiAgICA8L0NvbHVtbkluZm8+CiAgICA8Um93cz4KICAgICAgPFJvdz4KICAgICAgICA8Q29sIGlkPSJzdG9ja0NvZGUiPjEwMDAxPC9Db2w+CiAgICAgICAgPENvbCBpZD0iY3VycmVudHByaWNlIj41NzAwPC9Db2w+CiAgICAgIDwvUm93PgogICAgICA8Um93PgogICAgICAgIDxDb2wgaWQ9InN0b2NrQ29kZSI+MTAwMDI8L0NvbD4KICAgICAgICA8Q29sIGlkPSJjdXJyZW50cHJpY2UiPjE0NTAwPC9Db2w+CiAgICAgIDwvUm93PgogICAgPC9Sb3dzPgogIDwvRGF0YXNldD4KPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "service",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "stock",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "method",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "search",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "output",
+          "columns": [
+            {
+              "id": "stockCode",
+              "type": "STRING",
+              "index": 0,
+              "size": "5"
+            },
+            {
+              "id": "currentprice",
+              "type": "INT",
+              "index": 1,
+              "size": "10"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "market",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "kse"
+              },
+              "size": "10"
+            },
+            {
+              "id": "openprice",
+              "type": "INT",
+              "value": {
+                "state": "value",
+                "lexical": "15000"
+              },
+              "size": "10"
+            }
+          ],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "currentprice": {
+                  "state": "value",
+                  "lexical": "5700"
+                },
+                "stockCode": {
+                  "state": "value",
+                  "lexical": "10001"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "currentprice": {
+                  "state": "value",
+                  "lexical": "14500"
+                },
+                "stockCode": {
+                  "state": "value",
+                  "lexical": "10002"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

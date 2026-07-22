@@ -1,0 +1,58 @@
+{
+  "id": "xapi-xml.error.inline-02-985613fa.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfdGVzdCI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9ImNvbDEiIHNpemU9IjEwIiB0eXBlPSJJTlZBTElEX1RZUEUiLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PgogICAgICAgICAgPENvbCBpZD0iY29sMSI+dmFsdWU8L0NvbD4KICAgICAgICA8L1Jvdz4KICAgICAgPC9Sb3dzPgogICAgPC9EYXRhc2V0PgogIDwvRGF0YXNldHM+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "ds_test",
+          "columns": [
+            {
+              "id": "col1",
+              "type": "INVALID_TYPE",
+              "index": 0,
+              "size": "10"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "col1": {
+                  "state": "value",
+                  "lexical": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/java/io/github/clickin/xapi/XapiErrorHandlingTest.java",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

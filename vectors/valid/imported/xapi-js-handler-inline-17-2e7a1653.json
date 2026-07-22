@@ -1,0 +1,87 @@
+{
+  "id": "xapi-js.handler.inline-17-2e7a1653.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgIDxSb290IHhtbG5zPSJodHRwOi8vd3d3LnRvYmVzb2Z0LmNvbS9wbGF0Zm9ybS9EYXRhc2V0IiB2ZXI9IjQwMDAiPgogICAgICA8RGF0YXNldCBpZD0idGVzdCI+CiAgICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgICA8Q29uc3RDb2x1bW4gaWQ9InNtYWxsQ29uc3RDb2wiIHNpemU9IjUiIHR5cGU9IlNUUklORyIgdmFsdWU9ImFiY2QiIC8+CiAgICAgICAgICA8Q29uc3RDb2x1bW4gaWQ9ImxhcmdlQ29uc3RDb2wiIHNpemU9IjEwMCIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0ibGFyZ2UgdGV4dCB2YWx1ZSIgLz4KICAgICAgICAgIDxDb2x1bW4gaWQ9InNtYWxsQ29sIiBzaXplPSI1IiB0eXBlPSJTVFJJTkciIC8+CiAgICAgICAgICA8Q29sdW1uIGlkPSJsYXJnZUNvbCIgc2l6ZT0iMTAwIiB0eXBlPSJTVFJJTkciIC8+CiAgICAgICAgPC9Db2x1bW5JbmZvPgogICAgICAgIDxSb3dzPgogICAgICAgICAgPFJvdz4KICAgICAgICAgICAgPENvbCBpZD0ic21hbGxDb2wiPnNtYWxsPC9Db2w+CiAgICAgICAgICAgIDxDb2wgaWQ9ImxhcmdlQ29sIj5sYXJnZSB0ZXh0IHZhbHVlPC9Db2w+CiAgICAgICAgICA8L1Jvdz4KICAgICAgICA8L1Jvd3M+CiAgICAgIDwvRGF0YXNldD4KICAgIDwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "test",
+          "columns": [
+            {
+              "id": "smallCol",
+              "type": "STRING",
+              "index": 0,
+              "size": "5"
+            },
+            {
+              "id": "largeCol",
+              "type": "STRING",
+              "index": 1,
+              "size": "100"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "smallConstCol",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "abcd"
+              },
+              "size": "5"
+            },
+            {
+              "id": "largeConstCol",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "large text value"
+              },
+              "size": "100"
+            }
+          ],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "largeCol": {
+                  "state": "value",
+                  "lexical": "large text value"
+                },
+                "smallCol": {
+                  "state": "value",
+                  "lexical": "small"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

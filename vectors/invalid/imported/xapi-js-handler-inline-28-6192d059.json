@@ -1,0 +1,27 @@
+{
+  "id": "xapi-js.handler.inline-28-6192d059.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgICAgPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+CiAgICAgICAgPERhdGFzZXQgaWQ9InRlc3QiPgogICAgICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgICAgIDxDb2x1bW4gaWQ9InRlc3RDb2wiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciIC8+CiAgICAgICAgICA8L0NvbHVtbkluZm8+CiAgICAgICAgICA8Um93cz4KICAgICAgICAgICAgPFJvdz4KICAgICAgICAgICAgICA8Q29sIGlkPSJpbnZhbGlkQ29sIj50ZXN0VmFsdWU8L0NvbD4gPCEtLSBUaGlzIGNvbCBkb2VzIG5vdCBtYXRjaCB0aGUgY29sdW1uSW5mbyAtLT4KICAgICAgICAgICAgPC9Sb3c+CiAgICAgICAgICA8L1Jvd3M+CiAgICAgICAgPC9EYXRhc2V0PgogICAgICA8L1Jvb3Q+"
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

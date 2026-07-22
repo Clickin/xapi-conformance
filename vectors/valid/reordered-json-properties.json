@@ -1,0 +1,9 @@
+{
+  "id":"compatibility.reordered-json-properties.decode",
+  "operation":"decode",
+  "profile":"nexacro-json-1.0",
+  "input":{"encoding":"base64","data":"eyJEYXRhc2V0cyI6W10sIlBhcmFtZXRlcnMiOltdLCJ2ZXJzaW9uIjoiMS4wIn0="},
+  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[],"wire":{"version":"1.0"}}},
+  "source":{"repository":"Clickin/xapi-js","commit":"244339098838d098d7087588d039a24d26448b5e","path":"packages/core/test/codec.test.ts","license":"MIT","attribution":"Clickin/xapi-js"},
+  "required":true
+}

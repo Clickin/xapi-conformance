@@ -1,0 +1,66 @@
+{
+  "id": "xapi-js.handler.inline-15-088f7902.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgIDxSb290IHhtbG5zPSJodHRwOi8vd3d3LnRvYmVzb2Z0LmNvbS9wbGF0Zm9ybS9EYXRhc2V0IiB2ZXI9IjQwMDAiPgogICAgICA8RGF0YXNldCBpZD0idGVzdCI+CiAgICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgICA8Q29sdW1uIGlkPSJ0ZXN0Q29sIiBzaXplPSIxMCIgdHlwZT0iU1RSSU5HIiAvPgogICAgICAgIDwvQ29sdW1uSW5mbz4KICAgICAgICA8Um93cz4KICAgICAgICAgIDxSb3cgdHlwZT0idXBkYXRlIj4KICAgICAgICAgICAgPENvbCBpZD0idGVzdENvbCI+bmV3VmFsdWU8L0NvbD4KICAgICAgICAgICAgPE9yZ1Jvdz4KICAgICAgICAgICAgICA8Q29sIGlkPSJ0ZXN0Q29sIiAvPgogICAgICAgICAgICA8L09yZ1Jvdz4KICAgICAgICAgIDwvUm93PgogICAgICAgIDwvUm93cz4KICAgICAgPC9EYXRhc2V0PgogICAgPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "test",
+          "columns": [
+            {
+              "id": "testCol",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "U",
+              "orgRow": {
+                "type": "O",
+                "orgRow": null,
+                "values": {
+                  "testCol": {
+                    "state": "empty"
+                  }
+                }
+              },
+              "values": {
+                "testCol": {
+                  "state": "value",
+                  "lexical": "newValue"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

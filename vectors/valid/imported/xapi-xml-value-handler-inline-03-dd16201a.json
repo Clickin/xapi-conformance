@@ -1,0 +1,98 @@
+{
+  "id": "xapi-xml.value-handler.inline-03-dd16201a.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0ibWl4ZWQiPgogICAgICA8Q29sdW1uSW5mbz4KICAgICAgICA8Q29sdW1uIGlkPSJpbnRDb2wiIHNpemU9IjEwIiB0eXBlPSJJTlQiLz4KICAgICAgICA8Q29sdW1uIGlkPSJmbG9hdENvbCIgc2l6ZT0iMjAiIHR5cGU9IkZMT0FUIi8+CiAgICAgICAgPENvbHVtbiBpZD0ic3RyaW5nQ29sIiBzaXplPSI1MCIgdHlwZT0iU1RSSU5HIi8+CiAgICAgICAgPENvbHVtbiBpZD0iZGF0ZUNvbCIgc2l6ZT0iOCIgdHlwZT0iREFURSIvPgogICAgICAgIDxDb2x1bW4gaWQ9ImRhdGV0aW1lQ29sIiBzaXplPSIxNCIgdHlwZT0iREFURVRJTUUiLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PgogICAgICAgICAgPENvbCBpZD0iaW50Q29sIj4xMjM8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9ImZsb2F0Q29sIj45OS45OTwvQ29sPgogICAgICAgICAgPENvbCBpZD0ic3RyaW5nQ29sIj50ZXh0PC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJkYXRlQ29sIj4yMDI1MDEwNDwvQ29sPgogICAgICAgICAgPENvbCBpZD0iZGF0ZXRpbWVDb2wiPjIwMjUwMTA0MTUzMDQ1PC9Db2w+CiAgICAgICAgPC9Sb3c+CiAgICAgIDwvUm93cz4KICAgIDwvRGF0YXNldD4KICA8L0RhdGFzZXRzPgo8L1Jvb3Q+"
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "mixed",
+          "columns": [
+            {
+              "id": "intCol",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "floatCol",
+              "type": "FLOAT",
+              "index": 1,
+              "size": "20"
+            },
+            {
+              "id": "stringCol",
+              "type": "STRING",
+              "index": 2,
+              "size": "50"
+            },
+            {
+              "id": "dateCol",
+              "type": "DATE",
+              "index": 3,
+              "size": "8"
+            },
+            {
+              "id": "datetimeCol",
+              "type": "DATETIME",
+              "index": 4,
+              "size": "14"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "dateCol": {
+                  "state": "value",
+                  "lexical": "20250104"
+                },
+                "datetimeCol": {
+                  "state": "value",
+                  "lexical": "20250104153045"
+                },
+                "floatCol": {
+                  "state": "value",
+                  "lexical": "99.99"
+                },
+                "intCol": {
+                  "state": "value",
+                  "lexical": "123"
+                },
+                "stringCol": {
+                  "state": "value",
+                  "lexical": "text"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/java/io/github/clickin/xapi/adapter/ValueObjectHandlerTest.java",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

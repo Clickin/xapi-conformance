@@ -1,0 +1,8 @@
+{
+  "id":"xplatform-xml.empty.encode",
+  "operation":"encode","profile":"xplatform-xml-4000",
+  "value":{"parameters":[],"datasets":[]},
+  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[]}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/xplatform-xml-empty-encode.json","license":"repository"},
+  "required":true
+}

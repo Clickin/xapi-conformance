@@ -1,0 +1,284 @@
+{
+  "id": "xapi-js.handler.inline-02-8a9d3a68.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8UGFyYW1ldGVycz4KICAgIDxQYXJhbWV0ZXIgaWQ9InN0cmluZ1BhcmFtIiB0eXBlPSJTVFJJTkciIHZhbHVlPSJ0ZXN0U3RyaW5nIiAvPgogICAgPFBhcmFtZXRlciBpZD0iaW50UGFyYW0iIHR5cGU9IklOVCIgdmFsdWU9IjEyMyIgLz4KICAgIDxQYXJhbWV0ZXIgaWQ9ImZsb2F0UGFyYW0iIHR5cGU9IkZMT0FUIiB2YWx1ZT0iMTIzLjQ1IiAvPgogICAgPFBhcmFtZXRlciBpZD0iZGF0ZVBhcmFtIiB0eXBlPSJEQVRFIiB2YWx1ZT0iMjAyMzA2MTUiIC8+CiAgICA8UGFyYW1ldGVyIGlkPSJkYXRldGltZVBhcmFtIiB0eXBlPSJEQVRFVElNRSIgdmFsdWU9IjIwMjMwNjE1MTQzMDIyIiAvPgogICAgPFBhcmFtZXRlciBpZD0idGltZVBhcmFtIiB0eXBlPSJUSU1FIiB2YWx1ZT0iMTQzMDIyIiAvPgogIDwvUGFyYW1ldGVycz4KICA8RGF0YXNldCBpZD0iY29tcGxleERhdGEiPgogICAgPENvbHVtbkluZm8+CiAgICAgIDxDb25zdENvbHVtbiBpZD0iY29uc3RTdHJpbmciIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciIHZhbHVlPSJjb25zdCIgLz4KICAgICAgPENvbnN0Q29sdW1uIGlkPSJjb25zdEludCIgc2l6ZT0iMTAiIHR5cGU9IklOVCIgdmFsdWU9IjEwMCIgLz4KICAgICAgPENvbHVtbiBpZD0ic3RyaW5nQ29sIiBzaXplPSI1MCIgdHlwZT0iU1RSSU5HIiAvPgogICAgICA8Q29sdW1uIGlkPSJpbnRDb2wiIHNpemU9IjEwIiB0eXBlPSJJTlQiIC8+CiAgICAgIDxDb2x1bW4gaWQ9ImZsb2F0Q29sIiBzaXplPSIxMCIgdHlwZT0iRkxPQVQiIC8+CiAgICAgIDxDb2x1bW4gaWQ9ImRlY2ltYWxDb2wiIHNpemU9IjEwIiB0eXBlPSJERUNJTUFMIiAvPgogICAgICA8Q29sdW1uIGlkPSJiaWdEZWNpbWFsQ29sIiBzaXplPSIxMCIgdHlwZT0iQklHREVDSU1BTCIgLz4KICAgICAgPENvbHVtbiBpZD0iZGF0ZUNvbCIgc2l6ZT0iOCIgdHlwZT0iREFURSIgLz4KICAgICAgPENvbHVtbiBpZD0iZGF0ZXRpbWVDb2wiIHNpemU9IjE0IiB0eXBlPSJEQVRFVElNRSIgLz4KICAgICAgPENvbHVtbiBpZD0idGltZUNvbCIgc2l6ZT0iNiIgdHlwZT0iVElNRSIgLz4KICAgICAgPENvbHVtbiBpZD0iYmxvYkNvbCIgc2l6ZT0iMTAwIiB0eXBlPSJCTE9CIiAvPgogICAgPC9Db2x1bW5JbmZvPgogICAgPFJvd3M+CiAgICAgIDxSb3cgdHlwZT0iaW5zZXJ0Ij4KICAgICAgICA8Q29sIGlkPSJzdHJpbmdDb2wiPnRlc3Qgc3RyaW5nPC9Db2w+CiAgICAgICAgPENvbCBpZD0iaW50Q29sIj40MjwvQ29sPgogICAgICAgIDxDb2wgaWQ9ImZsb2F0Q29sIj4zLjE0PC9Db2w+CiAgICAgICAgPENvbCBpZD0iZGVjaW1hbENvbCI+OTkuOTk8L0NvbD4KICAgICAgICA8Q29sIGlkPSJiaWdEZWNpbWFsQ29sIj4xMjM0NTY3ODkwPC9Db2w+CiAgICAgICAgPENvbCBpZD0iZGF0ZUNvbCI+MjAyMzA2MTU8L0NvbD4KICAgICAgICA8Q29sIGlkPSJkYXRldGltZUNvbCI+MjAyMzA2MTUxNDMwMjI8L0NvbD4KICAgICAgICA8Q29sIGlkPSJ0aW1lQ29sIj4xNDMwMjI8L0NvbD4KICAgICAgICA8Q29sIGlkPSJibG9iQ29sIj5TR1ZzYkc4Z1YyOXliR1E9PC9Db2w+CiAgICAgICAgPE9yZ1Jvdz4KICAgICAgICAgIDxDb2wgaWQ9InN0cmluZ0NvbCI+b2xkIHN0cmluZzwvQ29sPgogICAgICAgICAgPENvbCBpZD0iaW50Q29sIj4yNDwvQ29sPgogICAgICAgIDwvT3JnUm93PgogICAgICA8L1Jvdz4KICAgICAgPFJvdyB0eXBlPSJ1cGRhdGUiPgogICAgICAgIDxDb2wgaWQ9InN0cmluZ0NvbCI+PC9Db2w+CiAgICAgICAgPENvbCBpZD0iaW50Q29sIiAvPgogICAgICA8L1Jvdz4KICAgIDwvUm93cz4KICA8L0RhdGFzZXQ+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "stringParam",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "testString",
+          "wire": {
+            "valueForm": "attribute"
+          }
+        },
+        {
+          "id": "intParam",
+          "type": "INT",
+          "state": "value",
+          "lexical": "123",
+          "index": 1,
+          "wire": {
+            "valueForm": "attribute"
+          }
+        },
+        {
+          "id": "floatParam",
+          "type": "FLOAT",
+          "state": "value",
+          "lexical": "123.45",
+          "index": 2,
+          "wire": {
+            "valueForm": "attribute"
+          }
+        },
+        {
+          "id": "dateParam",
+          "type": "DATE",
+          "state": "value",
+          "lexical": "20230615",
+          "index": 3,
+          "wire": {
+            "valueForm": "attribute"
+          }
+        },
+        {
+          "id": "datetimeParam",
+          "type": "DATETIME",
+          "state": "value",
+          "lexical": "20230615143022",
+          "index": 4,
+          "wire": {
+            "valueForm": "attribute"
+          }
+        },
+        {
+          "id": "timeParam",
+          "type": "TIME",
+          "state": "value",
+          "lexical": "143022",
+          "index": 5,
+          "wire": {
+            "valueForm": "attribute"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "complexData",
+          "columns": [
+            {
+              "id": "stringCol",
+              "type": "STRING",
+              "index": 0,
+              "size": "50"
+            },
+            {
+              "id": "intCol",
+              "type": "INT",
+              "index": 1,
+              "size": "10"
+            },
+            {
+              "id": "floatCol",
+              "type": "FLOAT",
+              "index": 2,
+              "size": "10"
+            },
+            {
+              "id": "decimalCol",
+              "type": "DECIMAL",
+              "index": 3,
+              "size": "10"
+            },
+            {
+              "id": "bigDecimalCol",
+              "type": "BIGDECIMAL",
+              "index": 4,
+              "size": "10"
+            },
+            {
+              "id": "dateCol",
+              "type": "DATE",
+              "index": 5,
+              "size": "8"
+            },
+            {
+              "id": "datetimeCol",
+              "type": "DATETIME",
+              "index": 6,
+              "size": "14"
+            },
+            {
+              "id": "timeCol",
+              "type": "TIME",
+              "index": 7,
+              "size": "6"
+            },
+            {
+              "id": "blobCol",
+              "type": "BLOB",
+              "index": 8,
+              "size": "100"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "constString",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "const"
+              },
+              "size": "10"
+            },
+            {
+              "id": "constInt",
+              "type": "INT",
+              "value": {
+                "state": "value",
+                "lexical": "100"
+              },
+              "size": "10"
+            }
+          ],
+          "rows": [
+            {
+              "type": "I",
+              "orgRow": {
+                "type": "O",
+                "orgRow": null,
+                "values": {
+                  "bigDecimalCol": {
+                    "state": "missing"
+                  },
+                  "blobCol": {
+                    "state": "missing"
+                  },
+                  "dateCol": {
+                    "state": "missing"
+                  },
+                  "datetimeCol": {
+                    "state": "missing"
+                  },
+                  "decimalCol": {
+                    "state": "missing"
+                  },
+                  "floatCol": {
+                    "state": "missing"
+                  },
+                  "intCol": {
+                    "state": "value",
+                    "lexical": "24"
+                  },
+                  "stringCol": {
+                    "state": "value",
+                    "lexical": "old string"
+                  },
+                  "timeCol": {
+                    "state": "missing"
+                  }
+                }
+              },
+              "values": {
+                "bigDecimalCol": {
+                  "state": "value",
+                  "lexical": "1234567890"
+                },
+                "blobCol": {
+                  "state": "value",
+                  "lexical": "SGVsbG8gV29ybGQ="
+                },
+                "dateCol": {
+                  "state": "value",
+                  "lexical": "20230615"
+                },
+                "datetimeCol": {
+                  "state": "value",
+                  "lexical": "20230615143022"
+                },
+                "decimalCol": {
+                  "state": "value",
+                  "lexical": "99.99"
+                },
+                "floatCol": {
+                  "state": "value",
+                  "lexical": "3.14"
+                },
+                "intCol": {
+                  "state": "value",
+                  "lexical": "42"
+                },
+                "stringCol": {
+                  "state": "value",
+                  "lexical": "test string"
+                },
+                "timeCol": {
+                  "state": "value",
+                  "lexical": "143022"
+                }
+              }
+            },
+            {
+              "type": "U",
+              "orgRow": null,
+              "values": {
+                "bigDecimalCol": {
+                  "state": "missing"
+                },
+                "blobCol": {
+                  "state": "missing"
+                },
+                "dateCol": {
+                  "state": "missing"
+                },
+                "datetimeCol": {
+                  "state": "missing"
+                },
+                "decimalCol": {
+                  "state": "missing"
+                },
+                "floatCol": {
+                  "state": "missing"
+                },
+                "intCol": {
+                  "state": "empty"
+                },
+                "stringCol": {
+                  "state": "empty"
+                },
+                "timeCol": {
+                  "state": "missing"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

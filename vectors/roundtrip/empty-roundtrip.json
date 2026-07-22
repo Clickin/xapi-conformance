@@ -1,0 +1,9 @@
+{
+  "id":"json.empty-dataset.roundtrip",
+  "operation":"roundtrip",
+  "profile":"nexacro-json-1.0",
+  "input":{"encoding":"base64","data":"eyJwYXJhbWV0ZXJzIjpbXSwiZGF0YXNldHMiOltdfQ=="},
+  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[]}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/roundtrip/empty-roundtrip.json","license":"repository"},
+  "required":true
+}

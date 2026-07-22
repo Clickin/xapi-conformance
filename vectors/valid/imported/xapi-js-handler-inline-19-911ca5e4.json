@@ -1,0 +1,88 @@
+{
+  "id": "xapi-js.handler.inline-19-911ca5e4.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgIDxSb290IHhtbG5zPSJodHRwOi8vd3d3LnRvYmVzb2Z0LmNvbS9wbGF0Zm9ybS9EYXRhc2V0IiB2ZXI9IjQwMDAiPgogICAgICA8RGF0YXNldCBpZD0idGVzdCI+CiAgICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgICA8Q29sdW1uIGlkPSJpbnRDb2wiIHNpemU9IjEwIiB0eXBlPSJJTlQiIC8+CiAgICAgICAgICA8Q29sdW1uIGlkPSJmbG9hdENvbCIgc2l6ZT0iMTAiIHR5cGU9IkZMT0FUIiAvPgogICAgICAgICAgPENvbHVtbiBpZD0iZGF0ZUNvbCIgc2l6ZT0iOCIgdHlwZT0iREFURSIgLz4KICAgICAgICAgIDxDb2x1bW4gaWQ9ImJsb2JDb2wiIHNpemU9IjEwMCIgdHlwZT0iQkxPQiIgLz4KICAgICAgICA8L0NvbHVtbkluZm8+CiAgICAgICAgPFJvd3M+CiAgICAgICAgICA8Um93PgogICAgICAgICAgICA8Q29sIGlkPSJpbnRDb2wiPm5vdF9hX251bWJlcjwvQ29sPgogICAgICAgICAgICA8Q29sIGlkPSJmbG9hdENvbCI+bm90X2FfZmxvYXQ8L0NvbD4KICAgICAgICAgICAgPENvbCBpZD0iZGF0ZUNvbCI+aW52YWxpZF9kYXRlPC9Db2w+CiAgICAgICAgICAgIDxDb2wgaWQ9ImJsb2JDb2wiPmludmFsaWRfYmFzZTY0ITwvQ29sPgogICAgICAgICAgPC9Sb3c+CiAgICAgICAgPC9Sb3dzPgogICAgICA8L0RhdGFzZXQ+CiAgICA8L1Jvb3Q+"
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "test",
+          "columns": [
+            {
+              "id": "intCol",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "floatCol",
+              "type": "FLOAT",
+              "index": 1,
+              "size": "10"
+            },
+            {
+              "id": "dateCol",
+              "type": "DATE",
+              "index": 2,
+              "size": "8"
+            },
+            {
+              "id": "blobCol",
+              "type": "BLOB",
+              "index": 3,
+              "size": "100"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "blobCol": {
+                  "state": "value",
+                  "lexical": "invalid_base64!"
+                },
+                "dateCol": {
+                  "state": "value",
+                  "lexical": "invalid_date"
+                },
+                "floatCol": {
+                  "state": "value",
+                  "lexical": "not_a_float"
+                },
+                "intCol": {
+                  "state": "value",
+                  "lexical": "not_a_number"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

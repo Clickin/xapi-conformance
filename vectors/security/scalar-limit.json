@@ -1,0 +1,10 @@
+{
+  "id":"security.scalar-limit",
+  "operation":"encode",
+  "profile":"nexacro-json-1.0",
+  "options":{"strict":true,"limits":{"scalarBytes":2}},
+  "value":{"parameters":[],"datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0}],"constColumns":[],"rows":[{"type":"N","orgRow":null,"values":{"a":{"state":"value","lexical":"long"}}}]}]},
+  "expect":{"kind":"error","error":{"class":"limit-exceeded","path":"value.datasets[0].rows[0].values.a"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/security/scalar-limit.json","license":"repository"},
+  "required":true
+}

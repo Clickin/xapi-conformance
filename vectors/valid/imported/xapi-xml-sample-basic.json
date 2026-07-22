@@ -1,0 +1,114 @@
+{
+  "id": "xapi-xml.sample-basic.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8UGFyYW1ldGVycz4KICAgIDxQYXJhbWV0ZXIgaWQ9InNlcnZpY2UiIHR5cGU9IlNUUklORyI+Z2V0VXNlckxpc3Q8L1BhcmFtZXRlcj4KICAgIDxQYXJhbWV0ZXIgaWQ9InBhZ2UiIHR5cGU9IklOVCI+MTwvUGFyYW1ldGVyPgogIDwvUGFyYW1ldGVycz4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfdXNlciI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9InVzZXJJZCIgc2l6ZT0iMTAiIHR5cGU9IlNUUklORyIvPgogICAgICAgIDxDb2x1bW4gaWQ9InVzZXJOYW1lIiBzaXplPSI1MCIgdHlwZT0iU1RSSU5HIi8+CiAgICAgICAgPENvbHVtbiBpZD0iYWdlIiBzaXplPSIzIiB0eXBlPSJJTlQiLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PgogICAgICAgICAgPENvbCBpZD0idXNlcklkIj51c2VyMDAxPC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJ1c2VyTmFtZSI+Sm9obiBEb2U8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9ImFnZSI+MzA8L0NvbD4KICAgICAgICA8L1Jvdz4KICAgICAgICA8Um93PgogICAgICAgICAgPENvbCBpZD0idXNlcklkIj51c2VyMDAyPC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJ1c2VyTmFtZSI+SmFuZSBTbWl0aDwvQ29sPgogICAgICAgICAgPENvbCBpZD0iYWdlIj4yNTwvQ29sPgogICAgICAgIDwvUm93PgogICAgICA8L1Jvd3M+CiAgICA8L0RhdGFzZXQ+CiAgPC9EYXRhc2V0cz4KPC9Sb290Pgo="
+  },
+  "options": {},
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "service",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "getUserList",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "page",
+          "type": "INT",
+          "state": "value",
+          "lexical": "1",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ds_user",
+          "columns": [
+            {
+              "id": "userId",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "userName",
+              "type": "STRING",
+              "index": 1,
+              "size": "50"
+            },
+            {
+              "id": "age",
+              "type": "INT",
+              "index": 2,
+              "size": "3"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "age": {
+                  "state": "value",
+                  "lexical": "30"
+                },
+                "userId": {
+                  "state": "value",
+                  "lexical": "user001"
+                },
+                "userName": {
+                  "state": "value",
+                  "lexical": "John Doe"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "age": {
+                  "state": "value",
+                  "lexical": "25"
+                },
+                "userId": {
+                  "state": "value",
+                  "lexical": "user002"
+                },
+                "userName": {
+                  "state": "value",
+                  "lexical": "Jane Smith"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/resources/xapi/sample-basic.xml",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

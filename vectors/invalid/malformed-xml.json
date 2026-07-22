@@ -1,0 +1,9 @@
+{
+  "id":"invalid.malformed-xml",
+  "operation":"decode",
+  "profile":"nexacro-xml-4000",
+  "input":{"encoding":"base64","data":"PFJvb3Q+"},
+  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/malformed-xml.json","license":"repository"},
+  "required":true
+}

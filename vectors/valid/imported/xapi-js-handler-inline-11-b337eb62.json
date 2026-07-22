@@ -1,0 +1,58 @@
+{
+  "id": "xapi-js.handler.inline-11-b337eb62.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgIDxSb290IHhtbG5zPSJodHRwOi8vd3d3LnRvYmVzb2Z0LmNvbS9wbGF0Zm9ybS9EYXRhc2V0IiB2ZXI9IjQwMDAiPgogICAgICA8RGF0YXNldCBpZD0idGVzdCI+CiAgICAgICAgPENvbHVtbkluZm8+CiAgICAgICAgICA8Q29sdW1uIGlkPSJ0ZXh0Q29sIiBzaXplPSIxMDAiIHR5cGU9IlNUUklORyIgLz4KICAgICAgICA8L0NvbHVtbkluZm8+CiAgICAgICAgPFJvd3M+CiAgICAgICAgICA8Um93PgogICAgICAgICAgICA8Q29sIGlkPSJ0ZXh0Q29sIj48IVtDREFUQVs8c2NyaXB0PmFsZXJ0KCd0ZXN0Jyk8L3NjcmlwdD5dXT48L0NvbD4KICAgICAgICAgIDwvUm93PgogICAgICAgIDwvUm93cz4KICAgICAgPC9EYXRhc2V0PgogICAgPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "test",
+          "columns": [
+            {
+              "id": "textCol",
+              "type": "STRING",
+              "index": 0,
+              "size": "100"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "textCol": {
+                  "state": "value",
+                  "lexical": "\u003cscript\u003ealert('test')\u003c/script\u003e"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi-js",
+    "commit": "244339098838d098d7087588d039a24d26448b5e",
+    "license": "MIT",
+    "path": "packages/core/test/handler.test.ts",
+    "repository": "Clickin/xapi-js"
+  },
+  "required": true
+}

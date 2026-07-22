@@ -1,0 +1,9 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "type":"object","required":["protocolVersion","profiles"],"properties":{
+    "protocolVersion":{"const":"1.0"},"implementation":{"type":"string"},
+    "profiles":{"type":"array","items":{"type":"object","required":["name","operations","options","limits"],"properties":{
+      "name":{"type":"string"},"operations":{"type":"array","items":{"enum":["decode","encode","roundtrip"]}},"options":{"type":"array","items":{"type":"string"}},"limits":{"type":"object"}
+    },"additionalProperties":false}}
+  },"additionalProperties":false
+}

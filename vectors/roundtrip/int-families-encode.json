@@ -1,0 +1,21 @@
+{
+  "id":"matrix.int-families.encode-json",
+  "operation":"encode",
+  "profile":"nexacro-json-1.0",
+  "value":{"parameters":[
+    {"id":"short","type":"SHORT","state":"value","lexical":"-2"},
+    {"id":"int","type":"INT","state":"value","lexical":"-1"},
+    {"id":"long","type":"LONG","state":"value","lexical":"9223372036854775807"},
+    {"id":"uint","type":"UINT","state":"value","lexical":"4294967295"},
+    {"id":"ulong","type":"ULONG","state":"value","lexical":"18446744073709551615"}
+  ],"datasets":[]},
+  "expect":{"kind":"canonical","value":{"parameters":[
+    {"id":"short","type":"SHORT","state":"value","lexical":"-2"},
+    {"id":"int","type":"INT","state":"value","lexical":"-1"},
+    {"id":"long","type":"LONG","state":"value","lexical":"9223372036854775807"},
+    {"id":"uint","type":"UINT","state":"value","lexical":"4294967295"},
+    {"id":"ulong","type":"ULONG","state":"value","lexical":"18446744073709551615"}
+  ],"datasets":[]}},
+  "source":{"repository":"Clickin/xapi","commit":"e0d54759162bbb06aef8a1bc4c557f9fe7336991","path":"xapi-core/src/test/java/io/github/clickin/xapi/ColumnTypeTest.java","license":"Apache-2.0","attribution":"Clickin/xapi"},
+  "required":true
+}

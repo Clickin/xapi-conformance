@@ -1,0 +1,24 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "cell":{"type":"object","required":["state"],"properties":{
+      "state":{"enum":["value","missing","null","empty"]},"lexical":{"type":"string"}
+    },"additionalProperties":false},
+    "row":{"type":"object","required":["type","values"],"properties":{
+      "type":{"enum":["N","I","U","D","O"]},"orgRow":{"type":["object","null"]},
+      "values":{"type":"object","additionalProperties":{"$ref":"#/$defs/cell"}}
+    },"additionalProperties":false},
+    "dataset":{"type":"object","required":["id","columns","constColumns","rows"],"properties":{
+      "id":{"type":"string"},"columns":{"type":"array","items":{"type":"object","required":["id","type","index"]}},
+      "constColumns":{"type":"array","items":{"type":"object","required":["id","type","value"]}},
+      "rows":{"type":"array","items":{"$ref":"#/$defs/row"}}
+    },"additionalProperties":true}
+  },
+  "type":"object","required":["parameters","datasets"],"properties":{
+    "parameters":{"type":"array","items":{"type":"object","required":["id","type","state"],"properties":{
+      "id":{"type":"string"},"type":{"type":"string"},"lexical":{"type":"string"},
+      "state":{"enum":["value","missing","null","empty"]},"index":{"type":"integer"},"wire":{"type":"object"}}}},
+    "datasets":{"type":"array","items":{"$ref":"#/$defs/dataset"}},
+    "wire":{"type":"object"}
+  },"additionalProperties":false
+}

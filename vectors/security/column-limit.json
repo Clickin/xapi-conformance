@@ -1,0 +1,10 @@
+{
+  "id":"security.column-limit",
+  "operation":"encode",
+  "profile":"nexacro-json-1.0",
+  "options":{"strict":true,"limits":{"columns":1}},
+  "value":{"parameters":[],"datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0},{"id":"b","type":"STRING","index":1}],"constColumns":[],"rows":[]}]},
+  "expect":{"kind":"error","error":{"class":"limit-exceeded","path":"value.datasets[0].columns"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/security/column-limit.json","license":"repository"},
+  "required":true
+}

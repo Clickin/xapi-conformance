@@ -1,0 +1,128 @@
+{
+  "id": "xplatform-xml.test.inline-02-a49e62a7.imported",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KICAgICAgICA8Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcnNpb249IjQwMDAiPgogICAgICAgICAgPFBhcmFtZXRlcnM+CiAgICAgICAgICAgIDxQYXJhbWV0ZXIgaWQ9InJlcXVlc3RJZCIgdHlwZT0iSU5UIj4xMDM8L1BhcmFtZXRlcj4KICAgICAgICAgICAgPFBhcmFtZXRlciBpZD0iZW5hYmxlZCIgdHlwZT0iQk9PTEVBTiI+dHJ1ZTwvUGFyYW1ldGVyPgogICAgICAgICAgPC9QYXJhbWV0ZXJzPgogICAgICAgICAgPERhdGFzZXRzPgogICAgICAgICAgICA8RGF0YXNldCBpZD0iZHNfdmFsdWVzIj4KICAgICAgICAgICAgICA8Q29sdW1uSW5mbz4KICAgICAgICAgICAgICAgIDxDb2x1bW4gaWQ9InBsYWluSW50ZWdlciIgc2l6ZT0iMTAiIHR5cGU9IklOVCIvPgogICAgICAgICAgICAgICAgPENvbHVtbiBpZD0iZGVjaW1hbFRleHQiIHNpemU9IjEwIiB0eXBlPSJERUNJTUFMIi8+CiAgICAgICAgICAgICAgICA8Q29sdW1uIGlkPSJkZWNpbWFsTnVtYmVyIiBzaXplPSIxMCIgdHlwZT0iREVDSU1BTCIvPgogICAgICAgICAgICAgICAgPENvbHVtbiBpZD0icGF5bG9hZCIgc2l6ZT0iMTI4IiB0eXBlPSJCTE9CIi8+CiAgICAgICAgICAgICAgICA8Q29sdW1uIGlkPSJjb250ZW50IiBzaXplPSI1MDAiIHR5cGU9IlNUUklORyIvPgogICAgICAgICAgICAgICAgPENvbHVtbiBpZD0iYWN0aXZlIiBzaXplPSI1IiB0eXBlPSJCT09MRUFOIi8+CiAgICAgICAgICAgICAgPC9Db2x1bW5JbmZvPgogICAgICAgICAgICAgIDxSb3dzPgogICAgICAgICAgICAgICAgPFJvdz4KICAgICAgICAgICAgICAgICAgPENvbCBpZD0icGxhaW5JbnRlZ2VyIj4xMDM8L0NvbD4KICAgICAgICAgICAgICAgICAgPENvbCBpZD0iZGVjaW1hbFRleHQiPjU1Ni4xMTwvQ29sPgogICAgICAgICAgICAgICAgICA8Q29sIGlkPSJkZWNpbWFsTnVtYmVyIj41NTYuMTE8L0NvbD4KICAgICAgICAgICAgICAgICAgPENvbCBpZD0icGF5bG9hZCI+U0dWc2JHOGdXRTFNPC9Db2w+CiAgICAgICAgICAgICAgICAgIDxDb2wgaWQ9ImNvbnRlbnQiPjwhW0NEQVRBW0NEQVRBIGtlZXBzIDx0YWdzPiAmIHN5bWJvbHNdXT48L0NvbD4KICAgICAgICAgICAgICAgICAgPENvbCBpZD0iYWN0aXZlIj50cnVlPC9Db2w+CiAgICAgICAgICAgICAgICA8L1Jvdz4KICAgICAgICAgICAgICA8L1Jvd3M+CiAgICAgICAgICAgIDwvRGF0YXNldD4KICAgICAgICAgIDwvRGF0YXNldHM+CiAgICAgICAgPC9Sb290Pg=="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "requestId",
+          "type": "INT",
+          "state": "value",
+          "lexical": "103",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "enabled",
+          "type": "BOOLEAN",
+          "state": "value",
+          "lexical": "true",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "ds_values",
+          "columns": [
+            {
+              "id": "plainInteger",
+              "type": "INT",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "decimalText",
+              "type": "DECIMAL",
+              "index": 1,
+              "size": "10"
+            },
+            {
+              "id": "decimalNumber",
+              "type": "DECIMAL",
+              "index": 2,
+              "size": "10"
+            },
+            {
+              "id": "payload",
+              "type": "BLOB",
+              "index": 3,
+              "size": "128"
+            },
+            {
+              "id": "content",
+              "type": "STRING",
+              "index": 4,
+              "size": "500"
+            },
+            {
+              "id": "active",
+              "type": "BOOLEAN",
+              "index": 5,
+              "size": "5"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "active": {
+                  "state": "value",
+                  "lexical": "true"
+                },
+                "content": {
+                  "state": "value",
+                  "lexical": "CDATA keeps \u003ctags\u003e \u0026 symbols"
+                },
+                "decimalNumber": {
+                  "state": "value",
+                  "lexical": "556.11"
+                },
+                "decimalText": {
+                  "state": "value",
+                  "lexical": "556.11"
+                },
+                "payload": {
+                  "state": "value",
+                  "lexical": "SGVsbG8gWE1M"
+                },
+                "plainInteger": {
+                  "state": "value",
+                  "lexical": "103"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xplatform-xml",
+    "commit": "cda8b6b31f64511ff9d22f64539c4b78e862455d",
+    "license": "upstream-no-license-file",
+    "path": "xplatform-xml-micronaut/src/test/java/io/clickin/xplatform/xml/runtime/examples/XplatformXmlSerdeTest.java",
+    "repository": "Clickin/xplatform-xml"
+  },
+  "required": true
+}

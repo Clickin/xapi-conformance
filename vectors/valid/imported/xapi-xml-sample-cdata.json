@@ -1,0 +1,80 @@
+{
+  "id": "xapi-xml.sample-cdata.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfY29tbWVudHMiPgogICAgICA8Q29sdW1uSW5mbz4KICAgICAgICA8Q29sdW1uIGlkPSJjb21tZW50SWQiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgICA8Q29sdW1uIGlkPSJjb250ZW50IiBzaXplPSI1MDAiIHR5cGU9IlNUUklORyIvPgogICAgICA8L0NvbHVtbkluZm8+CiAgICAgIDxSb3dzPgogICAgICAgIDxSb3c+CiAgICAgICAgICA8Q29sIGlkPSJjb21tZW50SWQiPkMwMDE8L0NvbD4KICAgICAgICAgIDxDb2wgaWQ9ImNvbnRlbnQiPjwhW0NEQVRBW1RoaXMgaXMgYSBjb21tZW50IHdpdGggPHNwZWNpYWw+IGNoYXJhY3RlcnMgJiBzeW1ib2xzXV0+PC9Db2w+CiAgICAgICAgPC9Sb3c+CiAgICAgICAgPFJvdz4KICAgICAgICAgIDxDb2wgaWQ9ImNvbW1lbnRJZCI+QzAwMjwvQ29sPgogICAgICAgICAgPENvbCBpZD0iY29udGVudCI+PCFbQ0RBVEFbTGluZSAxCkxpbmUgMgpMaW5lIDNdXT48L0NvbD4KICAgICAgICA8L1Jvdz4KICAgICAgPC9Sb3dzPgogICAgPC9EYXRhc2V0PgogIDwvRGF0YXNldHM+CjwvUm9vdD4K"
+  },
+  "options": {},
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "ds_comments",
+          "columns": [
+            {
+              "id": "commentId",
+              "type": "STRING",
+              "index": 0,
+              "size": "10"
+            },
+            {
+              "id": "content",
+              "type": "STRING",
+              "index": 1,
+              "size": "500"
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "commentId": {
+                  "state": "value",
+                  "lexical": "C001"
+                },
+                "content": {
+                  "state": "value",
+                  "lexical": "This is a comment with \u003cspecial\u003e characters \u0026 symbols"
+                }
+              }
+            },
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "commentId": {
+                  "state": "value",
+                  "lexical": "C002"
+                },
+                "content": {
+                  "state": "value",
+                  "lexical": "Line 1\nLine 2\nLine 3"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/resources/xapi/sample-cdata.xml",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}

@@ -1,0 +1,63 @@
+{
+  "id": "xapi-xml.edge.inline-20-3c15ef77.imported",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8UGFyYW1ldGVycz4KICAgIDxQYXJhbWV0ZXIgaWQ9InAxIiB0eXBlPSJTVFJJTkciPnZhbHVlMTwvUGFyYW1ldGVyPgogICAgPFBhcmFtZXRlciBpZD0icDIiIHR5cGU9IklOVCI+MTIzPC9QYXJhbWV0ZXI+CiAgICA8UGFyYW1ldGVyIGlkPSJwMyIgdHlwZT0iREVDSU1BTCI+NDUuNjc8L1BhcmFtZXRlcj4KICA8L1BhcmFtZXRlcnM+CjwvUm9vdD4="
+  },
+  "options": {
+    "strict": false
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p1",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "value1",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p2",
+          "type": "INT",
+          "state": "value",
+          "lexical": "123",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p3",
+          "type": "DECIMAL",
+          "state": "value",
+          "lexical": "45.67",
+          "index": 2,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "attribution": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "license": "Apache-2.0",
+    "path": "xapi-xml/src/test/java/io/github/clickin/xapi/XapiEdgeCasesTest.java",
+    "repository": "Clickin/xapi"
+  },
+  "required": true
+}
