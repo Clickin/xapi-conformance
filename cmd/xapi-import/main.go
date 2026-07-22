@@ -84,8 +84,8 @@ func main() {
 
 func importWire(validOut string, f fixture, b []byte) {
 	repository, commit, sourcePath, license, attribution := sourceMeta(f.Path)
-	v := vector{ID: f.ID, Operation: "decode", Profile: f.Profile, Input: protocol.Input{Encoding: "base64", Data: base64.StdEncoding.EncodeToString(b)}, Options: map[string]any{}, Required: true, Source: map[string]string{"repository": repository, "commit": commit, "path": sourcePath, "license": license, "attribution": attribution}}
-	value, err := codec.Decode(b)
+	v := vector{ID: f.ID, Operation: "decode", Profile: f.Profile, Input: protocol.Input{Encoding: "base64", Data: base64.StdEncoding.EncodeToString(b)}, Options: map[string]any{"strict": false}, Required: true, Source: map[string]string{"repository": repository, "commit": commit, "path": sourcePath, "license": license, "attribution": attribution}}
+	value, err := codec.DecodeWithStrict(b, false)
 	if err != nil {
 		v.Expect.Kind = "error"
 		v.Expect.Error = &protocol.ErrorBody{Class: "malformed-input", Path: "wire"}

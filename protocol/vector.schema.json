@@ -18,7 +18,13 @@
       "error": {"type": "object", "required": ["class"], "properties": {
         "class": {"type": "string"}, "path": {"type": "string"}
       }, "additionalProperties": false}
-    }, "additionalProperties": false},
+      },
+      "allOf": [
+        {"if":{"properties":{"kind":{"const":"canonical"}}},"then":{"required":["value"]}},
+        {"if":{"properties":{"kind":{"const":"wire"}}},"then":{"required":["output"]}},
+        {"if":{"properties":{"kind":{"const":"error"}}},"then":{"required":["error"]}}
+      ],
+      "additionalProperties": false},
     "source": {"type": "object", "required": ["repository", "commit", "path", "license"],
       "properties": {"repository":{"type":"string"},"commit":{"type":"string"},
         "path":{"type":"string"},"license":{"type":"string"},"attribution":{"type":"string"}},

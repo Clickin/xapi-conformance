@@ -1,0 +1,26 @@
+{
+  "id": "nexacro-ssv.unknown-type.strict",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpVTktOT1dOHh4="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/invalid/nexacro-ssv-unknown-type.json",
+    "license": "repository"
+  },
+  "required": true
+}

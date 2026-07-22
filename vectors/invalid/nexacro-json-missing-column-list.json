@@ -1,0 +1,26 @@
+{
+  "id": "nexacro-json.missing-column-list.strict",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiRGF0YXNldHMiOlt7ImlkIjoiZCIsIkNvbHVtbkluZm8iOnt9LCJSb3dzIjpbXX1dfQ=="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/invalid/nexacro-json-missing-column-list.json",
+    "license": "repository"
+  },
+  "required": true
+}

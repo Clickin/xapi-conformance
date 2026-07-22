@@ -1,0 +1,427 @@
+{
+  "id": "xplatform-xml.optional-combinations.decode",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJwMCI+djwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InAxIiB0eXBlPSJzVHJJbkciPnY8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMiI+PC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0icDMiLz48UGFyYW1ldGVyIGlkPSJwNCIgdHlwZT0ic1RySW5HIj48L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwNSIgdHlwZT0ic1RySW5HIi8+PC9QYXJhbWV0ZXJzPjxEYXRhc2V0IGlkPSJjaGlsZHJlbjAiLz48RGF0YXNldCBpZD0iY2hpbGRyZW4xIj48Q29sdW1uSW5mby8+PC9EYXRhc2V0PjxEYXRhc2V0IGlkPSJjaGlsZHJlbjIiPjxSb3dzLz48L0RhdGFzZXQ+PERhdGFzZXQgaWQ9ImNoaWxkcmVuMyI+PENvbHVtbkluZm8vPjxSb3dzLz48L0RhdGFzZXQ+PERhdGFzZXQgaWQ9Iml0ZW1zIj48Q29sdW1uSW5mbz48Q29uc3RDb2x1bW4gaWQ9ImMwIi8+PENvbnN0Q29sdW1uIGlkPSJjMSIgdHlwZT0ic1RySW5HIi8+PENvbnN0Q29sdW1uIGlkPSJjMiIgc2l6ZT0iNyIvPjxDb25zdENvbHVtbiBpZD0iYzMiIHR5cGU9InNUckluRyIgc2l6ZT0iNyIvPjxDb25zdENvbHVtbiBpZD0iYzQiIHZhbHVlPSJ2Ii8+PENvbnN0Q29sdW1uIGlkPSJjNSIgdHlwZT0ic1RySW5HIiB2YWx1ZT0idiIvPjxDb25zdENvbHVtbiBpZD0iYzYiIHNpemU9IjciIHZhbHVlPSJ2Ii8+PENvbnN0Q29sdW1uIGlkPSJjNyIgdHlwZT0ic1RySW5HIiBzaXplPSI3IiB2YWx1ZT0idiIvPjxDb2x1bW4gaWQ9Im0wIi8+PENvbHVtbiBpZD0ibTEiIHR5cGU9InNUckluRyIvPjxDb2x1bW4gaWQ9Im0yIiBzaXplPSI3Ii8+PENvbHVtbiBpZD0ibTMiIHR5cGU9InNUckluRyIgc2l6ZT0iNyIvPjxDb2x1bW4gaWQ9Im00IiBwcm9wPSJUZXh0Ii8+PENvbHVtbiBpZD0ibTUiIHR5cGU9InNUckluRyIgcHJvcD0iVGV4dCIvPjxDb2x1bW4gaWQ9Im02IiBzaXplPSI3IiBwcm9wPSJUZXh0Ii8+PENvbHVtbiBpZD0ibTciIHR5cGU9InNUckluRyIgc2l6ZT0iNyIgcHJvcD0iVGV4dCIvPjxDb2x1bW4gaWQ9Im04IiBzdW10ZXh0PSJ0b3RhbCIvPjxDb2x1bW4gaWQ9Im05IiB0eXBlPSJzVHJJbkciIHN1bXRleHQ9InRvdGFsIi8+PENvbHVtbiBpZD0ibTEwIiBzaXplPSI3IiBzdW10ZXh0PSJ0b3RhbCIvPjxDb2x1bW4gaWQ9Im0xMSIgdHlwZT0ic1RySW5HIiBzaXplPSI3IiBzdW10ZXh0PSJ0b3RhbCIvPjxDb2x1bW4gaWQ9Im0xMiIgcHJvcD0iVGV4dCIgc3VtdGV4dD0idG90YWwiLz48Q29sdW1uIGlkPSJtMTMiIHR5cGU9InNUckluRyIgcHJvcD0iVGV4dCIgc3VtdGV4dD0idG90YWwiLz48Q29sdW1uIGlkPSJtMTQiIHNpemU9IjciIHByb3A9IlRleHQiIHN1bXRleHQ9InRvdGFsIi8+PENvbHVtbiBpZD0ibTE1IiB0eXBlPSJzVHJJbkciIHNpemU9IjciIHByb3A9IlRleHQiIHN1bXRleHQ9InRvdGFsIi8+PENvbHVtbiBpZD0idFNUUklORzAiIHR5cGU9IlNUUklORyIvPjxDb2x1bW4gaWQ9InRTVFJJTkcxIiB0eXBlPSJzdHJpbmciLz48Q29sdW1uIGlkPSJ0U1RSSU5HMiIgdHlwZT0iU3RyaW5nIi8+PENvbHVtbiBpZD0idElOVDAiIHR5cGU9IklOVCIvPjxDb2x1bW4gaWQ9InRJTlQxIiB0eXBlPSJpbnQiLz48Q29sdW1uIGlkPSJ0SU5UMiIgdHlwZT0iSW50Ii8+PENvbHVtbiBpZD0idEZMT0FUMCIgdHlwZT0iRkxPQVQiLz48Q29sdW1uIGlkPSJ0RkxPQVQxIiB0eXBlPSJmbG9hdCIvPjxDb2x1bW4gaWQ9InRGTE9BVDIiIHR5cGU9IkZsb2F0Ii8+PENvbHVtbiBpZD0idERFQ0lNQUwwIiB0eXBlPSJERUNJTUFMIi8+PENvbHVtbiBpZD0idERFQ0lNQUwxIiB0eXBlPSJkZWNpbWFsIi8+PENvbHVtbiBpZD0idERFQ0lNQUwyIiB0eXBlPSJEZWNpbWFsIi8+PENvbHVtbiBpZD0idEJJR0RFQ0lNQUwwIiB0eXBlPSJCSUdERUNJTUFMIi8+PENvbHVtbiBpZD0idEJJR0RFQ0lNQUwxIiB0eXBlPSJiaWdkZWNpbWFsIi8+PENvbHVtbiBpZD0idEJJR0RFQ0lNQUwyIiB0eXBlPSJCaWdkZWNpbWFsIi8+PENvbHVtbiBpZD0idERBVEUwIiB0eXBlPSJEQVRFIi8+PENvbHVtbiBpZD0idERBVEUxIiB0eXBlPSJkYXRlIi8+PENvbHVtbiBpZD0idERBVEUyIiB0eXBlPSJEYXRlIi8+PENvbHVtbiBpZD0idERBVEVUSU1FMCIgdHlwZT0iREFURVRJTUUiLz48Q29sdW1uIGlkPSJ0REFURVRJTUUxIiB0eXBlPSJkYXRldGltZSIvPjxDb2x1bW4gaWQ9InREQVRFVElNRTIiIHR5cGU9IkRhdGV0aW1lIi8+PENvbHVtbiBpZD0idFRJTUUwIiB0eXBlPSJUSU1FIi8+PENvbHVtbiBpZD0idFRJTUUxIiB0eXBlPSJ0aW1lIi8+PENvbHVtbiBpZD0idFRJTUUyIiB0eXBlPSJUaW1lIi8+PENvbHVtbiBpZD0idEJMT0IwIiB0eXBlPSJCTE9CIiBlbmM9ImJhc2U2NCIvPjxDb2x1bW4gaWQ9InRCTE9CMSIgdHlwZT0iYmxvYiIgZW5jPSJiYXNlNjQiLz48Q29sdW1uIGlkPSJ0QkxPQjIiIHR5cGU9IkJsb2IiIGVuYz0iYmFzZTY0Ii8+PC9Db2x1bW5JbmZvPjxSb3dzLz48L0RhdGFzZXQ+PC9Sb290Pg=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p0",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p1",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p2",
+          "type": "STRING",
+          "state": "empty",
+          "index": 2,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p3",
+          "type": "STRING",
+          "state": "null",
+          "index": 3,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p4",
+          "type": "STRING",
+          "state": "empty",
+          "index": 4,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p5",
+          "type": "STRING",
+          "state": "null",
+          "index": 5,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "children0",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        },
+        {
+          "id": "children1",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        },
+        {
+          "id": "children2",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        },
+        {
+          "id": "children3",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        },
+        {
+          "id": "items",
+          "columns": [
+            {
+              "id": "m0",
+              "type": "STRING",
+              "index": 0
+            },
+            {
+              "id": "m1",
+              "type": "STRING",
+              "index": 1
+            },
+            {
+              "id": "m2",
+              "type": "STRING",
+              "index": 2,
+              "size": "7"
+            },
+            {
+              "id": "m3",
+              "type": "STRING",
+              "index": 3,
+              "size": "7"
+            },
+            {
+              "id": "m4",
+              "type": "STRING",
+              "index": 4,
+              "prop": "Text"
+            },
+            {
+              "id": "m5",
+              "type": "STRING",
+              "index": 5,
+              "prop": "Text"
+            },
+            {
+              "id": "m6",
+              "type": "STRING",
+              "index": 6,
+              "size": "7",
+              "prop": "Text"
+            },
+            {
+              "id": "m7",
+              "type": "STRING",
+              "index": 7,
+              "size": "7",
+              "prop": "Text"
+            },
+            {
+              "id": "m8",
+              "type": "STRING",
+              "index": 8,
+              "sumtext": "total"
+            },
+            {
+              "id": "m9",
+              "type": "STRING",
+              "index": 9,
+              "sumtext": "total"
+            },
+            {
+              "id": "m10",
+              "type": "STRING",
+              "index": 10,
+              "size": "7",
+              "sumtext": "total"
+            },
+            {
+              "id": "m11",
+              "type": "STRING",
+              "index": 11,
+              "size": "7",
+              "sumtext": "total"
+            },
+            {
+              "id": "m12",
+              "type": "STRING",
+              "index": 12,
+              "prop": "Text",
+              "sumtext": "total"
+            },
+            {
+              "id": "m13",
+              "type": "STRING",
+              "index": 13,
+              "prop": "Text",
+              "sumtext": "total"
+            },
+            {
+              "id": "m14",
+              "type": "STRING",
+              "index": 14,
+              "size": "7",
+              "prop": "Text",
+              "sumtext": "total"
+            },
+            {
+              "id": "m15",
+              "type": "STRING",
+              "index": 15,
+              "size": "7",
+              "prop": "Text",
+              "sumtext": "total"
+            },
+            {
+              "id": "tSTRING0",
+              "type": "STRING",
+              "index": 16
+            },
+            {
+              "id": "tSTRING1",
+              "type": "STRING",
+              "index": 17
+            },
+            {
+              "id": "tSTRING2",
+              "type": "STRING",
+              "index": 18
+            },
+            {
+              "id": "tINT0",
+              "type": "INT",
+              "index": 19
+            },
+            {
+              "id": "tINT1",
+              "type": "INT",
+              "index": 20
+            },
+            {
+              "id": "tINT2",
+              "type": "INT",
+              "index": 21
+            },
+            {
+              "id": "tFLOAT0",
+              "type": "FLOAT",
+              "index": 22
+            },
+            {
+              "id": "tFLOAT1",
+              "type": "FLOAT",
+              "index": 23
+            },
+            {
+              "id": "tFLOAT2",
+              "type": "FLOAT",
+              "index": 24
+            },
+            {
+              "id": "tDECIMAL0",
+              "type": "DECIMAL",
+              "index": 25
+            },
+            {
+              "id": "tDECIMAL1",
+              "type": "DECIMAL",
+              "index": 26
+            },
+            {
+              "id": "tDECIMAL2",
+              "type": "DECIMAL",
+              "index": 27
+            },
+            {
+              "id": "tBIGDECIMAL0",
+              "type": "BIGDECIMAL",
+              "index": 28
+            },
+            {
+              "id": "tBIGDECIMAL1",
+              "type": "BIGDECIMAL",
+              "index": 29
+            },
+            {
+              "id": "tBIGDECIMAL2",
+              "type": "BIGDECIMAL",
+              "index": 30
+            },
+            {
+              "id": "tDATE0",
+              "type": "DATE",
+              "index": 31
+            },
+            {
+              "id": "tDATE1",
+              "type": "DATE",
+              "index": 32
+            },
+            {
+              "id": "tDATE2",
+              "type": "DATE",
+              "index": 33
+            },
+            {
+              "id": "tDATETIME0",
+              "type": "DATETIME",
+              "index": 34
+            },
+            {
+              "id": "tDATETIME1",
+              "type": "DATETIME",
+              "index": 35
+            },
+            {
+              "id": "tDATETIME2",
+              "type": "DATETIME",
+              "index": 36
+            },
+            {
+              "id": "tTIME0",
+              "type": "TIME",
+              "index": 37
+            },
+            {
+              "id": "tTIME1",
+              "type": "TIME",
+              "index": 38
+            },
+            {
+              "id": "tTIME2",
+              "type": "TIME",
+              "index": 39
+            },
+            {
+              "id": "tBLOB0",
+              "type": "BLOB",
+              "index": 40,
+              "encoding": "base64"
+            },
+            {
+              "id": "tBLOB1",
+              "type": "BLOB",
+              "index": 41,
+              "encoding": "base64"
+            },
+            {
+              "id": "tBLOB2",
+              "type": "BLOB",
+              "index": 42,
+              "encoding": "base64"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c0",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              }
+            },
+            {
+              "id": "c1",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              }
+            },
+            {
+              "id": "c2",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              },
+              "size": "7"
+            },
+            {
+              "id": "c3",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              },
+              "size": "7"
+            },
+            {
+              "id": "c4",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              }
+            },
+            {
+              "id": "c5",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              }
+            },
+            {
+              "id": "c6",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              },
+              "size": "7"
+            },
+            {
+              "id": "c7",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              },
+              "size": "7"
+            }
+          ],
+          "rows": []
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/xplatform-xml-optional-combinations.json",
+    "license": "repository"
+  },
+  "required": true
+}

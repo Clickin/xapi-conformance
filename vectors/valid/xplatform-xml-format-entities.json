@@ -1,0 +1,17 @@
+{
+  "id":"xplatform-xml.format-entities.decode",
+  "operation":"decode",
+  "profile":"xplatform-xml-4000",
+  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJubCIgdHlwZT0iU1RSSU5HIj5hJiMxMDtiICZhbXA7IGM8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJudWxsIi8+PFBhcmFtZXRlciBpZD0iZW1wdHkiPjwvUGFyYW1ldGVyPjwvUGFyYW1ldGVycz48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbnN0Q29sdW1uIGlkPSJjIiB0eXBlPSJTVFJJTkciIHZhbHVlPSJmaXhlZCIvPjxDb2x1bW4gaWQ9ImEiIHR5cGU9IlNUUklORyIgcHJvcD0ic3VtIiBzdW10ZXh0PSJ0b3RhbCIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9ImEiPngmIzEwO3k8L0NvbD48L1Jvdz48L1Jvd3M+PC9EYXRhc2V0PjwvUm9vdD4="},
+  "expect":{"kind":"canonical","value":{
+    "parameters":[
+      {"id":"nl","type":"STRING","state":"value","lexical":"a\nb & c","wire":{"valueForm":"text"}},
+      {"id":"null","type":"STRING","state":"null","index":1,"wire":{"valueForm":"text"}},
+      {"id":"empty","type":"STRING","state":"empty","index":2,"wire":{"valueForm":"text"}}
+    ],
+    "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0,"prop":"sum","sumtext":"total"}],"constColumns":[{"id":"c","type":"STRING","value":{"state":"value","lexical":"fixed"}}],"rows":[{"type":"N","orgRow":null,"values":{"a":{"state":"value","lexical":"x\ny"}}}]}],
+    "wire":{"root":{"namespace":"http://www.tobesoft.com/platform/Dataset","ver":"4000"}}
+  }},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/xplatform-xml-format-entities.json","license":"repository"},
+  "required":true
+}

@@ -1,0 +1,10 @@
+{
+  "id":"nexacro-json.missing-version.strict",
+  "operation":"decode",
+  "profile":"nexacro-json-1.0",
+  "options":{"strict":true},
+  "input":{"encoding":"base64","data":"eyJQYXJhbWV0ZXJzIjpbXSwiRGF0YXNldHMiOltdfQ=="},
+  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/json-missing-version.json","license":"repository"},
+  "required":true
+}

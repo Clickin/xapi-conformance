@@ -27,9 +27,10 @@ type vector struct {
 	Value     map[string]any `json:"value,omitempty"`
 	Options   map[string]any `json:"options,omitempty"`
 	Expect    struct {
-		Kind  string         `json:"kind"`
-		Value map[string]any `json:"value"`
-		Error struct {
+		Kind   string         `json:"kind"`
+		Value  map[string]any `json:"value"`
+		Output map[string]any `json:"output"`
+		Error  struct {
 			Class string `json:"class"`
 			Path  string `json:"path"`
 		} `json:"error"`
@@ -247,6 +248,20 @@ func evaluate(v vector, actual map[string]any) result {
 		}
 		return r
 	}
+	if v.Expect.Kind == "wire" {
+		output, ok := actual["output"].(map[string]any)
+		pass := ok && jsonEqual(output, v.Expect.Output)
+		if pass && v.Expect.Value != nil {
+			value, valueOK := actual["value"].(map[string]any)
+			pass = valueOK && jsonEqual(value, v.Expect.Value)
+		}
+		r.Pass = pass
+		if !pass {
+			r.Error = "wire output differs"
+			r.Diff = diff(r.Expected, actual)
+		}
+		return r
+	}
 	av, ok := actual["value"].(map[string]any)
 	if !ok {
 		r.Error = "missing response value"
@@ -270,6 +285,13 @@ func evaluate(v vector, actual map[string]any) result {
 func expected(v vector) any {
 	if v.Expect.Kind == "error" {
 		return map[string]any{"error": v.Expect.Error}
+	}
+	if v.Expect.Kind == "wire" {
+		expected := map[string]any{"output": v.Expect.Output}
+		if v.Expect.Value != nil {
+			expected["value"] = v.Expect.Value
+		}
+		return expected
 	}
 	if v.Expect.Value != nil {
 		return v.Expect.Value

@@ -2,8 +2,8 @@
   "id":"json.empty-dataset.roundtrip",
   "operation":"roundtrip",
   "profile":"nexacro-json-1.0",
-  "input":{"encoding":"base64","data":"eyJwYXJhbWV0ZXJzIjpbXSwiZGF0YXNldHMiOltdfQ=="},
-  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[]}},
+  "input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbXX0="},
+  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[],"wire":{"version":"1.0"}}},
   "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/roundtrip/empty-roundtrip.json","license":"repository"},
   "required":true
 }

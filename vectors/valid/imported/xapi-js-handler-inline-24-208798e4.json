@@ -73,7 +73,7 @@
             },
             {
               "id": "defaultCol",
-              "type": "",
+              "type": "STRING",
               "index": 9,
               "size": "255"
             }

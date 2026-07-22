@@ -1,0 +1,12 @@
+{
+  "id":"xplatform-ssv.compatibility.decode",
+  "operation":"decode",
+  "profile":"xplatform-ssv",
+  "input":{"encoding":"base64","data":"U1NWHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpTVFJJTkcfYjpTVFJJTkceTh8fAh4="},
+  "expect":{"kind":"canonical","value":{
+    "parameters":[],
+    "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0},{"id":"b","type":"STRING","index":1}],"constColumns":[],"rows":[{"type":"N","orgRow":null,"values":{"a":{"state":"null"},"b":{"state":"empty"}}}]}]
+  }},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/xplatform-ssv-compatibility.json","license":"repository"},
+  "required":true
+}

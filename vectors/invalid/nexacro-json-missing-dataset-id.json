@@ -1,0 +1,26 @@
+{
+  "id": "nexacro-json.missing-dataset-id.strict",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiRGF0YXNldHMiOlt7IkNvbHVtbkluZm8iOnsiQ29sdW1uIjpbXX0sIlJvd3MiOltdfV19"
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/invalid/nexacro-json-missing-dataset-id.json",
+    "license": "repository"
+  },
+  "required": true
+}

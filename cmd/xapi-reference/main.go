@@ -76,8 +76,12 @@ func capabilities(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	profiles := []any{}
-	for _, name := range []string{"nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000"} {
-		profiles = append(profiles, map[string]any{"name": name, "operations": []string{"decode", "encode", "roundtrip"}, "options": []string{"strict", "base64Whitespace", "limits"}, "limits": map[string]int{"payloadBytes": maxPayload, "datasets": 100, "rows": 100000, "columns": 1000, "scalarBytes": 1048576, "blobBytes": 10485760}})
+	for _, name := range []string{"nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000", "nexacro-ssv", "xplatform-ssv"} {
+		options := []string{"strict", "base64Whitespace", "limits"}
+		if name == "nexacro-ssv" {
+			options = append(options, "ssvUnitSeparator", "ssvRecordSeparator")
+		}
+		profiles = append(profiles, map[string]any{"name": name, "operations": []string{"decode", "encode", "roundtrip"}, "options": options, "limits": map[string]int{"payloadBytes": maxPayload, "datasets": 100, "rows": 100000, "columns": 1000, "scalarBytes": 1048576, "blobBytes": 10485760}})
 	}
 	writeJSON(w, map[string]any{"protocolVersion": protocol.Version, "implementation": "reference-go", "profiles": profiles})
 }
@@ -100,11 +104,11 @@ func operation(w http.ResponseWriter, r *http.Request) {
 		writeError(w, 400, "unsupported-operation", "operation", "operation does not match endpoint")
 		return
 	}
-	if req.Profile != "nexacro-json-1.0" && req.Profile != "nexacro-xml-4000" && req.Profile != "xplatform-xml-4000" {
+	if !supportedProfile(req.Profile) {
 		writeError(w, 400, "unsupported-profile", "profile", "profile is not supported by reference adapter")
 		return
 	}
-	if key := invalidOption(req.Options, boolOpt(req.Options, "strict")); key != "" {
+	if key := invalidOption(req.Options, boolOpt(req.Options, "strict"), req.Profile); key != "" {
 		writeError(w, 400, "invalid-request", "options."+key, "unknown option")
 		return
 	}
@@ -120,7 +124,7 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "malformed-input", "input.data", err.Error())
 			return
 		}
-		v, err := codec.DecodeWithStrict(b, strictOpt(req.Options))
+		v, err := codec.DecodeProfile(b, req.Profile, decodeOptions(req.Options))
 		if err != nil {
 			writeError(w, 400, "malformed-input", "wire", err.Error())
 			return
@@ -141,7 +145,7 @@ func operation(w http.ResponseWriter, r *http.Request) {
 		}
 		b, err := codec.Encode(*req.Value, req.Profile)
 		if err != nil {
-			writeError(w, 500, "internal", "", err.Error())
+			writeError(w, 400, "invalid-value", "value", err.Error())
 			return
 		}
 		out = protocol.Response{OK: true, Value: req.Value, Output: protocol.EncodeOutput(b)}
@@ -155,7 +159,7 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "malformed-input", "input.data", err.Error())
 			return
 		}
-		v, err := codec.DecodeWithStrict(b, strictOpt(req.Options))
+		v, err := codec.DecodeProfile(b, req.Profile, decodeOptions(req.Options))
 		if err != nil {
 			writeError(w, 400, "malformed-input", "wire", err.Error())
 			return
@@ -166,7 +170,7 @@ func operation(w http.ResponseWriter, r *http.Request) {
 		}
 		encoded, e := codec.Encode(v, req.Profile)
 		if e != nil {
-			writeError(w, 500, "internal", "", e.Error())
+			writeError(w, 400, "invalid-value", "value", e.Error())
 			return
 		}
 		out = protocol.Response{OK: true, Value: &v, Output: protocol.EncodeOutput(encoded)}
@@ -183,14 +187,37 @@ func strictOpt(m map[string]any) bool {
 	}
 	return true
 }
-func invalidOption(options map[string]any, strict bool) string {
+func stringOpt(m map[string]any, key string) string {
+	value, _ := m[key].(string)
+	return value
+}
+func decodeOptions(options map[string]any) codec.DecodeOptions {
+	return codec.DecodeOptions{
+		Strict:             strictOpt(options),
+		SSVUnitSeparator:   stringOpt(options, "ssvUnitSeparator"),
+		SSVRecordSeparator: stringOpt(options, "ssvRecordSeparator"),
+	}
+}
+func supportedProfile(profile string) bool {
+	switch profile {
+	case "nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000", "nexacro-ssv", "xplatform-ssv":
+		return true
+	default:
+		return false
+	}
+}
+func invalidOption(options map[string]any, strict bool, profile string) string {
 	if !strict {
 		return ""
 	}
-	for k := range options {
-		if k != "strict" && k != "base64Whitespace" && k != "limits" {
-			return k
+	for key := range options {
+		if key == "strict" || key == "base64Whitespace" || key == "limits" {
+			continue
 		}
+		if profile == "nexacro-ssv" && (key == "ssvUnitSeparator" || key == "ssvRecordSeparator") {
+			continue
+		}
+		return key
 	}
 	return ""
 }

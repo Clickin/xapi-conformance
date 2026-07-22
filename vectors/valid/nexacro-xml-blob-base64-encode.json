@@ -1,0 +1,55 @@
+{
+  "id": "nexacro-xml.blob-base64.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "value": {
+    "parameters": [],
+    "datasets": [
+      {
+        "id": "d",
+        "columns": [
+          {
+            "id": "b",
+            "type": "BLOB",
+            "index": 0
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "c",
+            "type": "BLOB",
+            "value": {
+              "state": "value",
+              "lexical": "eA=="
+            }
+          }
+        ],
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "b": {
+                "state": "value",
+                "lexical": "eQ=="
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iQkxPQiIgZW5jPSJiYXNlNjQiIHZhbHVlPSJlQT09Ii8+PENvbHVtbiBpZD0iYiIgdHlwZT0iQkxPQiIgZW5jPSJiYXNlNjQiLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJiIj5lUT09PC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-xml-blob-base64-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

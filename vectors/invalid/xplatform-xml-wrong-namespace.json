@@ -1,0 +1,10 @@
+{
+  "id":"xplatform-xml.wrong-namespace.strict",
+  "operation":"decode",
+  "profile":"xplatform-xml-4000",
+  "options":{"strict":true},
+  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PC9Sb290Pg=="},
+  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/xplatform-xml-wrong-namespace.json","license":"repository"},
+  "required":true
+}

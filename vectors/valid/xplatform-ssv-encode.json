@@ -1,0 +1,12 @@
+{
+  "id":"xplatform-ssv.states.encode",
+  "operation":"encode",
+  "profile":"xplatform-ssv",
+  "value":{
+    "parameters":[],
+    "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0},{"id":"b","type":"STRING","index":1}],"constColumns":[],"rows":[{"type":"N","values":{"a":{"state":"empty"},"b":{"state":"missing"}}}]}]
+  },
+  "expect":{"kind":"wire","output":{"encoding":"base64","data":"U1NWOnV0Zi04HkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpTVFJJTkcfYjpTVFJJTkceTh8CHx4="}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/xplatform-ssv-encode.json","license":"repository"},
+  "required":true
+}

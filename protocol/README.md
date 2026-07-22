@@ -4,14 +4,15 @@ Protocol version: `1.0`.
 
 The protocol is deliberately independent of Java, JavaScript, Go, Rust, or
 any implementation DTO. A conformance adapter is an HTTP process that accepts
-JSON envelopes and transports the original XML/JSON wire document as base64.
-For fixed CI runs, the same envelope is also supported as JSON Lines over
-stdin/stdout: invoke the reference adapter as `go run ./cmd/xapi-reference
-stdio`. One request line produces one response line; logs go to stderr.
+JSON envelopes and transports the original XML, JSON, or SSV wire document as
+base64. For fixed CI runs, the same envelope is also supported as JSON Lines
+over stdin/stdout: invoke the reference adapter as `go run
+./cmd/xapi-reference stdio`. One request line produces one response line; logs
+go to stderr.
 
 All requests and responses use `application/json`. The `input.data` and
-`output.data` fields contain base64-encoded wire bytes so XML and JSON payloads
-are transported identically.
+`output.data` fields contain base64-encoded wire bytes so all profiles are
+transported identically.
 
 ## Endpoints
 
@@ -38,11 +39,12 @@ reject an operation/profile mismatch with `unsupported-operation` or
 
 `input` is required for `decode` and `roundtrip`; `value` is required for
 `encode`. `options` is an object and may include `strict`, `base64Whitespace`,
-and `limits` (`payloadBytes`, `datasets`, `rows`, `columns`, `scalarBytes`, and
-`blobBytes`). Unknown options are an `invalid-request` error in strict mode.
-The default maximum request body is 10 MiB and the default operation timeout
-is 10 seconds. Adapters must return a response before the timeout;
-the runner terminates an unresponsive process and reports `timeout`.
+`ssvUnitSeparator`, `ssvRecordSeparator`, and `limits` (`payloadBytes`,
+`datasets`, `rows`, `columns`, `scalarBytes`, and `blobBytes`). SSV separators
+must each be one Unicode scalar. Unknown options are an `invalid-request` error
+in strict mode. The default maximum request body is 10 MiB and the default
+operation timeout is 10 seconds. Adapters must return a response before the
+timeout; the runner terminates an unresponsive process and reports `timeout`.
 
 ## Success
 
@@ -60,9 +62,10 @@ the runner terminates an unresponsive process and reports `timeout`.
 field is explicitly structural. BLOB values are base64 strings.
 
 For `encode` and `roundtrip`, a successful response also contains
-`output: {"encoding":"base64","data":"..."}`. Base64 is RFC 4648 without
-line breaks by default. Whitespace is accepted only when
-`options.base64Whitespace` is `ignore`; it is rejected by default.
+`output: {"encoding":"base64","data":"..."}`. Base64 is RFC 4648 without line
+breaks by default. Input whitespace is accepted only when
+`options.base64Whitespace` is `true`. Vectors with `expect.kind` equal to
+`wire` compare this output envelope exactly.
 
 ## Failure
 
@@ -122,8 +125,8 @@ must compare semantically equal. `state` is one of `value`, `missing`,
 `empty`. This preserves DATE/TIME/DATETIME precision, BIGDECIMAL spelling,
 and all scalar values without imposing a host-language type. BLOB lexical
 values are base64 and `orgRow` is a complete row snapshot using the same cell
-model. XML namespace and version metadata, parameter text/attribute form, and
-JSON ordering are represented under `wire` when they are semantically relevant.
+model. XML namespace/version and parameter form, JSON version, and SSV framing
+metadata are represented under `wire` when they are semantically relevant.
 
 See [`canonical.schema.json`](canonical.schema.json) and
 [`vector.schema.json`](vector.schema.json) for machine-readable definitions.
@@ -132,9 +135,38 @@ Requests, responses, and capabilities are defined by
 [`response.schema.json`](response.schema.json), and
 [`capabilities.schema.json`](capabilities.schema.json).
 
+## Schema and wire validation
+
+The files under `protocol/*.schema.json` are JSON Schema documents because the
+request envelope, response envelope, vector manifest, and canonical value are
+JSON for every profile. They validate those JSON structures. The
+base64-encoded `input.data` and `output.data` fields are intentionally opaque
+to JSON Schema: the schemas do not decode or validate embedded XML, JSON
+Dataset payloads, or SSV records.
+
+Wire-format conformance is executable. The runner sends each vector to the
+adapter under the selected profile and checks the canonical value, exact wire
+output, or expected error. Strict XML vectors cover XML declarations,
+namespaces, element/attribute grammar, entities, and row structure. Strict JSON
+vectors cover Dataset JSON fields and types. Strict SSV vectors cover stream
+headers, RS/US framing, headers, rows, state markers, and terminal null records.
+
+Entity handling is profile-specific:
+
+- XML decodes XML character/entity references. XML encoding represents line
+  feed as `&#10;` where required by the XAPI wire behavior.
+- JSON applies only JSON string escaping. Text such as `&amp;` or `&#10;`
+  remains literal text and is never passed through an XML entity codec.
+- SSV does not apply XML entity processing; separator and state-marker rules
+  define its framing.
+
+For default rows, XML may omit `Row@type` and JSON may omit `_RowType_`; both
+decode as `N`. XML omits `OrgRow` and JSON omits the adjacent `O` row when no
+original row exists.
+
 ## Security and limits
 
 Adapters must not resolve DTDs or external entities, must reject duplicate JSON
 keys and duplicate XML attributes, and must enforce payload, nesting, dataset,
 row, column, scalar, and blob limits before allocating unbounded memory.
-Malformed XML/JSON and invalid base64 are protocol errors, not process crashes.
+Malformed XML/JSON/SSV and invalid base64 are protocol errors, not process crashes.

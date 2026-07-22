@@ -33,7 +33,7 @@ func TestCapabilitiesAdvertiseAllReferenceProfiles(t *testing.T) {
 	if err := json.Unmarshal(w.Body.Bytes(), &out); err != nil {
 		t.Fatal(err)
 	}
-	if len(out.Profiles) != 3 {
+	if len(out.Profiles) != 5 {
 		t.Fatalf("profiles = %+v", out.Profiles)
 	}
 }

@@ -1,0 +1,10 @@
+{
+  "id":"xplatform-xml.commercial-framing.strict",
+  "operation":"decode",
+  "profile":"xplatform-xml-4000",
+  "options":{"strict":true},
+  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vZGF0YXNldCIgdmVyPSI1MDAwIj48L1Jvb3Q+"},
+  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/xplatform-xml-commercial-framing-strict.json","license":"repository"},
+  "required":true
+}

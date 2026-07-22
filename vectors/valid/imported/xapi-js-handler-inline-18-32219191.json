@@ -19,21 +19,21 @@
           "columns": [
             {
               "id": "emptyCol",
-              "type": "",
+              "type": "STRING",
               "index": 0
             }
           ],
           "constColumns": [
             {
               "id": "emptyConstCol",
-              "type": "",
+              "type": "STRING",
               "value": {
-                "state": "empty"
+                "state": "missing"
               }
             },
             {
               "id": "defaultConstCol",
-              "type": "",
+              "type": "STRING",
               "value": {
                 "state": "value",
                 "lexical": "default"

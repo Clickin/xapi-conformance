@@ -1,0 +1,38 @@
+{
+  "id": "nexacro-ssv.optional-root-110.decode",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWOnV0Zi04HnA9dh4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v"
+        }
+      ],
+      "datasets": [],
+      "wire": {
+        "ssv": {
+          "codePage": "utf-8"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-ssv-optional-root-110.json",
+    "license": "repository"
+  },
+  "required": true
+}

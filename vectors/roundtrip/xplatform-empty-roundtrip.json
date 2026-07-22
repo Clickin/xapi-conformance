@@ -2,8 +2,8 @@
   "id":"xplatform-xml.empty.roundtrip",
   "operation":"roundtrip",
   "profile":"xplatform-xml-4000",
-  "input":{"encoding":"base64","data":"PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj48RGF0YXNldHMvPjwvUm9vdD4="},
-  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[],"wire":{"root":{"namespace":"http://www.nexacroplatform.com/platform/dataset","version":"4000"}}}},
+  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48L1Jvb3Q+"},
+  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[],"wire":{"root":{"namespace":"http://www.tobesoft.com/platform/Dataset","ver":"4000"}}}},
   "source":{"repository":"xplatform-xml","commit":"cda8b6b31f64511ff9d22f64539c4b78e862455d","path":"xplatform-xml-micronaut/src/test/java/io/clickin/xplatform/xml/runtime/examples/XplatformXmlSerdeTest.java","license":"upstream-no-license-file","attribution":"Clickin/xplatform-xml"},
   "required":true
 }

@@ -16,7 +16,7 @@
         {
           "id": "test",
           "type": "STRING",
-          "state": "empty",
+          "state": "null",
           "wire": {
             "valueForm": "text"
           }

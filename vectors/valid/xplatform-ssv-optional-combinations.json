@@ -1,0 +1,319 @@
+{
+  "id": "xplatform-ssv.optional-combinations.decode",
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHnAwHnAxPXYecDI6c1RySW5HHnAzOnNUckluRz12HnA0OnNUckluRyg3KR5wNTpzVHJJbkcoNyk9dh5EYXRhc2V0OmQeX0NvbnN0Xx9jMB9jMT12H2MyOnNUckluRx9jMzpzVHJJbkc9dh9jNDpzVHJJbkcoNykfYzU6c1RySW5HKDcpPXYeX1Jvd1R5cGVfH20wMB9tMDE6OlNVTR9tMDI6OlNVTTp0b3RhbB9tMTA6c1RySW5HH20xMTpzVHJJbkc6U1VNH20xMjpzVHJJbkc6U1VNOnRvdGFsH20yMDpzVHJJbkcoNykfbTIxOnNUckluRyg3KTpTVU0fbTIyOnNUckluRyg3KTpTVU06dG90YWwfdFNUUklORzA6U1RSSU5HH3RTVFJJTkcxOnN0cmluZx90U1RSSU5HMjpTdHJpbmcfdElOVDA6SU5UH3RJTlQxOmludB90SU5UMjpJbnQfdEZMT0FUMDpGTE9BVB90RkxPQVQxOmZsb2F0H3RGTE9BVDI6RmxvYXQfdERFQ0lNQUwwOkRFQ0lNQUwfdERFQ0lNQUwxOmRlY2ltYWwfdERFQ0lNQUwyOkRlY2ltYWwfdEJJR0RFQ0lNQUwwOkJJR0RFQ0lNQUwfdEJJR0RFQ0lNQUwxOmJpZ2RlY2ltYWwfdEJJR0RFQ0lNQUwyOkJpZ2RlY2ltYWwfdERBVEUwOkRBVEUfdERBVEUxOmRhdGUfdERBVEUyOkRhdGUfdERBVEVUSU1FMDpEQVRFVElNRR90REFURVRJTUUxOmRhdGV0aW1lH3REQVRFVElNRTI6RGF0ZXRpbWUfdFRJTUUwOlRJTUUfdFRJTUUxOnRpbWUfdFRJTUUyOlRpbWUfdEJMT0IwOkJMT0IfdEJMT0IxOmJsb2IfdEJMT0IyOkJsb2IeHg=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p0",
+          "type": "STRING",
+          "state": "missing"
+        },
+        {
+          "id": "p1",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "index": 1
+        },
+        {
+          "id": "p2",
+          "type": "STRING",
+          "state": "missing",
+          "index": 2
+        },
+        {
+          "id": "p3",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "index": 3
+        },
+        {
+          "id": "p4",
+          "type": "STRING",
+          "state": "missing",
+          "index": 4,
+          "wire": {
+            "length": "7"
+          }
+        },
+        {
+          "id": "p5",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "index": 5,
+          "wire": {
+            "length": "7"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "m00",
+              "type": "STRING",
+              "index": 0
+            },
+            {
+              "id": "m01",
+              "type": "STRING",
+              "index": 1,
+              "prop": "SUM"
+            },
+            {
+              "id": "m02",
+              "type": "STRING",
+              "index": 2,
+              "prop": "SUM",
+              "sumtext": "total"
+            },
+            {
+              "id": "m10",
+              "type": "STRING",
+              "index": 3
+            },
+            {
+              "id": "m11",
+              "type": "STRING",
+              "index": 4,
+              "prop": "SUM"
+            },
+            {
+              "id": "m12",
+              "type": "STRING",
+              "index": 5,
+              "prop": "SUM",
+              "sumtext": "total"
+            },
+            {
+              "id": "m20",
+              "type": "STRING",
+              "index": 6,
+              "size": "7"
+            },
+            {
+              "id": "m21",
+              "type": "STRING",
+              "index": 7,
+              "size": "7",
+              "prop": "SUM"
+            },
+            {
+              "id": "m22",
+              "type": "STRING",
+              "index": 8,
+              "size": "7",
+              "prop": "SUM",
+              "sumtext": "total"
+            },
+            {
+              "id": "tSTRING0",
+              "type": "STRING",
+              "index": 9
+            },
+            {
+              "id": "tSTRING1",
+              "type": "STRING",
+              "index": 10
+            },
+            {
+              "id": "tSTRING2",
+              "type": "STRING",
+              "index": 11
+            },
+            {
+              "id": "tINT0",
+              "type": "INT",
+              "index": 12
+            },
+            {
+              "id": "tINT1",
+              "type": "INT",
+              "index": 13
+            },
+            {
+              "id": "tINT2",
+              "type": "INT",
+              "index": 14
+            },
+            {
+              "id": "tFLOAT0",
+              "type": "FLOAT",
+              "index": 15
+            },
+            {
+              "id": "tFLOAT1",
+              "type": "FLOAT",
+              "index": 16
+            },
+            {
+              "id": "tFLOAT2",
+              "type": "FLOAT",
+              "index": 17
+            },
+            {
+              "id": "tDECIMAL0",
+              "type": "DECIMAL",
+              "index": 18
+            },
+            {
+              "id": "tDECIMAL1",
+              "type": "DECIMAL",
+              "index": 19
+            },
+            {
+              "id": "tDECIMAL2",
+              "type": "DECIMAL",
+              "index": 20
+            },
+            {
+              "id": "tBIGDECIMAL0",
+              "type": "BIGDECIMAL",
+              "index": 21
+            },
+            {
+              "id": "tBIGDECIMAL1",
+              "type": "BIGDECIMAL",
+              "index": 22
+            },
+            {
+              "id": "tBIGDECIMAL2",
+              "type": "BIGDECIMAL",
+              "index": 23
+            },
+            {
+              "id": "tDATE0",
+              "type": "DATE",
+              "index": 24
+            },
+            {
+              "id": "tDATE1",
+              "type": "DATE",
+              "index": 25
+            },
+            {
+              "id": "tDATE2",
+              "type": "DATE",
+              "index": 26
+            },
+            {
+              "id": "tDATETIME0",
+              "type": "DATETIME",
+              "index": 27
+            },
+            {
+              "id": "tDATETIME1",
+              "type": "DATETIME",
+              "index": 28
+            },
+            {
+              "id": "tDATETIME2",
+              "type": "DATETIME",
+              "index": 29
+            },
+            {
+              "id": "tTIME0",
+              "type": "TIME",
+              "index": 30
+            },
+            {
+              "id": "tTIME1",
+              "type": "TIME",
+              "index": 31
+            },
+            {
+              "id": "tTIME2",
+              "type": "TIME",
+              "index": 32
+            },
+            {
+              "id": "tBLOB0",
+              "type": "BLOB",
+              "index": 33
+            },
+            {
+              "id": "tBLOB1",
+              "type": "BLOB",
+              "index": 34
+            },
+            {
+              "id": "tBLOB2",
+              "type": "BLOB",
+              "index": 35
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c0",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              }
+            },
+            {
+              "id": "c1",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              }
+            },
+            {
+              "id": "c2",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              }
+            },
+            {
+              "id": "c3",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              }
+            },
+            {
+              "id": "c4",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              },
+              "size": "7"
+            },
+            {
+              "id": "c5",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              },
+              "size": "7"
+            }
+          ],
+          "rows": []
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/xplatform-ssv-optional-combinations.json",
+    "license": "repository"
+  },
+  "required": true
+}

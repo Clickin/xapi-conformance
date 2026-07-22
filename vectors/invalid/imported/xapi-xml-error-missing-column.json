@@ -6,7 +6,9 @@
     "encoding": "base64",
     "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfaW52YWxpZCI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9ImNvbDEiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PgogICAgICAgICAgPENvbCBpZD0iY29sMSI+VmFsaWQgY29sdW1uPC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJjb2wyIj5UaGlzIGNvbHVtbiBub3QgaW4gQ29sdW1uSW5mbzwvQ29sPgogICAgICAgIDwvUm93PgogICAgICA8L1Jvd3M+CiAgICA8L0RhdGFzZXQ+CiAgPC9EYXRhc2V0cz4KPC9Sb290Pgo="
   },
-  "options": {},
+  "options": {
+    "strict": false
+  },
   "expect": {
     "kind": "error",
     "error": {

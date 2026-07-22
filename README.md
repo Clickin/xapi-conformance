@@ -52,17 +52,20 @@ go run ./cmd/xapi-runner -url http://127.0.0.1:8787
 ```
 
 The runner supports `-profile`, `-operation`, `-parallel`, `-timeout`, and
-`-filter` selectors. It compares canonical semantic JSON, not wire bytes.
+`-filter` selectors. It compares canonical JSON or exact wire output according
+to each vector's expectation kind.
 
 ## Sources
 
 Fixtures and assertions are imported from the Clickin `xapi-js`,
-`xplatform-xml`, and `xapi` repositories. Each imported source keeps its
-original attribution and license metadata.
+`xplatform-xml`, and `xapi` repositories. Published-format and clean-room
+compatibility cases are maintained as repository-owned vectors. Every imported
+source keeps its original attribution and license metadata.
 
 ## Scope
 
 The vector corpus is intended to cover the complete supported wire matrix:
-profiles, scalar types, lexical forms, null/missing/empty values, parameters,
-datasets, constants, row states, original rows, ordering variants, BLOBs,
-malformed input, limits, and compatibility policies.
+XPLATFORM/Nexacro XML, Nexacro JSON, XPLATFORM/Nexacro SSV, scalar types,
+lexical forms, null/missing/empty values, parameters, datasets, constants, row
+states, original rows, ordering variants, BLOBs, malformed input, limits, and
+compatibility policies.

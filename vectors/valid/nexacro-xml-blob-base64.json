@@ -1,0 +1,67 @@
+{
+  "id": "nexacro-xml.blob-base64.decode",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iYkxvQiIgZW5jPSJCQVNFNjQiIHZhbHVlPSJlQT09Ii8+PENvbHVtbiBpZD0iYiIgdHlwZT0iYmxvYiIgZW5jPSJiYXNlNjQiLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJiIj5lUT09PC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "b",
+              "type": "BLOB",
+              "index": 0,
+              "encoding": "base64"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "type": "BLOB",
+              "encoding": "base64",
+              "value": {
+                "state": "value",
+                "lexical": "eA=="
+              }
+            }
+          ],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "b": {
+                  "state": "value",
+                  "lexical": "eQ=="
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-xml-blob-base64.json",
+    "license": "repository"
+  },
+  "required": true
+}

@@ -1,0 +1,26 @@
+{
+  "id": "xplatform-xml.blob-column-missing-encoding.strict",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbHVtbiBpZD0iYiIgdHlwZT0iQkxPQiIvPjwvQ29sdW1uSW5mbz48L0RhdGFzZXQ+PC9Sb290Pg=="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/invalid/xplatform-xml-blob-column-missing-encoding.json",
+    "license": "repository"
+  },
+  "required": true
+}

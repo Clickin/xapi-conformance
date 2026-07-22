@@ -1,0 +1,427 @@
+{
+  "id": "nexacro-xml.optional-combinations.decode",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0icDAiPnY8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMSIgdHlwZT0ic1RySW5HIj52PC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0icDIiPjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InAzIi8+PFBhcmFtZXRlciBpZD0icDQiIHR5cGU9InNUckluRyI+PC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0icDUiIHR5cGU9InNUckluRyIvPjwvUGFyYW1ldGVycz48RGF0YXNldCBpZD0iY2hpbGRyZW4wIi8+PERhdGFzZXQgaWQ9ImNoaWxkcmVuMSI+PENvbHVtbkluZm8vPjwvRGF0YXNldD48RGF0YXNldCBpZD0iY2hpbGRyZW4yIj48Um93cy8+PC9EYXRhc2V0PjxEYXRhc2V0IGlkPSJjaGlsZHJlbjMiPjxDb2x1bW5JbmZvLz48Um93cy8+PC9EYXRhc2V0PjxEYXRhc2V0IGlkPSJpdGVtcyI+PENvbHVtbkluZm8+PENvbnN0Q29sdW1uIGlkPSJjMCIvPjxDb25zdENvbHVtbiBpZD0iYzEiIHR5cGU9InNUckluRyIvPjxDb25zdENvbHVtbiBpZD0iYzIiIHNpemU9IjciLz48Q29uc3RDb2x1bW4gaWQ9ImMzIiB0eXBlPSJzVHJJbkciIHNpemU9IjciLz48Q29uc3RDb2x1bW4gaWQ9ImM0IiB2YWx1ZT0idiIvPjxDb25zdENvbHVtbiBpZD0iYzUiIHR5cGU9InNUckluRyIgdmFsdWU9InYiLz48Q29uc3RDb2x1bW4gaWQ9ImM2IiBzaXplPSI3IiB2YWx1ZT0idiIvPjxDb25zdENvbHVtbiBpZD0iYzciIHR5cGU9InNUckluRyIgc2l6ZT0iNyIgdmFsdWU9InYiLz48Q29sdW1uIGlkPSJtMCIvPjxDb2x1bW4gaWQ9Im0xIiB0eXBlPSJzVHJJbkciLz48Q29sdW1uIGlkPSJtMiIgc2l6ZT0iNyIvPjxDb2x1bW4gaWQ9Im0zIiB0eXBlPSJzVHJJbkciIHNpemU9IjciLz48Q29sdW1uIGlkPSJtNCIgcHJvcD0iVGV4dCIvPjxDb2x1bW4gaWQ9Im01IiB0eXBlPSJzVHJJbkciIHByb3A9IlRleHQiLz48Q29sdW1uIGlkPSJtNiIgc2l6ZT0iNyIgcHJvcD0iVGV4dCIvPjxDb2x1bW4gaWQ9Im03IiB0eXBlPSJzVHJJbkciIHNpemU9IjciIHByb3A9IlRleHQiLz48Q29sdW1uIGlkPSJtOCIgc3VtdGV4dD0idG90YWwiLz48Q29sdW1uIGlkPSJtOSIgdHlwZT0ic1RySW5HIiBzdW10ZXh0PSJ0b3RhbCIvPjxDb2x1bW4gaWQ9Im0xMCIgc2l6ZT0iNyIgc3VtdGV4dD0idG90YWwiLz48Q29sdW1uIGlkPSJtMTEiIHR5cGU9InNUckluRyIgc2l6ZT0iNyIgc3VtdGV4dD0idG90YWwiLz48Q29sdW1uIGlkPSJtMTIiIHByb3A9IlRleHQiIHN1bXRleHQ9InRvdGFsIi8+PENvbHVtbiBpZD0ibTEzIiB0eXBlPSJzVHJJbkciIHByb3A9IlRleHQiIHN1bXRleHQ9InRvdGFsIi8+PENvbHVtbiBpZD0ibTE0IiBzaXplPSI3IiBwcm9wPSJUZXh0IiBzdW10ZXh0PSJ0b3RhbCIvPjxDb2x1bW4gaWQ9Im0xNSIgdHlwZT0ic1RySW5HIiBzaXplPSI3IiBwcm9wPSJUZXh0IiBzdW10ZXh0PSJ0b3RhbCIvPjxDb2x1bW4gaWQ9InRTVFJJTkcwIiB0eXBlPSJTVFJJTkciLz48Q29sdW1uIGlkPSJ0U1RSSU5HMSIgdHlwZT0ic3RyaW5nIi8+PENvbHVtbiBpZD0idFNUUklORzIiIHR5cGU9IlN0cmluZyIvPjxDb2x1bW4gaWQ9InRJTlQwIiB0eXBlPSJJTlQiLz48Q29sdW1uIGlkPSJ0SU5UMSIgdHlwZT0iaW50Ii8+PENvbHVtbiBpZD0idElOVDIiIHR5cGU9IkludCIvPjxDb2x1bW4gaWQ9InRGTE9BVDAiIHR5cGU9IkZMT0FUIi8+PENvbHVtbiBpZD0idEZMT0FUMSIgdHlwZT0iZmxvYXQiLz48Q29sdW1uIGlkPSJ0RkxPQVQyIiB0eXBlPSJGbG9hdCIvPjxDb2x1bW4gaWQ9InRERUNJTUFMMCIgdHlwZT0iREVDSU1BTCIvPjxDb2x1bW4gaWQ9InRERUNJTUFMMSIgdHlwZT0iZGVjaW1hbCIvPjxDb2x1bW4gaWQ9InRERUNJTUFMMiIgdHlwZT0iRGVjaW1hbCIvPjxDb2x1bW4gaWQ9InRCSUdERUNJTUFMMCIgdHlwZT0iQklHREVDSU1BTCIvPjxDb2x1bW4gaWQ9InRCSUdERUNJTUFMMSIgdHlwZT0iYmlnZGVjaW1hbCIvPjxDb2x1bW4gaWQ9InRCSUdERUNJTUFMMiIgdHlwZT0iQmlnZGVjaW1hbCIvPjxDb2x1bW4gaWQ9InREQVRFMCIgdHlwZT0iREFURSIvPjxDb2x1bW4gaWQ9InREQVRFMSIgdHlwZT0iZGF0ZSIvPjxDb2x1bW4gaWQ9InREQVRFMiIgdHlwZT0iRGF0ZSIvPjxDb2x1bW4gaWQ9InREQVRFVElNRTAiIHR5cGU9IkRBVEVUSU1FIi8+PENvbHVtbiBpZD0idERBVEVUSU1FMSIgdHlwZT0iZGF0ZXRpbWUiLz48Q29sdW1uIGlkPSJ0REFURVRJTUUyIiB0eXBlPSJEYXRldGltZSIvPjxDb2x1bW4gaWQ9InRUSU1FMCIgdHlwZT0iVElNRSIvPjxDb2x1bW4gaWQ9InRUSU1FMSIgdHlwZT0idGltZSIvPjxDb2x1bW4gaWQ9InRUSU1FMiIgdHlwZT0iVGltZSIvPjxDb2x1bW4gaWQ9InRCTE9CMCIgdHlwZT0iQkxPQiIgZW5jPSJiYXNlNjQiLz48Q29sdW1uIGlkPSJ0QkxPQjEiIHR5cGU9ImJsb2IiIGVuYz0iYmFzZTY0Ii8+PENvbHVtbiBpZD0idEJMT0IyIiB0eXBlPSJCbG9iIiBlbmM9ImJhc2U2NCIvPjwvQ29sdW1uSW5mbz48Um93cy8+PC9EYXRhc2V0PjwvUm9vdD4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p0",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p1",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "index": 1,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p2",
+          "type": "STRING",
+          "state": "empty",
+          "index": 2,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p3",
+          "type": "STRING",
+          "state": "null",
+          "index": 3,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p4",
+          "type": "STRING",
+          "state": "empty",
+          "index": 4,
+          "wire": {
+            "valueForm": "text"
+          }
+        },
+        {
+          "id": "p5",
+          "type": "STRING",
+          "state": "null",
+          "index": 5,
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "children0",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        },
+        {
+          "id": "children1",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        },
+        {
+          "id": "children2",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        },
+        {
+          "id": "children3",
+          "columns": [],
+          "constColumns": [],
+          "rows": []
+        },
+        {
+          "id": "items",
+          "columns": [
+            {
+              "id": "m0",
+              "type": "STRING",
+              "index": 0
+            },
+            {
+              "id": "m1",
+              "type": "STRING",
+              "index": 1
+            },
+            {
+              "id": "m2",
+              "type": "STRING",
+              "index": 2,
+              "size": "7"
+            },
+            {
+              "id": "m3",
+              "type": "STRING",
+              "index": 3,
+              "size": "7"
+            },
+            {
+              "id": "m4",
+              "type": "STRING",
+              "index": 4,
+              "prop": "Text"
+            },
+            {
+              "id": "m5",
+              "type": "STRING",
+              "index": 5,
+              "prop": "Text"
+            },
+            {
+              "id": "m6",
+              "type": "STRING",
+              "index": 6,
+              "size": "7",
+              "prop": "Text"
+            },
+            {
+              "id": "m7",
+              "type": "STRING",
+              "index": 7,
+              "size": "7",
+              "prop": "Text"
+            },
+            {
+              "id": "m8",
+              "type": "STRING",
+              "index": 8,
+              "sumtext": "total"
+            },
+            {
+              "id": "m9",
+              "type": "STRING",
+              "index": 9,
+              "sumtext": "total"
+            },
+            {
+              "id": "m10",
+              "type": "STRING",
+              "index": 10,
+              "size": "7",
+              "sumtext": "total"
+            },
+            {
+              "id": "m11",
+              "type": "STRING",
+              "index": 11,
+              "size": "7",
+              "sumtext": "total"
+            },
+            {
+              "id": "m12",
+              "type": "STRING",
+              "index": 12,
+              "prop": "Text",
+              "sumtext": "total"
+            },
+            {
+              "id": "m13",
+              "type": "STRING",
+              "index": 13,
+              "prop": "Text",
+              "sumtext": "total"
+            },
+            {
+              "id": "m14",
+              "type": "STRING",
+              "index": 14,
+              "size": "7",
+              "prop": "Text",
+              "sumtext": "total"
+            },
+            {
+              "id": "m15",
+              "type": "STRING",
+              "index": 15,
+              "size": "7",
+              "prop": "Text",
+              "sumtext": "total"
+            },
+            {
+              "id": "tSTRING0",
+              "type": "STRING",
+              "index": 16
+            },
+            {
+              "id": "tSTRING1",
+              "type": "STRING",
+              "index": 17
+            },
+            {
+              "id": "tSTRING2",
+              "type": "STRING",
+              "index": 18
+            },
+            {
+              "id": "tINT0",
+              "type": "INT",
+              "index": 19
+            },
+            {
+              "id": "tINT1",
+              "type": "INT",
+              "index": 20
+            },
+            {
+              "id": "tINT2",
+              "type": "INT",
+              "index": 21
+            },
+            {
+              "id": "tFLOAT0",
+              "type": "FLOAT",
+              "index": 22
+            },
+            {
+              "id": "tFLOAT1",
+              "type": "FLOAT",
+              "index": 23
+            },
+            {
+              "id": "tFLOAT2",
+              "type": "FLOAT",
+              "index": 24
+            },
+            {
+              "id": "tDECIMAL0",
+              "type": "DECIMAL",
+              "index": 25
+            },
+            {
+              "id": "tDECIMAL1",
+              "type": "DECIMAL",
+              "index": 26
+            },
+            {
+              "id": "tDECIMAL2",
+              "type": "DECIMAL",
+              "index": 27
+            },
+            {
+              "id": "tBIGDECIMAL0",
+              "type": "BIGDECIMAL",
+              "index": 28
+            },
+            {
+              "id": "tBIGDECIMAL1",
+              "type": "BIGDECIMAL",
+              "index": 29
+            },
+            {
+              "id": "tBIGDECIMAL2",
+              "type": "BIGDECIMAL",
+              "index": 30
+            },
+            {
+              "id": "tDATE0",
+              "type": "DATE",
+              "index": 31
+            },
+            {
+              "id": "tDATE1",
+              "type": "DATE",
+              "index": 32
+            },
+            {
+              "id": "tDATE2",
+              "type": "DATE",
+              "index": 33
+            },
+            {
+              "id": "tDATETIME0",
+              "type": "DATETIME",
+              "index": 34
+            },
+            {
+              "id": "tDATETIME1",
+              "type": "DATETIME",
+              "index": 35
+            },
+            {
+              "id": "tDATETIME2",
+              "type": "DATETIME",
+              "index": 36
+            },
+            {
+              "id": "tTIME0",
+              "type": "TIME",
+              "index": 37
+            },
+            {
+              "id": "tTIME1",
+              "type": "TIME",
+              "index": 38
+            },
+            {
+              "id": "tTIME2",
+              "type": "TIME",
+              "index": 39
+            },
+            {
+              "id": "tBLOB0",
+              "type": "BLOB",
+              "index": 40,
+              "encoding": "base64"
+            },
+            {
+              "id": "tBLOB1",
+              "type": "BLOB",
+              "index": 41,
+              "encoding": "base64"
+            },
+            {
+              "id": "tBLOB2",
+              "type": "BLOB",
+              "index": 42,
+              "encoding": "base64"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c0",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              }
+            },
+            {
+              "id": "c1",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              }
+            },
+            {
+              "id": "c2",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              },
+              "size": "7"
+            },
+            {
+              "id": "c3",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              },
+              "size": "7"
+            },
+            {
+              "id": "c4",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              }
+            },
+            {
+              "id": "c5",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              }
+            },
+            {
+              "id": "c6",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              },
+              "size": "7"
+            },
+            {
+              "id": "c7",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              },
+              "size": "7"
+            }
+          ],
+          "rows": []
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-xml-optional-combinations.json",
+    "license": "repository"
+  },
+  "required": true
+}

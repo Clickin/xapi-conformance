@@ -29,6 +29,8 @@ type Column struct {
 	Index    int    `json:"index"`
 	Size     string `json:"size,omitempty"`
 	Encoding string `json:"encoding,omitempty"`
+	Prop     string `json:"prop,omitempty"`
+	SumText  string `json:"sumtext,omitempty"`
 }
 type ConstColumn struct {
 	ID       string `json:"id"`

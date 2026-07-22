@@ -17,10 +17,11 @@ go run ./cmd/xapi-runner -url http://127.0.0.1:8787
 ## Java, JavaScript, and Rust
 
 Java, JavaScript, and Rust adapters should implement the same four endpoints,
-advertise only the profiles/options they actually support, and compare the
-canonical model rather than serialized bytes. Pin this repository to a commit
-or tag in the implementation repository's CI; do not copy protocol DTOs from
-an implementation library.
+advertise only the profiles/options they actually support, and return both the
+canonical model and encoded bytes required by the operation. The runner
+performs semantic canonical comparison or exact wire comparison as selected by
+the vector. Pin this repository to a commit or tag in the implementation
+repository's CI; do not copy protocol DTOs from an implementation library.
 
 The adapter may be an ordinary HTTP process, or a small JSONL subprocess for
 CI. In JSONL mode, read one UTF-8 JSON envelope from stdin, write exactly one
@@ -33,7 +34,7 @@ Example request:
 ```sh
 curl -s http://127.0.0.1:8787/decode \
   -H 'content-type: application/json' \
-  -d '{"operation":"decode","profile":"nexacro-json-1.0","input":{"encoding":"base64","data":"eyJwYXJhbWV0ZXJzIjpbXSwiZGF0YXNldHMiOltdfQ=="}}'
+  -d '{"operation":"decode","profile":"nexacro-json-1.0","input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbXX0="}}'
 ```
 
 For fixed CI execution, use JSONL subprocess mode. The runner enforces the

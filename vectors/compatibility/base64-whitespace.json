@@ -2,9 +2,9 @@
   "id":"compatibility.base64-whitespace-ignored",
   "operation":"decode",
   "profile":"nexacro-json-1.0",
-  "input":{"encoding":"base64","data":"eyJwYXJhbWV0ZXJzIjpbXSwiZGF0YXNldHMiOltdfQ =="},
+  "input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbXX0 ="},
   "options":{"strict":true,"base64Whitespace":true},
-  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[]}},
+  "expect":{"kind":"canonical","value":{"parameters":[],"datasets":[],"wire":{"version":"1.0"}}},
   "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/compatibility/base64-whitespace.json","license":"repository"},
   "required":true
 }

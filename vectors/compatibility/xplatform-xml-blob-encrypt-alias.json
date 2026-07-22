@@ -1,0 +1,56 @@
+{
+  "id": "xplatform-xml.blob-encrypt-alias.decode",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbnN0Q29sdW1uIGlkPSJjIiB0eXBlPSJCTE9CIiBlbmNyeXB0PSJiYXNlNjQiIHZhbHVlPSJlQT09Ii8+PENvbHVtbiBpZD0iYiIgdHlwZT0iQkxPQiIgZW5jcnlwdD0iYmFzZTY0Ii8+PC9Db2x1bW5JbmZvPjxSb3dzLz48L0RhdGFzZXQ+PC9Sb290Pg=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "b",
+              "type": "BLOB",
+              "index": 0,
+              "encoding": "base64"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "type": "BLOB",
+              "encoding": "base64",
+              "value": {
+                "state": "value",
+                "lexical": "eA=="
+              }
+            }
+          ],
+          "rows": []
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/compatibility/xplatform-xml-blob-encrypt-alias.json",
+    "license": "repository"
+  },
+  "required": true
+}

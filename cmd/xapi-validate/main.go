@@ -24,6 +24,7 @@ type vector struct {
 	Expect struct {
 		Kind    string          `json:"kind"`
 		Value   json.RawMessage `json:"value"`
+		Output  json.RawMessage `json:"output"`
 		Options map[string]any  `json:"options"`
 		Error   struct {
 			Class string `json:"class"`
@@ -161,6 +162,9 @@ func validate(v vector, checkSources bool) []string {
 	}
 	if v.Expect.Kind == "canonical" && len(v.Expect.Value) == 0 {
 		e = append(e, "expect.value is required")
+	}
+	if v.Expect.Kind == "wire" && len(v.Expect.Output) == 0 {
+		e = append(e, "expect.output is required")
 	}
 	if v.Expect.Kind == "error" && v.Expect.Error.Class == "" {
 		e = append(e, "expect.error.class is required")

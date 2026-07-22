@@ -1,0 +1,33 @@
+{
+  "id": "xplatform-ssv.optional-root-010.decode",
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHnA9dh4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v"
+        }
+      ],
+      "datasets": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/xplatform-ssv-optional-root-010.json",
+    "license": "repository"
+  },
+  "required": true
+}

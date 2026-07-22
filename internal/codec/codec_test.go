@@ -8,7 +8,7 @@ import (
 )
 
 func TestDecodeJSONPreservesStatesAndRows(t *testing.T) {
-	v, err := Decode([]byte(`{"Parameters":[{"id":"p","type":"BIGDECIMAL","value":"001.20"}],"Datasets":[{"id":"d","ColumnInfo":{"Column":[{"id":"a","type":"STRING"},{"id":"b","type":"DATE"}]},"Rows":[{"_RowType_":"U","a":"","b":null}]}]}`))
+	v, err := Decode([]byte(`{"version":"1.0","Parameters":[{"id":"p","type":"BIGDECIMAL","value":"001.20"}],"Datasets":[{"id":"d","ColumnInfo":{"Column":[{"id":"a","type":"STRING"},{"id":"b","type":"DATE"}]},"Rows":[{"_RowType_":"U","a":"","b":null}]}]}`))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -22,7 +22,7 @@ func TestDecodeJSONPreservesStatesAndRows(t *testing.T) {
 }
 
 func TestDecodeXMLBasic(t *testing.T) {
-	v, err := Decode([]byte(`<Root xmlns="http://www.nexacroplatform.com/platform/dataset" version="4000"><Parameters><Parameter id="p" type="TIME">12:34:56.123</Parameter></Parameters><Datasets><Dataset id="d"><ColumnInfo><Column id="x" type="STRING"/></ColumnInfo><Rows><Row><Col id="x"><![CDATA[a<b]]></Col></Row></Rows></Dataset></Datasets></Root>`))
+	v, err := DecodeProfile([]byte(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="http://www.nexacroplatform.com/platform/dataset" ver="4000"><Parameters><Parameter id="p" type="TIME">12:34:56.123</Parameter></Parameters><Dataset id="d"><ColumnInfo><Column id="x" type="STRING"/></ColumnInfo><Rows><Row><Col id="x"><![CDATA[a<b]]></Col></Row></Rows></Dataset></Root>`), "nexacro-xml-4000", DecodeOptions{Strict: true})
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -44,7 +44,7 @@ func TestDecodeRejectsDuplicateXMLAttributes(t *testing.T) {
 }
 
 func TestEncodeXMLRoundTripsOrgRowAndConstColumn(t *testing.T) {
-	v, err := Decode([]byte(`<Root xmlns="http://www.nexacroplatform.com/platform/dataset" version="4000"><Datasets><Dataset id="d"><ColumnInfo><ConstColumn id="c" type="STRING" value="x"/><Column id="a" type="STRING"/></ColumnInfo><Rows><Row type="update"><Col id="a">new</Col><OrgRow><Col id="a">old</Col></OrgRow></Row></Rows></Dataset></Datasets></Root>`))
+	v, err := DecodeProfile([]byte(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="http://www.nexacroplatform.com/platform/dataset" ver="4000"><Dataset id="d"><ColumnInfo><ConstColumn id="c" type="STRING" value="x"/><Column id="a" type="STRING"/></ColumnInfo><Rows><Row type="update"><Col id="a">new</Col><OrgRow><Col id="a">old</Col></OrgRow></Row></Rows></Dataset></Root>`), "nexacro-xml-4000", DecodeOptions{Strict: true})
 	if err != nil {
 		t.Fatal(err)
 	}

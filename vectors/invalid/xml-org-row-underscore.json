@@ -1,0 +1,10 @@
+{
+  "id":"nexacro-xml.org-row-underscore.strict",
+  "operation":"decode",
+  "profile":"nexacro-xml-4000",
+  "options":{"strict":true},
+  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImEiIHR5cGU9IlNUUklORyIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93IHR5cGU9InVwZGF0ZSI+PENvbCBpZD0iYSI+bmV3PC9Db2w+PE9yZ19Sb3c+PENvbCBpZD0iYSI+b2xkPC9Db2w+PC9PcmdfUm93PjwvUm93PjwvUm93cz48L0RhdGFzZXQ+PC9Sb290Pg=="},
+  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/xml-org-row-underscore.json","license":"repository"},
+  "required":true
+}

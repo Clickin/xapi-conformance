@@ -1,0 +1,26 @@
+{
+  "id": "nexacro-json.missing-const-id.strict",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiRGF0YXNldHMiOlt7ImlkIjoiZCIsIkNvbHVtbkluZm8iOnsiQ29uc3RDb2x1bW4iOlt7InR5cGUiOiJTVFJJTkcifV0sIkNvbHVtbiI6W119LCJSb3dzIjpbXX1dfQ=="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/invalid/nexacro-json-missing-const-id.json",
+    "license": "repository"
+  },
+  "required": true
+}

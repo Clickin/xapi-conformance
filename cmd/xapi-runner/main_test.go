@@ -39,6 +39,24 @@ func TestHTTPClientRejectsMissingRequiredCapability(t *testing.T) {
 	}
 }
 
+func TestEvaluateComparesWireOutput(t *testing.T) {
+	v := vector{ID: "wire.test", Operation: "encode", Profile: "p", Required: true}
+	v.Expect.Kind = "wire"
+	v.Expect.Output = map[string]any{"encoding": "base64", "data": "eA=="}
+	actual := map[string]any{
+		"ok":     true,
+		"value":  map[string]any{"parameters": []any{}, "datasets": []any{}},
+		"output": map[string]any{"encoding": "base64", "data": "eA=="},
+	}
+	if result := evaluate(v, actual); !result.Pass {
+		t.Fatalf("matching wire failed: %+v", result)
+	}
+	actual["output"].(map[string]any)["data"] = "eQ=="
+	if result := evaluate(v, actual); result.Pass {
+		t.Fatal("different wire passed")
+	}
+}
+
 type roundTripFunc func(*http.Request) (*http.Response, error)
 
 func (f roundTripFunc) RoundTrip(r *http.Request) (*http.Response, error) { return f(r) }

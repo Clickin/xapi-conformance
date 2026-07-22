@@ -1,0 +1,10 @@
+{
+  "id":"nexacro-xml.leading-whitespace.strict",
+  "operation":"decode",
+  "profile":"nexacro-xml-4000",
+  "options":{"strict":true},
+  "input":{"encoding":"base64","data":"IDw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9InV0Zi04Ij8+PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXI9IjQwMDAiPjwvUm9vdD4="},
+  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
+  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/xml-leading-whitespace.json","license":"repository"},
+  "required":true
+}
