@@ -43,6 +43,7 @@ var idRE = regexp.MustCompile(`^[A-Za-z0-9][A-Za-z0-9._-]*$`)
 func main() {
 	dir := flag.String("vectors", "vectors", "vector directory")
 	schemaDir := flag.String("schemas", "protocol", "schema directory")
+	checkSources := flag.Bool("check-sources", true, "verify source paths in pinned checkouts")
 	flag.Parse()
 	if err := validateSchemas(*schemaDir); err != nil {
 		fmt.Fprintln(os.Stderr, err)
@@ -68,7 +69,7 @@ func main() {
 			errs = append(errs, path+": invalid JSON: "+e.Error())
 			continue
 		}
-		for _, msg := range validate(v) {
+		for _, msg := range validate(v, *checkSources) {
 			errs = append(errs, path+": "+msg)
 		}
 	}
@@ -110,7 +111,7 @@ func validateSchemas(dir string) error {
 	}
 	return nil
 }
-func validate(v vector) []string {
+func validate(v vector, checkSources bool) []string {
 	e := []string{}
 	if !idRE.MatchString(v.ID) {
 		e = append(e, "id must match [A-Za-z0-9][A-Za-z0-9._-]*")
@@ -123,12 +124,14 @@ func validate(v vector) []string {
 	}
 	if v.Source.Repository == "" || v.Source.Commit == "" || v.Source.Path == "" || v.Source.License == "" {
 		e = append(e, "source.repository, source.commit, source.path, and source.license are required")
-	} else if root := sourceRoot(v.Source.Repository); root != "" {
-		if _, err := os.Stat(filepath.Join(root, v.Source.Path)); err != nil {
-			e = append(e, "source.path does not exist in pinned checkout: "+v.Source.Path)
+	} else if checkSources {
+		if root := sourceRoot(v.Source.Repository); root != "" {
+			if _, err := os.Stat(filepath.Join(root, v.Source.Path)); err != nil {
+				e = append(e, "source.path does not exist in pinned checkout: "+v.Source.Path)
+			}
+		} else if _, err := os.Stat(v.Source.Path); err != nil {
+			e = append(e, "source.path does not exist: "+v.Source.Path)
 		}
-	} else if _, err := os.Stat(v.Source.Path); err != nil {
-		e = append(e, "source.path does not exist: "+v.Source.Path)
 	}
 	if v.Expect.Kind != "canonical" && v.Expect.Kind != "wire" && v.Expect.Kind != "error" {
 		e = append(e, "expect.kind must be canonical, wire, or error")

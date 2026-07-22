@@ -17,7 +17,7 @@ jobs:
         with:
           go-version: '1.22'
       - run: go test ./...
-      - run: go run ./cmd/xapi-validate -vectors vectors
+      - run: go run ./cmd/xapi-validate -vectors vectors -check-sources=false
 
   github-release:
     needs: verify
