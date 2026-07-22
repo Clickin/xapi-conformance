@@ -11,21 +11,6 @@ jobs:
         with:
           go-version: '1.22'
       - run: go test ./...
-      - name: Fetch pinned source inventories
-        run: |
-          git clone --depth 1 https://github.com/Clickin/xapi-js.git /tmp/xapi-js-source
-          git clone --depth 1 https://github.com/Clickin/xplatform-xml.git /tmp/xplatform-xml-source
-          git clone --depth 1 https://github.com/Clickin/xapi.git /tmp/xapi-source
-          git -C /tmp/xapi-js-source fetch --depth 1 origin 244339098838d098d7087588d039a24d26448b5e
-          git -C /tmp/xapi-js-source checkout 244339098838d098d7087588d039a24d26448b5e
-          git -C /tmp/xplatform-xml-source fetch --depth 1 origin cda8b6b31f64511ff9d22f64539c4b78e862455d
-          git -C /tmp/xplatform-xml-source checkout cda8b6b31f64511ff9d22f64539c4b78e862455d
-          git -C /tmp/xapi-source fetch --depth 1 origin e0d54759162bbb06aef8a1bc4c557f9fe7336991
-          git -C /tmp/xapi-source checkout e0d54759162bbb06aef8a1bc4c557f9fe7336991
-          mv /tmp/xapi-js-source sources/xapi-js
-          mv /tmp/xplatform-xml-source sources/xplatform-xml
-          mv /tmp/xapi-source sources/xapi
-      - run: go run ./cmd/xapi-import -output vectors/valid/imported
       - run: go run ./cmd/xapi-validate -vectors vectors
       - run: go run ./cmd/xapi-runner -command 'go run ./cmd/xapi-reference stdio' -json results.json -junit results.xml
       - if: always()

@@ -20,11 +20,12 @@ The wire contract is described in [`protocol/README.md`](protocol/README.md).
 
 ## Run the reference conformance suite
 
-The fastest CI path uses JSONL over stdin/stdout:
+The CI path validates the committed vector corpus and runs the reference
+adapter. Source inventory checkout is only needed when regenerating imported
+vectors and may require access to private upstream repositories.
 
 ```sh
 go test ./...
-go run ./cmd/xapi-import -output vectors/valid/imported
 go run ./cmd/xapi-validate -vectors vectors
 go run ./cmd/xapi-runner -command 'go run ./cmd/xapi-reference stdio' \
   -json results.json -junit results.xml
