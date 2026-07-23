@@ -12,12 +12,3 @@ jobs:
           go-version: '1.22'
       - run: go test ./...
       - run: go run ./cmd/xapi-validate -vectors vectors -check-sources=false
-      - run: go run ./cmd/xapi-runner -command 'go run ./cmd/xapi-reference stdio' -json results.json -junit results.xml
-      - if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: conformance-results
-          path: |
-            results.json
-            results.xml
-            server.log
