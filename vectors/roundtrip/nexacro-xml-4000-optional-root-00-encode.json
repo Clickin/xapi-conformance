@@ -1,0 +1,23 @@
+{
+  "id": "nexacro-xml-4000.optional-root-00.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PC9Sb290Pg=="
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/nexacro-xml-4000-optional-root-00-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

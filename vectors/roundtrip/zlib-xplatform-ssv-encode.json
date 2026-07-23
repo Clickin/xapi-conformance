@@ -1,0 +1,26 @@
+{
+  "id": "zlib.xplatform-ssv.encode",
+  "operation": "encode",
+  "profile": "xplatform-ssv",
+  "options": {
+    "zlib": true
+  },
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "/614AQAKAPX/U1NWOnV0Zi04HgEAAP//EigDCQ=="
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-xplatform-ssv-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

@@ -1,0 +1,23 @@
+{
+  "id": "xplatform-ssv.optional-root-00.encode",
+  "operation": "encode",
+  "profile": "xplatform-ssv",
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "U1NWOnV0Zi04Hg=="
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/xplatform-ssv-optional-root-00-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

@@ -1,0 +1,42 @@
+{
+  "id": "isolated.nexacro-ssv-column-form-8.decode",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpzVHJJbkcoNyk6U1VNOnRvdGFsHh4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0,
+              "size": "7",
+              "prop": "SUM",
+              "sumtext": "total"
+            }
+          ],
+          "constColumns": [],
+          "rows": []
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-nexacro-ssv-column-form-8.json",
+    "license": "repository"
+  },
+  "required": true
+}

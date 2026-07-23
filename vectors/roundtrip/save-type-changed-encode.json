@@ -1,0 +1,23 @@
+{
+  "id": "policy.save-type-changed.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "value": {
+    "saveType": 5,
+    "parameters": [],
+    "datasets": [{
+      "id": "d",
+      "columns": [{"id": "a", "type": "STRING", "index": 0}],
+      "constColumns": [],
+      "rows": [
+        {"type": "N", "orgRow": null, "values": {"a": {"state": "value", "lexical": "normal"}}},
+        {"type": "I", "orgRow": null, "values": {"a": {"state": "value", "lexical": "inserted"}}},
+        {"type": "U", "orgRow": {"type": "O", "orgRow": null, "values": {"a": {"state": "value", "lexical": "old"}}}, "values": {"a": {"state": "value", "lexical": "updated"}}},
+        {"type": "D", "orgRow": null, "values": {"a": {"state": "value", "lexical": "deleted"}}}
+      ]
+    }]
+  },
+  "expect": {"kind": "wire", "output": {"encoding": "base64", "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb2x1bW4iOlt7ImlkIjoiYSIsInR5cGUiOiJzdHJpbmcifV0sIkNvbnN0Q29sdW1uIjpbXX0sIlJvd3MiOlt7Il9Sb3dUeXBlXyI6IkkiLCJhIjoiaW5zZXJ0ZWQifSx7Il9Sb3dUeXBlXyI6IlUiLCJhIjoidXBkYXRlZCJ9LHsiX1Jvd1R5cGVfIjoiTyIsImEiOiJvbGQifSx7Il9Sb3dUeXBlXyI6IkQiLCJhIjoiZGVsZXRlZCJ9XSwiaWQiOiJkIn1dLCJ2ZXJzaW9uIjoiMS4wIn0="}},
+  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/save-type-changed-encode.json", "license": "repository"},
+  "required": true
+}

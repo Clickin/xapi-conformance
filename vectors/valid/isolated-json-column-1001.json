@@ -1,0 +1,43 @@
+{
+  "id": "isolated.json-column-1001.decode",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbeyJpZCI6ImQiLCJDb2x1bW5JbmZvIjp7IkNvbnN0Q29sdW1uIjpbXSwiQ29sdW1uIjpbeyJpZCI6ImEiLCJ0eXBlIjoic1RySW5HIiwic3VtdGV4dCI6InRvdGFsIn1dfSwiUm93cyI6W119XX0="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0,
+              "sumtext": "total"
+            }
+          ],
+          "constColumns": [],
+          "rows": []
+        }
+      ],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-json-column-1001.json",
+    "license": "repository"
+  },
+  "required": true
+}

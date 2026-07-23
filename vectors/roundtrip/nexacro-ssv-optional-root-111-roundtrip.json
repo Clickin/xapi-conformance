@@ -1,0 +1,51 @@
+{
+  "id": "nexacro-ssv.optional-root-111.roundtrip",
+  "operation": "roundtrip",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWOnV0Zi04HnA9dh5EYXRhc2V0OmQeX1Jvd1R5cGVfH2E6U1RSSU5HHh4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v"
+        }
+      ],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0
+            }
+          ],
+          "constColumns": [],
+          "rows": []
+        }
+      ],
+      "wire": {
+        "ssv": {
+          "codePage": "utf-8"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/nexacro-ssv-optional-root-111-roundtrip.json",
+    "license": "repository"
+  },
+  "required": true
+}

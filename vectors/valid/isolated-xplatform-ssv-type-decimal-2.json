@@ -1,0 +1,39 @@
+{
+  "id": "isolated.xplatform-ssv-type-decimal-2.decode",
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpEZWNpbWFsHh4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "DECIMAL",
+              "index": 0
+            }
+          ],
+          "constColumns": [],
+          "rows": []
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-xplatform-ssv-type-decimal-2.json",
+    "license": "repository"
+  },
+  "required": true
+}

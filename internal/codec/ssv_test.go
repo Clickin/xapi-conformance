@@ -32,11 +32,34 @@ func TestDecodeNexacroSSVDocumentedLayout(t *testing.T) {
 	if dataset.Rows[0].OrgRow == nil || dataset.Rows[0].OrgRow.Values["a"].Lexical != "old" {
 		t.Fatalf("original row lost: %+v", dataset.Rows)
 	}
-	if dataset.Rows[2].Values["a"].State != "empty" || dataset.Rows[2].Values["b"].State != "missing" {
-		t.Fatalf("Nexacro cell states lost: %+v", dataset.Rows[2].Values)
+	if dataset.Rows[1].Values["a"].State != "empty" || dataset.Rows[1].Values["b"].State != "missing" {
+		t.Fatalf("Nexacro cell states lost: %+v", dataset.Rows[1].Values)
 	}
 }
 
+func TestDecodeNexacroSSVPackedVariables(t *testing.T) {
+	wire := "SSV:utf-8\x1ep:INT=1\x1fq:STRING=two\x1e\x1e"
+	value, err := DecodeProfile([]byte(wire), nexacroSSVProfile, DecodeOptions{Strict: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(value.Parameters) != 2 || value.Parameters[0].ID != "p" || value.Parameters[1].ID != "q" {
+		t.Fatalf("packed variables lost: %+v", value.Parameters)
+	}
+}
+
+func TestDecodeSSVLatin1CodePage(t *testing.T) {
+	wire := []byte("SSV:iso-8859-1\x1ep:STRING=")
+	wire = append(wire, 0xe9)
+	wire = append(wire, []byte("\x1e\x1e")...)
+	value, err := DecodeProfile(wire, nexacroSSVProfile, DecodeOptions{Strict: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got := value.Parameters[0].Lexical; got != "é" {
+		t.Fatalf("latin-1 value = %q", got)
+	}
+}
 func TestDecodeXPlatformSSVPreservesLegacyCellStates(t *testing.T) {
 	wire := "SSV\x1eDataset:d\x1e_RowType_\x1fa:STRING\x1fb:STRING\x1eN\x1f\x1f\x02\x1e"
 	value, err := DecodeProfile([]byte(wire), xplatformSSVProfile, DecodeOptions{Strict: true})

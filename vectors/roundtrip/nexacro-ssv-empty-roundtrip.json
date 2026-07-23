@@ -1,0 +1,9 @@
+{
+  "id": "nexacro-ssv.empty.roundtrip",
+  "operation": "roundtrip",
+  "profile": "nexacro-ssv",
+  "input": {"encoding": "base64", "data": "U1NWOnV0Zi04Hh4="},
+  "expect": {"kind": "canonical", "value": {"parameters": [], "datasets": [], "wire": {"ssv": {"codePage": "utf-8"}}}},
+  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/nexacro-ssv-empty-roundtrip.json", "license": "repository"},
+  "required": true
+}

@@ -1,0 +1,66 @@
+{
+  "id": "nexacro-xml.zlib.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "zlib": true
+  },
+  "value": {
+    "parameters": [
+      {
+        "id": "p",
+        "type": "INT",
+        "state": "value",
+        "lexical": "7",
+        "wire": {
+          "valueForm": "text"
+        }
+      }
+    ],
+    "datasets": [
+      {
+        "id": "d",
+        "columns": [
+          {
+            "id": "a",
+            "type": "STRING",
+            "index": 0
+          }
+        ],
+        "constColumns": [],
+        "rows": [
+          {
+            "type": "N",
+            "orgRow": null,
+            "values": {
+              "a": {
+                "state": "value",
+                "lexical": "zlib"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "wire": {
+      "root": {
+        "namespace": "http://www.nexacroplatform.com/platform/dataset",
+        "ver": "4000"
+      }
+    }
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/614AUyMwWrzMBCEX0Xs/bf8Q6GlrDaH5tKb8RtsbTkVSFojbSK3T1/i1pDL8MHMN3jaUjQ3X2qQ7OB/14PxeZI55IuDqy7/XuBEOIqo2VLM1cGn6vpqbWuty37jqcgaWRcpqZsk2TWyLlKSnVm5egVz88XBU9/3QDhw4eTVl0o4HGzC7GAFo1+rdxCyAj2jHY6aHrgSnlnvv7s0A+GbxGvK73mRg/eKj7+qJeQLWEL7OB2lVbrnbv0p9B3Dx74jtKO036yE9szK1SuhHUWUfgIAAP//eVxqOA==",
+      "encoding": "base64"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-xml-zlib-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

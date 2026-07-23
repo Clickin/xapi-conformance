@@ -11,7 +11,9 @@
     "dataset":{"type":"object","required":["id","columns","constColumns","rows"],"properties":{
       "id":{"type":"string"},"columns":{"type":"array","items":{"type":"object","required":["id","type","index"]}},
       "constColumns":{"type":"array","items":{"type":"object","required":["id","type","value"]}},
-      "rows":{"type":"array","items":{"$ref":"#/$defs/row"}}
+      "rows":{"type":"array","items":{"$ref":"#/$defs/row"}},
+      "saveType":{"type":"integer","minimum":0,"maximum":5},
+      "wire":{"type":"object"}
     },"additionalProperties":true}
   },
   "type":"object","required":["parameters","datasets"],"properties":{
@@ -19,6 +21,7 @@
       "id":{"type":"string"},"type":{"type":"string"},"lexical":{"type":"string"},
       "state":{"enum":["value","missing","null","empty"]},"index":{"type":"integer"},"wire":{"type":"object"}}}},
     "datasets":{"type":"array","items":{"$ref":"#/$defs/dataset"}},
+    "saveType":{"type":"integer","minimum":0,"maximum":5},
     "wire":{"type":"object"}
   },"additionalProperties":false
 }

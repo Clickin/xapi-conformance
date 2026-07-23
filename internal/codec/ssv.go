@@ -1,6 +1,7 @@
 package codec
 
 import (
+	"bytes"
 	"fmt"
 	"strings"
 	"unicode/utf8"
@@ -15,9 +16,30 @@ const (
 	xplatformSSVProfile       = "xplatform-ssv"
 )
 
+func decodeSSVText(b []byte) (string, error) {
+	if utf8.Valid(b) {
+		return string(b), nil
+	}
+	end := bytes.IndexByte(b, 0x1e)
+	if end < 0 {
+		return "", fmt.Errorf("SSV input is not valid UTF-8")
+	}
+	header := string(b[:end])
+	codePage := strings.ToLower(strings.TrimPrefix(header, "SSV:"))
+	if codePage != "iso-8859-1" && codePage != "latin1" && codePage != "windows-1252" {
+		return "", fmt.Errorf("unsupported SSV code page %q", codePage)
+	}
+	runes := make([]rune, len(b))
+	for i, value := range b {
+		runes[i] = rune(value)
+	}
+	return string(runes), nil
+}
+
 func ssvValue(b []byte, profile string, strict bool, unitSeparator, recordSeparator string) (protocol.Value, error) {
-	if !utf8.Valid(b) {
-		return protocol.Value{}, fmt.Errorf("SSV input is not valid UTF-8")
+	text, err := decodeSSVText(b)
+	if err != nil {
+		return protocol.Value{}, err
 	}
 	if unitSeparator == "" {
 		unitSeparator = defaultSSVUnitSeparator
@@ -29,7 +51,7 @@ func ssvValue(b []byte, profile string, strict bool, unitSeparator, recordSepara
 		return protocol.Value{}, fmt.Errorf("SSV separators must differ")
 	}
 
-	records, tail := splitSSVRecords(string(b), recordSeparator)
+	records, tail := splitSSVRecords(text, recordSeparator)
 	if tail != "" {
 		if strict {
 			return protocol.Value{}, fmt.Errorf("SSV record is not terminated")
@@ -79,11 +101,20 @@ func ssvValue(b []byte, profile string, strict bool, unitSeparator, recordSepara
 			i = next
 			continue
 		}
-		parameter, err := parseSSVParameter(record, profile)
-		if err != nil {
-			return protocol.Value{}, err
+		variableSeparator := unitSeparator
+		if variableSeparator == "" {
+			variableSeparator = "\x1f"
 		}
-		out.Parameters = replaceSSVParameter(out.Parameters, parameter)
+		for _, variableRecord := range strings.Split(record, variableSeparator) {
+			if variableRecord == "" {
+				continue
+			}
+			parameter, err := parseSSVParameter(variableRecord, profile)
+			if err != nil {
+				return protocol.Value{}, err
+			}
+			out.Parameters = replaceSSVParameter(out.Parameters, parameter)
+		}
 		i++
 	}
 	for i := range out.Parameters {
@@ -186,11 +217,11 @@ func parseSSVDataset(records []string, start int, profile string, strict bool, u
 			continue
 		}
 		if row.Type == "O" {
-			if len(dataset.Rows) == 0 || dataset.Rows[len(dataset.Rows)-1].Type != "U" {
-				continue
+			if len(dataset.Rows) > 0 {
+				original := row
+				dataset.Rows[len(dataset.Rows)-1].OrgRow = &original
 			}
-			original := row
-			dataset.Rows[len(dataset.Rows)-1].OrgRow = &original
+			continue
 		}
 		dataset.Rows = append(dataset.Rows, row)
 	}
@@ -397,11 +428,11 @@ func encodeSSV(value protocol.Value, profile string) ([]byte, error) {
 				writeRecord(record)
 			}
 		}
-		if profile == nexacroSSVProfile || i+1 < len(value.Datasets) {
+		if ssvProfileUsesNexacroFraming(profile) || i+1 < len(value.Datasets) {
 			writeRecord("")
 		}
 	}
-	if profile == nexacroSSVProfile && len(value.Datasets) == 0 {
+	if ssvProfileUsesNexacroFraming(profile) && len(value.Datasets) == 0 {
 		writeRecord("")
 	}
 	return []byte(out.String()), nil
@@ -507,6 +538,12 @@ func encodeSSVCell(cell protocol.Cell, profile, unitSeparator, recordSeparator s
 	}
 }
 
+// ssvProfileUsesNexacroFraming reports whether a profile follows the Nexacro
+// SSV framing rules (per-dataset null record and terminal null record).
+func ssvProfileUsesNexacroFraming(profile string) bool {
+	return profile == nexacroSSVProfile
+}
+
 func validateSSVToken(value, unitSeparator, recordSeparator string) error {
 	if strings.Contains(value, unitSeparator) || strings.Contains(value, recordSeparator) {
 		return fmt.Errorf("value contains an SSV separator")
@@ -518,7 +555,7 @@ func isKnownType(dataType string) bool {
 	switch strings.ToUpper(dataType) {
 	case "STRING", "CHAR", "SHORT", "USHORT", "INT", "UINT", "LONG", "ULONG",
 		"FLOAT", "DOUBLE", "DECIMAL", "BIGDECIMAL", "BOOLEAN", "DATE", "TIME",
-		"DATETIME", "BLOB", "FILE", "NULL":
+		"DATETIME", "BLOB", "FILE", "NULL", "UNDEFINED", "DATASET", "INVALID":
 		return true
 	default:
 		return false

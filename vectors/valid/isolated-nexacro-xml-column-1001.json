@@ -1,0 +1,46 @@
+{
+  "id": "isolated.nexacro-xml-column-1001.decode",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImEiIHR5cGU9InNUckluRyIgc3VtdGV4dD0idG90YWwiLz48L0NvbHVtbkluZm8+PFJvd3MvPjwvRGF0YXNldD48L1Jvb3Q+"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0,
+              "sumtext": "total"
+            }
+          ],
+          "constColumns": [],
+          "rows": []
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-nexacro-xml-column-1001.json",
+    "license": "repository"
+  },
+  "required": true
+}

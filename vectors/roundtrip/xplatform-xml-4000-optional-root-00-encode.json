@@ -1,0 +1,23 @@
+{
+  "id": "xplatform-xml-4000.optional-root-00.encode",
+  "operation": "encode",
+  "profile": "xplatform-xml-4000",
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48L1Jvb3Q+"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/xplatform-xml-4000-optional-root-00-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

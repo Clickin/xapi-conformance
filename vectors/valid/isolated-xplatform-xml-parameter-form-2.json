@@ -1,0 +1,41 @@
+{
+  "id": "isolated.xplatform-xml-parameter-form-2.decode",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJwIj48L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PC9Sb290Pg=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p",
+          "type": "STRING",
+          "state": "empty",
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-xplatform-xml-parameter-form-2.json",
+    "license": "repository"
+  },
+  "required": true
+}

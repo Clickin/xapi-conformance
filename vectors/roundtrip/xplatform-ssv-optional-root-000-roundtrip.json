@@ -1,0 +1,26 @@
+{
+  "id": "xplatform-ssv.optional-root-000.roundtrip",
+  "operation": "roundtrip",
+  "profile": "xplatform-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHg=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/xplatform-ssv-optional-root-000-roundtrip.json",
+    "license": "repository"
+  },
+  "required": true
+}

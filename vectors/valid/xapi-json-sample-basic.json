@@ -13,7 +13,6 @@
       {"id":"Column1","type":"STRING","index":1,"size":"256"}
     ],"constColumns":[{"id":"ConstCol1","type":"STRING","value":{"state":"value","lexical":"10"},"size":"10"}],"rows":[
       {"type":"U","orgRow":{"type":"O","orgRow":null,"values":{"Column0":{"state":"value","lexical":"1"},"Column1":{"state":"value","lexical":"old"}}},"values":{"Column0":{"state":"value","lexical":"1"},"Column1":{"state":"value","lexical":"new"}}},
-      {"type":"O","orgRow":null,"values":{"Column0":{"state":"value","lexical":"1"},"Column1":{"state":"value","lexical":"old"}}},
       {"type":"N","orgRow":null,"values":{"Column0":{"state":"value","lexical":"2"},"Column1":{"state":"value","lexical":"normal"}}}
     ]}],"wire":{"version":"1.0"}
   }},

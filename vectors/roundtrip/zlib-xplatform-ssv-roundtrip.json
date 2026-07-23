@@ -1,0 +1,32 @@
+{
+  "id": "zlib.xplatform-ssv.roundtrip",
+  "operation": "roundtrip",
+  "profile": "xplatform-ssv",
+  "options": {
+    "strict": false,
+    "zlib": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "/614AQAKAPX/U1NWOnV0Zi04HgEAAP//EigDCQ=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [],
+      "wire": {
+        "ssv": {
+          "codePage": "utf-8"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-xplatform-ssv-roundtrip.json",
+    "license": "repository"
+  },
+  "required": true
+}

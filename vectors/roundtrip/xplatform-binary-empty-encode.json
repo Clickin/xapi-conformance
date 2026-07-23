@@ -1,0 +1,9 @@
+{
+  "id": "xplatform-binary.empty.encode",
+  "operation": "encode",
+  "profile": "xplatform-binary-5000",
+  "value": {"parameters": [], "datasets": []},
+  "expect": {"kind": "wire", "output": {"encoding": "base64", "data": "/hATiAACAAA="}},
+  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/xplatform-binary-empty-encode.json", "license": "repository"},
+  "required": true
+}

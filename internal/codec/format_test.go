@@ -3,6 +3,7 @@ package codec
 import (
 	"bytes"
 	"fmt"
+	"strings"
 	"testing"
 
 	"github.com/Clickin/xapi-conformance/internal/protocol"
@@ -140,7 +141,9 @@ func TestDecodeJSONAppliesDocumentedDefaultsAndOriginalRowRules(t *testing.T) {
 	if dataset.ConstColumns[0].Type != "INT" || dataset.Columns[0].Type != "STRING" || dataset.Columns[0].Prop != "sum" || dataset.Columns[0].SumText != "total" {
 		t.Fatalf("column defaults: %+v %+v", dataset.ConstColumns, dataset.Columns)
 	}
-	if len(dataset.Rows) != 3 || dataset.Rows[1].Type != "U" || dataset.Rows[1].OrgRow == nil || dataset.Rows[1].OrgRow.Values["a"].Lexical != "old" {
+	if len(dataset.Rows) != 2 ||
+		dataset.Rows[0].Type != "N" || dataset.Rows[0].OrgRow == nil || dataset.Rows[0].OrgRow.Values["a"].Lexical != "ignored" ||
+		dataset.Rows[1].Type != "U" || dataset.Rows[1].OrgRow == nil || dataset.Rows[1].OrgRow.Values["a"].Lexical != "old" {
 		t.Fatalf("original row rules: %+v", dataset.Rows)
 	}
 }
@@ -221,5 +224,27 @@ func TestTypesAreCaseInsensitiveAcrossJSONAndSSV(t *testing.T) {
 	}
 	if ssvValue.Parameters[0].Type != "STRING" || ssvValue.Datasets[0].ConstColumns[0].Type != "INT" || ssvValue.Datasets[0].Columns[0].Type != "BIGDECIMAL" {
 		t.Fatalf("SSV types were not normalized: %+v", ssvValue)
+	}
+}
+
+func TestEncodeUsesPublishedTypeAliases(t *testing.T) {
+	value := protocol.Value{
+		Parameters: []protocol.Parameter{
+			{ID: "bool", Type: "BOOLEAN", State: "value", Lexical: "true"},
+			{ID: "long", Type: "LONG", State: "value", Lexical: "7"},
+			{ID: "double", Type: "DOUBLE", State: "value", Lexical: "1.5"},
+			{ID: "file", Type: "FILE", State: "value", Lexical: "AA=="},
+		},
+		Datasets: []protocol.Dataset{},
+	}
+	wire, err := Encode(value, "nexacro-json-1.0")
+	if err != nil {
+		t.Fatal(err)
+	}
+	text := string(wire)
+	for _, alias := range []string{`"type":"int"`, `"type":"bigdecimal"`, `"type":"float"`, `"type":"blob"`} {
+		if !strings.Contains(text, alias) {
+			t.Fatalf("missing published alias %s in %s", alias, text)
+		}
 	}
 }

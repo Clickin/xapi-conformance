@@ -27,14 +27,29 @@ func TestCapabilitiesAdvertiseAllReferenceProfiles(t *testing.T) {
 	capabilities(w, httptest.NewRequest(http.MethodGet, "/capabilities", nil))
 	var out struct {
 		Profiles []struct {
-			Name string `json:"name"`
+			Name       string   `json:"name"`
+			Operations []string `json:"operations"`
 		} `json:"profiles"`
 	}
 	if err := json.Unmarshal(w.Body.Bytes(), &out); err != nil {
 		t.Fatal(err)
 	}
-	if len(out.Profiles) != 5 {
+	expected := []string{
+		"nexacro-json-1.0",
+		"nexacro-xml-4000",
+		"xplatform-xml-4000",
+		"nexacro-ssv",
+		"xplatform-ssv",
+		"nexacro-binary-5000",
+		"xplatform-binary-5000",
+	}
+	if len(out.Profiles) != len(expected) {
 		t.Fatalf("profiles = %+v", out.Profiles)
+	}
+	for i, name := range expected {
+		if out.Profiles[i].Name != name {
+			t.Fatalf("profile[%d] = %q, want %q", i, out.Profiles[i].Name, name)
+		}
 	}
 }
 

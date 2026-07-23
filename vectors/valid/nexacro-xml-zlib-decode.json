@@ -1,0 +1,63 @@
+{
+  "id": "nexacro-xml.zlib.decode",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "/614AU2NQQ6CMBBFr9LMXoqJicbQutDEsCEGvUCFoiS0Q2AU9fSOVQybyW/n/TfJ5uEacbddX6NXMI9iENYXWNb+ouBG1WwFG53kiCSY9L2CK1G7lnIYhsjbhyk6bBtDFXYuKtDJ8SFLQ6a3BB+7gkUcx6CTg+mMs8T3JlnUpYIWBD1bqyDNTqCXifyjepK5tvt6Q6lk5Rabm/Opr3DMYWVG3/GUp9keJGumaI4Dy3iG1q+iX019DhzTYfeZzMnf1fCNpN/97WkY"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p",
+          "type": "INT",
+          "state": "value",
+          "lexical": "7",
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "a": {
+                  "state": "value",
+                  "lexical": "zlib"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-xml-zlib-decode.json",
+    "license": "repository"
+  },
+  "required": true
+}

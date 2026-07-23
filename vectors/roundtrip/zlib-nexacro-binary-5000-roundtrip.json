@@ -1,0 +1,31 @@
+{
+  "id": "zlib.nexacro-binary-5000.roundtrip",
+  "operation": "roundtrip",
+  "profile": "nexacro-binary-5000",
+  "options": {
+    "strict": false,
+    "zlib": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "/614AQAIAPf//hATiAACAAABAAD//wuIAaw="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [],
+      "wire": {
+        "format": "PlatformBinary",
+        "version": "5000"
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-nexacro-binary-5000-roundtrip.json",
+    "license": "repository"
+  },
+  "required": true
+}

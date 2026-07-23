@@ -1,0 +1,26 @@
+{
+  "id": "zlib.nexacro-binary-5000.encode",
+  "operation": "encode",
+  "profile": "nexacro-binary-5000",
+  "options": {
+    "zlib": true
+  },
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "/614AQAIAPf//hATiAACAAABAAD//wuIAaw="
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-nexacro-binary-5000-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

@@ -45,14 +45,17 @@ type Row struct {
 	Values map[string]Cell `json:"values"`
 }
 type Dataset struct {
-	ID           string        `json:"id"`
-	Columns      []Column      `json:"columns"`
-	ConstColumns []ConstColumn `json:"constColumns"`
-	Rows         []Row         `json:"rows"`
+	ID           string         `json:"id"`
+	Columns      []Column       `json:"columns"`
+	ConstColumns []ConstColumn  `json:"constColumns"`
+	Rows         []Row          `json:"rows"`
+	SaveType     int            `json:"saveType,omitempty"`
+	Wire         map[string]any `json:"wire,omitempty"`
 }
 type Value struct {
 	Parameters []Parameter    `json:"parameters"`
 	Datasets   []Dataset      `json:"datasets"`
+	SaveType   int            `json:"saveType,omitempty"`
 	Wire       map[string]any `json:"wire,omitempty"`
 }
 

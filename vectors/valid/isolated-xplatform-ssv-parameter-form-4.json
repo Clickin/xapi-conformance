@@ -1,0 +1,35 @@
+{
+  "id": "isolated.xplatform-ssv-parameter-form-4.decode",
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHnA6c1RySW5HKDcpHg=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p",
+          "type": "STRING",
+          "state": "missing",
+          "wire": {
+            "length": "7"
+          }
+        }
+      ],
+      "datasets": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-xplatform-ssv-parameter-form-4.json",
+    "license": "repository"
+  },
+  "required": true
+}

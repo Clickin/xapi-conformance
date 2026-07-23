@@ -1,0 +1,43 @@
+{
+  "id": "nexacro-ssv.optional-root-11.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "value": {
+    "parameters": [
+      {
+        "id": "p",
+        "type": "STRING",
+        "state": "value",
+        "lexical": "x"
+      }
+    ],
+    "datasets": [
+      {
+        "id": "d",
+        "columns": [
+          {
+            "id": "a",
+            "type": "STRING",
+            "index": 0
+          }
+        ],
+        "constColumns": [],
+        "rows": []
+      }
+    ]
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "U1NWOnV0Zi04HnA6U1RSSU5HPXgeRGF0YXNldDpkHl9Sb3dUeXBlXx9hOlNUUklORx4e"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/nexacro-ssv-optional-root-11-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

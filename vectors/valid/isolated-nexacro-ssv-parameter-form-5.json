@@ -1,0 +1,36 @@
+{
+  "id": "isolated.nexacro-ssv-parameter-form-5.decode",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHnA6c1RySW5HKDcpPXYe"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "wire": {
+            "length": "7"
+          }
+        }
+      ],
+      "datasets": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-nexacro-ssv-parameter-form-5.json",
+    "license": "repository"
+  },
+  "required": true
+}

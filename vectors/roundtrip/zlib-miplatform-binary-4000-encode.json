@@ -1,0 +1,26 @@
+{
+  "id": "zlib.miplatform-binary-4000.encode",
+  "operation": "encode",
+  "profile": "miplatform-binary-4000",
+  "options": {
+    "zlib": true
+  },
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "/614AQAKAPX/AAH+EA+gAAIAAAEAAP//C/MBwQ=="
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-miplatform-binary-4000-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

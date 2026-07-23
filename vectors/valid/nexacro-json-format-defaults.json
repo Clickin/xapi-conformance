@@ -10,9 +10,8 @@
       {"id":"s","type":"STRING","state":"value","lexical":"1","index":2}
     ],
     "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0,"prop":"sum","sumtext":"total"}],"constColumns":[{"id":"c","type":"INT","value":{"state":"value","lexical":"10"}}],"rows":[
-      {"type":"N","orgRow":null,"values":{"a":{"state":"value","lexical":"normal"}}},
-      {"type":"U","orgRow":{"type":"O","orgRow":null,"values":{"a":{"state":"value","lexical":"old"}}},"values":{"a":{"state":"value","lexical":"new"}}},
-      {"type":"O","orgRow":null,"values":{"a":{"state":"value","lexical":"old"}}}
+      {"type":"N","orgRow":{"type":"O","orgRow":null,"values":{"a":{"state":"value","lexical":"ignored"}}},"values":{"a":{"state":"value","lexical":"normal"}}},
+      {"type":"U","orgRow":{"type":"O","orgRow":null,"values":{"a":{"state":"value","lexical":"old"}}},"values":{"a":{"state":"value","lexical":"new"}}}
     ]}],
     "wire":{"version":"1.0"}
   }},

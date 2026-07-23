@@ -1,0 +1,30 @@
+{
+  "id": "zlib.nexacro-json-1.0.roundtrip",
+  "operation": "roundtrip",
+  "profile": "nexacro-json-1.0",
+  "options": {
+    "strict": false,
+    "zlib": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "/614AQARAO7/eyJ2ZXJzaW9uIjoiMS4wIn0BAAD//zUhBVA="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-nexacro-json-1-0-roundtrip.json",
+    "license": "repository"
+  },
+  "required": true
+}

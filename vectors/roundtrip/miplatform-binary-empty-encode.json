@@ -1,0 +1,9 @@
+{
+  "id": "miplatform-binary.empty.encode",
+  "operation": "encode",
+  "profile": "miplatform-binary-4000",
+  "value": {"parameters": [], "datasets": []},
+  "expect": {"kind": "canonical", "value": {"parameters": [], "datasets": []}},
+  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/miplatform-binary-empty-encode.json", "license": "repository"},
+  "required": true
+}

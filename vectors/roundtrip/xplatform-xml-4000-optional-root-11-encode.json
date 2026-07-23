@@ -1,0 +1,43 @@
+{
+  "id": "xplatform-xml-4000.optional-root-11.encode",
+  "operation": "encode",
+  "profile": "xplatform-xml-4000",
+  "value": {
+    "parameters": [
+      {
+        "id": "p",
+        "type": "STRING",
+        "state": "value",
+        "lexical": "x"
+      }
+    ],
+    "datasets": [
+      {
+        "id": "d",
+        "columns": [
+          {
+            "id": "a",
+            "type": "STRING",
+            "index": 0
+          }
+        ],
+        "constColumns": [],
+        "rows": []
+      }
+    ]
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJwIiB0eXBlPSJzdHJpbmciPng8L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIvPjwvQ29sdW1uSW5mbz48L0RhdGFzZXQ+PC9Sb290Pg=="
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/xplatform-xml-4000-optional-root-11-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

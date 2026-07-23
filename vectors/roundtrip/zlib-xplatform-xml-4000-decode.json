@@ -1,0 +1,32 @@
+{
+  "id": "zlib.xplatform-xml-4000.decode",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "strict": false
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "/614AQTAwQ3CIBgF4FXIf7dg4sEYoBcn6AZYQZsAr4Fn6fh+dj5LVkdsfUN1cp2MqFhXvLf6cfJjutxl9nYBqM6Sa3fyJfeH1mOMiXjFjsRpRdF7DkxoRT8DQ48UdcTm5GaMEW/1AtD/AwAA//85NSVT"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-xplatform-xml-4000-decode.json",
+    "license": "repository"
+  },
+  "required": true
+}

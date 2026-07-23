@@ -1,0 +1,23 @@
+{
+  "id": "nexacro-ssv.optional-root-00.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "U1NWOnV0Zi04Hh4="
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/nexacro-ssv-optional-root-00-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

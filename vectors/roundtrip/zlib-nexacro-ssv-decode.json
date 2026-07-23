@@ -1,0 +1,31 @@
+{
+  "id": "zlib.nexacro-ssv.decode",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": false
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "/614AQALAPT/U1NWOnV0Zi04Hh4BAAD//xVPAyc="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [],
+      "wire": {
+        "ssv": {
+          "codePage": "utf-8"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-nexacro-ssv-decode.json",
+    "license": "repository"
+  },
+  "required": true
+}

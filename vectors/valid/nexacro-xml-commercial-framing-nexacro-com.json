@@ -1,0 +1,63 @@
+{
+  "id": "nexacro-xml.commercial-framing-nexacro-com.decode",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXI9IjUwMDAiPjxQYXJhbWV0ZXJzPjxQYXJhbWV0ZXIgaWQ9InAiPnY8L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImEiIHR5cGU9IlNUUklORyIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9ImEiPng8L0NvbD48L1Jvdz48L1Jvd3M+PC9EYXRhc2V0PjwvUm9vdD4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [
+        {
+          "id": "p",
+          "type": "STRING",
+          "state": "value",
+          "lexical": "v",
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "orgRow": null,
+              "values": {
+                "a": {
+                  "state": "value",
+                  "lexical": "x"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacro.com/platform/dataset",
+          "ver": "5000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-xml-commercial-framing-nexacro-com.json",
+    "license": "repository"
+  },
+  "required": true
+}

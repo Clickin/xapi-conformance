@@ -2,6 +2,7 @@ package codec
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
@@ -26,26 +27,103 @@ func DecodeWithStrict(b []byte, strict bool) (protocol.Value, error) {
 	if len(trimmed) == 0 {
 		return protocol.Value{}, fmt.Errorf("empty document")
 	}
-	if bytes.HasPrefix(trimmed, []byte("SSV")) {
-		return ssvValue(trimmed, nexacroSSVProfile, strict, "", "")
+	var value protocol.Value
+	var err error
+	switch {
+	case len(trimmed) >= 2 && ((trimmed[0] == 0xfe && trimmed[1] == 0x10) || (trimmed[0] == 0xfe && trimmed[1] == 0x01)):
+		value, err = binaryValue(trimmed, strict)
+	case bytes.HasPrefix(trimmed, []byte("SSV")):
+		value, err = ssvValue(trimmed, nexacroSSVProfile, strict, "", "")
+	case trimmed[0] == '<':
+		value, err = xmlValue(b, strict, "")
+	default:
+		value, err = jsonValue(b, strict)
 	}
-	if trimmed[0] == '<' {
-		return xmlValue(b, strict, "")
-	}
-	return jsonValue(b, strict)
+	return validateDecodedValue(value, err, strict)
 }
 
 func DecodeProfile(b []byte, profile string, options DecodeOptions) (protocol.Value, error) {
+	var value protocol.Value
+	var err error
 	switch profile {
 	case "nexacro-json-1.0":
-		return jsonValue(b, options.Strict)
+		value, err = jsonValue(b, options.Strict)
 	case "xplatform-xml-4000", "nexacro-xml-4000":
-		return xmlValue(b, options.Strict, profile)
+		value, err = xmlValue(b, options.Strict, profile)
 	case nexacroSSVProfile, xplatformSSVProfile:
-		return ssvValue(b, profile, options.Strict, options.SSVUnitSeparator, options.SSVRecordSeparator)
+		value, err = ssvValue(b, profile, options.Strict, options.SSVUnitSeparator, options.SSVRecordSeparator)
+	case nexacroBinaryProfile, xplatformBinaryProfile:
+		value, err = binaryValue(b, options.Strict)
 	default:
 		return protocol.Value{}, fmt.Errorf("unsupported profile %q", profile)
 	}
+	return validateDecodedValue(value, err, options.Strict)
+}
+
+func validateDecodedValue(value protocol.Value, decodeErr error, strict bool) (protocol.Value, error) {
+	if decodeErr != nil || !strict {
+		return value, decodeErr
+	}
+	if err := validateBlobLexicals(value); err != nil {
+		return protocol.Value{}, err
+	}
+	return value, nil
+}
+
+func validateBlobLexicals(value protocol.Value) error {
+	for i, parameter := range value.Parameters {
+		if isBlobType(parameter.Type) {
+			if err := validateBlobCell(protocol.Cell{State: parameter.State, Lexical: parameter.Lexical}); err != nil {
+				return fmt.Errorf("Parameters[%d].value: %w", i, err)
+			}
+		}
+	}
+	for di, dataset := range value.Datasets {
+		for ci, column := range dataset.ConstColumns {
+			if isBlobType(column.Type) {
+				if err := validateBlobCell(column.Value); err != nil {
+					return fmt.Errorf("Datasets[%d].ConstColumns[%d].value: %w", di, ci, err)
+				}
+			}
+		}
+		columnTypes := make(map[string]string, len(dataset.Columns))
+		for _, column := range dataset.Columns {
+			columnTypes[column.ID] = column.Type
+		}
+		for ri, row := range dataset.Rows {
+			for id, cell := range row.Values {
+				if isBlobType(columnTypes[id]) {
+					if err := validateBlobCell(cell); err != nil {
+						return fmt.Errorf("Datasets[%d].Rows[%d].%s: %w", di, ri, id, err)
+					}
+				}
+			}
+			if row.OrgRow != nil {
+				for id, cell := range row.OrgRow.Values {
+					if isBlobType(columnTypes[id]) {
+						if err := validateBlobCell(cell); err != nil {
+							return fmt.Errorf("Datasets[%d].Rows[%d].OrgRow.%s: %w", di, ri, id, err)
+						}
+					}
+				}
+			}
+		}
+	}
+	return nil
+}
+
+func isBlobType(dataType string) bool {
+	return strings.EqualFold(dataType, "BLOB") || strings.EqualFold(dataType, "FILE")
+}
+
+func validateBlobCell(cell protocol.Cell) error {
+	if cell.State != "value" && cell.State != "empty" {
+		return nil
+	}
+	if _, err := base64.StdEncoding.DecodeString(cell.Lexical); err != nil {
+		return fmt.Errorf("invalid base64 BLOB value")
+	}
+	return nil
 }
 
 func jsonValue(b []byte, strict bool) (protocol.Value, error) {
@@ -120,11 +198,11 @@ func jsonValue(b []byte, strict bool) (protocol.Value, error) {
 				row.Values[c.ID] = rawCell(r[c.ID])
 			}
 			if row.Type == "O" {
-				if len(ds.Rows) == 0 || ds.Rows[len(ds.Rows)-1].Type != "U" {
-					continue
+				if len(ds.Rows) > 0 {
+					org := row
+					ds.Rows[len(ds.Rows)-1].OrgRow = &org
 				}
-				org := row
-				ds.Rows[len(ds.Rows)-1].OrgRow = &org
+				continue
 			}
 			ds.Rows = append(ds.Rows, row)
 		}
@@ -528,11 +606,8 @@ func validateXMLStructure(b []byte, strict bool, profile string) (xmlSyntax, err
 					return syntax, fmt.Errorf("root element must be Root")
 				}
 				rootSeen = true
-				if strict {
-					expected := xmlNamespace(profile)
-					if expected != "" && element.Name.Space != expected {
-						return syntax, fmt.Errorf("unexpected XML namespace %q", element.Name.Space)
-					}
+				if strict && !xmlAcceptedNamespace(profile, element.Name.Space) {
+					return syntax, fmt.Errorf("unexpected XML namespace %q", element.Name.Space)
 				}
 			}
 			if strict {
@@ -607,6 +682,35 @@ func xmlNamespace(profile string) string {
 	}
 }
 
+// xmlAcceptedNamespace reports whether a decoded root namespace is acceptable
+// for the profile. Decode is intentionally permissive: it accepts both the
+// canonical namespace emitted by Encode and the variant forms the commercial
+// jars emit (tobesoft lowercase "dataset"; nexacro "nexacro.com"). Encode
+// still emits only the canonical form returned by xmlNamespace.
+func xmlAcceptedNamespace(profile, namespace string) bool {
+	accepted := xmlAcceptedNamespaces(profile)
+	if len(accepted) == 0 {
+		return true
+	}
+	for _, value := range accepted {
+		if namespace == value {
+			return true
+		}
+	}
+	return false
+}
+
+func xmlAcceptedNamespaces(profile string) []string {
+	switch profile {
+	case "xplatform-xml-4000":
+		return []string{"http://www.tobesoft.com/platform/Dataset", "http://www.tobesoft.com/platform/dataset"}
+	case "nexacro-xml-4000":
+		return []string{"http://www.nexacroplatform.com/platform/dataset", "http://www.nexacro.com/platform/dataset"}
+	default:
+		return nil
+	}
+}
+
 func rejectDuplicateXMLAttrs(b []byte) error {
 	d := xml.NewDecoder(bytes.NewReader(b))
 	for {
@@ -631,7 +735,7 @@ func rejectDuplicateXMLAttrs(b []byte) error {
 }
 
 func xmlRow(r xrow, columns []protocol.Column) protocol.Row {
-	typ := map[string]string{"insert": "I", "update": "U", "delete": "D", "normal": "N"}[strings.ToLower(r.Type)]
+	typ := map[string]string{"insert": "I", "update": "U", "delete": "D", "normal": "N"}[r.Type]
 	if typ == "" {
 		typ = "N"
 	}

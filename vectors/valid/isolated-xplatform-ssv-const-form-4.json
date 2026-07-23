@@ -1,0 +1,48 @@
+{
+  "id": "isolated.xplatform-ssv-const-form-4.decode",
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHkRhdGFzZXQ6ZB5fQ29uc3RfH2M6c1RySW5HKDcpHl9Sb3dUeXBlXx9hOlNUUklORx4e"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "type": "STRING",
+              "value": {
+                "state": "missing"
+              },
+              "size": "7"
+            }
+          ],
+          "rows": []
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-xplatform-ssv-const-form-4.json",
+    "license": "repository"
+  },
+  "required": true
+}

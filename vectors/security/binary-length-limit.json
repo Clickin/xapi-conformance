@@ -1,0 +1,10 @@
+{
+  "id": "security.binary-length-limit",
+  "operation": "decode",
+  "profile": "nexacro-binary-5000",
+  "options": {"strict": true},
+  "input": {"encoding": "base64", "data": "/hATiP//"},
+  "expect": {"kind": "error", "error": {"class": "malformed-input", "path": "wire"}},
+  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/security/binary-length-limit.json", "license": "repository"},
+  "required": true
+}

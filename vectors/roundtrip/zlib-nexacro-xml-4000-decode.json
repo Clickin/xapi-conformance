@@ -1,0 +1,32 @@
+{
+  "id": "zlib.nexacro-xml-4000.decode",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "strict": false
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "/614AQTAUQ7DEBgH8KvI9z4s2cOyoHfoDUTZmuAvfCvH789sq2RxxT5OVEtPqUnEGnCc9Wvpz+nxps2ZHWCxSq7D0o+5fZSac8oalw8dLXtO6EUGFNWy54Re1OHZj8gkrtgtvbTW5IzaAXZ3AAAA//9oOChi"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-nexacro-xml-4000-decode.json",
+    "license": "repository"
+  },
+  "required": true
+}

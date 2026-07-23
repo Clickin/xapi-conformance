@@ -1,0 +1,29 @@
+{
+  "id": "security.miplatform-xml-payload-limit",
+  "operation": "decode",
+  "profile": "miplatform-xml",
+  "options": {
+    "strict": true,
+    "limits": {
+      "payloadBytes": 5
+    }
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHJvb3Q+Cgk8cGFyYW1zLz4KPC9yb290Pgo="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "limit-exceeded",
+      "path": "input.data"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/security/miplatform-xml-payload-limit.json",
+    "license": "repository"
+  },
+  "required": true
+}

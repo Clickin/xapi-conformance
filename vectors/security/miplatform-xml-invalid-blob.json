@@ -1,0 +1,23 @@
+{
+  "id": "security.miplatform-xml-invalid-blob",
+  "operation": "decode",
+  "profile": "miplatform-xml",
+  "input": {
+    "encoding": "base64",
+    "data": "PHJvb3Q+PHBhcmFtcz48cGFyYW0gaWQ9ImIiIHR5cGU9IkJMT0IiPiUlJTwvcGFyYW0+PC9wYXJhbXM+PC9yb290Pg=="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/security/miplatform-xml-invalid-blob.json",
+    "license": "repository"
+  },
+  "required": true
+}

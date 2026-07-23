@@ -1,0 +1,48 @@
+{
+  "id": "isolated.nexacro-ssv-const-form-3.decode",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHkRhdGFzZXQ6ZB5fQ29uc3RfH2M6c1RySW5HPXYeX1Jvd1R5cGVfH2E6U1RSSU5HHh4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "type": "STRING",
+              "value": {
+                "state": "value",
+                "lexical": "v"
+              }
+            }
+          ],
+          "rows": []
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-nexacro-ssv-const-form-3.json",
+    "license": "repository"
+  },
+  "required": true
+}

@@ -1,12 +1,62 @@
 {
-  "id":"xplatform-xml.entity.encode",
-  "operation":"encode",
-  "profile":"xplatform-xml-4000",
-  "value":{
-    "parameters":[{"id":"p","type":"STRING","state":"value","lexical":"first\nsecond"}],
-    "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0}],"constColumns":[{"id":"c","type":"STRING","value":{"state":"value","lexical":"fixed"}}],"rows":[{"type":"N","values":{"a":{"state":"value","lexical":"a\nb"}}}]}]
+  "id": "xplatform-xml.entity.encode",
+  "operation": "encode",
+  "profile": "xplatform-xml-4000",
+  "value": {
+    "parameters": [
+      {
+        "id": "p",
+        "type": "STRING",
+        "state": "value",
+        "lexical": "first\nsecond"
+      }
+    ],
+    "datasets": [
+      {
+        "id": "d",
+        "columns": [
+          {
+            "id": "a",
+            "type": "STRING",
+            "index": 0
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "c",
+            "type": "STRING",
+            "value": {
+              "state": "value",
+              "lexical": "fixed"
+            }
+          }
+        ],
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "state": "value",
+                "lexical": "a\nb"
+              }
+            }
+          }
+        ]
+      }
+    ]
   },
-  "expect":{"kind":"wire","output":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJwIiB0eXBlPSJTVFJJTkciPmZpcnN0JiMxMDtzZWNvbmQ8L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0iZml4ZWQiLz48Q29sdW1uIGlkPSJhIiB0eXBlPSJTVFJJTkciLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJhIj5hJiMxMDtiPC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+"}},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/xplatform-xml-entity-encode.json","license":"repository"},
-  "required":true
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJwIiB0eXBlPSJzdHJpbmciPmZpcnN0JiMxMDtzZWNvbmQ8L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0ic3RyaW5nIiB2YWx1ZT0iZml4ZWQiLz48Q29sdW1uIGlkPSJhIiB0eXBlPSJzdHJpbmciLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJhIj5hJiMxMDtiPC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+",
+      "encoding": "base64"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/xplatform-xml-entity-encode.json",
+    "license": "repository"
+  },
+  "required": true
 }

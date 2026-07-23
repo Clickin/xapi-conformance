@@ -1,0 +1,30 @@
+{
+  "id": "zlib.miplatform-binary-4000.decode",
+  "operation": "decode",
+  "profile": "miplatform-binary-4000",
+  "options": {
+    "strict": false
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "/614AQAKAPX/AAH+EA+gAAIAAAEAAP//C/MBwQ=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [],
+      "wire": {
+        "format": "MiBinary",
+        "version": "4000"
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-miplatform-binary-4000-decode.json",
+    "license": "repository"
+  },
+  "required": true
+}

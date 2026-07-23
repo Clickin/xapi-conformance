@@ -1,0 +1,39 @@
+{
+  "id": "isolated.nexacro-ssv-type-decimal-1.decode",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpkZWNpbWFsHh4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "DECIMAL",
+              "index": 0
+            }
+          ],
+          "constColumns": [],
+          "rows": []
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/isolated-nexacro-ssv-type-decimal-1.json",
+    "license": "repository"
+  },
+  "required": true
+}

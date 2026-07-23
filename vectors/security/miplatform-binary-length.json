@@ -1,0 +1,23 @@
+{
+  "id": "security.miplatform-binary-length",
+  "operation": "decode",
+  "profile": "miplatform-binary-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "AAH+EA+g/////w=="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": "wire"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/security/miplatform-binary-length.json",
+    "license": "repository"
+  },
+  "required": true
+}

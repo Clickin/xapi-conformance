@@ -1,0 +1,26 @@
+{
+  "id": "zlib.nexacro-xml-4000.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "zlib": true
+  },
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "encoding": "base64",
+      "data": "/614AQTAUQ7DEBgH8KvI9z4s2cOyoHfoDUTZmuAvfCvH789sq2RxxT5OVEtPqUnEGnCc9Wvpz+nxps2ZHWCxSq7D0o+5fZSac8oalw8dLXtO6EUGFNWy54Re1OHZj8gkrtgtvbTW5IzaAXZ3AAAA//9oOChi"
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-nexacro-xml-4000-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

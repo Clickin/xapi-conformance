@@ -48,6 +48,13 @@ func stdio() {
 			fmt.Fprintln(os.Stdout, string(b))
 			continue
 		}
+		if req.Operation == "capabilities" {
+			r := httptest.NewRequest(http.MethodGet, "/capabilities", nil)
+			w := httptest.NewRecorder()
+			capabilities(w, r)
+			fmt.Fprintln(os.Stdout, strings.TrimSpace(w.Body.String()))
+			continue
+		}
 		path := "/" + req.Operation
 		r := httptest.NewRequest(http.MethodPost, path, bytes.NewReader(line))
 		w := httptest.NewRecorder()
@@ -76,12 +83,13 @@ func capabilities(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	profiles := []any{}
-	for _, name := range []string{"nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000", "nexacro-ssv", "xplatform-ssv"} {
-		options := []string{"strict", "base64Whitespace", "limits"}
+	for _, name := range []string{"nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000", "nexacro-ssv", "xplatform-ssv", "nexacro-binary-5000", "xplatform-binary-5000"} {
+		options := []string{"strict", "base64Whitespace", "limits", "zlib"}
 		if name == "nexacro-ssv" {
 			options = append(options, "ssvUnitSeparator", "ssvRecordSeparator")
 		}
-		profiles = append(profiles, map[string]any{"name": name, "operations": []string{"decode", "encode", "roundtrip"}, "options": options, "limits": map[string]int{"payloadBytes": maxPayload, "datasets": 100, "rows": 100000, "columns": 1000, "scalarBytes": 1048576, "blobBytes": 10485760}})
+		operations := []string{"decode", "encode", "roundtrip"}
+		profiles = append(profiles, map[string]any{"name": name, "operations": operations, "options": options, "limits": map[string]int{"payloadBytes": maxPayload, "datasets": 100, "rows": 100000, "columns": 1000, "scalarBytes": 1048576, "blobBytes": 10485760}})
 	}
 	writeJSON(w, map[string]any{"protocolVersion": protocol.Version, "implementation": "reference-go", "profiles": profiles})
 }
@@ -124,6 +132,13 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "malformed-input", "input.data", err.Error())
 			return
 		}
+		if codec.IsZlib(b) {
+			b, err = codec.InflateZlibLimit(b, maxPayload)
+			if err != nil {
+				writeError(w, 400, "malformed-input", "wire", err.Error())
+				return
+			}
+		}
 		v, err := codec.DecodeProfile(b, req.Profile, decodeOptions(req.Options))
 		if err != nil {
 			writeError(w, 400, "malformed-input", "wire", err.Error())
@@ -148,6 +163,13 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "invalid-value", "value", err.Error())
 			return
 		}
+		if boolOpt(req.Options, "zlib") {
+			b, err = codec.DeflateZlib(b)
+			if err != nil {
+				writeError(w, 400, "invalid-value", "value", err.Error())
+				return
+			}
+		}
 		out = protocol.Response{OK: true, Value: req.Value, Output: protocol.EncodeOutput(b)}
 	case "roundtrip":
 		if req.Input == nil {
@@ -158,6 +180,13 @@ func operation(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			writeError(w, 400, "malformed-input", "input.data", err.Error())
 			return
+		}
+		if codec.IsZlib(b) {
+			b, err = codec.InflateZlibLimit(b, maxPayload)
+			if err != nil {
+				writeError(w, 400, "malformed-input", "wire", err.Error())
+				return
+			}
 		}
 		v, err := codec.DecodeProfile(b, req.Profile, decodeOptions(req.Options))
 		if err != nil {
@@ -172,6 +201,13 @@ func operation(w http.ResponseWriter, r *http.Request) {
 		if e != nil {
 			writeError(w, 400, "invalid-value", "value", e.Error())
 			return
+		}
+		if boolOpt(req.Options, "zlib") {
+			encoded, e = codec.DeflateZlib(encoded)
+			if e != nil {
+				writeError(w, 400, "invalid-value", "value", e.Error())
+				return
+			}
 		}
 		out = protocol.Response{OK: true, Value: &v, Output: protocol.EncodeOutput(encoded)}
 	default:
@@ -200,7 +236,7 @@ func decodeOptions(options map[string]any) codec.DecodeOptions {
 }
 func supportedProfile(profile string) bool {
 	switch profile {
-	case "nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000", "nexacro-ssv", "xplatform-ssv":
+	case "nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000", "nexacro-ssv", "xplatform-ssv", "nexacro-binary-5000", "xplatform-binary-5000":
 		return true
 	default:
 		return false
@@ -211,10 +247,10 @@ func invalidOption(options map[string]any, strict bool, profile string) string {
 		return ""
 	}
 	for key := range options {
-		if key == "strict" || key == "base64Whitespace" || key == "limits" {
+		if key == "strict" || key == "base64Whitespace" || key == "limits" || key == "zlib" {
 			continue
 		}
-		if profile == "nexacro-ssv" && (key == "ssvUnitSeparator" || key == "ssvRecordSeparator") {
+		if (profile == "nexacro-ssv" || profile == "xplatform-ssv") && (key == "ssvUnitSeparator" || key == "ssvRecordSeparator") {
 			continue
 		}
 		return key

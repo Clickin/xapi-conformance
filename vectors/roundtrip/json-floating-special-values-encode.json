@@ -1,0 +1,13 @@
+{
+  "id": "compatibility.json-floating-special-values.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "value": {"parameters": [
+    {"id": "nan", "type": "FLOAT", "state": "value", "lexical": "NaN"},
+    {"id": "pos", "type": "DOUBLE", "state": "value", "lexical": "Infinity", "index": 1},
+    {"id": "neg", "type": "DOUBLE", "state": "value", "lexical": "-Infinity", "index": 2}
+  ], "datasets": []},
+  "expect": {"kind": "wire", "output": {"encoding": "base64", "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6Im5hbiIsInR5cGUiOiJmbG9hdCIsInZhbHVlIjpudWxsfSx7ImlkIjoicG9zIiwidHlwZSI6ImZsb2F0IiwidmFsdWUiOm51bGx9LHsiaWQiOiJuZWciLCJ0eXBlIjoiZmxvYXQiLCJ2YWx1ZSI6bnVsbH1dLCJ2ZXJzaW9uIjoiMS4wIn0="}},
+  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/json-floating-special-values-encode.json", "license": "repository"},
+  "required": true
+}
