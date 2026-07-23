@@ -1,7 +1,7 @@
 {
   "name": "@clickin/xapi-conformance",
-  "version": "0.2.2",
-  "description": "CLI wrapper for the xapi-conformance HTTP test runner",
+  "version": "0.2.3",
+  "description": "XPLATFORM/Nexacro wire protocol 적합성 검증 runner",
   "license": "MIT",
   "repository": {
     "type": "git",
