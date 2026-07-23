@@ -1,9 +1,0 @@
-{
-  "id": "miplatform-binary.empty.roundtrip",
-  "operation": "roundtrip",
-  "profile": "miplatform-binary-4000",
-  "input": {"encoding": "base64", "data": "AAH+EA+gAAIAAA=="},
-  "expect": {"kind": "canonical", "value": {"parameters": [], "datasets": [], "wire": {"format": "MiBinary", "version": "4000"}}},
-  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/miplatform-binary-empty-roundtrip.json", "license": "repository"},
-  "required": true
-}

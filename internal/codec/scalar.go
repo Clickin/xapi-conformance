@@ -69,7 +69,7 @@ func normalizeSourceCell(dataType string, cell protocol.Cell) protocol.Cell {
 	}
 	switch strings.ToUpper(defaultType(dataType)) {
 	case "BOOLEAN":
-		if miBoolean(cell.Lexical) {
+		if sourceBoolean(cell.Lexical) {
 			cell.Lexical = "1"
 		} else {
 			cell.Lexical = "0"
@@ -86,6 +86,15 @@ func normalizeSourceCell(dataType string, cell protocol.Cell) protocol.Cell {
 		cell.Lexical = normalizeSourceDecimal(cell.Lexical)
 	}
 	return cell
+}
+
+func sourceBoolean(value string) bool {
+	switch value {
+	case "true", "True", "TRUE", "yes", "Yes", "YES", "y", "Y", "on", "On", "ON", "1":
+		return true
+	default:
+		return false
+	}
 }
 
 func normalizeSourceInteger(value string, allowHex bool) string {
