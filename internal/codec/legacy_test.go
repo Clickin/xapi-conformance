@@ -17,14 +17,14 @@ func TestSaveTypeFiltersCanonicalRows(t *testing.T) {
 	}
 	cases := []struct {
 		saveType int
-		want     string
+		want     []string
 	}{
-		{0, "NIUD"},
-		{1, "NIUD"},
-		{2, "NNN"},
-		{3, "IU"},
-		{4, "D"},
-		{5, "IUD"},
+		{0, []string{"normal", "inserted", "updated", "deleted"}},
+		{1, []string{"normal", "inserted", "updated", "deleted"}},
+		{2, []string{"normal", "inserted", "updated"}},
+		{3, []string{"inserted", "updated"}},
+		{4, []string{"deleted"}},
+		{5, []string{"inserted", "updated", "deleted"}},
 	}
 	for _, tc := range cases {
 		value := protocol.Value{
@@ -42,15 +42,17 @@ func TestSaveTypeFiltersCanonicalRows(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		var got string
-		for _, row := range decoded.Datasets[0].Rows {
-			got += row.Type
+		rows := decoded.Datasets[0].Rows
+		if len(rows) != len(tc.want) {
+			t.Fatalf("saveType %d row count = %d, want %d; wire=%s", tc.saveType, len(rows), len(tc.want), wire)
 		}
-		if got != tc.want {
-			t.Fatalf("saveType %d rows = %q, want %q; wire=%s", tc.saveType, got, tc.want, wire)
-		}
-		if tc.saveType == 3 && decoded.Datasets[0].Rows[1].OrgRow == nil {
-			t.Fatal("updated row lost original values")
+		for i, row := range rows {
+			if row.Type != "N" {
+				t.Fatalf("saveType %d row %d type = %q, want N; wire=%s", tc.saveType, i, row.Type, wire)
+			}
+			if got := row.Values["a"].Lexical; got != tc.want[i] {
+				t.Fatalf("saveType %d row %d value = %q, want %q; wire=%s", tc.saveType, i, got, tc.want[i], wire)
+			}
 		}
 	}
 }
@@ -102,7 +104,7 @@ func TestSourceScalarLexicalsNormalizeOnEncode(t *testing.T) {
 	if err := json.Unmarshal(wire, &document); err != nil {
 		t.Fatal(err)
 	}
-	want := []any{float64(16), float64(1234), float64(1), float64(0), float64(1234.5), float64(0), float64(1.23)}
+	want := []any{"16", "1234", "1", "0", "1234.5", "0.0", "1.2300"}
 	for i, expected := range want {
 		if document.Parameters[i].Value != expected {
 			t.Fatalf("parameter %d value = %#v, want %#v; wire=%s", i, document.Parameters[i].Value, expected, wire)
@@ -127,8 +129,13 @@ func TestFileAndJSONBlobContracts(t *testing.T) {
 		t.Fatalf("FILE JSON = %s", jsonWire)
 	}
 	invalidJSON := []byte(`{"version":"1.0","Parameters":[{"id":"blob","type":"blob","value":"%%%"}],"Datasets":[]}`)
-	if _, err := DecodeProfile(invalidJSON, "nexacro-json-1.0", DecodeOptions{Strict: true}); err == nil {
-		t.Fatal("invalid JSON BLOB was accepted")
+	decoded, err := DecodeProfile(invalidJSON, "nexacro-json-1.0", DecodeOptions{Strict: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	blob := decoded.Parameters[0]
+	if blob.Type != "BLOB" || blob.State != "value" || blob.Lexical != "JSUl" {
+		t.Fatalf("decoded JSON BLOB = %+v", blob)
 	}
 	for _, profile := range []string{"nexacro-json-1.0", "nexacro-xml-4000", nexacroSSVProfile, nexacroBinaryProfile} {
 		_, err := Encode(protocol.Value{Parameters: []protocol.Parameter{{ID: "blob", Type: "BLOB", State: "value", Lexical: "%%%"}}}, profile)

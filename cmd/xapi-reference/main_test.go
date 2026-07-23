@@ -74,6 +74,63 @@ func TestMalformedUnknownAndInvalidRequests(t *testing.T) {
 	}
 }
 
+func TestConfiguredResourceLimitsAreIgnored(t *testing.T) {
+	const value = `{"parameters":[],"datasets":[{"id":"d","columns":[{"id":"a","type":"BLOB","index":0}],"constColumns":[],"rows":[{"type":"N","values":{"a":{"state":"value","lexical":"YQ=="}}}]}]}`
+	for _, key := range []string{"datasets", "columns", "rows", "depth", "scalarBytes", "blobBytes"} {
+		t.Run(key, func(t *testing.T) {
+			body := `{"operation":"encode","profile":"nexacro-json-1.0","options":{"limits":{"` + key + `":0}},"value":` + value + `}`
+			if status, out := call(t, "/encode", body); status != 200 || out["ok"] != true {
+				t.Fatalf("configured %s limit was enforced: %d %+v", key, status, out)
+			}
+		})
+	}
+
+	const payload = `{"operation":"decode","profile":"nexacro-json-1.0","options":{"limits":{"payloadBytes":1}},"input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbXX0="}}`
+	if status, out := call(t, "/decode", payload); status != 200 || out["ok"] != true {
+		t.Fatalf("configured payload limit was enforced: %d %+v", status, out)
+	}
+}
+
+func TestDriverIgnoredDecodeOptionsDoNotRelaxSourceParsing(t *testing.T) {
+	tests := []struct {
+		name string
+		body string
+	}{
+		{
+			name: "base64 whitespace",
+			body: `{"operation":"decode","profile":"nexacro-json-1.0","options":{"strict":true,"base64Whitespace":true},"input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbXX0 ="}}`,
+		},
+		{
+			name: "SSV separators",
+			body: `{"operation":"decode","profile":"nexacro-ssv","options":{"strict":true,"ssvUnitSeparator":"|","ssvRecordSeparator":"~"},"input":{"encoding":"base64","data":"U1NWOnV0Zi04fkRhdGFzZXQ6ZH5fUm93VHlwZV98YTpTVFJJTkd+Tnx4fn4="}}`,
+		},
+	}
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			status, out := call(t, "/decode", test.body)
+			if status != 400 || out["error"].(map[string]any)["class"] != "malformed-input" {
+				t.Fatalf("status = %d, response = %+v", status, out)
+			}
+		})
+	}
+}
+
+func TestSaveTypeEncodeSourceRejection(t *testing.T) {
+	const body = `{"operation":"encode","profile":"nexacro-json-1.0","value":{"saveType":5,"parameters":[],"datasets":[]}}`
+	status, out := call(t, "/encode", body)
+	if status != 400 || out["error"].(map[string]any)["class"] != "malformed-input" {
+		t.Fatalf("status = %d, response = %+v", status, out)
+	}
+}
+
+func TestBinaryIntrinsicLengthErrorRemainsCodecOwned(t *testing.T) {
+	const body = `{"operation":"decode","profile":"nexacro-binary-5000","options":{"strict":true},"input":{"encoding":"base64","data":"/hATiP//"}}`
+	status, out := call(t, "/decode", body)
+	if status != 400 || out["error"].(map[string]any)["class"] != "malformed-input" || out["error"].(map[string]any)["path"] != "wire" {
+		t.Fatalf("status = %d, response = %+v", status, out)
+	}
+}
+
 func TestRequestLimit(t *testing.T) {
 	r := httptest.NewRequest(http.MethodPost, "/decode", bytes.NewReader([]byte(`{}`)))
 	r.ContentLength = maxPayload + 1

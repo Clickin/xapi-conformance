@@ -46,8 +46,12 @@ func TestEncodeXMLUsesDocumentedLayoutAndEntities(t *testing.T) {
 		if err != nil {
 			t.Fatal(err)
 		}
-		if !bytes.Contains(wire, []byte("&#10;")) || bytes.Contains(wire, []byte("first\nsecond")) {
-			t.Fatalf("line feed was not entity encoded: %s", wire)
+		if profile == "nexacro-xml-4000" {
+			if !bytes.Contains(wire, []byte("first\nsecond")) || bytes.Contains(wire, []byte("&#10;")) {
+				t.Fatalf("Nexacro line feed encoding: %s", wire)
+			}
+		} else if !bytes.Contains(wire, []byte("&#10;")) || bytes.Contains(wire, []byte("first\nsecond")) {
+			t.Fatalf("XPlatform line feed encoding: %s", wire)
 		}
 		if bytes.Contains(wire, []byte("<Datasets>")) {
 			t.Fatalf("non-format Datasets wrapper emitted: %s", wire)
@@ -57,11 +61,9 @@ func TestEncodeXMLUsesDocumentedLayoutAndEntities(t *testing.T) {
 		}
 		constantIndex := bytes.Index(wire, []byte("<ConstColumn"))
 		columnIndex := bytes.Index(wire, []byte("<Column "))
-		if constantIndex < 0 || columnIndex < 0 || constantIndex > columnIndex {
-			t.Fatalf("ConstColumn did not precede Column: %s", wire)
-		}
-		if _, err := DecodeProfile(wire, profile, DecodeOptions{Strict: true}); err != nil {
-			t.Fatalf("encoded XML rejected: %v\n%s", err, wire)
+		constantFirst := constantIndex >= 0 && columnIndex >= 0 && constantIndex < columnIndex
+		if constantFirst != (profile == "nexacro-xml-4000") {
+			t.Fatalf("profile column order: %s", wire)
 		}
 	}
 }
@@ -89,8 +91,8 @@ func TestJSONDoesNotApplyXMLEntities(t *testing.T) {
 	if bytes.Contains(encoded, []byte("&#10;")) || bytes.Contains(encoded, []byte("&amp;")) {
 		t.Fatalf("JSON used XML entity encoding: %s", encoded)
 	}
-	if bytes.Contains(encoded, []byte(`"_RowType_"`)) {
-		t.Fatalf("default JSON _RowType_ was not omitted: %s", encoded)
+	if !bytes.Contains(encoded, []byte(`"_RowType_":"N"`)) {
+		t.Fatalf("default JSON _RowType_ was not emitted: %s", encoded)
 	}
 	roundTrip, err := DecodeProfile(encoded, "nexacro-json-1.0", DecodeOptions{Strict: true})
 	if err != nil {
@@ -104,18 +106,18 @@ func TestJSONDoesNotApplyXMLEntities(t *testing.T) {
 	}
 }
 
-func TestDecodeXMLDistinguishesNullAndEmptyParameter(t *testing.T) {
-	wire := []byte(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="http://www.nexacroplatform.com/platform/dataset" ver="4000"><Parameters><Parameter id="null"/><Parameter id="empty"></Parameter></Parameters></Root>`)
+func TestDecodeXMLTreatsEmptyParameterFormsEqually(t *testing.T) {
+	wire := []byte(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="http://www.nexacroplatform.com/platform/dataset" ver="4000"><Parameters><Parameter id="self-closing"/><Parameter id="paired"></Parameter></Parameters></Root>`)
 	value, err := DecodeProfile(wire, "nexacro-xml-4000", DecodeOptions{Strict: true})
 	if err != nil {
 		t.Fatal(err)
 	}
-	if value.Parameters[0].State != "null" || value.Parameters[1].State != "empty" {
+	if value.Parameters[0].State != "empty" || value.Parameters[1].State != "empty" {
 		t.Fatalf("parameter states: %+v", value.Parameters)
 	}
 }
 
-func TestDecodeJSONAppliesDocumentedDefaultsAndOriginalRowRules(t *testing.T) {
+func TestDecodeJSONRejectsOrphanOriginalRow(t *testing.T) {
 	wire := []byte(`{
 		"version":"1.0",
 		"Parameters":[{"id":"i","value":1},{"id":"f","value":1.5},{"id":"s","value":"1"}],
@@ -130,79 +132,63 @@ func TestDecodeJSONAppliesDocumentedDefaultsAndOriginalRowRules(t *testing.T) {
 			{"_RowType_":"O","a":"old"}
 		]}]
 	}`)
+	if _, err := DecodeProfile(wire, "nexacro-json-1.0", DecodeOptions{Strict: true}); err == nil {
+		t.Fatal("orphan original row was accepted")
+	}
+}
+
+func TestDecodeJSONDefaultsVersion(t *testing.T) {
+	wire := []byte(`{"Parameters":[],"Datasets":[]}`)
 	value, err := DecodeProfile(wire, "nexacro-json-1.0", DecodeOptions{Strict: true})
 	if err != nil {
 		t.Fatal(err)
 	}
-	if value.Parameters[0].Type != "INT" || value.Parameters[1].Type != "FLOAT" || value.Parameters[2].Type != "STRING" {
-		t.Fatalf("parameter defaults: %+v", value.Parameters)
-	}
-	dataset := value.Datasets[0]
-	if dataset.ConstColumns[0].Type != "INT" || dataset.Columns[0].Type != "STRING" || dataset.Columns[0].Prop != "sum" || dataset.Columns[0].SumText != "total" {
-		t.Fatalf("column defaults: %+v %+v", dataset.ConstColumns, dataset.Columns)
-	}
-	if len(dataset.Rows) != 2 ||
-		dataset.Rows[0].Type != "N" || dataset.Rows[0].OrgRow == nil || dataset.Rows[0].OrgRow.Values["a"].Lexical != "ignored" ||
-		dataset.Rows[1].Type != "U" || dataset.Rows[1].OrgRow == nil || dataset.Rows[1].OrgRow.Values["a"].Lexical != "old" {
-		t.Fatalf("original row rules: %+v", dataset.Rows)
+	if value.Wire["version"] != "1.0" {
+		t.Fatalf("wire version = %#v", value.Wire)
 	}
 }
 
-func TestDecodeJSONRequiresVersion(t *testing.T) {
-	wire := []byte(`{"Parameters":[],"Datasets":[]}`)
-	if _, err := DecodeProfile(wire, "nexacro-json-1.0", DecodeOptions{Strict: true}); err == nil {
-		t.Fatal("missing JSON version accepted")
-	}
-}
-
-func TestXMLTypeCaseBlobEncodingAndOptionalConstantValue(t *testing.T) {
-	for _, profile := range []struct {
-		name      string
-		namespace string
-	}{
-		{name: "xplatform-xml-4000", namespace: "http://www.tobesoft.com/platform/Dataset"},
-		{name: "nexacro-xml-4000", namespace: "http://www.nexacroplatform.com/platform/dataset"},
-	} {
-		t.Run(profile.name, func(t *testing.T) {
-			wire := fmt.Sprintf(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="%s" ver="4000"><Dataset id="d"><ColumnInfo><ConstColumn id="missing" type="string"/><ConstColumn id="empty" type="STRING" value=""/><ConstColumn id="blobConst" type="bLoB" enc="BASE64" value="eA=="/><Column id="lower" type="string"/><Column id="mixed" type="StRiNg"/><Column id="blob" type="blob" enc="base64"/></ColumnInfo><Rows/></Dataset></Root>`, profile.namespace)
-			value, err := DecodeProfile([]byte(wire), profile.name, DecodeOptions{Strict: true})
+func TestXMLEncodeTypeCaseBlobEncodingAndOptionalConstantValue(t *testing.T) {
+	for _, profile := range []string{"xplatform-xml-4000", "nexacro-xml-4000"} {
+		t.Run(profile, func(t *testing.T) {
+			encoded, err := Encode(protocol.Value{Datasets: []protocol.Dataset{{
+				ID: "blob",
+				Columns: []protocol.Column{
+					{ID: "lower", Type: "string"},
+					{ID: "mixed", Type: "StRiNg"},
+					{ID: "b", Type: "blob"},
+				},
+				ConstColumns: []protocol.ConstColumn{
+					{ID: "missing", Type: "string", Value: protocol.Cell{State: "missing"}},
+					{ID: "empty", Type: "STRING", Value: protocol.Cell{State: "value", Lexical: ""}},
+					{ID: "c", Type: "BlOb", Value: protocol.Cell{State: "value", Lexical: "eA=="}},
+				},
+			}}}, profile)
 			if err != nil {
 				t.Fatal(err)
 			}
-			dataset := value.Datasets[0]
-			if dataset.Columns[0].Type != "STRING" || dataset.Columns[1].Type != "STRING" || dataset.Columns[2].Type != "BLOB" {
-				t.Fatalf("case-insensitive types were not normalized: %+v", dataset.Columns)
-			}
-			if dataset.Columns[2].Encoding != "base64" || dataset.ConstColumns[2].Encoding != "base64" {
-				t.Fatalf("BLOB encoding was not normalized: %+v %+v", dataset.Columns, dataset.ConstColumns)
-			}
-			if dataset.ConstColumns[0].Value.State != "missing" || dataset.ConstColumns[1].Value.State != "empty" {
-				t.Fatalf("optional ConstColumn values collapsed: %+v", dataset.ConstColumns)
-			}
-
-			encoded, err := Encode(protocol.Value{Parameters: []protocol.Parameter{}, Datasets: []protocol.Dataset{{
-				ID: "blob", Columns: []protocol.Column{{ID: "b", Type: "blob"}},
-				ConstColumns: []protocol.ConstColumn{{ID: "c", Type: "BlOb", Value: protocol.Cell{State: "value", Lexical: "eA=="}}},
-				Rows:         []protocol.Row{},
-			}}}, profile.name)
-			if err != nil {
-				t.Fatal(err)
-			}
-			if bytes.Count(encoded, []byte(`enc="base64"`)) != 2 {
-				t.Fatalf("BLOB encoding contract not emitted: %s", encoded)
+			if bytes.Count(encoded, []byte(`type="string"`)) != 4 ||
+				bytes.Count(encoded, []byte(`encrypt="base64"`)) != 2 ||
+				!bytes.Contains(encoded, []byte(`<ConstColumn id="missing" type="string" size="32"/>`)) ||
+				!bytes.Contains(encoded, []byte(`<ConstColumn id="empty" type="string" size="32" value=""/>`)) {
+				t.Fatalf("XML type/value contract not emitted: %s", encoded)
 			}
 		})
 	}
 }
 
-func TestXMLStrictRejectsBlobWithoutBase64Encoding(t *testing.T) {
+func TestXMLAcceptsBlobWithoutEncodingMetadata(t *testing.T) {
 	for _, element := range []string{
 		`<Column id="b" type="BLOB"/>`,
 		`<ConstColumn id="b" type="BLOB" value="eA=="/>`,
 	} {
 		wire := []byte(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="http://www.nexacroplatform.com/platform/dataset" ver="4000"><Dataset id="d"><ColumnInfo>` + element + `</ColumnInfo></Dataset></Root>`)
-		if _, err := DecodeProfile(wire, "nexacro-xml-4000", DecodeOptions{Strict: true}); err == nil {
-			t.Fatalf("BLOB without base64 encoding accepted: %s", wire)
+		value, err := DecodeProfile(wire, "nexacro-xml-4000", DecodeOptions{Strict: true})
+		if err != nil {
+			t.Fatalf("BLOB without encoding metadata rejected: %v", err)
+		}
+		if len(value.Datasets) != 1 {
+			t.Fatalf("dataset missing: %+v", value)
 		}
 	}
 }

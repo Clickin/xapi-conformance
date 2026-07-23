@@ -1,8 +1,10 @@
 package codec
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"sort"
 	"strings"
 
 	"github.com/Clickin/xapi-conformance/internal/protocol"
@@ -92,7 +94,11 @@ func Encode(v protocol.Value, profile string) ([]byte, error) {
 	v = applySaveTypes(v)
 	switch profile {
 	case "nexacro-json-1.0":
-		return json.Marshal(toJSON(v))
+		encoded, err := json.Marshal(toJSON(v))
+		if err != nil {
+			return nil, err
+		}
+		return bytes.ReplaceAll(encoded, []byte("/"), []byte(`\/`)), nil
 	case "xplatform-xml-4000", "nexacro-xml-4000":
 		return encodeXML(v, profile)
 	case nexacroSSVProfile, xplatformSSVProfile:
@@ -133,151 +139,226 @@ func wireType(dataType string) string {
 	}
 }
 
-func toJSON(v protocol.Value) map[string]any {
-	root := map[string]any{"version": "1.0"}
-	if v.Wire != nil {
-		if s, ok := v.Wire["version"].(string); ok {
-			root["version"] = s
-		}
-	}
-	params := make([]any, 0, len(v.Parameters))
-	for _, p := range v.Parameters {
-		x := map[string]any{"id": p.ID, "type": wireType(p.Type)}
-		if p.State != "missing" {
-			if p.State == "null" {
-				x["value"] = nil
-			} else {
-				x["value"] = jsonScalar(p.Type, protocol.Cell{State: p.State, Lexical: p.Lexical})
-			}
-		}
-		params = append(params, x)
-	}
-	if len(params) > 0 {
-		root["Parameters"] = params
-	}
-	datasets := make([]any, 0, len(v.Datasets))
-	for _, d := range v.Datasets {
-		cols := make([]any, 0, len(d.Columns))
-		for _, c := range d.Columns {
-			column := map[string]any{"id": c.ID, "type": wireType(c.Type)}
-			if c.Size != "" {
-				column["size"] = c.Size
-			}
-			if c.Prop != "" {
-				column["prop"] = c.Prop
-			}
-			if c.SumText != "" {
-				column["sumtext"] = c.SumText
-			}
-			cols = append(cols, column)
-		}
-		consts := make([]any, 0, len(d.ConstColumns))
-		for _, c := range d.ConstColumns {
-			column := map[string]any{"id": c.ID, "type": wireType(c.Type)}
-			if c.Size != "" {
-				column["size"] = c.Size
-			}
-			if c.Value.State != "missing" {
-				column["value"] = jsonScalar(c.Type, c.Value)
-			}
-			consts = append(consts, column)
-		}
-		columnTypes := make(map[string]string, len(d.Columns))
-		for _, column := range d.Columns {
-			columnTypes[column.ID] = column.Type
-		}
-		rows := []any{}
-		for ri, r := range d.Rows {
-			if r.Type == "O" && ri > 0 && d.Rows[ri-1].OrgRow != nil && sameRow(*d.Rows[ri-1].OrgRow, r) {
-				continue
-			}
-			x := map[string]any{}
-			if r.Type != "N" {
-				x["_RowType_"] = r.Type
-			}
-			for id, c := range r.Values {
-				if c.State != "missing" {
-					x[id] = jsonScalar(columnTypes[id], c)
-				}
-			}
-			rows = append(rows, x)
-			if r.OrgRow != nil {
-				ox := map[string]any{"_RowType_": "O"}
-				for id, c := range r.OrgRow.Values {
-					if c.State != "missing" {
-						ox[id] = jsonScalar(columnTypes[id], c)
-					}
-				}
-				rows = append(rows, ox)
-			}
-		}
-		dataset := map[string]any{"id": d.ID}
-		if len(consts) > 0 || len(cols) > 0 {
-			dataset["ColumnInfo"] = map[string]any{"ConstColumn": consts, "Column": cols}
-		}
-		if len(rows) > 0 {
-			dataset["Rows"] = rows
-		}
-		datasets = append(datasets, dataset)
-	}
-	if len(datasets) > 0 {
-		root["Datasets"] = datasets
-	}
-	return root
+type jsonField struct {
+	key   string
+	value any
 }
 
-func encodeXML(value protocol.Value, profile string) ([]byte, error) {
-	namespace := xmlNamespace(profile)
-	versionName, version := "ver", "4000"
-	if root, ok := value.Wire["root"].(map[string]any); ok {
-		if configured, ok := root["namespace"].(string); ok && configured != "" {
-			namespace = configured
-		}
-		if configured, ok := root["version"].(string); ok {
-			versionName, version = "version", configured
-		}
-		if configured, ok := root["ver"].(string); ok {
-			versionName, version = "ver", configured
-		}
-	}
+type jsonObject []jsonField
 
+func orderedJSON(fields ...jsonField) jsonObject {
+	capacity := 16
+	for len(fields) > capacity*3/4 {
+		capacity *= 2
+	}
+	sort.SliceStable(fields, func(i, j int) bool {
+		return javaJSONBucket(fields[i].key, capacity) < javaJSONBucket(fields[j].key, capacity)
+	})
+	return fields
+}
+
+func javaJSONBucket(key string, capacity int) uint32 {
+	var hash uint32
+	for _, r := range key {
+		if r <= 0xffff {
+			hash = 31*hash + uint32(r)
+			continue
+		}
+		r -= 0x10000
+		hash = 31*hash + uint32(0xd800+(r>>10))
+		hash = 31*hash + uint32(0xdc00+(r&0x3ff))
+	}
+	hash ^= hash >> 16
+	return hash & uint32(capacity-1)
+}
+
+func (object jsonObject) MarshalJSON() ([]byte, error) {
 	var out strings.Builder
-	out.WriteString(`<?xml version="1.0" encoding="utf-8"?>`)
-	out.WriteString(`<Root xmlns="`)
-	escaped, err := escapeXMLScalar(namespace)
-	if err != nil {
-		return nil, err
-	}
-	out.WriteString(escaped)
-	out.WriteString(`" `)
-	out.WriteString(versionName)
-	out.WriteString(`="`)
-	escaped, err = escapeXMLScalar(version)
-	if err != nil {
-		return nil, err
-	}
-	out.WriteString(escaped)
-	out.WriteString(`">`)
-
-	if len(value.Parameters) > 0 {
-		out.WriteString("<Parameters>")
-		for _, parameter := range value.Parameters {
-			if err := writeXMLParameter(&out, parameter); err != nil {
-				return nil, err
-			}
+	out.WriteByte('{')
+	for i, field := range object {
+		if i > 0 {
+			out.WriteByte(',')
 		}
-		out.WriteString("</Parameters>")
-	}
-	for _, dataset := range value.Datasets {
-		if err := writeXMLDataset(&out, dataset); err != nil {
+		key, err := marshalJSONString(field.key)
+		if err != nil {
 			return nil, err
 		}
+		value, err := marshalJSONValue(field.value)
+		if err != nil {
+			return nil, err
+		}
+		out.Write(key)
+		out.WriteByte(':')
+		out.Write(value)
 	}
-	out.WriteString("</Root>")
+	out.WriteByte('}')
 	return []byte(out.String()), nil
 }
 
-func writeXMLParameter(out *strings.Builder, parameter protocol.Parameter) error {
+func marshalJSONValue(value any) ([]byte, error) {
+	if text, ok := value.(string); ok {
+		return marshalJSONString(text)
+	}
+	return json.Marshal(value)
+}
+
+func marshalJSONString(value string) ([]byte, error) {
+	return json.Marshal(value)
+}
+
+func defaultWireSize(dataType string) string {
+	switch strings.ToUpper(defaultType(dataType)) {
+	case "STRING", "CHAR":
+		return "32"
+	case "SHORT", "USHORT", "INT", "UINT":
+		return "4"
+	case "LONG", "ULONG", "DECIMAL", "BIGDECIMAL":
+		return "16"
+	case "FLOAT":
+		return "4"
+	case "DOUBLE":
+		return "8"
+	case "BOOLEAN":
+		return "2"
+	case "DATE":
+		return "6"
+	case "TIME":
+		return "9"
+	case "DATETIME":
+		return "17"
+	case "FILE", "BLOB":
+		return "256"
+	default:
+		return "32"
+	}
+}
+
+func toJSON(v protocol.Value) jsonObject {
+	root := []jsonField{{key: "version", value: "1.0"}}
+	if v.Wire != nil {
+		if version, ok := v.Wire["version"].(string); ok {
+			root[0].value = version
+		}
+	}
+
+	parameters := make([]any, 0, len(v.Parameters))
+	for _, parameter := range v.Parameters {
+		fields := []jsonField{
+			{key: "id", value: parameter.ID},
+			{key: "type", value: wireType(parameter.Type)},
+		}
+		if scalar, ok := jsonScalar(parameter.Type, protocol.Cell{State: parameter.State, Lexical: parameter.Lexical}); ok {
+			fields = append(fields, jsonField{key: "value", value: scalar})
+		}
+		parameters = append(parameters, orderedJSON(fields...))
+	}
+	if len(parameters) > 0 {
+		root = append(root, jsonField{key: "Parameters", value: parameters})
+	}
+
+	datasets := make([]any, 0, len(v.Datasets))
+	for _, dataset := range v.Datasets {
+		columns := make([]any, 0, len(dataset.Columns))
+		for _, column := range dataset.Columns {
+			columns = append(columns, orderedJSON(
+				jsonField{key: "id", value: column.ID},
+				jsonField{key: "type", value: wireType(column.Type)},
+				jsonField{key: "size", value: defaultWireSize(column.Type)},
+			))
+		}
+
+		constants := make([]any, 0, len(dataset.ConstColumns))
+		for _, column := range dataset.ConstColumns {
+			fields := []jsonField{
+				{key: "id", value: column.ID},
+				{key: "type", value: wireType(column.Type)},
+				{key: "size", value: defaultWireSize(column.Type)},
+			}
+			if column.Value.State == "value" {
+				fields = append(fields, jsonField{key: "value", value: column.Value.Lexical})
+			} else if strings.EqualFold(defaultType(column.Type), "BOOLEAN") {
+				fields = append(fields, jsonField{key: "value", value: "0"})
+			}
+			constants = append(constants, orderedJSON(fields...))
+		}
+
+		rows := make([]any, 0, len(dataset.Rows))
+		for _, row := range dataset.Rows {
+			if strings.EqualFold(row.Type, "O") {
+				continue
+			}
+			fields := []jsonField{{key: "_RowType_", value: "N"}}
+			for _, column := range dataset.Columns {
+				cell, ok := row.Values[column.ID]
+				if !ok {
+					cell.State = "missing"
+				}
+				if scalar, include := jsonScalar(column.Type, cell); include {
+					fields = append(fields, jsonField{key: column.ID, value: scalar})
+				}
+			}
+			rows = append(rows, orderedJSON(fields...))
+		}
+
+		fields := []jsonField{{key: "id", value: dataset.ID}}
+		if len(constants) > 0 || len(columns) > 0 {
+			columnInfo := make([]jsonField, 0, 2)
+			if len(constants) > 0 {
+				columnInfo = append(columnInfo, jsonField{key: "ConstColumn", value: constants})
+			}
+			if len(columns) > 0 {
+				columnInfo = append(columnInfo, jsonField{key: "Column", value: columns})
+			}
+			fields = append(fields, jsonField{key: "ColumnInfo", value: orderedJSON(columnInfo...)})
+		}
+		if len(rows) > 0 {
+			fields = append(fields, jsonField{key: "Rows", value: rows})
+		}
+		datasets = append(datasets, orderedJSON(fields...))
+	}
+	if len(datasets) > 0 {
+		root = append(root, jsonField{key: "Datasets", value: datasets})
+	}
+	return orderedJSON(root...)
+}
+
+func encodeXML(value protocol.Value, profile string) ([]byte, error) {
+	var out strings.Builder
+	namespace := "http://www.nexacroplatform.com/platform/dataset"
+	if profile == "xplatform-xml-4000" {
+		namespace = "http://www.tobesoft.com/platform/dataset"
+	}
+	out.WriteString(`<?xml version="1.0" encoding="UTF-8"?>`)
+	out.WriteByte('\n')
+	out.WriteString(`<Root xmlns="`)
+	out.WriteString(namespace)
+	out.WriteByte('"')
+	if profile == "xplatform-xml-4000" {
+		out.WriteString(` ver="5000"`)
+	}
+	out.WriteString(">\n")
+
+	if len(value.Parameters) == 0 {
+		out.WriteString("\t<Parameters/>\n")
+	} else {
+		out.WriteString("\t<Parameters>\n")
+		for _, parameter := range value.Parameters {
+			if err := writeXMLParameter(&out, parameter, profile == "nexacro-xml-4000"); err != nil {
+				return nil, err
+			}
+		}
+		out.WriteString("\t</Parameters>\n")
+	}
+	for _, dataset := range value.Datasets {
+		if err := writeXMLDataset(&out, dataset, profile); err != nil {
+			return nil, err
+		}
+	}
+	out.WriteString("</Root>\n")
+	return []byte(out.String()), nil
+}
+
+func writeXMLParameter(out *strings.Builder, parameter protocol.Parameter, rawText bool) error {
 	id, err := escapeXMLScalar(parameter.ID)
 	if err != nil {
 		return err
@@ -286,45 +367,39 @@ func writeXMLParameter(out *strings.Builder, parameter protocol.Parameter) error
 	if err != nil {
 		return err
 	}
-	out.WriteString(`<Parameter id="`)
+	scalar, hasValue := jsonScalar(parameter.Type, protocol.Cell{State: parameter.State, Lexical: parameter.Lexical})
+	out.WriteString(`		<Parameter id="`)
 	out.WriteString(id)
 	out.WriteString(`" type="`)
 	out.WriteString(dataType)
 	out.WriteByte('"')
-	if form, ok := parameter.Wire["valueForm"].(string); ok && form == "attribute" && parameter.State != "missing" && parameter.State != "null" {
-		value, err := escapeXMLScalar(parameter.Lexical)
-		if err != nil {
-			return err
-		}
-		out.WriteString(` value="`)
-		out.WriteString(value)
-		out.WriteString(`"/>`)
-		return nil
+	if strings.EqualFold(defaultType(parameter.Type), "BLOB") && hasValue {
+		out.WriteString(` encrypt="base64"`)
 	}
-	if parameter.State == "missing" || parameter.State == "null" {
-		out.WriteString("/>")
+	if !hasValue {
+		out.WriteString("/>\n")
 		return nil
 	}
 	out.WriteByte('>')
-	value, err := escapeXMLScalar(parameter.Lexical)
+	escaped, err := escapeXMLText(scalar, rawText)
 	if err != nil {
 		return err
 	}
-	out.WriteString(value)
-	out.WriteString("</Parameter>")
+	out.WriteString(escaped)
+	out.WriteString("</Parameter>\n")
 	return nil
 }
 
-func writeXMLDataset(out *strings.Builder, dataset protocol.Dataset) error {
+func writeXMLDataset(out *strings.Builder, dataset protocol.Dataset, profile string) error {
 	id, err := escapeXMLScalar(dataset.ID)
 	if err != nil {
 		return err
 	}
-	out.WriteString(`<Dataset id="`)
+	out.WriteString(`	<Dataset id="`)
 	out.WriteString(id)
-	out.WriteByte('"')
-	if len(dataset.ConstColumns) > 0 || len(dataset.Columns) > 0 {
-		out.WriteString("><ColumnInfo>")
+	out.WriteString(`">` + "\n")
+	out.WriteString("\t\t<ColumnInfo>\n")
+	if profile == "nexacro-xml-4000" {
 		for _, column := range dataset.ConstColumns {
 			if err := writeXMLConstColumn(out, column); err != nil {
 				return err
@@ -335,26 +410,30 @@ func writeXMLDataset(out *strings.Builder, dataset protocol.Dataset) error {
 				return err
 			}
 		}
-		out.WriteString("</ColumnInfo>")
 	} else {
-		out.WriteByte('>')
-	}
-	if len(dataset.Rows) > 0 {
-		out.WriteString("<Rows>")
-		for rowIndex, row := range dataset.Rows {
-			if row.Type == "O" && rowIndex > 0 && dataset.Rows[rowIndex-1].OrgRow != nil && sameRow(*dataset.Rows[rowIndex-1].OrgRow, row) {
-				continue
-			}
-			if row.Type == "O" {
-				continue
-			}
-			if err := writeXMLRow(out, row, dataset.Columns); err != nil {
+		for _, column := range dataset.Columns {
+			if err := writeXMLColumn(out, column); err != nil {
 				return err
 			}
 		}
-		out.WriteString("</Rows>")
+		for _, column := range dataset.ConstColumns {
+			if err := writeXMLConstColumn(out, column); err != nil {
+				return err
+			}
+		}
 	}
-	out.WriteString("</Dataset>")
+	out.WriteString("\t\t</ColumnInfo>\n")
+	out.WriteString("\t\t<Rows>\n")
+	for _, row := range dataset.Rows {
+		if strings.EqualFold(row.Type, "O") {
+			continue
+		}
+		if err := writeXMLRow(out, row, dataset.Columns, profile == "nexacro-xml-4000"); err != nil {
+			return err
+		}
+	}
+	out.WriteString("\t\t</Rows>\n")
+	out.WriteString("\t</Dataset>\n")
 	return nil
 }
 
@@ -367,46 +446,36 @@ func writeXMLConstColumn(out *strings.Builder, column protocol.ConstColumn) erro
 	if err != nil {
 		return err
 	}
-	out.WriteString(`<ConstColumn id="`)
+	size, err := escapeXMLScalar(defaultWireSize(column.Type))
+	if err != nil {
+		return err
+	}
+	out.WriteString(`			<ConstColumn id="`)
 	out.WriteString(id)
 	out.WriteString(`" type="`)
 	out.WriteString(dataType)
+	out.WriteString(`" size="`)
+	out.WriteString(size)
 	out.WriteByte('"')
-	if column.Size != "" {
-		size, err := escapeXMLScalar(column.Size)
-		if err != nil {
-			return err
-		}
-		out.WriteString(` size="`)
-		out.WriteString(size)
-		out.WriteByte('"')
+	if strings.EqualFold(defaultType(column.Type), "BLOB") {
+		out.WriteString(` encrypt="base64"`)
 	}
-	encoding := column.Encoding
-	if strings.EqualFold(dataType, "BLOB") && encoding == "" {
-		encoding = "base64"
+	if column.Value.State != "value" {
+		out.WriteString("/>\n")
+		return nil
 	}
-	if strings.EqualFold(dataType, "BLOB") && !strings.EqualFold(encoding, "base64") {
-		return fmt.Errorf("BLOB ConstColumn requires base64 encoding")
+	value, err := escapeXMLScalar(column.Value.Lexical)
+	if err != nil {
+		return err
 	}
-	if encoding != "" {
-		escapedEncoding, err := escapeXMLScalar(strings.ToLower(encoding))
-		if err != nil {
-			return err
-		}
-		out.WriteString(` enc="`)
-		out.WriteString(escapedEncoding)
-		out.WriteByte('"')
+	out.WriteString(` value="`)
+	out.WriteString(value)
+	out.WriteByte('"')
+	if strings.EqualFold(defaultType(column.Type), "BLOB") {
+		out.WriteString("></ConstColumn>\n")
+	} else {
+		out.WriteString("/>\n")
 	}
-	if column.Value.State != "missing" && column.Value.State != "null" {
-		value, err := escapeXMLScalar(column.Value.Lexical)
-		if err != nil {
-			return err
-		}
-		out.WriteString(` value="`)
-		out.WriteString(value)
-		out.WriteByte('"')
-	}
-	out.WriteString("/>")
 	return nil
 }
 
@@ -419,64 +488,51 @@ func writeXMLColumn(out *strings.Builder, column protocol.Column) error {
 	if err != nil {
 		return err
 	}
-	out.WriteString(`<Column id="`)
+	size, err := escapeXMLScalar(defaultWireSize(column.Type))
+	if err != nil {
+		return err
+	}
+	out.WriteString(`			<Column id="`)
 	out.WriteString(id)
 	out.WriteString(`" type="`)
 	out.WriteString(dataType)
+	out.WriteString(`" size="`)
+	out.WriteString(size)
 	out.WriteByte('"')
-	encoding := column.Encoding
-	if strings.EqualFold(dataType, "BLOB") && encoding == "" {
-		encoding = "base64"
+	if strings.EqualFold(defaultType(column.Type), "BLOB") {
+		out.WriteString(` encrypt="base64"`)
 	}
-	if strings.EqualFold(dataType, "BLOB") && !strings.EqualFold(encoding, "base64") {
-		return fmt.Errorf("BLOB Column requires base64 encoding")
-	}
-	attributes := [][2]string{{"size", column.Size}, {"enc", strings.ToLower(encoding)}, {"prop", column.Prop}, {"sumtext", column.SumText}}
-	for _, attribute := range attributes {
-		if attribute[1] == "" {
-			continue
-		}
-		value, err := escapeXMLScalar(attribute[1])
-		if err != nil {
-			return err
-		}
-		out.WriteByte(' ')
-		out.WriteString(attribute[0])
-		out.WriteString(`="`)
-		out.WriteString(value)
-		out.WriteByte('"')
-	}
-	out.WriteString("/>")
+	out.WriteString("/>\n")
 	return nil
 }
 
-func writeXMLRow(out *strings.Builder, row protocol.Row, columns []protocol.Column) error {
-	rowType := map[string]string{"N": "", "I": "insert", "U": "update", "D": "delete"}[row.Type]
-	if rowType == "" && row.Type != "N" {
+func writeXMLRow(out *strings.Builder, row protocol.Row, columns []protocol.Column, rawText bool) error {
+	rowType := map[string]string{"N": "", "I": "insert", "U": "update", "D": "delete"}[strings.ToUpper(row.Type)]
+	if rowType == "" && !strings.EqualFold(row.Type, "N") {
 		return fmt.Errorf("invalid XML row type %q", row.Type)
 	}
-	out.WriteString("<Row")
+	out.WriteString("\t\t\t<Row")
 	if rowType != "" {
 		out.WriteString(` type="`)
 		out.WriteString(rowType)
 		out.WriteByte('"')
 	}
-	out.WriteByte('>')
-	if err := writeXMLCells(out, row.Values, columns); err != nil {
+	out.WriteString(">\n")
+	if err := writeXMLCells(out, row.Values, columns, "\t\t\t\t", rawText); err != nil {
 		return err
 	}
 	if row.OrgRow != nil {
-		out.WriteString("<OrgRow>")
-		if err := writeXMLCells(out, row.OrgRow.Values, columns); err != nil {
+		out.WriteString("\t\t\t\t<OrgRow>\n")
+		if err := writeXMLCells(out, row.OrgRow.Values, columns, "\t\t\t\t\t", rawText); err != nil {
 			return err
 		}
-		out.WriteString("</OrgRow>")
+		out.WriteString("\t\t\t\t</OrgRow>\n")
 	}
-	out.WriteString("</Row>")
+	out.WriteString("\t\t\t</Row>\n")
 	return nil
 }
 
-func writeXMLCells(out *strings.Builder, cells map[string]protocol.Cell, columns []protocol.Column) error {
+func writeXMLCells(out *strings.Builder, cells map[string]protocol.Cell, columns []protocol.Column, indent string, rawText bool) error {
 	for _, column := range columns {
 		cell, ok := cells[column.ID]
 		if !ok || cell.State == "missing" || cell.State == "null" {
@@ -486,20 +542,29 @@ func writeXMLCells(out *strings.Builder, cells map[string]protocol.Cell, columns
 		if err != nil {
 			return err
 		}
-		value, err := escapeXMLScalar(cell.Lexical)
+		value, err := escapeXMLText(cell.Lexical, rawText)
 		if err != nil {
 			return err
 		}
+		out.WriteString(indent)
 		out.WriteString(`<Col id="`)
 		out.WriteString(id)
 		out.WriteString(`">`)
 		out.WriteString(value)
-		out.WriteString("</Col>")
+		out.WriteString("</Col>\n")
 	}
 	return nil
 }
 
 func escapeXMLScalar(value string) (string, error) {
+	return escapeXML(value, true)
+}
+
+func escapeXMLText(value string, rawWhitespace bool) (string, error) {
+	return escapeXML(value, !rawWhitespace)
+}
+
+func escapeXML(value string, escapeWhitespace bool) (string, error) {
 	var out strings.Builder
 	for _, r := range value {
 		switch r {
@@ -514,11 +579,23 @@ func escapeXMLScalar(value string) (string, error) {
 		case '\'':
 			out.WriteString("&apos;")
 		case '\t':
-			out.WriteString("&#9;")
+			if escapeWhitespace {
+				out.WriteString("&#9;")
+			} else {
+				out.WriteRune(r)
+			}
 		case '\n':
-			out.WriteString("&#10;")
+			if escapeWhitespace {
+				out.WriteString("&#10;")
+			} else {
+				out.WriteRune(r)
+			}
 		case '\r':
-			out.WriteString("&#13;")
+			if escapeWhitespace {
+				out.WriteString("&#13;")
+			} else {
+				out.WriteRune(r)
+			}
 		default:
 			if r < 0x20 {
 				return "", fmt.Errorf("character U+%04X is not valid XML 1.0", r)

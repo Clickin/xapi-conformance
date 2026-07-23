@@ -26,8 +26,20 @@ func TestDecodeXMLBasic(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if v.Parameters[0].Lexical != "12:34:56.123" || v.Datasets[0].Rows[0].Values["x"].Lexical != "a<b" {
-		t.Fatalf("XML lexical value lost: %+v", v)
+	if v.Parameters[0].State != "null" || v.Datasets[0].Rows[0].Values["x"].Lexical != "a<b" {
+		t.Fatalf("XML scalar normalization failed: %+v", v)
+	}
+}
+
+func TestDecodeXMLNormalizesLenientDateTimeLexical(t *testing.T) {
+	wire := []byte(`<Root><Dataset id="d"><ColumnInfo><Column id="dt" type="DATETIME"/></ColumnInfo><Rows><Row><Col id="dt">not-a-datetime</Col></Row></Rows></Dataset></Root>`)
+	value, err := DecodeProfile(wire, "nexacro-xml-4000", DecodeOptions{Strict: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	cell := value.Datasets[0].Rows[0].Values["dt"]
+	if cell.State != "value" || cell.Lexical != "690190220012803000" {
+		t.Fatalf("DATETIME cell = %+v", cell)
 	}
 }
 
@@ -43,38 +55,39 @@ func TestDecodeRejectsDuplicateXMLAttributes(t *testing.T) {
 	}
 }
 
-func TestEncodeXMLRoundTripsOrgRowAndConstColumn(t *testing.T) {
-	v, err := DecodeProfile([]byte(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="http://www.nexacroplatform.com/platform/dataset" ver="4000"><Dataset id="d"><ColumnInfo><ConstColumn id="c" type="STRING" value="x"/><Column id="a" type="STRING"/></ColumnInfo><Rows><Row type="update"><Col id="a">new</Col><OrgRow><Col id="a">old</Col></OrgRow></Row></Rows></Dataset></Root>`), "nexacro-xml-4000", DecodeOptions{Strict: true})
+func TestEncodeXMLWritesOrgRowAndConstColumn(t *testing.T) {
+	value := protocol.Value{Datasets: []protocol.Dataset{{
+		ID:           "d",
+		Columns:      []protocol.Column{{ID: "a", Type: "STRING"}},
+		ConstColumns: []protocol.ConstColumn{{ID: "c", Type: "STRING", Value: protocol.Cell{State: "value", Lexical: "x"}}},
+		Rows: []protocol.Row{{
+			Type:   "U",
+			Values: map[string]protocol.Cell{"a": {State: "value", Lexical: "new"}},
+			OrgRow: &protocol.Row{
+				Type:   "O",
+				Values: map[string]protocol.Cell{"a": {State: "value", Lexical: "old"}},
+			},
+		}},
+	}}}
+	wire, err := Encode(value, "nexacro-xml-4000")
 	if err != nil {
 		t.Fatal(err)
 	}
-	b, err := Encode(v, "nexacro-xml-4000")
-	if err != nil {
-		t.Fatal(err)
-	}
-	round, err := Decode(b)
-	if err != nil {
-		t.Fatal(err)
-	}
-	if len(round.Datasets) != 1 || len(round.Datasets[0].ConstColumns) != 1 || round.Datasets[0].Rows[0].OrgRow == nil {
-		t.Fatalf("XML metadata/org row lost: %s", b)
+	if !bytes.Contains(wire, []byte(`<ConstColumn id="c" type="string" size="32" value="x"/>`)) ||
+		!bytes.Contains(wire, []byte(`<Row type="update">`)) ||
+		!bytes.Contains(wire, []byte("<OrgRow>")) ||
+		!bytes.Contains(wire, []byte(`>old</Col>`)) {
+		t.Fatalf("XML metadata/org row missing: %s", wire)
 	}
 }
 
-func TestEncodeXMLPreservesVerAndParameterAttributeForm(t *testing.T) {
+func TestEncodeXMLUsesProfileFramingAndTextParameters(t *testing.T) {
 	v := protocol.Value{Parameters: []protocol.Parameter{{ID: "p", Type: "STRING", State: "value", Lexical: "x", Wire: map[string]any{"valueForm": "attribute"}}}, Datasets: []protocol.Dataset{}, Wire: map[string]any{"root": map[string]any{"ver": "4000"}}}
 	b, err := Encode(v, "nexacro-xml-4000")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if !bytes.Contains(b, []byte(`ver="4000"`)) || !bytes.Contains(b, []byte(`value="x"`)) {
-		t.Fatalf("wire metadata lost: %s", b)
-	}
-	round, err := Decode(b)
-	if err != nil {
-		t.Fatal(err)
-	}
-	if round.Parameters[0].Wire["valueForm"] != "attribute" {
-		t.Fatalf("parameter form lost: %+v", round.Parameters[0])
+	if bytes.Contains(b, []byte(`ver="4000"`)) || bytes.Contains(b, []byte(`value="x"`)) || !bytes.Contains(b, []byte(`>x</Parameter>`)) {
+		t.Fatalf("unexpected Nexacro XML framing: %s", b)
 	}
 }

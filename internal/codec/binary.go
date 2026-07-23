@@ -106,7 +106,7 @@ func binaryValue(b []byte, strict bool) (protocol.Value, error) {
 		return protocol.Value{}, fmt.Errorf("binary payload exceeds limit")
 	}
 	r := newBinaryReader(b)
-	value := protocol.Value{Parameters: []protocol.Parameter{}, Datasets: []protocol.Dataset{}, Wire: map[string]any{"format": "PlatformBinary", "version": "5000"}}
+	value := protocol.Value{Parameters: []protocol.Parameter{}, Datasets: []protocol.Dataset{}}
 	mark, err := r.u16()
 	if err != nil {
 		return protocol.Value{}, err
@@ -179,7 +179,7 @@ func readBinaryVariables(r *binaryReader, value *protocol.Value) error {
 			return err
 		}
 		state, lexical := binaryCell(v)
-		value.Parameters = append(value.Parameters, protocol.Parameter{ID: id, Type: binaryVariantType(tag), State: state, Lexical: lexical, Index: i})
+		value.Parameters = append(value.Parameters, protocol.Parameter{ID: id, Type: binaryVariantType(tag), State: state, Lexical: lexical})
 	}
 	if br.remaining() != 0 {
 		return fmt.Errorf("trailing bytes in PlatformBinary variable block")
@@ -248,12 +248,11 @@ func readBinaryDataset(r *binaryReader, value *protocol.Value) error {
 		if err != nil {
 			return err
 		}
-		v, err := readBinaryValue(cr, tag)
+		_, err = readBinaryValue(cr, tag)
 		if err != nil {
 			return err
 		}
-		state, lexical := binaryCell(v)
-		constants = append(constants, protocol.ConstColumn{ID: id, Type: binaryVariantType(tag), Value: protocol.Cell{State: state, Lexical: lexical}})
+		constants = append(constants, protocol.ConstColumn{ID: id, Type: binaryVariantType(tag), Index: i})
 	}
 	if cr.remaining() != 0 {
 		return fmt.Errorf("trailing bytes in PlatformBinary constant block")
@@ -275,7 +274,7 @@ func readBinaryDataset(r *binaryReader, value *protocol.Value) error {
 		if err != nil {
 			return err
 		}
-		size, err := hr.u16()
+		_, err = hr.u16()
 		if err != nil {
 			return err
 		}
@@ -283,27 +282,22 @@ func readBinaryDataset(r *binaryReader, value *protocol.Value) error {
 		if err != nil {
 			return err
 		}
-		column := protocol.Column{ID: id, Type: binaryColumnType(columnType), Index: i}
-		if size != 0 {
-			column.Size = strconv.Itoa(int(size))
-		}
+		column := protocol.Column{ID: id, Type: binaryColumnType(columnType), Index: int(constantCount) + i}
 		if attr&0xf000 == 0x6000 {
 			sumLen, err := hr.u16()
 			if err != nil {
 				return err
 			}
-			sum, err := hr.bytes(int(sumLen))
-			if err != nil {
+			if _, err := hr.bytes(int(sumLen)); err != nil {
 				return err
 			}
-			column.Prop, column.SumText = "SUM", string(sum)
 		}
 		columns = append(columns, column)
 	}
 	if hr.remaining() != 0 {
 		return fmt.Errorf("trailing bytes in PlatformBinary dataset header")
 	}
-	dataset := protocol.Dataset{ID: alias, Columns: columns, ConstColumns: constants, Rows: []protocol.Row{}, Wire: map[string]any{"alias": alias, "version": "5000"}}
+	dataset := protocol.Dataset{ID: alias, Columns: columns, ConstColumns: constants, Rows: []protocol.Row{}}
 	for {
 		rowLen, err := r.length()
 		if err != nil {
@@ -506,6 +500,9 @@ func binaryColumnType(code uint16) string {
 }
 
 func encodeBinary(value protocol.Value) ([]byte, error) {
+	if len(value.Parameters) == 0 && len(value.Datasets) == 0 {
+		return []byte{}, nil
+	}
 	var out bytes.Buffer
 	block := &bytes.Buffer{}
 	writeU16(block, uint16(len(value.Parameters)))
@@ -677,9 +674,12 @@ func writeBinaryTypedValue(out *bytes.Buffer, dataType string, cell protocol.Cel
 		}
 		writeU16(out, 26)
 		return writeBinaryLengthBytes(out, value)
-	case "NULL", "UNDEFINED", "DATASET", "INVALID":
+	case "NULL":
 		writeU16(out, 0)
 		return nil
+	case "UNDEFINED", "DATASET", "INVALID":
+		writeU16(out, 21)
+		return writeBinaryLengthBytes(out, []byte(cell.Lexical))
 	default:
 		return fmt.Errorf("unsupported PlatformBinary type %q", dataType)
 	}

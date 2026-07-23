@@ -2,6 +2,9 @@ package main
 
 import (
 	"bufio"
+	"bytes"
+	"compress/zlib"
+	"encoding/base64"
 	"encoding/json"
 	"io"
 	"net/http"
@@ -56,7 +59,7 @@ func TestHTTPClientSkipsUnsupportedOptionalVector(t *testing.T) {
 	}
 }
 
-func TestEvaluateComparesWireOutput(t *testing.T) {
+func TestEvaluateNonZlibWireOutputRemainsExact(t *testing.T) {
 	v := vector{ID: "wire.test", Operation: "encode", Profile: "p", Required: true}
 	v.Expect.Kind = "wire"
 	v.Expect.Output = map[string]any{"encoding": "base64", "data": "eA=="}
@@ -71,6 +74,86 @@ func TestEvaluateComparesWireOutput(t *testing.T) {
 	actual["output"].(map[string]any)["data"] = "eQ=="
 	if result := evaluate(v, actual); result.Pass {
 		t.Fatal("different wire passed")
+	}
+}
+
+func TestEvaluateZlibWireOutputComparesInflatedPayload(t *testing.T) {
+	payload := []byte("the same uncompressed platform payload, repeated: the same uncompressed platform payload")
+	expectedOutput := testZlibOutput(t, payload, zlib.BestCompression)
+	actualOutput := testZlibOutput(t, payload, zlib.NoCompression)
+	if expectedOutput["data"] == actualOutput["data"] {
+		t.Fatal("test requires different compressed byte streams")
+	}
+
+	v := vector{ID: "wire.zlib", Operation: "encode", Profile: "p", Options: map[string]any{"zlib": true}}
+	v.Expect.Kind = "wire"
+	v.Expect.Output = expectedOutput
+	actual := map[string]any{"ok": true, "output": actualOutput}
+
+	if result := evaluate(v, actual); !result.Pass {
+		t.Fatalf("equivalent zlib output failed: %+v", result)
+	}
+}
+
+func TestEvaluateZlibWireOutputRejectsInvalidTransport(t *testing.T) {
+	payload := []byte("expected payload")
+	v := vector{ID: "wire.zlib", Operation: "encode", Profile: "p", Options: map[string]any{"zlib": true}}
+	v.Expect.Kind = "wire"
+	v.Expect.Output = testZlibOutput(t, payload, zlib.DefaultCompression)
+	trailingJunk := testZlibOutput(t, payload, zlib.DefaultCompression)
+	trailingBytes, err := base64.StdEncoding.DecodeString(trailingJunk["data"].(string))
+	if err != nil {
+		t.Fatal(err)
+	}
+	trailingJunk["data"] = base64.StdEncoding.EncodeToString(append(trailingBytes, 0xde, 0xad, 0xbe, 0xef))
+
+	tests := map[string]map[string]any{
+		"wrong encoding": {
+			"encoding": "text",
+			"data":     v.Expect.Output["data"],
+		},
+		"invalid base64": {
+			"encoding": "base64",
+			"data":     "%%%",
+		},
+		"missing magic": {
+			"encoding": "base64",
+			"data":     base64.StdEncoding.EncodeToString([]byte("not a zlib transport")),
+		},
+		"invalid zlib": {
+			"encoding": "base64",
+			"data":     base64.StdEncoding.EncodeToString([]byte{0xff, 0xad, 0x00, 0x01}),
+		},
+		"different payload": testZlibOutput(t, []byte("different payload"), zlib.DefaultCompression),
+		"trailing junk":     trailingJunk,
+	}
+	for name, output := range tests {
+		t.Run(name, func(t *testing.T) {
+			actual := map[string]any{"ok": true, "output": output}
+			if result := evaluate(v, actual); result.Pass {
+				t.Fatalf("invalid zlib transport passed: %+v", result)
+			}
+		})
+	}
+}
+
+func testZlibOutput(t *testing.T, payload []byte, level int) map[string]any {
+	t.Helper()
+	var encoded bytes.Buffer
+	encoded.Write([]byte{0xff, 0xad})
+	writer, err := zlib.NewWriterLevel(&encoded, level)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if _, err := writer.Write(payload); err != nil {
+		t.Fatal(err)
+	}
+	if err := writer.Close(); err != nil {
+		t.Fatal(err)
+	}
+	return map[string]any{
+		"encoding": "base64",
+		"data":     base64.StdEncoding.EncodeToString(encoded.Bytes()),
 	}
 }
 

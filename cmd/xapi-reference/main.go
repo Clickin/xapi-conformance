@@ -3,7 +3,6 @@ package main
 import (
 	"bufio"
 	"bytes"
-	"encoding/base64"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -127,7 +126,11 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "invalid-request", "input", "input is required")
 			return
 		}
-		b, err := protocol.DecodeInput(*req.Input, boolOpt(req.Options, "base64Whitespace"))
+		if msg := invalidDecodeSource(req.Options, req.Profile); msg != "" {
+			writeError(w, 400, "malformed-input", "", msg)
+			return
+		}
+		b, err := protocol.DecodeInput(*req.Input, false)
 		if err != nil {
 			writeError(w, 400, "malformed-input", "input.data", err.Error())
 			return
@@ -144,18 +147,14 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "malformed-input", "wire", err.Error())
 			return
 		}
-		if class, path, msg := checkLimits(v, req.Options, int64(len(b))); class != "" {
-			writeError(w, 400, class, path, msg)
-			return
-		}
 		out = protocol.Response{OK: true, Value: &v}
 	case "encode":
 		if req.Value == nil {
 			writeError(w, 400, "invalid-request", "value", "value is required")
 			return
 		}
-		if class, path, msg := checkLimits(*req.Value, req.Options, -1); class != "" {
-			writeError(w, 400, class, path, msg)
+		if msg := invalidEncodeSource(*req.Value); msg != "" {
+			writeError(w, 400, "malformed-input", "", msg)
 			return
 		}
 		b, err := codec.Encode(*req.Value, req.Profile)
@@ -176,7 +175,11 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "invalid-request", "input", "input is required")
 			return
 		}
-		b, err := protocol.DecodeInput(*req.Input, boolOpt(req.Options, "base64Whitespace"))
+		if msg := invalidDecodeSource(req.Options, req.Profile); msg != "" {
+			writeError(w, 400, "malformed-input", "", msg)
+			return
+		}
+		b, err := protocol.DecodeInput(*req.Input, false)
 		if err != nil {
 			writeError(w, 400, "malformed-input", "input.data", err.Error())
 			return
@@ -191,10 +194,6 @@ func operation(w http.ResponseWriter, r *http.Request) {
 		v, err := codec.DecodeProfile(b, req.Profile, decodeOptions(req.Options))
 		if err != nil {
 			writeError(w, 400, "malformed-input", "wire", err.Error())
-			return
-		}
-		if class, path, msg := checkLimits(v, req.Options, int64(len(b))); class != "" {
-			writeError(w, 400, class, path, msg)
 			return
 		}
 		encoded, e := codec.Encode(v, req.Profile)
@@ -223,16 +222,8 @@ func strictOpt(m map[string]any) bool {
 	}
 	return true
 }
-func stringOpt(m map[string]any, key string) string {
-	value, _ := m[key].(string)
-	return value
-}
 func decodeOptions(options map[string]any) codec.DecodeOptions {
-	return codec.DecodeOptions{
-		Strict:             strictOpt(options),
-		SSVUnitSeparator:   stringOpt(options, "ssvUnitSeparator"),
-		SSVRecordSeparator: stringOpt(options, "ssvRecordSeparator"),
-	}
+	return codec.DecodeOptions{Strict: strictOpt(options)}
 }
 func supportedProfile(profile string) bool {
 	switch profile {
@@ -258,66 +249,25 @@ func invalidOption(options map[string]any, strict bool, profile string) string {
 	return ""
 }
 
-func checkLimits(v protocol.Value, options map[string]any, payloadBytes int64) (string, string, string) {
-	l, _ := options["limits"].(map[string]any)
-	if l == nil {
-		return "", "", ""
+func invalidDecodeSource(options map[string]any, profile string) string {
+	if profile != "nexacro-ssv" && profile != "xplatform-ssv" {
+		return ""
 	}
-	if n, ok := limitNumber(l, "payloadBytes"); ok && payloadBytes >= 0 && payloadBytes > n {
-		return "limit-exceeded", "input.data", "payload exceeds configured limit"
-	}
-	if n, ok := limitNumber(l, "datasets"); ok && int64(len(v.Datasets)) > n {
-		return "limit-exceeded", "value.datasets", "dataset limit exceeded"
-	}
-	for di, d := range v.Datasets {
-		if n, ok := limitNumber(l, "columns"); ok && int64(len(d.Columns)+len(d.ConstColumns)) > n {
-			return "limit-exceeded", fmt.Sprintf("value.datasets[%d].columns", di), "column limit exceeded"
-		}
-		if n, ok := limitNumber(l, "rows"); ok && int64(len(d.Rows)) > n {
-			return "limit-exceeded", fmt.Sprintf("value.datasets[%d].rows", di), "row limit exceeded"
-		}
-		for ri, row := range d.Rows {
-			if n, ok := limitNumber(l, "depth"); ok && int64(rowDepth(row)) > n {
-				return "limit-exceeded", fmt.Sprintf("value.datasets[%d].rows[%d].orgRow", di, ri), "row depth limit exceeded"
-			}
-			if len(row.Values) > 0 {
-				for id, c := range row.Values {
-					if n, ok := limitNumber(l, "scalarBytes"); ok && int64(len(c.Lexical)) > n {
-						return "limit-exceeded", fmt.Sprintf("value.datasets[%d].rows[%d].values.%s", di, ri, id), "scalar limit exceeded"
-					}
-					if c.State == "value" && strings.EqualFold(columnType(d, id), "BLOB") {
-						if n, ok := limitNumber(l, "blobBytes"); ok {
-							if decoded, err := base64.StdEncoding.DecodeString(c.Lexical); err == nil && int64(len(decoded)) > n {
-								return "limit-exceeded", fmt.Sprintf("value.datasets[%d].rows[%d].values.%s", di, ri, id), "blob limit exceeded"
-							}
-						}
-					}
-				}
-			}
-		}
-	}
-	return "", "", ""
-}
-func limitNumber(m map[string]any, key string) (int64, bool) {
-	v, ok := m[key].(float64)
-	return int64(v), ok && v >= 0
-}
-func columnType(d protocol.Dataset, id string) string {
-	for _, c := range d.Columns {
-		if c.ID == id {
-			return c.Type
+	for _, key := range []string{"ssvUnitSeparator", "ssvRecordSeparator"} {
+		if value, ok := options[key].(string); ok && value != "" {
+			return "custom SSV separators are not accepted for decode"
 		}
 	}
 	return ""
 }
-func rowDepth(r protocol.Row) int {
-	n := 1
-	for r.OrgRow != nil {
-		n++
-		r = *r.OrgRow
+
+func invalidEncodeSource(v protocol.Value) string {
+	if v.SaveType != 0 {
+		return "saveType is not accepted for encode"
 	}
-	return n
+	return ""
 }
+
 func writeJSON(w http.ResponseWriter, v any) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(v)

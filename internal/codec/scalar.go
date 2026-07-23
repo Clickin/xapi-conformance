@@ -1,7 +1,6 @@
 package codec
 
 import (
-	"encoding/json"
 	"math"
 	"math/big"
 	"regexp"
@@ -29,7 +28,7 @@ func applyScalarCompatibility(value protocol.Value) protocol.Value {
 		dataset := &datasets[di]
 		constants := append([]protocol.ConstColumn(nil), dataset.ConstColumns...)
 		for i := range constants {
-			constants[i].Value = normalizeSourceCell(constants[i].Type, constants[i].Value)
+			constants[i].Value = normalizeSourceConstCell(constants[i].Type, constants[i].Value)
 		}
 		dataset.ConstColumns = constants
 
@@ -75,13 +74,30 @@ func normalizeSourceCell(dataType string, cell protocol.Cell) protocol.Cell {
 			cell.Lexical = "0"
 		}
 	case "SHORT", "USHORT", "INT", "UINT":
-		cell.Lexical = normalizeSourceInteger(cell.Lexical, true)
+		cell.Lexical = normalizeSourceInt(cell.Lexical)
 	case "LONG", "ULONG":
 		cell.Lexical = normalizeSourceInteger(cell.Lexical, false)
 	case "FLOAT":
 		cell.Lexical = normalizeSourceFloat(cell.Lexical, 32)
 	case "DOUBLE":
 		cell.Lexical = normalizeSourceFloat(cell.Lexical, 64)
+	case "DECIMAL", "BIGDECIMAL":
+		cell.Lexical = normalizeSourceDecimal(cell.Lexical)
+	}
+	return cell
+}
+
+func normalizeSourceConstCell(dataType string, cell protocol.Cell) protocol.Cell {
+	if cell.State != "value" {
+		return cell
+	}
+	switch strings.ToUpper(defaultType(dataType)) {
+	case "BOOLEAN":
+		if sourceBoolean(cell.Lexical) {
+			cell.Lexical = "1"
+		} else {
+			cell.Lexical = "0"
+		}
 	case "DECIMAL", "BIGDECIMAL":
 		cell.Lexical = normalizeSourceDecimal(cell.Lexical)
 	}
@@ -95,6 +111,15 @@ func sourceBoolean(value string) bool {
 	default:
 		return false
 	}
+}
+
+func normalizeSourceInt(value string) string {
+	normalized := normalizeSourceInteger(value, true)
+	parsed, err := strconv.ParseInt(normalized, 10, 32)
+	if err != nil {
+		return "0"
+	}
+	return strconv.FormatInt(parsed, 10)
 }
 
 func normalizeSourceInteger(value string, allowHex bool) string {
@@ -147,6 +172,9 @@ func normalizeSourceFloat(value string, bits int) string {
 
 func normalizeSourceDecimal(value string) string {
 	value = strings.ReplaceAll(strings.TrimSpace(value), ",", "")
+	if value == "" {
+		return ""
+	}
 	if !sourceDecimalPattern.MatchString(value) {
 		return "0"
 	}
@@ -172,22 +200,27 @@ func normalizeSourceDecimal(value string) string {
 	return sign + integer + exponent
 }
 
-func jsonScalar(dataType string, cell protocol.Cell) any {
-	if cell.State == "null" {
-		return nil
-	}
+func jsonScalar(dataType string, cell protocol.Cell) (string, bool) {
+	dataType = strings.ToUpper(defaultType(dataType))
 	if cell.State != "value" {
-		return cell.Lexical
-	}
-	switch strings.ToUpper(defaultType(dataType)) {
-	case "BOOLEAN", "SHORT", "USHORT", "INT", "UINT", "LONG", "ULONG", "DECIMAL", "BIGDECIMAL":
-		return json.Number(cell.Lexical)
-	case "FLOAT", "DOUBLE":
-		if cell.Lexical == "NaN" || cell.Lexical == "Infinity" || cell.Lexical == "-Infinity" {
-			return nil
+		if dataType == "BOOLEAN" {
+			return "0", true
 		}
-		return json.Number(cell.Lexical)
+		return "", false
+	}
+	if cell.Lexical != "" {
+		return cell.Lexical, true
+	}
+	switch dataType {
+	case "STRING", "CHAR", "FILE", "BLOB":
+		return "", true
+	case "SHORT", "USHORT", "INT", "UINT", "LONG", "ULONG":
+		return "0", true
+	case "FLOAT", "DOUBLE":
+		return "0.0", true
+	case "BOOLEAN":
+		return "0", true
 	default:
-		return cell.Lexical
+		return "", false
 	}
 }

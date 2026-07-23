@@ -17,6 +17,11 @@
             "id": "b",
             "type": "STRING",
             "index": 1
+          },
+          {
+            "id": "c",
+            "type": "STRING",
+            "index": 2
           }
         ],
         "constColumns": [],
@@ -29,6 +34,9 @@
               },
               "b": {
                 "state": "missing"
+              },
+              "c": {
+                "state": "null"
               }
             }
           }
@@ -37,10 +45,52 @@
     ]
   },
   "expect": {
-    "kind": "error",
-    "error": {
-      "class": "malformed-input",
-      "path": ""
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpzdHJpbmcoMzIpH2I6c3RyaW5nKDMyKR9jOnN0cmluZygzMikeTh8fHx4=",
+      "encoding": "base64"
+    },
+    "value": {
+      "parameters": [],
+      "datasets": [
+        {
+          "id": "d",
+          "columns": [
+            {
+              "id": "a",
+              "type": "STRING",
+              "index": 0
+            },
+            {
+              "id": "b",
+              "type": "STRING",
+              "index": 1
+            },
+            {
+              "id": "c",
+              "type": "STRING",
+              "index": 2
+            }
+          ],
+          "constColumns": [],
+          "rows": [
+            {
+              "type": "N",
+              "values": {
+                "a": {
+                  "state": "empty"
+                },
+                "b": {
+                  "state": "missing"
+                },
+                "c": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   "source": {

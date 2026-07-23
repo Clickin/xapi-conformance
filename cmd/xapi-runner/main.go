@@ -3,7 +3,9 @@ package main
 import (
 	"bufio"
 	"bytes"
+	"compress/zlib"
 	"context"
+	"encoding/base64"
 	"encoding/json"
 	"encoding/xml"
 	"flag"
@@ -261,7 +263,8 @@ func evaluate(v vector, actual map[string]any) result {
 	}
 	if v.Expect.Kind == "wire" {
 		output, ok := actual["output"].(map[string]any)
-		pass := ok && jsonEqual(output, v.Expect.Output)
+		zlibExpected, _ := v.Options["zlib"].(bool)
+		pass := ok && ((!zlibExpected && jsonEqual(output, v.Expect.Output)) || (zlibExpected && equalZlibOutput(output, v.Expect.Output)))
 		if pass && v.Expect.Value != nil {
 			value, valueOK := actual["value"].(map[string]any)
 			pass = valueOK && jsonEqual(value, v.Expect.Value)
@@ -292,6 +295,45 @@ func evaluate(v vector, actual map[string]any) result {
 		r.Diff = diff(r.Expected, av)
 	}
 	return r
+}
+func equalZlibOutput(actual, expected map[string]any) bool {
+	if len(actual) != len(expected) {
+		return false
+	}
+	for key, expectedValue := range expected {
+		if key == "data" {
+			continue
+		}
+		actualValue, ok := actual[key]
+		if !ok || !jsonEqual(actualValue, expectedValue) {
+			return false
+		}
+	}
+	actualPayload, actualOK := inflateZlibOutput(actual)
+	expectedPayload, expectedOK := inflateZlibOutput(expected)
+	return actualOK && expectedOK && bytes.Equal(actualPayload, expectedPayload)
+}
+
+func inflateZlibOutput(output map[string]any) ([]byte, bool) {
+	if output["encoding"] != "base64" {
+		return nil, false
+	}
+	encoded, ok := output["data"].(string)
+	if !ok {
+		return nil, false
+	}
+	compressed, err := base64.StdEncoding.DecodeString(encoded)
+	if err != nil || len(compressed) < 2 || compressed[0] != 0xff || compressed[1] != 0xad {
+		return nil, false
+	}
+	compressedReader := bytes.NewReader(compressed[2:])
+	reader, err := zlib.NewReader(compressedReader)
+	if err != nil {
+		return nil, false
+	}
+	payload, readErr := io.ReadAll(reader)
+	closeErr := reader.Close()
+	return payload, readErr == nil && closeErr == nil && compressedReader.Len() == 0
 }
 func expected(v vector) any {
 	if v.Expect.Kind == "error" {
