@@ -1,6 +1,6 @@
 {
   "name": "@clickin/xapi-conformance",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "CLI wrapper for the xapi-conformance HTTP test runner",
   "license": "MIT",
   "repository": {

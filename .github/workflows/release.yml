@@ -75,10 +75,19 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: dist
+      - name: Prepare uniquely named release assets
+        run: |
+          mkdir -p release
+          cp dist/darwin-arm64/xapi-conformance release/xapi-conformance-darwin-arm64
+          cp dist/darwin-x64/xapi-conformance release/xapi-conformance-darwin-x64
+          cp dist/linux-arm64/xapi-conformance release/xapi-conformance-linux-arm64
+          cp dist/linux-x64/xapi-conformance release/xapi-conformance-linux-x64
+          cp dist/win32-arm64/xapi-conformance.exe release/xapi-conformance-win32-arm64.exe
+          cp dist/win32-x64/xapi-conformance.exe release/xapi-conformance-win32-x64.exe
       - name: Create GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" dist/*/* --repo "$GITHUB_REPOSITORY" --generate-notes
+        run: gh release create "$GITHUB_REF_NAME" release/* --repo "$GITHUB_REPOSITORY" --generate-notes
 
   npm-publish:
     needs: build
