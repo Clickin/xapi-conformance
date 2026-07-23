@@ -1,6 +1,6 @@
 {
   "name": "@clickin/xapi-conformance",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "XPLATFORM/Nexacro wire protocol 적합성 검증 runner",
   "license": "MIT",
   "repository": {

@@ -47,6 +47,8 @@ type capabilities struct {
 	} `json:"profiles"`
 }
 
+const wireOutputDiffError = "wire output differs"
+
 type result struct {
 	ID       string `json:"id"`
 	Pass     bool   `json:"pass"`
@@ -129,6 +131,12 @@ func finish(results []result, jsonOut, junit string) {
 	for _, r := range results {
 		if !r.Pass {
 			fmt.Fprintf(os.Stderr, "FAIL %s: %s\n", r.ID, r.Error)
+			if r.Error == wireOutputDiffError {
+				fmt.Fprintf(os.Stderr, "expected:\n%s\n", formatJSON(r.Expected))
+				if r.Diff != "" {
+					fmt.Fprintf(os.Stderr, "diff:\n%s\n", r.Diff)
+				}
+			}
 		}
 	}
 	if jsonOut != "" {
@@ -271,7 +279,7 @@ func evaluate(v vector, actual map[string]any) result {
 		}
 		r.Pass = pass
 		if !pass {
-			r.Error = "wire output differs"
+			r.Error = wireOutputDiffError
 			r.Diff = diff(r.Expected, actual)
 		}
 		return r
@@ -351,6 +359,14 @@ func expected(v vector) any {
 	}
 	return v.Value
 }
+func formatJSON(v any) string {
+	b, err := json.MarshalIndent(v, "", "  ")
+	if err != nil {
+		return fmt.Sprint(v)
+	}
+	return string(b)
+}
+
 func diff(expected, actual any) string {
 	a, _ := json.MarshalIndent(expected, "", "  ")
 	b, _ := json.MarshalIndent(actual, "", "  ")

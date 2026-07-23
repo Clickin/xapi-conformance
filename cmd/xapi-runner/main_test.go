@@ -77,6 +77,43 @@ func TestEvaluateNonZlibWireOutputRemainsExact(t *testing.T) {
 	}
 }
 
+func TestFinishShowsWireExpectedAndDiff(t *testing.T) {
+	readStderr, writeStderr, err := os.Pipe()
+	if err != nil {
+		t.Fatal(err)
+	}
+	originalStderr := os.Stderr
+	os.Stderr = writeStderr
+	defer func() {
+		os.Stderr = originalStderr
+	}()
+	finish([]result{{
+		ID:       "wire.test",
+		Error:    wireOutputDiffError,
+		Expected: map[string]any{"output": map[string]any{"encoding": "base64", "data": "eA=="}},
+		Diff:     "expected:\n...\nactual:\n...",
+	}}, "", "")
+	if err := writeStderr.Close(); err != nil {
+		t.Fatal(err)
+	}
+	defer readStderr.Close()
+
+	output, err := io.ReadAll(readStderr)
+	if err != nil {
+		t.Fatal(err)
+	}
+	text := string(output)
+	for _, want := range []string{
+		"FAIL wire.test: wire output differs\n",
+		"expected:\n{\n  \"output\": {\n",
+		"diff:\nexpected:\n...\nactual:\n...",
+	} {
+		if !bytes.Contains(output, []byte(want)) {
+			t.Errorf("stderr does not contain %q:\n%s", want, text)
+		}
+	}
+}
+
 func TestEvaluateZlibWireOutputComparesInflatedPayload(t *testing.T) {
 	payload := []byte("the same uncompressed platform payload, repeated: the same uncompressed platform payload")
 	expectedOutput := testZlibOutput(t, payload, zlib.BestCompression)
