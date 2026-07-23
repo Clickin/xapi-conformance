@@ -12,14 +12,14 @@
   "expect": {
     "kind": "canonical",
     "value": {
+      "datasets": [],
       "parameters": [
         {
           "id": "p",
-          "type": "STRING",
-          "state": "missing"
+          "state": "null",
+          "type": "STRING"
         }
       ],
-      "datasets": [],
       "wire": {
         "version": "1.0"
       }

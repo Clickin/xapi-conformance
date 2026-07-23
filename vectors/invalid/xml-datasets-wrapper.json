@@ -1,10 +1,32 @@
 {
-  "id":"nexacro-xml.datasets-wrapper.strict",
-  "operation":"decode",
-  "profile":"nexacro-xml-4000",
-  "options":{"strict":true},
-  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXRzLz48L1Jvb3Q+"},
-  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/xml-datasets-wrapper.json","license":"repository"},
-  "required":true
+  "id": "nexacro-xml.datasets-wrapper.strict",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXRzLz48L1Jvb3Q+"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/invalid/xml-datasets-wrapper.json",
+    "license": "repository"
+  },
+  "required": true
 }

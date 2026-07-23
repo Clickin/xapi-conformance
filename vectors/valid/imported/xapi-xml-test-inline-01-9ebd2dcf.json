@@ -12,38 +12,27 @@
   "expect": {
     "kind": "canonical",
     "value": {
+      "datasets": [],
       "parameters": [
         {
           "id": "testDate",
-          "type": "DATE",
-          "state": "value",
           "lexical": "20250104",
-          "wire": {
-            "valueForm": "text"
-          }
+          "state": "value",
+          "type": "DATE"
         },
         {
           "id": "testDateTime",
-          "type": "DATETIME",
+          "lexical": "20250104153045000",
           "state": "value",
-          "lexical": "20250104153045",
-          "index": 1,
-          "wire": {
-            "valueForm": "text"
-          }
+          "type": "DATETIME"
         },
         {
           "id": "testTime",
-          "type": "TIME",
+          "lexical": "153045000",
           "state": "value",
-          "lexical": "153045",
-          "index": 2,
-          "wire": {
-            "valueForm": "text"
-          }
+          "type": "TIME"
         }
       ],
-      "datasets": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

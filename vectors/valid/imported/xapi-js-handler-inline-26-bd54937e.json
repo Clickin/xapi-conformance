@@ -10,41 +10,10 @@
     "strict": false
   },
   "expect": {
-    "kind": "canonical",
-    "value": {
-      "parameters": [],
-      "datasets": [
-        {
-          "id": "",
-          "columns": [
-            {
-              "id": "testCol",
-              "type": "STRING",
-              "index": 0,
-              "size": "10"
-            }
-          ],
-          "constColumns": [],
-          "rows": [
-            {
-              "type": "N",
-              "orgRow": null,
-              "values": {
-                "testCol": {
-                  "state": "value",
-                  "lexical": "testValue"
-                }
-              }
-            }
-          ]
-        }
-      ],
-      "wire": {
-        "root": {
-          "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
-        }
-      }
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": ""
     }
   },
   "source": {

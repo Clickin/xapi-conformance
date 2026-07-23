@@ -1,13 +1,57 @@
 {
-  "id":"nexacro-json.entity-literals.decode",
-  "operation":"decode",
-  "profile":"nexacro-json-1.0",
-  "input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W3siaWQiOiJwIiwidHlwZSI6IlNUUklORyIsInZhbHVlIjoiZmlyc3QmIzEwO3NlY29uZCAmYW1wOyB0aGlyZCJ9XSwiRGF0YXNldHMiOlt7ImlkIjoiZCIsIkNvbHVtbkluZm8iOnsiQ29sdW1uIjpbeyJpZCI6ImEiLCJ0eXBlIjoiU1RSSU5HIn1dfSwiUm93cyI6W3siYSI6IngmIzEwO3kgJmx0O3omZ3Q7In1dfV19"},
-  "expect":{"kind":"canonical","value":{
-    "parameters":[{"id":"p","type":"STRING","state":"value","lexical":"first&#10;second &amp; third"}],
-    "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0}],"constColumns":[],"rows":[{"type":"N","orgRow":null,"values":{"a":{"state":"value","lexical":"x&#10;y &lt;z&gt;"}}}]}],
-    "wire":{"version":"1.0"}
-  }},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/nexacro-json-entity-literals.json","license":"repository"},
-  "required":true
+  "id": "nexacro-json.entity-literals.decode",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "input": {
+    "encoding": "base64",
+    "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W3siaWQiOiJwIiwidHlwZSI6IlNUUklORyIsInZhbHVlIjoiZmlyc3QmIzEwO3NlY29uZCAmYW1wOyB0aGlyZCJ9XSwiRGF0YXNldHMiOlt7ImlkIjoiZCIsIkNvbHVtbkluZm8iOnsiQ29sdW1uIjpbeyJpZCI6ImEiLCJ0eXBlIjoiU1RSSU5HIn1dfSwiUm93cyI6W3siYSI6IngmIzEwO3kgJmx0O3omZ3Q7In1dfV19"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "x&#10;y &lt;z&gt;",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "first&#10;second &amp; third",
+          "state": "value",
+          "type": "STRING"
+        }
+      ],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-json-entity-literals.json",
+    "license": "repository"
+  },
+  "required": true
 }

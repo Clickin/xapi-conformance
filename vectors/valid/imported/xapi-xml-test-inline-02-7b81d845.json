@@ -12,18 +12,15 @@
   "expect": {
     "kind": "canonical",
     "value": {
+      "datasets": [],
       "parameters": [
         {
           "id": "test",
-          "type": "INT",
-          "state": "value",
           "lexical": "42",
-          "wire": {
-            "valueForm": "text"
-          }
+          "state": "value",
+          "type": "INT"
         }
       ],
-      "datasets": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

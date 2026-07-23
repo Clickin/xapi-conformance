@@ -29,8 +29,32 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "encoding": "base64",
-      "data": "U1NWOnV0Zi04HnA6U1RSSU5HPXgeRGF0YXNldDpkHl9Sb3dUeXBlXx9hOlNUUklORx4="
+      "data": "U1NWOlVURi04HnA6c3RyaW5nPXgeRGF0YXNldDpkHl9Sb3dUeXBlXx9hOnN0cmluZygzMike",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": []
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "x",
+          "state": "value",
+          "type": "STRING"
+        }
+      ]
     }
   },
   "source": {

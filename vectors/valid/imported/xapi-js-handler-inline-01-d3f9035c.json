@@ -12,100 +12,99 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "service",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "stock",
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "method",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "search",
-          "index": 1,
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "output",
           "columns": [
             {
               "id": "stockCode",
-              "type": "STRING",
-              "index": 0,
-              "size": "5"
+              "index": 2,
+              "type": "STRING"
             },
             {
               "id": "currentprice",
-              "type": "INT",
-              "index": 1,
-              "size": "10"
+              "index": 3,
+              "type": "INT"
             }
           ],
           "constColumns": [
             {
               "id": "market",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "kse"
-              },
-              "size": "10"
+              "index": 0,
+              "type": "STRING"
             },
             {
               "id": "openprice",
-              "type": "INT",
-              "value": {
-                "state": "value",
-                "lexical": "15000"
-              },
-              "size": "10"
+              "index": 1,
+              "type": "INT"
             }
           ],
+          "id": "output",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "currentprice": {
-                  "state": "value",
-                  "lexical": "5700"
+                  "lexical": "5700",
+                  "state": "value"
+                },
+                "market": {
+                  "lexical": "kse",
+                  "state": "value"
+                },
+                "openprice": {
+                  "lexical": "15000",
+                  "state": "value"
                 },
                 "stockCode": {
-                  "state": "value",
-                  "lexical": "10001"
+                  "lexical": "10001",
+                  "state": "value"
                 }
               }
             },
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "currentprice": {
-                  "state": "value",
-                  "lexical": "14500"
+                  "lexical": "14500",
+                  "state": "value"
+                },
+                "market": {
+                  "lexical": "kse",
+                  "state": "value"
+                },
+                "openprice": {
+                  "lexical": "15000",
+                  "state": "value"
                 },
                 "stockCode": {
-                  "state": "value",
-                  "lexical": "10002"
+                  "lexical": "10002",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [
+        {
+          "id": "service",
+          "lexical": "stock",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "method",
+          "lexical": "search",
+          "state": "value",
+          "type": "STRING"
+        }
+      ],
       "wire": {
         "root": {
-          "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
         }
       }
     }

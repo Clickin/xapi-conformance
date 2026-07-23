@@ -41,8 +41,44 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbnN0Q29sdW1uIGlkPSJjIiB0eXBlPSJibG9iIiBlbmM9ImJhc2U2NCIgdmFsdWU9ImVBPT0iLz48Q29sdW1uIGlkPSJiIiB0eXBlPSJibG9iIiBlbmM9ImJhc2U2NCIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9ImIiPmVRPT08L0NvbD48L1Jvdz48L1Jvd3M+PC9EYXRhc2V0PjwvUm9vdD4=",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImIiIHR5cGU9ImJsb2IiIHNpemU9IjI1NiIgZW5jcnlwdD0iYmFzZTY0Ii8+CgkJCTxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iYmxvYiIgc2l6ZT0iMjU2IiBlbmNyeXB0PSJiYXNlNjQiIHZhbHVlPSJlQT09Ij48L0NvbnN0Q29sdW1uPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9ImIiPmVRPT08L0NvbD4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
       "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "b",
+              "index": 0,
+              "type": "BLOB"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "type": "BLOB",
+              "value": {
+                "lexical": "eA==",
+                "state": "value"
+              }
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "eQ==",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
     }
   },
   "source": {

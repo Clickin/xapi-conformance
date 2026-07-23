@@ -2,12 +2,68 @@
   "id": "compatibility.json-floating-special-values.encode",
   "operation": "encode",
   "profile": "nexacro-json-1.0",
-  "value": {"parameters": [
-    {"id": "nan", "type": "FLOAT", "state": "value", "lexical": "NaN"},
-    {"id": "pos", "type": "DOUBLE", "state": "value", "lexical": "Infinity", "index": 1},
-    {"id": "neg", "type": "DOUBLE", "state": "value", "lexical": "-Infinity", "index": 2}
-  ], "datasets": []},
-  "expect": {"kind": "wire", "output": {"encoding": "base64", "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6Im5hbiIsInR5cGUiOiJmbG9hdCIsInZhbHVlIjpudWxsfSx7ImlkIjoicG9zIiwidHlwZSI6ImZsb2F0IiwidmFsdWUiOm51bGx9LHsiaWQiOiJuZWciLCJ0eXBlIjoiZmxvYXQiLCJ2YWx1ZSI6bnVsbH1dLCJ2ZXJzaW9uIjoiMS4wIn0="}},
-  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/json-floating-special-values-encode.json", "license": "repository"},
+  "value": {
+    "parameters": [
+      {
+        "id": "nan",
+        "type": "FLOAT",
+        "state": "value",
+        "lexical": "NaN"
+      },
+      {
+        "id": "pos",
+        "type": "DOUBLE",
+        "state": "value",
+        "lexical": "Infinity",
+        "index": 1
+      },
+      {
+        "id": "neg",
+        "type": "DOUBLE",
+        "state": "value",
+        "lexical": "-Infinity",
+        "index": 2
+      }
+    ],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6Im5hbiIsInR5cGUiOiJmbG9hdCIsInZhbHVlIjoiTmFOIn0seyJpZCI6InBvcyIsInR5cGUiOiJmbG9hdCIsInZhbHVlIjoiSW5maW5pdHkifSx7ImlkIjoibmVnIiwidHlwZSI6ImZsb2F0IiwidmFsdWUiOiItSW5maW5pdHkifV0sInZlcnNpb24iOiIxLjAifQ==",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "nan",
+          "lexical": "NaN",
+          "state": "value",
+          "type": "FLOAT"
+        },
+        {
+          "id": "pos",
+          "index": 1,
+          "lexical": "Infinity",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "neg",
+          "index": 2,
+          "lexical": "-Infinity",
+          "state": "value",
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/json-floating-special-values-encode.json",
+    "license": "repository"
+  },
   "required": true
 }

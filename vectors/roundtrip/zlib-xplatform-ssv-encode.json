@@ -12,8 +12,12 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "encoding": "base64",
-      "data": "/614AQAKAPX/U1NWOnV0Zi04HgEAAP//EigDCQ=="
+      "data": "/614nAsODrMKDXHTtZADABBIAqk=",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": []
     }
   },
   "source": {

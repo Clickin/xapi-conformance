@@ -16,8 +16,19 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "encoding": "base64",
-      "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6InAiLCJ0eXBlIjoic3RyaW5nIiwidmFsdWUiOiJ4In1dLCJ2ZXJzaW9uIjoiMS4wIn0="
+      "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6InAiLCJ0eXBlIjoic3RyaW5nIiwidmFsdWUiOiJ4In1dLCJ2ZXJzaW9uIjoiMS4wIn0=",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "x",
+          "state": "value",
+          "type": "STRING"
+        }
+      ]
     }
   },
   "source": {

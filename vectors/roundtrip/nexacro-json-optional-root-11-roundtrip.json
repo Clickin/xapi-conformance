@@ -10,10 +10,14 @@
     "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbXX0="
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "eyJ2ZXJzaW9uIjoiMS4wIn0=",
+      "encoding": "base64"
+    },
     "value": {
-      "parameters": [],
       "datasets": [],
+      "parameters": [],
       "wire": {
         "version": "1.0"
       }

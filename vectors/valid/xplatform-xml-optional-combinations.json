@@ -12,401 +12,331 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "p0",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v",
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "p1",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v",
-          "index": 1,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "p2",
-          "type": "STRING",
-          "state": "empty",
-          "index": 2,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "p3",
-          "type": "STRING",
-          "state": "null",
-          "index": 3,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "p4",
-          "type": "STRING",
-          "state": "empty",
-          "index": 4,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "p5",
-          "type": "STRING",
-          "state": "null",
-          "index": 5,
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
       "datasets": [
         {
+          "columns": [],
+          "constColumns": [],
           "id": "children0",
-          "columns": [],
-          "constColumns": [],
           "rows": []
         },
         {
+          "columns": [],
+          "constColumns": [],
           "id": "children1",
-          "columns": [],
-          "constColumns": [],
           "rows": []
         },
         {
+          "columns": [],
+          "constColumns": [],
           "id": "children2",
-          "columns": [],
-          "constColumns": [],
           "rows": []
         },
         {
+          "columns": [],
+          "constColumns": [],
           "id": "children3",
-          "columns": [],
-          "constColumns": [],
           "rows": []
         },
         {
-          "id": "items",
           "columns": [
             {
               "id": "m0",
-              "type": "STRING",
-              "index": 0
+              "index": 8,
+              "type": "UNDEFINED"
             },
             {
               "id": "m1",
-              "type": "STRING",
-              "index": 1
+              "index": 9,
+              "type": "STRING"
             },
             {
               "id": "m2",
-              "type": "STRING",
-              "index": 2,
-              "size": "7"
+              "index": 10,
+              "type": "UNDEFINED"
             },
             {
               "id": "m3",
-              "type": "STRING",
-              "index": 3,
-              "size": "7"
+              "index": 11,
+              "type": "STRING"
             },
             {
               "id": "m4",
-              "type": "STRING",
-              "index": 4,
-              "prop": "Text"
+              "index": 12,
+              "type": "UNDEFINED"
             },
             {
               "id": "m5",
-              "type": "STRING",
-              "index": 5,
-              "prop": "Text"
+              "index": 13,
+              "type": "STRING"
             },
             {
               "id": "m6",
-              "type": "STRING",
-              "index": 6,
-              "size": "7",
-              "prop": "Text"
+              "index": 14,
+              "type": "UNDEFINED"
             },
             {
               "id": "m7",
-              "type": "STRING",
-              "index": 7,
-              "size": "7",
-              "prop": "Text"
+              "index": 15,
+              "type": "STRING"
             },
             {
               "id": "m8",
-              "type": "STRING",
-              "index": 8,
-              "sumtext": "total"
+              "index": 16,
+              "type": "UNDEFINED"
             },
             {
               "id": "m9",
-              "type": "STRING",
-              "index": 9,
-              "sumtext": "total"
+              "index": 17,
+              "type": "STRING"
             },
             {
               "id": "m10",
-              "type": "STRING",
-              "index": 10,
-              "size": "7",
-              "sumtext": "total"
+              "index": 18,
+              "type": "UNDEFINED"
             },
             {
               "id": "m11",
-              "type": "STRING",
-              "index": 11,
-              "size": "7",
-              "sumtext": "total"
+              "index": 19,
+              "type": "STRING"
             },
             {
               "id": "m12",
-              "type": "STRING",
-              "index": 12,
-              "prop": "Text",
-              "sumtext": "total"
+              "index": 20,
+              "type": "UNDEFINED"
             },
             {
               "id": "m13",
-              "type": "STRING",
-              "index": 13,
-              "prop": "Text",
-              "sumtext": "total"
+              "index": 21,
+              "type": "STRING"
             },
             {
               "id": "m14",
-              "type": "STRING",
-              "index": 14,
-              "size": "7",
-              "prop": "Text",
-              "sumtext": "total"
+              "index": 22,
+              "type": "UNDEFINED"
             },
             {
               "id": "m15",
-              "type": "STRING",
-              "index": 15,
-              "size": "7",
-              "prop": "Text",
-              "sumtext": "total"
+              "index": 23,
+              "type": "STRING"
             },
             {
               "id": "tSTRING0",
-              "type": "STRING",
-              "index": 16
+              "index": 24,
+              "type": "STRING"
             },
             {
               "id": "tSTRING1",
-              "type": "STRING",
-              "index": 17
+              "index": 25,
+              "type": "STRING"
             },
             {
               "id": "tSTRING2",
-              "type": "STRING",
-              "index": 18
+              "index": 26,
+              "type": "STRING"
             },
             {
               "id": "tINT0",
-              "type": "INT",
-              "index": 19
+              "index": 27,
+              "type": "INT"
             },
             {
               "id": "tINT1",
-              "type": "INT",
-              "index": 20
+              "index": 28,
+              "type": "INT"
             },
             {
               "id": "tINT2",
-              "type": "INT",
-              "index": 21
+              "index": 29,
+              "type": "INT"
             },
             {
               "id": "tFLOAT0",
-              "type": "FLOAT",
-              "index": 22
+              "index": 30,
+              "type": "DOUBLE"
             },
             {
               "id": "tFLOAT1",
-              "type": "FLOAT",
-              "index": 23
+              "index": 31,
+              "type": "DOUBLE"
             },
             {
               "id": "tFLOAT2",
-              "type": "FLOAT",
-              "index": 24
+              "index": 32,
+              "type": "DOUBLE"
             },
             {
               "id": "tDECIMAL0",
-              "type": "DECIMAL",
-              "index": 25
+              "index": 33,
+              "type": "UNDEFINED"
             },
             {
               "id": "tDECIMAL1",
-              "type": "DECIMAL",
-              "index": 26
+              "index": 34,
+              "type": "UNDEFINED"
             },
             {
               "id": "tDECIMAL2",
-              "type": "DECIMAL",
-              "index": 27
+              "index": 35,
+              "type": "UNDEFINED"
             },
             {
               "id": "tBIGDECIMAL0",
-              "type": "BIGDECIMAL",
-              "index": 28
+              "index": 36,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tBIGDECIMAL1",
-              "type": "BIGDECIMAL",
-              "index": 29
+              "index": 37,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tBIGDECIMAL2",
-              "type": "BIGDECIMAL",
-              "index": 30
+              "index": 38,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tDATE0",
-              "type": "DATE",
-              "index": 31
+              "index": 39,
+              "type": "DATE"
             },
             {
               "id": "tDATE1",
-              "type": "DATE",
-              "index": 32
+              "index": 40,
+              "type": "DATE"
             },
             {
               "id": "tDATE2",
-              "type": "DATE",
-              "index": 33
+              "index": 41,
+              "type": "DATE"
             },
             {
               "id": "tDATETIME0",
-              "type": "DATETIME",
-              "index": 34
+              "index": 42,
+              "type": "DATETIME"
             },
             {
               "id": "tDATETIME1",
-              "type": "DATETIME",
-              "index": 35
+              "index": 43,
+              "type": "DATETIME"
             },
             {
               "id": "tDATETIME2",
-              "type": "DATETIME",
-              "index": 36
+              "index": 44,
+              "type": "DATETIME"
             },
             {
               "id": "tTIME0",
-              "type": "TIME",
-              "index": 37
+              "index": 45,
+              "type": "TIME"
             },
             {
               "id": "tTIME1",
-              "type": "TIME",
-              "index": 38
+              "index": 46,
+              "type": "TIME"
             },
             {
               "id": "tTIME2",
-              "type": "TIME",
-              "index": 39
+              "index": 47,
+              "type": "TIME"
             },
             {
               "id": "tBLOB0",
-              "type": "BLOB",
-              "index": 40,
-              "encoding": "base64"
+              "index": 48,
+              "type": "BLOB"
             },
             {
               "id": "tBLOB1",
-              "type": "BLOB",
-              "index": 41,
-              "encoding": "base64"
+              "index": 49,
+              "type": "BLOB"
             },
             {
               "id": "tBLOB2",
-              "type": "BLOB",
-              "index": 42,
-              "encoding": "base64"
+              "index": 50,
+              "type": "BLOB"
             }
           ],
           "constColumns": [
             {
               "id": "c0",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              }
+              "index": 0,
+              "type": "UNDEFINED"
             },
             {
               "id": "c1",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              }
+              "index": 1,
+              "type": "STRING"
             },
             {
               "id": "c2",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              },
-              "size": "7"
+              "index": 2,
+              "type": "UNDEFINED"
             },
             {
               "id": "c3",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              },
-              "size": "7"
+              "index": 3,
+              "type": "STRING"
             },
             {
               "id": "c4",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              }
+              "index": 4,
+              "type": "UNDEFINED"
             },
             {
               "id": "c5",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              }
+              "index": 5,
+              "type": "STRING"
             },
             {
               "id": "c6",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              },
-              "size": "7"
+              "index": 6,
+              "type": "UNDEFINED"
             },
             {
               "id": "c7",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              },
-              "size": "7"
+              "index": 7,
+              "type": "STRING"
             }
           ],
+          "id": "items",
           "rows": []
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "p1",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "p2",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "p3",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "p4",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "p5",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
         }
       ],
       "wire": {

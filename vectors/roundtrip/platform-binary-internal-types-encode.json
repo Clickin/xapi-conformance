@@ -2,13 +2,82 @@
   "id": "platform-binary.internal-types.encode",
   "operation": "encode",
   "profile": "nexacro-binary-5000",
-  "value": {"parameters": [
-    {"id": "u", "type": "UNDEFINED", "state": "empty", "lexical": ""},
-    {"id": "n", "type": "NULL", "state": "empty", "lexical": "", "index": 1},
-    {"id": "d", "type": "DATASET", "state": "empty", "lexical": "", "index": 2},
-    {"id": "i", "type": "INVALID", "state": "empty", "lexical": "", "index": 3}
-  ], "datasets": []},
-  "expect": {"kind": "wire", "output": {"encoding": "base64", "data": "/hATiAAWAAQAAXUAAAABbgAAAAFkAAAAAWkAAA=="}},
-  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/platform-binary-internal-types-encode.json", "license": "repository"},
+  "value": {
+    "parameters": [
+      {
+        "id": "u",
+        "type": "UNDEFINED",
+        "state": "empty",
+        "lexical": ""
+      },
+      {
+        "id": "n",
+        "type": "NULL",
+        "state": "empty",
+        "lexical": "",
+        "index": 1
+      },
+      {
+        "id": "d",
+        "type": "DATASET",
+        "state": "empty",
+        "lexical": "",
+        "index": 2
+      },
+      {
+        "id": "i",
+        "type": "INVALID",
+        "state": "empty",
+        "lexical": "",
+        "index": 3
+      }
+    ],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/hATiAAcAAQAAXUAFQAAAAFuAAAAAWQAFQAAAAFpABUAAA==",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "u",
+          "lexical": "",
+          "state": "empty",
+          "type": "UNDEFINED"
+        },
+        {
+          "id": "n",
+          "index": 1,
+          "lexical": "",
+          "state": "empty",
+          "type": "NULL"
+        },
+        {
+          "id": "d",
+          "index": 2,
+          "lexical": "",
+          "state": "empty",
+          "type": "DATASET"
+        },
+        {
+          "id": "i",
+          "index": 3,
+          "lexical": "",
+          "state": "empty",
+          "type": "INVALID"
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/platform-binary-internal-types-encode.json",
+    "license": "repository"
+  },
   "required": true
 }

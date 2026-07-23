@@ -12,21 +12,21 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "a",
-              "type": "DATETIME",
-              "index": 0
+              "index": 0,
+              "type": "DATETIME"
             }
           ],
           "constColumns": [],
+          "id": "d",
           "rows": []
         }
-      ]
+      ],
+      "parameters": []
     }
   },
   "source": {

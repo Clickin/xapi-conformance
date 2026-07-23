@@ -12,21 +12,21 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "a",
-              "type": "BIGDECIMAL",
-              "index": 0
+              "index": 0,
+              "type": "BIGDECIMAL"
             }
           ],
           "constColumns": [],
+          "id": "d",
           "rows": []
         }
-      ]
+      ],
+      "parameters": []
     }
   },
   "source": {

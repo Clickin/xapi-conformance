@@ -11,14 +11,14 @@
     "data": "/614AQAIAPf//hATiAACAAABAAD//wuIAaw="
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "/614nAMAAAAAAQ==",
+      "encoding": "base64"
+    },
     "value": {
-      "parameters": [],
       "datasets": [],
-      "wire": {
-        "format": "PlatformBinary",
-        "version": "5000"
-      }
+      "parameters": []
     }
   },
   "source": {

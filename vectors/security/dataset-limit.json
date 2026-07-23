@@ -1,10 +1,59 @@
 {
-  "id":"security.dataset-limit",
-  "operation":"encode",
-  "profile":"nexacro-json-1.0",
-  "options":{"strict":true,"limits":{"datasets":1}},
-  "value":{"parameters":[],"datasets":[{"id":"a","columns":[],"constColumns":[],"rows":[]},{"id":"b","columns":[],"constColumns":[],"rows":[]}]},
-  "expect":{"kind":"error","error":{"class":"limit-exceeded","path":"value.datasets"}},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/security/dataset-limit.json","license":"repository"},
-  "required":true
+  "id": "security.dataset-limit",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "options": {
+    "strict": true,
+    "limits": {
+      "datasets": 1
+    }
+  },
+  "value": {
+    "parameters": [],
+    "datasets": [
+      {
+        "id": "a",
+        "columns": [],
+        "constColumns": [],
+        "rows": []
+      },
+      {
+        "id": "b",
+        "columns": [],
+        "constColumns": [],
+        "rows": []
+      }
+    ]
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siaWQiOiJhIn0seyJpZCI6ImIifV0sInZlcnNpb24iOiIxLjAifQ==",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [],
+          "constColumns": [],
+          "id": "a",
+          "rows": []
+        },
+        {
+          "columns": [],
+          "constColumns": [],
+          "id": "b",
+          "rows": []
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/security/dataset-limit.json",
+    "license": "repository"
+  },
+  "required": true
 }

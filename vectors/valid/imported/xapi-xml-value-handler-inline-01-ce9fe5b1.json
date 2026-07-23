@@ -12,57 +12,55 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "employees",
           "columns": [
             {
               "id": "id",
-              "type": "INT",
               "index": 0,
-              "size": "10"
+              "type": "INT"
             },
             {
               "id": "name",
-              "type": "STRING",
               "index": 1,
-              "size": "50"
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "employees",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "id": {
-                  "state": "value",
-                  "lexical": "1"
+                  "lexical": "1",
+                  "state": "value"
                 },
                 "name": {
-                  "state": "value",
-                  "lexical": "John"
+                  "lexical": "John",
+                  "state": "value"
                 }
               }
             },
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "id": {
-                  "state": "value",
-                  "lexical": "2"
+                  "lexical": "2",
+                  "state": "value"
                 },
                 "name": {
-                  "state": "value",
-                  "lexical": "Jane"
+                  "lexical": "Jane",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

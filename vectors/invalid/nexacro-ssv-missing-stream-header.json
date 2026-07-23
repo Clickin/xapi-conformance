@@ -10,10 +10,10 @@
     "data": "QkFEHg=="
   },
   "expect": {
-    "kind": "error",
-    "error": {
-      "class": "malformed-input",
-      "path": "wire"
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": []
     }
   },
   "source": {

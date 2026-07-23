@@ -10,35 +10,34 @@
     "data": "U1NWOnV0Zi04HnA9dh5EYXRhc2V0OmQeX1Jvd1R5cGVfH2E6U1RSSU5HHh4="
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HnA6c3RyaW5nPXYeRGF0YXNldDpkHl9Sb3dUeXBlXx9hOnN0cmluZygzMike",
+      "encoding": "base64"
+    },
     "value": {
-      "parameters": [
-        {
-          "id": "p",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v"
-        }
-      ],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "a",
-              "type": "STRING",
-              "index": 0
+              "index": 0,
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "d",
           "rows": []
         }
       ],
-      "wire": {
-        "ssv": {
-          "codePage": "utf-8"
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
         }
-      }
+      ]
     }
   },
   "source": {

@@ -12,8 +12,8 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
-      "datasets": []
+      "datasets": [],
+      "parameters": []
     }
   },
   "source": {

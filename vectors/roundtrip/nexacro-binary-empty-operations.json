@@ -2,8 +2,26 @@
   "id": "nexacro-binary.empty.encode",
   "operation": "encode",
   "profile": "nexacro-binary-5000",
-  "value": {"parameters": [], "datasets": []},
-  "expect": {"kind": "wire", "output": {"encoding": "base64", "data": "/hATiAACAAA="}},
-  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/nexacro-binary-empty-operations.json", "license": "repository"},
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/nexacro-binary-empty-operations.json",
+    "license": "repository"
+  },
   "required": true
 }

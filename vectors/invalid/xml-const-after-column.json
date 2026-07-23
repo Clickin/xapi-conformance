@@ -1,10 +1,51 @@
 {
-  "id":"nexacro-xml.const-after-column.strict",
-  "operation":"decode",
-  "profile":"nexacro-xml-4000",
-  "options":{"strict":true},
-  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImEiIHR5cGU9IlNUUklORyIvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0ieCIvPjwvQ29sdW1uSW5mbz48L0RhdGFzZXQ+PC9Sb290Pg=="},
-  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/xml-const-after-column.json","license":"repository"},
-  "required":true
+  "id": "nexacro-xml.const-after-column.strict",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImEiIHR5cGU9IlNUUklORyIvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0ieCIvPjwvQ29sdW1uSW5mbz48L0RhdGFzZXQ+PC9Sb290Pg=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "index": 1,
+              "type": "STRING"
+            }
+          ],
+          "id": "d",
+          "rows": []
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/invalid/xml-const-after-column.json",
+    "license": "repository"
+  },
+  "required": true
 }

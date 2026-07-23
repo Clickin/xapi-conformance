@@ -12,32 +12,27 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "b",
-              "type": "BLOB",
-              "index": 0,
-              "encoding": "base64"
+              "index": 1,
+              "type": "BLOB"
             }
           ],
           "constColumns": [
             {
               "id": "c",
-              "type": "BLOB",
-              "encoding": "base64",
-              "value": {
-                "state": "value",
-                "lexical": "eA=="
-              }
+              "index": 0,
+              "type": "BLOB"
             }
           ],
+          "id": "d",
           "rows": []
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.tobesoft.com/platform/Dataset",

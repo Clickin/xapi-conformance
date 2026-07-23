@@ -1,19 +1,90 @@
 {
-  "id":"nexacro-ssv.format.decode",
-  "operation":"decode",
-  "profile":"nexacro-ssv",
-  "input":{"encoding":"base64","data":"U1NWOnV0Zi04HnA6SU5UPTEeRGF0YXNldDpkHl9Db25zdF8fYzpTVFJJTkcoNSk9Zml4ZWQeX1Jvd1R5cGVfH2E6U1RSSU5HKDEwKTpTVU06dG90YWwfYjpJTlQeVR9uZXcfMR5PH29sZB8xHk4fHwMeHg=="},
-  "expect":{"kind":"canonical","value":{
-    "parameters":[{"id":"p","type":"INT","state":"value","lexical":"1"}],
-    "datasets":[{"id":"d","columns":[
-      {"id":"a","type":"STRING","index":0,"size":"10","prop":"SUM","sumtext":"total"},
-      {"id":"b","type":"INT","index":1}
-    ],"constColumns":[{"id":"c","type":"STRING","size":"5","value":{"state":"value","lexical":"fixed"}}],"rows":[
-      {"type":"U","orgRow":{"type":"O","orgRow":null,"values":{"a":{"state":"value","lexical":"old"},"b":{"state":"value","lexical":"1"}}},"values":{"a":{"state":"value","lexical":"new"},"b":{"state":"value","lexical":"1"}}},
-      {"type":"N","orgRow":null,"values":{"a":{"state":"empty"},"b":{"state":"missing"}}}
-    ]}],
-    "wire":{"ssv":{"codePage":"utf-8"}}
-  }},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/nexacro-ssv-format.json","license":"repository"},
-  "required":true
+  "id": "nexacro-ssv.format.decode",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWOnV0Zi04HnA6SU5UPTEeRGF0YXNldDpkHl9Db25zdF8fYzpTVFJJTkcoNSk9Zml4ZWQeX1Jvd1R5cGVfH2E6U1RSSU5HKDEwKTpTVU06dG90YWwfYjpJTlQeVR9uZXcfMR5PH29sZB8xHk4fHwMeHg=="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "b",
+              "index": 1,
+              "type": "INT"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "index": 2,
+              "type": "STRING"
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "new",
+                  "state": "value"
+                },
+                "b": {
+                  "lexical": "1",
+                  "state": "value"
+                },
+                "c": {
+                  "lexical": "fixed",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "b": {
+                  "state": "null"
+                },
+                "c": {
+                  "lexical": "fixed",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "1",
+          "state": "value",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-ssv-format.json",
+    "license": "repository"
+  },
+  "required": true
 }

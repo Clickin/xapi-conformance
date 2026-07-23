@@ -12,53 +12,52 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "ds_multi",
           "columns": [
             {
               "id": "col1",
-              "type": "STRING",
               "index": 0,
-              "size": "10"
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "ds_multi",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "col1": {
-                  "state": "value",
-                  "lexical": "row1"
+                  "lexical": "row1",
+                  "state": "value"
                 }
               }
             },
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "col1": {
-                  "state": "value",
-                  "lexical": "row2"
+                  "lexical": "row2",
+                  "state": "value"
                 }
               }
             },
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "col1": {
-                  "state": "value",
-                  "lexical": "row3"
+                  "lexical": "row3",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

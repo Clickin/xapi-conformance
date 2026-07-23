@@ -11,15 +11,14 @@
     "data": "/614AQAKAPX/U1NWOnV0Zi04HgEAAP//EigDCQ=="
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "/614nAsODrMKDXHTtZADABBIAqk=",
+      "encoding": "base64"
+    },
     "value": {
-      "parameters": [],
       "datasets": [],
-      "wire": {
-        "ssv": {
-          "codePage": "utf-8"
-        }
-      }
+      "parameters": []
     }
   },
   "source": {

@@ -10,10 +10,29 @@
     "strict": false
   },
   "expect": {
-    "kind": "error",
-    "error": {
-      "class": "malformed-input",
-      "path": "wire"
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "test",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "invalid",
+          "rows": []
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
     }
   },
   "source": {

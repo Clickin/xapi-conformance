@@ -12,480 +12,457 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "p0",
-          "type": "STRING",
-          "state": "missing"
-        },
-        {
-          "id": "p1",
-          "type": "STRING",
-          "state": "missing",
-          "index": 1
-        },
-        {
-          "id": "p2",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v",
-          "index": 2
-        },
-        {
-          "id": "p3",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v",
-          "index": 3
-        }
-      ],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "m0",
-              "type": "STRING",
-              "index": 0
+              "index": 0,
+              "type": "STRING"
             },
             {
               "id": "m1",
-              "type": "STRING",
-              "index": 1
+              "index": 1,
+              "type": "STRING"
             },
             {
               "id": "m2",
-              "type": "STRING",
               "index": 2,
-              "size": "7"
+              "type": "STRING"
             },
             {
               "id": "m3",
-              "type": "STRING",
               "index": 3,
-              "size": "7"
+              "type": "STRING"
             },
             {
               "id": "m4",
-              "type": "STRING",
               "index": 4,
-              "prop": "Text"
+              "type": "STRING"
             },
             {
               "id": "m5",
-              "type": "STRING",
               "index": 5,
-              "prop": "Text"
+              "type": "STRING"
             },
             {
               "id": "m6",
-              "type": "STRING",
               "index": 6,
-              "size": "7",
-              "prop": "Text"
+              "type": "STRING"
             },
             {
               "id": "m7",
-              "type": "STRING",
               "index": 7,
-              "size": "7",
-              "prop": "Text"
+              "type": "STRING"
             },
             {
               "id": "m8",
-              "type": "STRING",
               "index": 8,
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "m9",
-              "type": "STRING",
               "index": 9,
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "m10",
-              "type": "STRING",
               "index": 10,
-              "size": "7",
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "m11",
-              "type": "STRING",
               "index": 11,
-              "size": "7",
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "m12",
-              "type": "STRING",
               "index": 12,
-              "prop": "Text",
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "m13",
-              "type": "STRING",
               "index": 13,
-              "prop": "Text",
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "m14",
-              "type": "STRING",
               "index": 14,
-              "size": "7",
-              "prop": "Text",
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "m15",
-              "type": "STRING",
               "index": 15,
-              "size": "7",
-              "prop": "Text",
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "tSTRING0",
-              "type": "STRING",
-              "index": 16
+              "index": 16,
+              "type": "STRING"
             },
             {
               "id": "tSTRING1",
-              "type": "STRING",
-              "index": 17
+              "index": 17,
+              "type": "STRING"
             },
             {
               "id": "tSTRING2",
-              "type": "STRING",
-              "index": 18
+              "index": 18,
+              "type": "STRING"
             },
             {
               "id": "tINT0",
-              "type": "INT",
-              "index": 19
+              "index": 19,
+              "type": "INT"
             },
             {
               "id": "tINT1",
-              "type": "INT",
-              "index": 20
+              "index": 20,
+              "type": "INT"
             },
             {
               "id": "tINT2",
-              "type": "INT",
-              "index": 21
+              "index": 21,
+              "type": "INT"
             },
             {
               "id": "tFLOAT0",
-              "type": "FLOAT",
-              "index": 22
+              "index": 22,
+              "type": "DOUBLE"
             },
             {
               "id": "tFLOAT1",
-              "type": "FLOAT",
-              "index": 23
+              "index": 23,
+              "type": "DOUBLE"
             },
             {
               "id": "tFLOAT2",
-              "type": "FLOAT",
-              "index": 24
+              "index": 24,
+              "type": "DOUBLE"
             },
             {
               "id": "tDECIMAL0",
-              "type": "DECIMAL",
-              "index": 25
+              "index": 25,
+              "type": "UNDEFINED"
             },
             {
               "id": "tDECIMAL1",
-              "type": "DECIMAL",
-              "index": 26
+              "index": 26,
+              "type": "UNDEFINED"
             },
             {
               "id": "tDECIMAL2",
-              "type": "DECIMAL",
-              "index": 27
+              "index": 27,
+              "type": "UNDEFINED"
             },
             {
               "id": "tBIGDECIMAL0",
-              "type": "BIGDECIMAL",
-              "index": 28
+              "index": 28,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tBIGDECIMAL1",
-              "type": "BIGDECIMAL",
-              "index": 29
+              "index": 29,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tBIGDECIMAL2",
-              "type": "BIGDECIMAL",
-              "index": 30
+              "index": 30,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tDATE0",
-              "type": "DATE",
-              "index": 31
+              "index": 31,
+              "type": "DATE"
             },
             {
               "id": "tDATE1",
-              "type": "DATE",
-              "index": 32
+              "index": 32,
+              "type": "DATE"
             },
             {
               "id": "tDATE2",
-              "type": "DATE",
-              "index": 33
+              "index": 33,
+              "type": "DATE"
             },
             {
               "id": "tDATETIME0",
-              "type": "DATETIME",
-              "index": 34
+              "index": 34,
+              "type": "DATETIME"
             },
             {
               "id": "tDATETIME1",
-              "type": "DATETIME",
-              "index": 35
+              "index": 35,
+              "type": "DATETIME"
             },
             {
               "id": "tDATETIME2",
-              "type": "DATETIME",
-              "index": 36
+              "index": 36,
+              "type": "DATETIME"
             },
             {
               "id": "tTIME0",
-              "type": "TIME",
-              "index": 37
+              "index": 37,
+              "type": "TIME"
             },
             {
               "id": "tTIME1",
-              "type": "TIME",
-              "index": 38
+              "index": 38,
+              "type": "TIME"
             },
             {
               "id": "tTIME2",
-              "type": "TIME",
-              "index": 39
+              "index": 39,
+              "type": "TIME"
             },
             {
               "id": "tBLOB0",
-              "type": "BLOB",
-              "index": 40
+              "index": 40,
+              "type": "BLOB"
             },
             {
               "id": "tBLOB1",
-              "type": "BLOB",
-              "index": 41
+              "index": 41,
+              "type": "BLOB"
             },
             {
               "id": "tBLOB2",
-              "type": "BLOB",
-              "index": 42
+              "index": 42,
+              "type": "BLOB"
             }
           ],
           "constColumns": [
             {
               "id": "c0",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              }
+              "index": 43,
+              "type": "STRING"
             },
             {
               "id": "c1",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              }
+              "index": 44,
+              "type": "STRING"
             },
             {
               "id": "c2",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              },
-              "size": "7"
+              "index": 45,
+              "type": "STRING"
             },
             {
               "id": "c3",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              },
-              "size": "7"
+              "index": 46,
+              "type": "STRING"
             },
             {
               "id": "c4",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              }
+              "index": 47,
+              "type": "STRING"
             },
             {
               "id": "c5",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              }
+              "index": 48,
+              "type": "STRING"
             },
             {
               "id": "c6",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              },
-              "size": "7"
+              "index": 49,
+              "type": "STRING"
             },
             {
               "id": "c7",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              },
-              "size": "7"
+              "index": 50,
+              "type": "STRING"
             }
           ],
+          "id": "d",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
+                "c0": {
+                  "state": "null"
+                },
+                "c1": {
+                  "state": "null"
+                },
+                "c2": {
+                  "state": "null"
+                },
+                "c3": {
+                  "state": "null"
+                },
+                "c4": {
+                  "lexical": "v",
+                  "state": "value"
+                },
+                "c5": {
+                  "lexical": "v",
+                  "state": "value"
+                },
+                "c6": {
+                  "lexical": "v",
+                  "state": "value"
+                },
+                "c7": {
+                  "lexical": "v",
+                  "state": "value"
+                },
                 "m0": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "m1": {
-                  "state": "missing"
-                },
-                "m2": {
-                  "state": "missing"
-                },
-                "m3": {
-                  "state": "missing"
-                },
-                "m4": {
-                  "state": "missing"
-                },
-                "m5": {
-                  "state": "missing"
-                },
-                "m6": {
-                  "state": "missing"
-                },
-                "m7": {
-                  "state": "missing"
-                },
-                "m8": {
-                  "state": "missing"
-                },
-                "m9": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "m10": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "m11": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "m12": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "m13": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "m14": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "m15": {
-                  "state": "missing"
+                  "state": "null"
                 },
-                "tSTRING0": {
-                  "state": "missing"
+                "m2": {
+                  "state": "null"
                 },
-                "tSTRING1": {
-                  "state": "missing"
+                "m3": {
+                  "state": "null"
                 },
-                "tSTRING2": {
-                  "state": "missing"
+                "m4": {
+                  "state": "null"
                 },
-                "tINT0": {
-                  "state": "missing"
+                "m5": {
+                  "state": "null"
                 },
-                "tINT1": {
-                  "state": "missing"
+                "m6": {
+                  "state": "null"
                 },
-                "tINT2": {
-                  "state": "missing"
+                "m7": {
+                  "state": "null"
                 },
-                "tFLOAT0": {
-                  "state": "missing"
+                "m8": {
+                  "state": "null"
                 },
-                "tFLOAT1": {
-                  "state": "missing"
-                },
-                "tFLOAT2": {
-                  "state": "missing"
-                },
-                "tDECIMAL0": {
-                  "state": "missing"
-                },
-                "tDECIMAL1": {
-                  "state": "missing"
-                },
-                "tDECIMAL2": {
-                  "state": "missing"
+                "m9": {
+                  "state": "null"
                 },
                 "tBIGDECIMAL0": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "tBIGDECIMAL1": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "tBIGDECIMAL2": {
-                  "state": "missing"
-                },
-                "tDATE0": {
-                  "state": "missing"
-                },
-                "tDATE1": {
-                  "state": "missing"
-                },
-                "tDATE2": {
-                  "state": "missing"
-                },
-                "tDATETIME0": {
-                  "state": "missing"
-                },
-                "tDATETIME1": {
-                  "state": "missing"
-                },
-                "tDATETIME2": {
-                  "state": "missing"
-                },
-                "tTIME0": {
-                  "state": "missing"
-                },
-                "tTIME1": {
-                  "state": "missing"
-                },
-                "tTIME2": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "tBLOB0": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "tBLOB1": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "tBLOB2": {
-                  "state": "missing"
+                  "state": "null"
+                },
+                "tDATE0": {
+                  "state": "null"
+                },
+                "tDATE1": {
+                  "state": "null"
+                },
+                "tDATE2": {
+                  "state": "null"
+                },
+                "tDATETIME0": {
+                  "state": "null"
+                },
+                "tDATETIME1": {
+                  "state": "null"
+                },
+                "tDATETIME2": {
+                  "state": "null"
+                },
+                "tDECIMAL0": {
+                  "state": "null"
+                },
+                "tDECIMAL1": {
+                  "state": "null"
+                },
+                "tDECIMAL2": {
+                  "state": "null"
+                },
+                "tFLOAT0": {
+                  "state": "null"
+                },
+                "tFLOAT1": {
+                  "state": "null"
+                },
+                "tFLOAT2": {
+                  "state": "null"
+                },
+                "tINT0": {
+                  "state": "null"
+                },
+                "tINT1": {
+                  "state": "null"
+                },
+                "tINT2": {
+                  "state": "null"
+                },
+                "tSTRING0": {
+                  "state": "null"
+                },
+                "tSTRING1": {
+                  "state": "null"
+                },
+                "tSTRING2": {
+                  "state": "null"
+                },
+                "tTIME0": {
+                  "state": "null"
+                },
+                "tTIME1": {
+                  "state": "null"
+                },
+                "tTIME2": {
+                  "state": "null"
                 }
               }
             }
           ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "state": "null",
+          "type": "STRING"
+        },
+        {
+          "id": "p1",
+          "state": "null",
+          "type": "STRING"
+        },
+        {
+          "id": "p2",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "p3",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
         }
       ],
       "wire": {

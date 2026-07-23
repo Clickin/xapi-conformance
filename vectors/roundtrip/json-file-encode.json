@@ -2,8 +2,40 @@
   "id": "json.file.encode",
   "operation": "encode",
   "profile": "nexacro-json-1.0",
-  "value": {"parameters": [{"id": "file", "type": "FILE", "state": "value", "lexical": "eA=="}], "datasets": []},
-  "expect": {"kind": "wire", "output": {"encoding": "base64", "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6ImZpbGUiLCJ0eXBlIjoiYmxvYiIsInZhbHVlIjoiZUE9PSJ9XSwidmVyc2lvbiI6IjEuMCJ9"}},
-  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/json-file-encode.json", "license": "repository"},
+  "value": {
+    "parameters": [
+      {
+        "id": "file",
+        "type": "FILE",
+        "state": "value",
+        "lexical": "eA=="
+      }
+    ],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6ImZpbGUiLCJ0eXBlIjoiYmxvYiIsInZhbHVlIjoiZUE9PSJ9XSwidmVyc2lvbiI6IjEuMCJ9",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "file",
+          "lexical": "eA==",
+          "state": "value",
+          "type": "FILE"
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/json-file-encode.json",
+    "license": "repository"
+  },
   "required": true
 }

@@ -12,15 +12,15 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [],
           "constColumns": [],
+          "id": "d",
           "rows": []
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.tobesoft.com/platform/Dataset",

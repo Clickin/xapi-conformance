@@ -2,8 +2,26 @@
   "id": "nexacro-binary.empty.roundtrip",
   "operation": "roundtrip",
   "profile": "nexacro-binary-5000",
-  "input": {"encoding": "base64", "data": "/hATiAACAAA="},
-  "expect": {"kind": "canonical", "value": {"parameters": [], "datasets": [], "wire": {"format": "PlatformBinary", "version": "5000"}}},
-  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/nexacro-binary-empty-roundtrip.json", "license": "repository"},
+  "input": {
+    "encoding": "base64",
+    "data": "/hATiAACAAA="
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/nexacro-binary-empty-roundtrip.json",
+    "license": "repository"
+  },
   "required": true
 }

@@ -12,63 +12,60 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "ds_multi_cols",
           "columns": [
             {
               "id": "col1",
-              "type": "STRING",
               "index": 0,
-              "size": "10"
+              "type": "STRING"
             },
             {
               "id": "col2",
-              "type": "INT",
               "index": 1,
-              "size": "10"
+              "type": "INT"
             },
             {
               "id": "col3",
-              "type": "DECIMAL",
               "index": 2,
-              "size": "10"
+              "type": "UNDEFINED"
             }
           ],
           "constColumns": [
             {
               "id": "const1",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "constant"
-              },
-              "size": "5"
+              "index": 3,
+              "type": "STRING"
             }
           ],
+          "id": "ds_multi_cols",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "col1": {
-                  "state": "value",
-                  "lexical": "test"
+                  "lexical": "test",
+                  "state": "value"
                 },
                 "col2": {
-                  "state": "value",
-                  "lexical": "42"
+                  "lexical": "42",
+                  "state": "value"
                 },
                 "col3": {
-                  "state": "value",
-                  "lexical": "3.14"
+                  "lexical": "3.14",
+                  "state": "value"
+                },
+                "const1": {
+                  "lexical": "constant",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

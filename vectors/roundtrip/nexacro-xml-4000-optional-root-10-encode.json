@@ -16,8 +16,19 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "encoding": "base64",
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0icCIgdHlwZT0ic3RyaW5nIj54PC9QYXJhbWV0ZXI+PC9QYXJhbWV0ZXJzPjwvUm9vdD4="
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzPgoJCTxQYXJhbWV0ZXIgaWQ9InAiIHR5cGU9InN0cmluZyI+eDwvUGFyYW1ldGVyPgoJPC9QYXJhbWV0ZXJzPgo8L1Jvb3Q+Cg==",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "x",
+          "state": "value",
+          "type": "STRING"
+        }
+      ]
     }
   },
   "source": {

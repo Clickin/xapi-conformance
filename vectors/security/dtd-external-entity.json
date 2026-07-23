@@ -1,9 +1,23 @@
 {
-  "id":"security.dtd-external-entity",
-  "operation":"decode",
-  "profile":"nexacro-xml-4000",
-  "input":{"encoding":"base64","data":"PD8/PQo8IURPQ1RZUEUgcm9vdCBbPCFFTlRJVFkgZXh0ZXJuYWwgU1lTVEVNICJodHRwOi8vZXZpbC5leGFtcGxlL2UudHh0Ij5dPjxyb290Lz4="},
-  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/security/dtd-external-entity.json","license":"repository"},
-  "required":true
+  "id": "security.dtd-external-entity",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD8/PQo8IURPQ1RZUEUgcm9vdCBbPCFFTlRJVFkgZXh0ZXJuYWwgU1lTVEVNICJodHRwOi8vZXZpbC5leGFtcGxlL2UudHh0Ij5dPjxyb290Lz4="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": ""
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/security/dtd-external-entity.json",
+    "license": "repository"
+  },
+  "required": true
 }

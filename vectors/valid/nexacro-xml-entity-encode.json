@@ -48,8 +48,51 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0icCIgdHlwZT0ic3RyaW5nIj5maXJzdCYjMTA7c2Vjb25kPC9QYXJhbWV0ZXI+PC9QYXJhbWV0ZXJzPjxEYXRhc2V0IGlkPSJkIj48Q29sdW1uSW5mbz48Q29uc3RDb2x1bW4gaWQ9ImMiIHR5cGU9InN0cmluZyIgdmFsdWU9ImZpeGVkIi8+PENvbHVtbiBpZD0iYSIgdHlwZT0ic3RyaW5nIi8+PC9Db2x1bW5JbmZvPjxSb3dzPjxSb3c+PENvbCBpZD0iYSI+YSYjMTA7YjwvQ29sPjwvUm93PjwvUm93cz48L0RhdGFzZXQ+PC9Sb290Pg==",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzPgoJCTxQYXJhbWV0ZXIgaWQ9InAiIHR5cGU9InN0cmluZyI+Zmlyc3QKc2Vjb25kPC9QYXJhbWV0ZXI+Cgk8L1BhcmFtZXRlcnM+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0ic3RyaW5nIiBzaXplPSIzMiIgdmFsdWU9ImZpeGVkIi8+CgkJCTxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQk8L0NvbHVtbkluZm8+CgkJPFJvd3M+CgkJCTxSb3c+CgkJCQk8Q29sIGlkPSJhIj5hCmI8L0NvbD4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
       "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "type": "STRING",
+              "value": {
+                "lexical": "fixed",
+                "state": "value"
+              }
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "a\nb",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "first\nsecond",
+          "state": "value",
+          "type": "STRING"
+        }
+      ]
     }
   },
   "source": {

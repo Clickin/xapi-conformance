@@ -12,299 +12,229 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "p0",
-          "type": "STRING",
-          "state": "missing"
-        },
-        {
-          "id": "p1",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v",
-          "index": 1
-        },
-        {
-          "id": "p2",
-          "type": "STRING",
-          "state": "missing",
-          "index": 2
-        },
-        {
-          "id": "p3",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v",
-          "index": 3
-        },
-        {
-          "id": "p4",
-          "type": "STRING",
-          "state": "missing",
-          "index": 4,
-          "wire": {
-            "length": "7"
-          }
-        },
-        {
-          "id": "p5",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v",
-          "index": 5,
-          "wire": {
-            "length": "7"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "m00",
-              "type": "STRING",
-              "index": 0
+              "index": 0,
+              "type": "STRING"
             },
             {
               "id": "m01",
-              "type": "STRING",
               "index": 1,
-              "prop": "SUM"
+              "type": "UNDEFINED"
             },
             {
               "id": "m02",
-              "type": "STRING",
               "index": 2,
-              "prop": "SUM",
-              "sumtext": "total"
+              "type": "UNDEFINED"
             },
             {
               "id": "m10",
-              "type": "STRING",
-              "index": 3
+              "index": 3,
+              "type": "STRING"
             },
             {
               "id": "m11",
-              "type": "STRING",
               "index": 4,
-              "prop": "SUM"
+              "type": "UNDEFINED"
             },
             {
               "id": "m12",
-              "type": "STRING",
               "index": 5,
-              "prop": "SUM",
-              "sumtext": "total"
+              "type": "UNDEFINED"
             },
             {
               "id": "m20",
-              "type": "STRING",
               "index": 6,
-              "size": "7"
+              "type": "STRING"
             },
             {
               "id": "m21",
-              "type": "STRING",
               "index": 7,
-              "size": "7",
-              "prop": "SUM"
+              "type": "STRING"
             },
             {
               "id": "m22",
-              "type": "STRING",
               "index": 8,
-              "size": "7",
-              "prop": "SUM",
-              "sumtext": "total"
+              "type": "STRING"
             },
             {
               "id": "tSTRING0",
-              "type": "STRING",
-              "index": 9
+              "index": 9,
+              "type": "STRING"
             },
             {
               "id": "tSTRING1",
-              "type": "STRING",
-              "index": 10
+              "index": 10,
+              "type": "STRING"
             },
             {
               "id": "tSTRING2",
-              "type": "STRING",
-              "index": 11
+              "index": 11,
+              "type": "STRING"
             },
             {
               "id": "tINT0",
-              "type": "INT",
-              "index": 12
+              "index": 12,
+              "type": "INT"
             },
             {
               "id": "tINT1",
-              "type": "INT",
-              "index": 13
+              "index": 13,
+              "type": "INT"
             },
             {
               "id": "tINT2",
-              "type": "INT",
-              "index": 14
+              "index": 14,
+              "type": "INT"
             },
             {
               "id": "tFLOAT0",
-              "type": "FLOAT",
-              "index": 15
+              "index": 15,
+              "type": "DOUBLE"
             },
             {
               "id": "tFLOAT1",
-              "type": "FLOAT",
-              "index": 16
+              "index": 16,
+              "type": "DOUBLE"
             },
             {
               "id": "tFLOAT2",
-              "type": "FLOAT",
-              "index": 17
+              "index": 17,
+              "type": "DOUBLE"
             },
             {
               "id": "tDECIMAL0",
-              "type": "DECIMAL",
-              "index": 18
+              "index": 18,
+              "type": "UNDEFINED"
             },
             {
               "id": "tDECIMAL1",
-              "type": "DECIMAL",
-              "index": 19
+              "index": 19,
+              "type": "UNDEFINED"
             },
             {
               "id": "tDECIMAL2",
-              "type": "DECIMAL",
-              "index": 20
+              "index": 20,
+              "type": "UNDEFINED"
             },
             {
               "id": "tBIGDECIMAL0",
-              "type": "BIGDECIMAL",
-              "index": 21
+              "index": 21,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tBIGDECIMAL1",
-              "type": "BIGDECIMAL",
-              "index": 22
+              "index": 22,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tBIGDECIMAL2",
-              "type": "BIGDECIMAL",
-              "index": 23
+              "index": 23,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "tDATE0",
-              "type": "DATE",
-              "index": 24
+              "index": 24,
+              "type": "DATE"
             },
             {
               "id": "tDATE1",
-              "type": "DATE",
-              "index": 25
+              "index": 25,
+              "type": "DATE"
             },
             {
               "id": "tDATE2",
-              "type": "DATE",
-              "index": 26
+              "index": 26,
+              "type": "DATE"
             },
             {
               "id": "tDATETIME0",
-              "type": "DATETIME",
-              "index": 27
+              "index": 27,
+              "type": "DATETIME"
             },
             {
               "id": "tDATETIME1",
-              "type": "DATETIME",
-              "index": 28
+              "index": 28,
+              "type": "DATETIME"
             },
             {
               "id": "tDATETIME2",
-              "type": "DATETIME",
-              "index": 29
+              "index": 29,
+              "type": "DATETIME"
             },
             {
               "id": "tTIME0",
-              "type": "TIME",
-              "index": 30
+              "index": 30,
+              "type": "TIME"
             },
             {
               "id": "tTIME1",
-              "type": "TIME",
-              "index": 31
+              "index": 31,
+              "type": "TIME"
             },
             {
               "id": "tTIME2",
-              "type": "TIME",
-              "index": 32
+              "index": 32,
+              "type": "TIME"
             },
             {
               "id": "tBLOB0",
-              "type": "BLOB",
-              "index": 33
+              "index": 33,
+              "type": "BLOB"
             },
             {
               "id": "tBLOB1",
-              "type": "BLOB",
-              "index": 34
+              "index": 34,
+              "type": "BLOB"
             },
             {
               "id": "tBLOB2",
-              "type": "BLOB",
-              "index": 35
+              "index": 35,
+              "type": "BLOB"
             }
           ],
           "constColumns": [
             {
-              "id": "c0",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              }
-            },
-            {
               "id": "c1",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              }
-            },
-            {
-              "id": "c2",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              }
+              "index": 36,
+              "type": "STRING"
             },
             {
               "id": "c3",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              }
-            },
-            {
-              "id": "c4",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              },
-              "size": "7"
+              "index": 37,
+              "type": "STRING"
             },
             {
               "id": "c5",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              },
-              "size": "7"
+              "index": 38,
+              "type": "STRING"
             }
           ],
+          "id": "d",
           "rows": []
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p1",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "p3",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "p5",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
         }
       ]
     }

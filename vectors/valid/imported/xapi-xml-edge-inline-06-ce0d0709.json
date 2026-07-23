@@ -10,26 +10,10 @@
     "strict": false
   },
   "expect": {
-    "kind": "canonical",
-    "value": {
-      "parameters": [
-        {
-          "id": "",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "test",
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
-      "datasets": [],
-      "wire": {
-        "root": {
-          "namespace": "http://www.nexacroplatform.com/platform/dataset",
-          "version": "4000"
-        }
-      }
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": ""
     }
   },
   "source": {

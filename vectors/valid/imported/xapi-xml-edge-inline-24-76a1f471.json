@@ -12,122 +12,103 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "userId",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "user123",
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "sessionId",
-          "type": "INT",
-          "state": "value",
-          "lexical": "999",
-          "index": 1,
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "ds_users",
           "columns": [
             {
               "id": "id",
-              "type": "INT",
               "index": 0,
-              "size": "10"
+              "type": "INT"
             },
             {
               "id": "name",
-              "type": "STRING",
               "index": 1,
-              "size": "50"
+              "type": "STRING"
             }
           ],
           "constColumns": [
             {
               "id": "status",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "active"
-              },
-              "size": "10"
+              "index": 2,
+              "type": "STRING"
             }
           ],
+          "id": "ds_users",
           "rows": [
             {
-              "type": "I",
               "orgRow": null,
+              "type": "I",
               "values": {
                 "id": {
-                  "state": "value",
-                  "lexical": "1"
+                  "lexical": "1",
+                  "state": "value"
                 },
                 "name": {
-                  "state": "value",
-                  "lexical": "Alice"
+                  "lexical": "Alice",
+                  "state": "value"
+                },
+                "status": {
+                  "lexical": "active",
+                  "state": "value"
                 }
               }
             },
             {
+              "orgRow": null,
               "type": "U",
-              "orgRow": {
-                "type": "O",
-                "orgRow": null,
-                "values": {
-                  "id": {
-                    "state": "value",
-                    "lexical": "2"
-                  },
-                  "name": {
-                    "state": "value",
-                    "lexical": "Bob"
-                  }
-                }
-              },
               "values": {
                 "id": {
-                  "state": "value",
-                  "lexical": "2"
+                  "lexical": "2",
+                  "state": "value"
                 },
                 "name": {
-                  "state": "value",
-                  "lexical": "Bob Updated"
+                  "lexical": "Bob Updated",
+                  "state": "value"
+                },
+                "status": {
+                  "lexical": "active",
+                  "state": "value"
                 }
               }
             }
           ]
         },
         {
-          "id": "ds_direct",
           "columns": [
             {
               "id": "key",
-              "type": "STRING",
               "index": 0,
-              "size": "20"
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "ds_direct",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "key": {
-                  "state": "value",
-                  "lexical": "direct_dataset"
+                  "lexical": "direct_dataset",
+                  "state": "value"
                 }
               }
             }
           ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "userId",
+          "lexical": "user123",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "sessionId",
+          "lexical": "999",
+          "state": "value",
+          "type": "INT"
         }
       ],
       "wire": {

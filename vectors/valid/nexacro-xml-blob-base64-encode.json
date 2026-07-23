@@ -41,8 +41,44 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iYmxvYiIgZW5jPSJiYXNlNjQiIHZhbHVlPSJlQT09Ii8+PENvbHVtbiBpZD0iYiIgdHlwZT0iYmxvYiIgZW5jPSJiYXNlNjQiLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJiIj5lUT09PC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzLz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbnN0Q29sdW1uIGlkPSJjIiB0eXBlPSJibG9iIiBzaXplPSIyNTYiIGVuY3J5cHQ9ImJhc2U2NCIgdmFsdWU9ImVBPT0iPjwvQ29uc3RDb2x1bW4+CgkJCTxDb2x1bW4gaWQ9ImIiIHR5cGU9ImJsb2IiIHNpemU9IjI1NiIgZW5jcnlwdD0iYmFzZTY0Ii8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCQk8Um93PgoJCQkJPENvbCBpZD0iYiI+ZVE9PTwvQ29sPgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
       "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "b",
+              "index": 0,
+              "type": "BLOB"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "type": "BLOB",
+              "value": {
+                "lexical": "eA==",
+                "state": "value"
+              }
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "eQ==",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
     }
   },
   "source": {

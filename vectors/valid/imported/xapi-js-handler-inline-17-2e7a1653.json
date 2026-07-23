@@ -12,66 +12,64 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "test",
           "columns": [
             {
               "id": "smallCol",
-              "type": "STRING",
-              "index": 0,
-              "size": "5"
+              "index": 2,
+              "type": "STRING"
             },
             {
               "id": "largeCol",
-              "type": "STRING",
-              "index": 1,
-              "size": "100"
+              "index": 3,
+              "type": "STRING"
             }
           ],
           "constColumns": [
             {
               "id": "smallConstCol",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "abcd"
-              },
-              "size": "5"
+              "index": 0,
+              "type": "STRING"
             },
             {
               "id": "largeConstCol",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "large text value"
-              },
-              "size": "100"
+              "index": 1,
+              "type": "STRING"
             }
           ],
+          "id": "test",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "largeCol": {
-                  "state": "value",
-                  "lexical": "large text value"
+                  "lexical": "large text value",
+                  "state": "value"
+                },
+                "largeConstCol": {
+                  "lexical": "large text value",
+                  "state": "value"
                 },
                 "smallCol": {
-                  "state": "value",
-                  "lexical": "small"
+                  "lexical": "small",
+                  "state": "value"
+                },
+                "smallConstCol": {
+                  "lexical": "abcd",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
-          "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
         }
       }
     }

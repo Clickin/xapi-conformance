@@ -12,38 +12,27 @@
   "expect": {
     "kind": "canonical",
     "value": {
+      "datasets": [],
       "parameters": [
         {
           "id": "p1",
-          "type": "STRING",
-          "state": "value",
           "lexical": "value1",
-          "wire": {
-            "valueForm": "text"
-          }
+          "state": "value",
+          "type": "STRING"
         },
         {
           "id": "p2",
-          "type": "INT",
-          "state": "value",
           "lexical": "123",
-          "index": 1,
-          "wire": {
-            "valueForm": "text"
-          }
+          "state": "value",
+          "type": "INT"
         },
         {
           "id": "p3",
-          "type": "DECIMAL",
-          "state": "value",
           "lexical": "45.67",
-          "index": 2,
-          "wire": {
-            "valueForm": "text"
-          }
+          "state": "value",
+          "type": "STRING"
         }
       ],
-      "datasets": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

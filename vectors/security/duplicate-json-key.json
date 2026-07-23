@@ -1,9 +1,26 @@
 {
-  "id":"security.duplicate-json-key",
-  "operation":"decode",
-  "profile":"nexacro-json-1.0",
-  "input":{"encoding":"base64","data":"eyJwYXJhbWV0ZXJzIjpbXSwicGFyYW1ldGVycyI6W119"},
-  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/security/duplicate-json-key.json","license":"repository"},
-  "required":true
+  "id": "security.duplicate-json-key",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "input": {
+    "encoding": "base64",
+    "data": "eyJwYXJhbWV0ZXJzIjpbXSwicGFyYW1ldGVycyI6W119"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/security/duplicate-json-key.json",
+    "license": "repository"
+  },
+  "required": true
 }

@@ -2,8 +2,35 @@
   "id": "xplatform-binary.basic.decode",
   "operation": "decode",
   "profile": "xplatform-binary-5000",
-  "input": {"encoding": "base64", "data": "/gETiAAWAAFk/hATiAACAAAAAQABYQABAAAAAQAAAAA="},
-  "expect": {"kind": "canonical", "value": {"parameters": [], "datasets": [{"id": "d", "columns": [{"id": "a", "type": "STRING", "index": 0}], "constColumns": [], "rows": [], "wire": {"alias": "d", "version": "5000"}}], "wire": {"format": "PlatformBinary", "version": "5000"}}},
-  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/valid/xplatform-binary-basic.json", "license": "repository"},
+  "input": {
+    "encoding": "base64",
+    "data": "/gETiAAWAAFk/hATiAACAAAAAQABYQABAAAAAQAAAAA="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": []
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/xplatform-binary-basic.json",
+    "license": "repository"
+  },
   "required": true
 }

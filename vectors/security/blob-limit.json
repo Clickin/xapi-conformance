@@ -1,10 +1,81 @@
 {
-  "id":"security.blob-limit",
-  "operation":"encode",
-  "profile":"nexacro-json-1.0",
-  "options":{"strict":true,"limits":{"blobBytes":1}},
-  "value":{"parameters":[],"datasets":[{"id":"d","columns":[{"id":"b","type":"BLOB","index":0}],"constColumns":[],"rows":[{"type":"N","orgRow":null,"values":{"b":{"state":"value","lexical":"AAEC"}}}]}]},
-  "expect":{"kind":"error","error":{"class":"limit-exceeded","path":"value.datasets[0].rows[0].values.b"}},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/security/blob-limit.json","license":"repository"},
-  "required":true
+  "id": "security.blob-limit",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "options": {
+    "strict": true,
+    "limits": {
+      "blobBytes": 1
+    }
+  },
+  "value": {
+    "parameters": [],
+    "datasets": [
+      {
+        "id": "d",
+        "columns": [
+          {
+            "id": "b",
+            "type": "BLOB",
+            "index": 0
+          }
+        ],
+        "constColumns": [],
+        "rows": [
+          {
+            "type": "N",
+            "orgRow": null,
+            "values": {
+              "b": {
+                "state": "value",
+                "lexical": "AAEC"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb2x1bW4iOlt7InNpemUiOiIyNTYiLCJpZCI6ImIiLCJ0eXBlIjoiYmxvYiJ9XX0sImlkIjoiZCIsIlJvd3MiOlt7ImIiOiJBQUVDIiwiX1Jvd1R5cGVfIjoiTiJ9XX1dLCJ2ZXJzaW9uIjoiMS4wIn0=",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "b",
+              "index": 0,
+              "type": "BLOB"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "AAEC",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/security/blob-limit.json",
+    "license": "repository"
+  },
+  "required": true
 }

@@ -12,26 +12,26 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "p",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "v"
-        }
-      ],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "a",
-              "type": "STRING",
-              "index": 0
+              "index": 0,
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "d",
           "rows": []
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
         }
       ]
     }

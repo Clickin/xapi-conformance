@@ -10,48 +10,49 @@
     "data": "/614AU2NQQ6CMBBFr9LMXoqJicbQutDEsCEGvUCFoiS0Q2AU9fSOVQybyW/n/TfJ5uEacbddX6NXMI9iENYXWNb+ouBG1WwFG53kiCSY9L2CK1G7lnIYhsjbhyk6bBtDFXYuKtDJ8SFLQ6a3BB+7gkUcx6CTg+mMs8T3JlnUpYIWBD1bqyDNTqCXifyjepK5tvt6Q6lk5Rabm/Opr3DMYWVG3/GUp9keJGumaI4Dy3iG1q+iX019DhzTYfeZzMnf1fCNpN/97WkY"
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "/614nFWQzU7DMBCEz+QprL2T5ecAQnZ6ACFxQxU8gElcsBR7I3vbtH16Nk6C6G1Gnm+8u3pzDL06uJQ9RQO39Q0oF1vqfPw28Pnxev0Im6bSWyJWEo3ZwA/z8IQ4jmMd3dG2iYbe8o5SqFsKuBrsLNvsGJrqSr/bZINj+UfcP6t8Z2AAxafBGfBR0g8a/54nFC9Y/TK3FrCD0vZM/T7Et7ijya6+JOxanTnJSqCyP4u7vwMsKF6ysueY5xJRRZS6pas59/6rMHMGl1ARZTpcxpOT4XSzpvoFwgxreg==",
+      "encoding": "base64"
+    },
     "value": {
-      "parameters": [
-        {
-          "id": "p",
-          "type": "INT",
-          "state": "value",
-          "lexical": "7",
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "a",
-              "type": "STRING",
-              "index": 0
+              "index": 0,
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "d",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "a": {
-                  "state": "value",
-                  "lexical": "zlib"
+                  "lexical": "zlib",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "7",
+          "state": "value",
+          "type": "INT"
+        }
+      ],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",
-          "ver": "4000"
+          "version": "4000"
         }
       }
     }

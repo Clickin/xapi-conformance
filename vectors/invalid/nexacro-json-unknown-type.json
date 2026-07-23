@@ -10,10 +10,26 @@
     "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbeyJpZCI6ImQiLCJDb2x1bW5JbmZvIjp7IkNvbHVtbiI6W3siaWQiOiJhIiwidHlwZSI6IlVOS05PV04ifV19LCJSb3dzIjpbXX1dfQ=="
   },
   "expect": {
-    "kind": "error",
-    "error": {
-      "class": "malformed-input",
-      "path": "wire"
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "UNDEFINED"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": []
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "version": "1.0"
+      }
     }
   },
   "source": {

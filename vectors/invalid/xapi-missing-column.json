@@ -1,8 +1,24 @@
 {
-  "id":"xapi-xml.error-missing-column",
-  "operation":"decode","profile":"nexacro-xml-4000",
-  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfaW52YWxpZCI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9ImNvbDEiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PgogICAgICAgICAgPENvbCBpZD0iY29sMSI+VmFsaWQgY29sdW1uPC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJjb2wyIj5UaGlzIGNvbHVtbiBub3QgaW4gQ29sdW1uSW5mbzwvQ29sPgogICAgICAgIDwvUm93PgogICAgICA8L1Jvd3M+CiAgICA8L0RhdGFzZXQ+CiAgPC9EYXRhc2V0cz4KPC9Sb290Pgo="},
-  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
-  "source":{"repository":"Clickin/xapi","commit":"e0d54759162bbb06aef8a1bc4c557f9fe7336991","path":"xapi-xml/src/test/resources/xapi/error/missing-column.xml","license":"Apache-2.0","attribution":"Clickin/xapi"},
-  "required":true
+  "id": "xapi-xml.error-missing-column",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXJzaW9uPSI0MDAwIj4KICA8RGF0YXNldHM+CiAgICA8RGF0YXNldCBpZD0iZHNfaW52YWxpZCI+CiAgICAgIDxDb2x1bW5JbmZvPgogICAgICAgIDxDb2x1bW4gaWQ9ImNvbDEiIHNpemU9IjEwIiB0eXBlPSJTVFJJTkciLz4KICAgICAgPC9Db2x1bW5JbmZvPgogICAgICA8Um93cz4KICAgICAgICA8Um93PgogICAgICAgICAgPENvbCBpZD0iY29sMSI+VmFsaWQgY29sdW1uPC9Db2w+CiAgICAgICAgICA8Q29sIGlkPSJjb2wyIj5UaGlzIGNvbHVtbiBub3QgaW4gQ29sdW1uSW5mbzwvQ29sPgogICAgICAgIDwvUm93PgogICAgICA8L1Jvd3M+CiAgICA8L0RhdGFzZXQ+CiAgPC9EYXRhc2V0cz4KPC9Sb290Pgo="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": ""
+    }
+  },
+  "source": {
+    "repository": "Clickin/xapi",
+    "commit": "e0d54759162bbb06aef8a1bc4c557f9fe7336991",
+    "path": "xapi-xml/src/test/resources/xapi/error/missing-column.xml",
+    "license": "Apache-2.0",
+    "attribution": "Clickin/xapi"
+  },
+  "required": true
 }

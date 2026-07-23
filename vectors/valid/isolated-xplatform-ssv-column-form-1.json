@@ -12,22 +12,21 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "a",
-              "type": "STRING",
               "index": 0,
-              "prop": "SUM"
+              "type": "UNDEFINED"
             }
           ],
           "constColumns": [],
+          "id": "d",
           "rows": []
         }
-      ]
+      ],
+      "parameters": []
     }
   },
   "source": {

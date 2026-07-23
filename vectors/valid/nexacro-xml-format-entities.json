@@ -1,17 +1,82 @@
 {
-  "id":"nexacro-xml.format-entities.decode",
-  "operation":"decode",
-  "profile":"nexacro-xml-4000",
-  "input":{"encoding":"base64","data":"PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0ibmwiIHR5cGU9IlNUUklORyI+YSYjMTA7YiAmYW1wOyBjPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0ibnVsbCIvPjxQYXJhbWV0ZXIgaWQ9ImVtcHR5Ij48L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0iZml4ZWQiLz48Q29sdW1uIGlkPSJhIiB0eXBlPSJTVFJJTkciIHByb3A9InN1bSIgc3VtdGV4dD0idG90YWwiLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJhIj54JiMxMDt5PC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+"},
-  "expect":{"kind":"canonical","value":{
-    "parameters":[
-      {"id":"nl","type":"STRING","state":"value","lexical":"a\nb & c","wire":{"valueForm":"text"}},
-      {"id":"null","type":"STRING","state":"null","index":1,"wire":{"valueForm":"text"}},
-      {"id":"empty","type":"STRING","state":"empty","index":2,"wire":{"valueForm":"text"}}
-    ],
-    "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0,"prop":"sum","sumtext":"total"}],"constColumns":[{"id":"c","type":"STRING","value":{"state":"value","lexical":"fixed"}}],"rows":[{"type":"N","orgRow":null,"values":{"a":{"state":"value","lexical":"x\ny"}}}]}],
-    "wire":{"root":{"namespace":"http://www.nexacroplatform.com/platform/dataset","ver":"4000"}}
-  }},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/nexacro-xml-format-entities.json","license":"repository"},
-  "required":true
+  "id": "nexacro-xml.format-entities.decode",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0ibmwiIHR5cGU9IlNUUklORyI+YSYjMTA7YiAmYW1wOyBjPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0ibnVsbCIvPjxQYXJhbWV0ZXIgaWQ9ImVtcHR5Ij48L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iU1RSSU5HIiB2YWx1ZT0iZml4ZWQiLz48Q29sdW1uIGlkPSJhIiB0eXBlPSJTVFJJTkciIHByb3A9InN1bSIgc3VtdGV4dD0idG90YWwiLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJhIj54JiMxMDt5PC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 1,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "x\ny",
+                  "state": "value"
+                },
+                "c": {
+                  "lexical": "fixed",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "nl",
+          "lexical": "a\nb & c",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "null",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "empty",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-xml-format-entities.json",
+    "license": "repository"
+  },
+  "required": true
 }

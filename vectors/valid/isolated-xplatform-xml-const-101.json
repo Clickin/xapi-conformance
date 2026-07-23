@@ -12,24 +12,21 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [],
           "constColumns": [
             {
               "id": "c",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              }
+              "index": 0,
+              "type": "STRING"
             }
           ],
+          "id": "d",
           "rows": []
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.tobesoft.com/platform/Dataset",

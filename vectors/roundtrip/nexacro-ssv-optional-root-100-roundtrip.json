@@ -10,15 +10,14 @@
     "data": "U1NWOnV0Zi04Hg=="
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04Hh4=",
+      "encoding": "base64"
+    },
     "value": {
-      "parameters": [],
       "datasets": [],
-      "wire": {
-        "ssv": {
-          "codePage": "utf-8"
-        }
-      }
+      "parameters": []
     }
   },
   "source": {

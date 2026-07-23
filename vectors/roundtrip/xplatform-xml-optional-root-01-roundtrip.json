@@ -10,17 +10,21 @@
     "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48RGF0YXNldCBpZD0iZCIvPjwvUm9vdD4="
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCTwvUm93cz4KCTwvRGF0YXNldD4KPC9Sb290Pgo=",
+      "encoding": "base64"
+    },
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [],
           "constColumns": [],
+          "id": "d",
           "rows": []
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.tobesoft.com/platform/Dataset",

@@ -12,22 +12,19 @@
   "expect": {
     "kind": "canonical",
     "value": {
+      "datasets": [],
       "parameters": [
         {
           "id": "response",
-          "type": "STRING",
-          "state": "value",
           "lexical": "success",
-          "wire": {
-            "valueForm": "text"
-          }
+          "state": "value",
+          "type": "STRING"
         }
       ],
-      "datasets": [],
       "wire": {
         "root": {
-          "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
         }
       }
     }

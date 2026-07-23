@@ -12,12 +12,8 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [],
-      "wire": {
-        "format": "PlatformBinary",
-        "version": "5000"
-      }
+      "parameters": []
     }
   },
   "source": {

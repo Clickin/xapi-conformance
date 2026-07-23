@@ -12,107 +12,94 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "requestId",
-          "type": "INT",
-          "state": "value",
-          "lexical": "103",
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "enabled",
-          "type": "BOOLEAN",
-          "state": "value",
-          "lexical": "true",
-          "index": 1,
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "ds_values",
           "columns": [
             {
               "id": "plainInteger",
-              "type": "INT",
               "index": 0,
-              "size": "10"
+              "type": "INT"
             },
             {
               "id": "decimalText",
-              "type": "DECIMAL",
               "index": 1,
-              "size": "10"
+              "type": "UNDEFINED"
             },
             {
               "id": "decimalNumber",
-              "type": "DECIMAL",
               "index": 2,
-              "size": "10"
+              "type": "UNDEFINED"
             },
             {
               "id": "payload",
-              "type": "BLOB",
               "index": 3,
-              "size": "128"
+              "type": "BLOB"
             },
             {
               "id": "content",
-              "type": "STRING",
               "index": 4,
-              "size": "500"
+              "type": "STRING"
             },
             {
               "id": "active",
-              "type": "BOOLEAN",
               "index": 5,
-              "size": "5"
+              "type": "BOOLEAN"
             }
           ],
           "constColumns": [],
+          "id": "ds_values",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "active": {
-                  "state": "value",
-                  "lexical": "true"
+                  "lexical": "true",
+                  "state": "value"
                 },
                 "content": {
-                  "state": "value",
-                  "lexical": "CDATA keeps \u003ctags\u003e \u0026 symbols"
+                  "lexical": "CDATA keeps <tags> & symbols",
+                  "state": "value"
                 },
                 "decimalNumber": {
-                  "state": "value",
-                  "lexical": "556.11"
+                  "lexical": "556.11",
+                  "state": "value"
                 },
                 "decimalText": {
-                  "state": "value",
-                  "lexical": "556.11"
+                  "lexical": "556.11",
+                  "state": "value"
                 },
                 "payload": {
-                  "state": "value",
-                  "lexical": "SGVsbG8gWE1M"
+                  "lexical": "SGVsbG8gWE1M",
+                  "state": "value"
                 },
                 "plainInteger": {
-                  "state": "value",
-                  "lexical": "103"
+                  "lexical": "103",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [
+        {
+          "id": "requestId",
+          "lexical": "103",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "enabled",
+          "lexical": "true",
+          "state": "value",
+          "type": "BOOLEAN"
+        }
+      ],
       "wire": {
         "root": {
-          "namespace": "http://www.nexacroplatform.com/platform/dataset",
-          "version": "4000"
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
         }
       }
     }

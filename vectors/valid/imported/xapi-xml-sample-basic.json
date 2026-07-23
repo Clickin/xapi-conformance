@@ -12,89 +12,79 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "service",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "getUserList",
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "page",
-          "type": "INT",
-          "state": "value",
-          "lexical": "1",
-          "index": 1,
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "ds_user",
           "columns": [
             {
               "id": "userId",
-              "type": "STRING",
               "index": 0,
-              "size": "10"
+              "type": "STRING"
             },
             {
               "id": "userName",
-              "type": "STRING",
               "index": 1,
-              "size": "50"
+              "type": "STRING"
             },
             {
               "id": "age",
-              "type": "INT",
               "index": 2,
-              "size": "3"
+              "type": "INT"
             }
           ],
           "constColumns": [],
+          "id": "ds_user",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "age": {
-                  "state": "value",
-                  "lexical": "30"
+                  "lexical": "30",
+                  "state": "value"
                 },
                 "userId": {
-                  "state": "value",
-                  "lexical": "user001"
+                  "lexical": "user001",
+                  "state": "value"
                 },
                 "userName": {
-                  "state": "value",
-                  "lexical": "John Doe"
+                  "lexical": "John Doe",
+                  "state": "value"
                 }
               }
             },
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "age": {
-                  "state": "value",
-                  "lexical": "25"
+                  "lexical": "25",
+                  "state": "value"
                 },
                 "userId": {
-                  "state": "value",
-                  "lexical": "user002"
+                  "lexical": "user002",
+                  "state": "value"
                 },
                 "userName": {
-                  "state": "value",
-                  "lexical": "Jane Smith"
+                  "lexical": "Jane Smith",
+                  "state": "value"
                 }
               }
             }
           ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "service",
+          "lexical": "getUserList",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "page",
+          "lexical": "1",
+          "state": "value",
+          "type": "INT"
         }
       ],
       "wire": {

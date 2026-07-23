@@ -12,28 +12,25 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [],
           "constColumns": [
             {
               "id": "c",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              },
-              "size": "7"
+              "index": 0,
+              "type": "UNDEFINED"
             }
           ],
+          "id": "d",
           "rows": []
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",
-          "ver": "4000"
+          "version": "4000"
         }
       }
     }

@@ -12,257 +12,198 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "stringParam",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "testString",
-          "wire": {
-            "valueForm": "attribute"
-          }
-        },
-        {
-          "id": "intParam",
-          "type": "INT",
-          "state": "value",
-          "lexical": "123",
-          "index": 1,
-          "wire": {
-            "valueForm": "attribute"
-          }
-        },
-        {
-          "id": "floatParam",
-          "type": "FLOAT",
-          "state": "value",
-          "lexical": "123.45",
-          "index": 2,
-          "wire": {
-            "valueForm": "attribute"
-          }
-        },
-        {
-          "id": "dateParam",
-          "type": "DATE",
-          "state": "value",
-          "lexical": "20230615",
-          "index": 3,
-          "wire": {
-            "valueForm": "attribute"
-          }
-        },
-        {
-          "id": "datetimeParam",
-          "type": "DATETIME",
-          "state": "value",
-          "lexical": "20230615143022",
-          "index": 4,
-          "wire": {
-            "valueForm": "attribute"
-          }
-        },
-        {
-          "id": "timeParam",
-          "type": "TIME",
-          "state": "value",
-          "lexical": "143022",
-          "index": 5,
-          "wire": {
-            "valueForm": "attribute"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "complexData",
           "columns": [
             {
               "id": "stringCol",
-              "type": "STRING",
-              "index": 0,
-              "size": "50"
+              "index": 2,
+              "type": "STRING"
             },
             {
               "id": "intCol",
-              "type": "INT",
-              "index": 1,
-              "size": "10"
+              "index": 3,
+              "type": "INT"
             },
             {
               "id": "floatCol",
-              "type": "FLOAT",
-              "index": 2,
-              "size": "10"
+              "index": 4,
+              "type": "DOUBLE"
             },
             {
               "id": "decimalCol",
-              "type": "DECIMAL",
-              "index": 3,
-              "size": "10"
+              "index": 5,
+              "type": "UNDEFINED"
             },
             {
               "id": "bigDecimalCol",
-              "type": "BIGDECIMAL",
-              "index": 4,
-              "size": "10"
+              "index": 6,
+              "type": "BIGDECIMAL"
             },
             {
               "id": "dateCol",
-              "type": "DATE",
-              "index": 5,
-              "size": "8"
+              "index": 7,
+              "type": "DATE"
             },
             {
               "id": "datetimeCol",
-              "type": "DATETIME",
-              "index": 6,
-              "size": "14"
+              "index": 8,
+              "type": "DATETIME"
             },
             {
               "id": "timeCol",
-              "type": "TIME",
-              "index": 7,
-              "size": "6"
+              "index": 9,
+              "type": "TIME"
             },
             {
               "id": "blobCol",
-              "type": "BLOB",
-              "index": 8,
-              "size": "100"
+              "index": 10,
+              "type": "BLOB"
             }
           ],
           "constColumns": [
             {
               "id": "constString",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "const"
-              },
-              "size": "10"
+              "index": 0,
+              "type": "STRING"
             },
             {
               "id": "constInt",
-              "type": "INT",
-              "value": {
-                "state": "value",
-                "lexical": "100"
-              },
-              "size": "10"
+              "index": 1,
+              "type": "INT"
             }
           ],
+          "id": "complexData",
           "rows": [
             {
+              "orgRow": null,
               "type": "I",
-              "orgRow": {
-                "type": "O",
-                "orgRow": null,
-                "values": {
-                  "bigDecimalCol": {
-                    "state": "missing"
-                  },
-                  "blobCol": {
-                    "state": "missing"
-                  },
-                  "dateCol": {
-                    "state": "missing"
-                  },
-                  "datetimeCol": {
-                    "state": "missing"
-                  },
-                  "decimalCol": {
-                    "state": "missing"
-                  },
-                  "floatCol": {
-                    "state": "missing"
-                  },
-                  "intCol": {
-                    "state": "value",
-                    "lexical": "24"
-                  },
-                  "stringCol": {
-                    "state": "value",
-                    "lexical": "old string"
-                  },
-                  "timeCol": {
-                    "state": "missing"
-                  }
-                }
-              },
               "values": {
                 "bigDecimalCol": {
-                  "state": "value",
-                  "lexical": "1234567890"
+                  "lexical": "1234567890",
+                  "state": "value"
                 },
                 "blobCol": {
-                  "state": "value",
-                  "lexical": "SGVsbG8gV29ybGQ="
+                  "lexical": "SGVsbG8gV29ybGQ=",
+                  "state": "value"
+                },
+                "constInt": {
+                  "lexical": "100",
+                  "state": "value"
+                },
+                "constString": {
+                  "lexical": "const",
+                  "state": "value"
                 },
                 "dateCol": {
-                  "state": "value",
-                  "lexical": "20230615"
+                  "lexical": "20230615",
+                  "state": "value"
                 },
                 "datetimeCol": {
-                  "state": "value",
-                  "lexical": "20230615143022"
+                  "lexical": "20230615143022000",
+                  "state": "value"
                 },
                 "decimalCol": {
-                  "state": "value",
-                  "lexical": "99.99"
+                  "lexical": "99.99",
+                  "state": "value"
                 },
                 "floatCol": {
-                  "state": "value",
-                  "lexical": "3.14"
+                  "lexical": "3.14",
+                  "state": "value"
                 },
                 "intCol": {
-                  "state": "value",
-                  "lexical": "42"
+                  "lexical": "42",
+                  "state": "value"
                 },
                 "stringCol": {
-                  "state": "value",
-                  "lexical": "test string"
+                  "lexical": "test string",
+                  "state": "value"
                 },
                 "timeCol": {
-                  "state": "value",
-                  "lexical": "143022"
+                  "lexical": "143022000",
+                  "state": "value"
                 }
               }
             },
             {
-              "type": "U",
               "orgRow": null,
+              "type": "U",
               "values": {
                 "bigDecimalCol": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "blobCol": {
-                  "state": "missing"
+                  "state": "null"
+                },
+                "constInt": {
+                  "lexical": "100",
+                  "state": "value"
+                },
+                "constString": {
+                  "lexical": "const",
+                  "state": "value"
                 },
                 "dateCol": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "datetimeCol": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "decimalCol": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "floatCol": {
-                  "state": "missing"
+                  "state": "null"
                 },
                 "intCol": {
-                  "state": "empty"
+                  "lexical": "0",
+                  "state": "value"
                 },
                 "stringCol": {
+                  "lexical": "",
                   "state": "empty"
                 },
                 "timeCol": {
-                  "state": "missing"
+                  "state": "null"
                 }
               }
             }
           ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "stringParam",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "intParam",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "floatParam",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "dateParam",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "datetimeParam",
+          "state": "null",
+          "type": "DATETIME"
+        },
+        {
+          "id": "timeParam",
+          "state": "null",
+          "type": "TIME"
         }
       ],
       "wire": {

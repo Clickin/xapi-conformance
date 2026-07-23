@@ -12,51 +12,54 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "test",
           "columns": [
             {
               "id": "emptyCol",
-              "type": "STRING",
-              "index": 0
+              "index": 2,
+              "type": "UNDEFINED"
             }
           ],
           "constColumns": [
             {
               "id": "emptyConstCol",
-              "type": "STRING",
-              "value": {
-                "state": "missing"
-              }
+              "index": 0,
+              "type": "UNDEFINED"
             },
             {
               "id": "defaultConstCol",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "default"
-              }
+              "index": 1,
+              "type": "UNDEFINED"
             }
           ],
+          "id": "test",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
+                "defaultConstCol": {
+                  "lexical": "default",
+                  "state": "value"
+                },
                 "emptyCol": {
+                  "lexical": "",
                   "state": "empty"
+                },
+                "emptyConstCol": {
+                  "state": "null"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
-          "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
         }
       }
     }

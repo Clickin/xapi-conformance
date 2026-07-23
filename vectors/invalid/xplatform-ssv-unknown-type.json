@@ -10,10 +10,23 @@
     "data": "U1NWHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpVTktOT1dOHh4="
   },
   "expect": {
-    "kind": "error",
-    "error": {
-      "class": "malformed-input",
-      "path": "wire"
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "UNDEFINED"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": []
+        }
+      ],
+      "parameters": []
     }
   },
   "source": {

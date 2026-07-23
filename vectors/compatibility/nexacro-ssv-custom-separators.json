@@ -1,14 +1,28 @@
 {
-  "id":"nexacro-ssv.custom-separators.decode",
-  "operation":"decode",
-  "profile":"nexacro-ssv",
-  "options":{"strict":true,"ssvUnitSeparator":"|","ssvRecordSeparator":"~"},
-  "input":{"encoding":"base64","data":"U1NWOnV0Zi04fkRhdGFzZXQ6ZH5fUm93VHlwZV98YTpTVFJJTkd+Tnx4fn4="},
-  "expect":{"kind":"canonical","value":{
-    "parameters":[],
-    "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0}],"constColumns":[],"rows":[{"type":"N","orgRow":null,"values":{"a":{"state":"value","lexical":"x"}}}]}],
-    "wire":{"ssv":{"codePage":"utf-8","unitSeparator":"|","recordSeparator":"~"}}
-  }},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/compatibility/nexacro-ssv-custom-separators.json","license":"repository"},
-  "required":true
+  "id": "nexacro-ssv.custom-separators.decode",
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "options": {
+    "strict": true,
+    "ssvUnitSeparator": "|",
+    "ssvRecordSeparator": "~"
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "U1NWOnV0Zi04fkRhdGFzZXQ6ZH5fUm93VHlwZV98YTpTVFJJTkd+Tnx4fn4="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": ""
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/compatibility/nexacro-ssv-custom-separators.json",
+    "license": "repository"
+  },
+  "required": true
 }

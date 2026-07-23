@@ -10,17 +10,21 @@
     "data": "U1NWHnA9dh4="
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HnA6c3RyaW5nPXYe",
+      "encoding": "base64"
+    },
     "value": {
+      "datasets": [],
       "parameters": [
         {
           "id": "p",
-          "type": "STRING",
+          "lexical": "v",
           "state": "value",
-          "lexical": "v"
+          "type": "STRING"
         }
-      ],
-      "datasets": []
+      ]
     }
   },
   "source": {

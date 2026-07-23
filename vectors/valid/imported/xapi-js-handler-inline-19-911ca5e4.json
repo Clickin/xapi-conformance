@@ -12,67 +12,61 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "test",
           "columns": [
             {
               "id": "intCol",
-              "type": "INT",
               "index": 0,
-              "size": "10"
+              "type": "INT"
             },
             {
               "id": "floatCol",
-              "type": "FLOAT",
               "index": 1,
-              "size": "10"
+              "type": "DOUBLE"
             },
             {
               "id": "dateCol",
-              "type": "DATE",
               "index": 2,
-              "size": "8"
+              "type": "DATE"
             },
             {
               "id": "blobCol",
-              "type": "BLOB",
               "index": 3,
-              "size": "100"
+              "type": "BLOB"
             }
           ],
           "constColumns": [],
+          "id": "test",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "blobCol": {
-                  "state": "value",
-                  "lexical": "invalid_base64!"
+                  "state": "null"
                 },
                 "dateCol": {
-                  "state": "value",
-                  "lexical": "invalid_date"
+                  "state": "null"
                 },
                 "floatCol": {
-                  "state": "value",
-                  "lexical": "not_a_float"
+                  "lexical": "0.0",
+                  "state": "value"
                 },
                 "intCol": {
-                  "state": "value",
-                  "lexical": "not_a_number"
+                  "lexical": "0",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
-          "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
         }
       }
     }

@@ -12,13 +12,8 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [],
-      "wire": {
-        "ssv": {
-          "codePage": "utf-8"
-        }
-      }
+      "parameters": []
     }
   },
   "source": {

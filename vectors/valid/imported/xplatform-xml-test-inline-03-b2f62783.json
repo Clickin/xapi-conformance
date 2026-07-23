@@ -12,61 +12,59 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "ds_comments",
           "columns": [
             {
               "id": "commentId",
-              "type": "STRING",
               "index": 0,
-              "size": "10"
+              "type": "STRING"
             },
             {
               "id": "content",
-              "type": "STRING",
               "index": 1,
-              "size": "500"
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "ds_comments",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "commentId": {
-                  "state": "value",
-                  "lexical": "C001"
+                  "lexical": "C001",
+                  "state": "value"
                 },
                 "content": {
-                  "state": "value",
-                  "lexical": "This is a comment with \u003cspecial\u003e characters \u0026 symbols"
+                  "lexical": "This is a comment with <special> characters & symbols",
+                  "state": "value"
                 }
               }
             },
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "commentId": {
-                  "state": "value",
-                  "lexical": "C002"
+                  "lexical": "C002",
+                  "state": "value"
                 },
                 "content": {
-                  "state": "value",
-                  "lexical": "Line 1\n        Line 2\n        Line 3"
+                  "lexical": "Line 1\n        Line 2\n        Line 3",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
-          "namespace": "http://www.nexacroplatform.com/platform/dataset",
-          "version": "4000"
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
         }
       }
     }

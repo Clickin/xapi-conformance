@@ -4,15 +4,94 @@
   "profile": "nexacro-json-1.0",
   "value": {
     "parameters": [
-      {"id": "hex", "type": "INT", "state": "value", "lexical": "0x10"},
-      {"id": "grouped", "type": "INT", "state": "value", "lexical": "1,234.9", "index": 1},
-      {"id": "truthy", "type": "BOOLEAN", "state": "value", "lexical": "YES", "index": 2},
-      {"id": "invalid", "type": "DOUBLE", "state": "value", "lexical": "not-a-number", "index": 3},
-      {"id": "decimal", "type": "BIGDECIMAL", "state": "value", "lexical": "001.2300", "index": 4}
+      {
+        "id": "hex",
+        "type": "INT",
+        "state": "value",
+        "lexical": "0x10"
+      },
+      {
+        "id": "grouped",
+        "type": "INT",
+        "state": "value",
+        "lexical": "1,234.9",
+        "index": 1
+      },
+      {
+        "id": "truthy",
+        "type": "BOOLEAN",
+        "state": "value",
+        "lexical": "YES",
+        "index": 2
+      },
+      {
+        "id": "invalid",
+        "type": "DOUBLE",
+        "state": "value",
+        "lexical": "not-a-number",
+        "index": 3
+      },
+      {
+        "id": "decimal",
+        "type": "BIGDECIMAL",
+        "state": "value",
+        "lexical": "001.2300",
+        "index": 4
+      }
     ],
     "datasets": []
   },
-  "expect": {"kind": "wire", "output": {"encoding": "base64", "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6ImhleCIsInR5cGUiOiJpbnQiLCJ2YWx1ZSI6MTZ9LHsiaWQiOiJncm91cGVkIiwidHlwZSI6ImludCIsInZhbHVlIjoxMjM0fSx7ImlkIjoidHJ1dGh5IiwidHlwZSI6ImludCIsInZhbHVlIjoxfSx7ImlkIjoiaW52YWxpZCIsInR5cGUiOiJmbG9hdCIsInZhbHVlIjowLjB9LHsiaWQiOiJkZWNpbWFsIiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6MS4yMzAwfV0sInZlcnNpb24iOiIxLjAifQ=="}},
-  "source": {"repository": "xapi-conformance", "commit": "working-tree", "path": "vectors/roundtrip/source-scalar-lexicals-encode.json", "license": "repository"},
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6ImhleCIsInR5cGUiOiJpbnQiLCJ2YWx1ZSI6IjE2In0seyJpZCI6Imdyb3VwZWQiLCJ0eXBlIjoiaW50IiwidmFsdWUiOiIxMjM0In0seyJpZCI6InRydXRoeSIsInR5cGUiOiJpbnQiLCJ2YWx1ZSI6IjEifSx7ImlkIjoiaW52YWxpZCIsInR5cGUiOiJmbG9hdCIsInZhbHVlIjoiMC4wIn0seyJpZCI6ImRlY2ltYWwiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiMS4yMzAwIn1dLCJ2ZXJzaW9uIjoiMS4wIn0=",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "hex",
+          "lexical": "0x10",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "grouped",
+          "index": 1,
+          "lexical": "1,234.9",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "truthy",
+          "index": 2,
+          "lexical": "YES",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "invalid",
+          "index": 3,
+          "lexical": "not-a-number",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "decimal",
+          "index": 4,
+          "lexical": "001.2300",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        }
+      ]
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/source-scalar-lexicals-encode.json",
+    "license": "repository"
+  },
   "required": true
 }

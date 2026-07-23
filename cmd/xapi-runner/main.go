@@ -37,6 +37,14 @@ type vector struct {
 	} `json:"expect"`
 	Required bool `json:"required"`
 }
+type capabilities struct {
+	ProtocolVersion string `json:"protocolVersion"`
+	Profiles        []struct {
+		Name       string   `json:"name"`
+		Operations []string `json:"operations"`
+	} `json:"profiles"`
+}
+
 type result struct {
 	ID       string `json:"id"`
 	Pass     bool   `json:"pass"`
@@ -87,7 +95,8 @@ func main() {
 		return
 	}
 	client := &http.Client{Timeout: *timeout}
-	if err := checkCapabilities(client, *base, vs); err != nil {
+	vs, err = checkCapabilities(client, *base, vs)
+	if err != nil {
 		fatal(err)
 	}
 	results := make([]result, len(vs))
@@ -160,27 +169,24 @@ func load(dir, filter, profile, operation string) ([]vector, error) {
 	sort.Slice(vs, func(i, j int) bool { return vs[i].ID < vs[j].ID })
 	return vs, err
 }
-func checkCapabilities(c *http.Client, base string, vs []vector) error {
+func checkCapabilities(c *http.Client, base string, vs []vector) ([]vector, error) {
 	r, e := c.Get(strings.TrimRight(base, "/") + "/capabilities")
 	if e != nil {
-		return e
+		return nil, e
 	}
 	defer r.Body.Close()
 	if r.StatusCode != 200 {
-		return fmt.Errorf("capabilities returned %s", r.Status)
+		return nil, fmt.Errorf("capabilities returned %s", r.Status)
 	}
-	var cap struct {
-		ProtocolVersion string `json:"protocolVersion"`
-		Profiles        []struct {
-			Name       string   `json:"name"`
-			Operations []string `json:"operations"`
-		} `json:"profiles"`
-	}
+	var cap capabilities
 	if err := json.NewDecoder(r.Body).Decode(&cap); err != nil {
-		return fmt.Errorf("invalid capabilities: %w", err)
+		return nil, fmt.Errorf("invalid capabilities: %w", err)
 	}
+	return selectVectors(cap, vs)
+}
+func selectVectors(cap capabilities, vs []vector) ([]vector, error) {
 	if cap.ProtocolVersion != "1.0" {
-		return fmt.Errorf("unsupported protocol version %q", cap.ProtocolVersion)
+		return nil, fmt.Errorf("unsupported protocol version %q", cap.ProtocolVersion)
 	}
 	profiles := map[string]map[string]bool{}
 	for _, p := range cap.Profiles {
@@ -189,19 +195,24 @@ func checkCapabilities(c *http.Client, base string, vs []vector) error {
 			profiles[p.Name][op] = true
 		}
 	}
+	selected := make([]vector, 0, len(vs))
 	for _, v := range vs {
-		p, ok := profiles[v.Profile]
+		operations, ok := profiles[v.Profile]
 		if !ok {
 			if v.Required {
-				return fmt.Errorf("required profile %q is not advertised", v.Profile)
+				return nil, fmt.Errorf("required profile %q is not advertised", v.Profile)
 			}
 			continue
 		}
-		if !p[v.Operation] && v.Required {
-			return fmt.Errorf("required operation %q for profile %q is not advertised", v.Operation, v.Profile)
+		if !operations[v.Operation] {
+			if v.Required {
+				return nil, fmt.Errorf("required operation %q for profile %q is not advertised", v.Operation, v.Profile)
+			}
+			continue
 		}
+		selected = append(selected, v)
 	}
-	return nil
+	return selected, nil
 }
 func run(c *http.Client, base string, v vector) result {
 	body := requestBody(v)
@@ -334,8 +345,44 @@ func runCommand(command string, vs []vector, timeout time.Duration) []result {
 		}
 		lines <- nil
 	}()
-	rs := make([]result, 0, len(vs))
 	enc := json.NewEncoder(in)
+	if err := enc.Encode(map[string]any{"operation": "capabilities"}); err != nil {
+		_ = cmd.Process.Kill()
+		_ = cmd.Wait()
+		return []result{{ID: "capabilities", Error: err.Error()}}
+	}
+	timer := time.NewTimer(timeout)
+	var capabilityLine []byte
+	select {
+	case capabilityLine = <-lines:
+	case <-timer.C:
+		_ = cmd.Process.Kill()
+		_ = cmd.Wait()
+		return []result{{ID: "capabilities", Error: "timeout"}}
+	}
+	if !timer.Stop() {
+		select {
+		case <-timer.C:
+		default:
+		}
+	}
+	if capabilityLine == nil {
+		_ = cmd.Wait()
+		return []result{{ID: "capabilities", Error: "stdio adapter exited before capability response"}}
+	}
+	var cap capabilities
+	if err := json.Unmarshal(capabilityLine, &cap); err != nil {
+		_ = cmd.Process.Kill()
+		_ = cmd.Wait()
+		return []result{{ID: "capabilities", Error: fmt.Sprintf("invalid capabilities: %v", err)}}
+	}
+	vs, err = selectVectors(cap, vs)
+	if err != nil {
+		_ = cmd.Process.Kill()
+		_ = cmd.Wait()
+		return []result{{ID: "capabilities", Error: err.Error()}}
+	}
+	rs := make([]result, 0, len(vs))
 	for i, v := range vs {
 		if err := enc.Encode(requestBody(v)); err != nil {
 			rs = append(rs, failedResult(v, err.Error()))
@@ -377,20 +424,20 @@ func runCommand(command string, vs []vector, timeout time.Duration) []result {
 	_ = in.Close()
 	wait := make(chan error, 1)
 	go func() { wait <- cmd.Wait() }()
-	timer := time.NewTimer(timeout)
+	waitTimer := time.NewTimer(timeout)
 	select {
 	case err := <-wait:
 		if err != nil && len(rs) < len(vs) {
 			rs = append(rs, result{ID: "process", Error: err.Error()})
 		}
-	case <-timer.C:
+	case <-waitTimer.C:
 		_ = cmd.Process.Kill()
 		<-wait
 		rs = append(rs, result{ID: "process", Error: "timeout waiting for process exit"})
 	}
-	if !timer.Stop() {
+	if !waitTimer.Stop() {
 		select {
-		case <-timer.C:
+		case <-waitTimer.C:
 		default:
 		}
 	}

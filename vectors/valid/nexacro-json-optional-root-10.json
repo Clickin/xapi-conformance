@@ -12,8 +12,8 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [],
+      "parameters": [],
       "wire": {
         "version": "1.0"
       }

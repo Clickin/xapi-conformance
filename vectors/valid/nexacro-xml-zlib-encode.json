@@ -52,8 +52,52 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "data": "/614AUyMwWrzMBCEX0Xs/bf8Q6GlrDaH5tKb8RtsbTkVSFojbSK3T1/i1pDL8MHMN3jaUjQ3X2qQ7OB/14PxeZI55IuDqy7/XuBEOIqo2VLM1cGn6vpqbWuty37jqcgaWRcpqZsk2TWyLlKSnVm5egVz88XBU9/3QDhw4eTVl0o4HGzC7GAFo1+rdxCyAj2jHY6aHrgSnlnvv7s0A+GbxGvK73mRg/eKj7+qJeQLWEL7OB2lVbrnbv0p9B3Dx74jtKO036yE9szK1SuhHUWUfgIAAP//eVxqOA==",
+      "data": "/614nFWQzU7DMBCEz+QprL2T5ecAQnZ6ACFxQxU8gElcsBR7I3vbtH16Nk6C6G1Gnm+8u3pzDL06uJQ9RQO39Q0oF1vqfPw28Pnxev0Im6bSWyJWEo3ZwA/z8IQ4jmMd3dG2iYbe8o5SqFsKuBrsLNvsGJrqSr/bZINj+UfcP6t8Z2AAxafBGfBR0g8a/54nFC9Y/TK3FrCD0vZM/T7Et7ijya6+JOxanTnJSqCyP4u7vwMsKF6ysueY5xJRRZS6pas59/6rMHMGl1ARZTpcxpOT4XSzpvoFwgxreg==",
       "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "zlib",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "7",
+          "state": "value",
+          "type": "INT",
+          "wire": {
+            "valueForm": "text"
+          }
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "ver": "4000"
+        }
+      }
     }
   },
   "source": {

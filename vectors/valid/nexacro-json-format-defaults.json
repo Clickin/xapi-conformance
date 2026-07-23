@@ -1,20 +1,23 @@
 {
-  "id":"nexacro-json.format-defaults.decode",
-  "operation":"decode",
-  "profile":"nexacro-json-1.0",
-  "input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W3siaWQiOiJpIiwidmFsdWUiOjF9LHsiaWQiOiJmIiwidmFsdWUiOjEuNX0seyJpZCI6InMiLCJ2YWx1ZSI6IjEifV0sIkRhdGFzZXRzIjpbeyJpZCI6ImQiLCJDb2x1bW5JbmZvIjp7IkNvbnN0Q29sdW1uIjpbeyJpZCI6ImMiLCJ2YWx1ZSI6MTB9XSwiQ29sdW1uIjpbeyJpZCI6ImEiLCJwcm9wIjoic3VtIiwic3VtdGV4dCI6InRvdGFsIn1dfSwiUm93cyI6W3siX1Jvd1R5cGVfIjoiTyIsImEiOiJpZ25vcmVkIn0seyJfUm93VHlwZV8iOiJOIiwiYSI6Im5vcm1hbCJ9LHsiX1Jvd1R5cGVfIjoiTyIsImEiOiJpZ25vcmVkIn0seyJfUm93VHlwZV8iOiJVIiwiYSI6Im5ldyJ9LHsiX1Jvd1R5cGVfIjoiTyIsImEiOiJvbGQifV19XX0="},
-  "expect":{"kind":"canonical","value":{
-    "parameters":[
-      {"id":"i","type":"INT","state":"value","lexical":"1"},
-      {"id":"f","type":"FLOAT","state":"value","lexical":"1.5","index":1},
-      {"id":"s","type":"STRING","state":"value","lexical":"1","index":2}
-    ],
-    "datasets":[{"id":"d","columns":[{"id":"a","type":"STRING","index":0,"prop":"sum","sumtext":"total"}],"constColumns":[{"id":"c","type":"INT","value":{"state":"value","lexical":"10"}}],"rows":[
-      {"type":"N","orgRow":{"type":"O","orgRow":null,"values":{"a":{"state":"value","lexical":"ignored"}}},"values":{"a":{"state":"value","lexical":"normal"}}},
-      {"type":"U","orgRow":{"type":"O","orgRow":null,"values":{"a":{"state":"value","lexical":"old"}}},"values":{"a":{"state":"value","lexical":"new"}}}
-    ]}],
-    "wire":{"version":"1.0"}
-  }},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/valid/nexacro-json-format-defaults.json","license":"repository"},
-  "required":true
+  "id": "nexacro-json.format-defaults.decode",
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "input": {
+    "encoding": "base64",
+    "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W3siaWQiOiJpIiwidmFsdWUiOjF9LHsiaWQiOiJmIiwidmFsdWUiOjEuNX0seyJpZCI6InMiLCJ2YWx1ZSI6IjEifV0sIkRhdGFzZXRzIjpbeyJpZCI6ImQiLCJDb2x1bW5JbmZvIjp7IkNvbnN0Q29sdW1uIjpbeyJpZCI6ImMiLCJ2YWx1ZSI6MTB9XSwiQ29sdW1uIjpbeyJpZCI6ImEiLCJwcm9wIjoic3VtIiwic3VtdGV4dCI6InRvdGFsIn1dfSwiUm93cyI6W3siX1Jvd1R5cGVfIjoiTyIsImEiOiJpZ25vcmVkIn0seyJfUm93VHlwZV8iOiJOIiwiYSI6Im5vcm1hbCJ9LHsiX1Jvd1R5cGVfIjoiTyIsImEiOiJpZ25vcmVkIn0seyJfUm93VHlwZV8iOiJVIiwiYSI6Im5ldyJ9LHsiX1Jvd1R5cGVfIjoiTyIsImEiOiJvbGQifV19XX0="
+  },
+  "expect": {
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": ""
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/valid/nexacro-json-format-defaults.json",
+    "license": "repository"
+  },
+  "required": true
 }

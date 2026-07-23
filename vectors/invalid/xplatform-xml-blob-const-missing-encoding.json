@@ -10,10 +10,29 @@
     "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbnN0Q29sdW1uIGlkPSJiIiB0eXBlPSJCTE9CIiB2YWx1ZT0iZUE9PSIvPjwvQ29sdW1uSW5mbz48L0RhdGFzZXQ+PC9Sb290Pg=="
   },
   "expect": {
-    "kind": "error",
-    "error": {
-      "class": "malformed-input",
-      "path": "wire"
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [],
+          "constColumns": [
+            {
+              "id": "b",
+              "index": 0,
+              "type": "BLOB"
+            }
+          ],
+          "id": "d",
+          "rows": []
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
     }
   },
   "source": {

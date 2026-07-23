@@ -12,84 +12,61 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "page",
-          "type": "INT",
-          "state": "value",
-          "lexical": "3",
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "ds_prices",
           "columns": [
             {
               "id": "name",
-              "type": "STRING",
               "index": 0,
-              "size": "50"
+              "type": "STRING"
             },
             {
               "id": "price",
-              "type": "DECIMAL",
               "index": 1,
-              "size": "8"
+              "type": "UNDEFINED"
             },
             {
               "id": "quantity",
-              "type": "INT",
               "index": 2,
-              "size": "4"
+              "type": "INT"
             }
           ],
           "constColumns": [],
+          "id": "ds_prices",
           "rows": [
             {
+              "orgRow": null,
               "type": "N",
-              "orgRow": {
-                "type": "O",
-                "orgRow": null,
-                "values": {
-                  "name": {
-                    "state": "value",
-                    "lexical": "Old Widget"
-                  },
-                  "price": {
-                    "state": "value",
-                    "lexical": "64.00"
-                  },
-                  "quantity": {
-                    "state": "value",
-                    "lexical": "11"
-                  }
-                }
-              },
               "values": {
                 "name": {
-                  "state": "value",
-                  "lexical": "Widget"
+                  "lexical": "Widget",
+                  "state": "value"
                 },
                 "price": {
-                  "state": "value",
-                  "lexical": "65.77"
+                  "lexical": "65.77",
+                  "state": "value"
                 },
                 "quantity": {
-                  "state": "value",
-                  "lexical": "12"
+                  "lexical": "12",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [
+        {
+          "id": "page",
+          "lexical": "3",
+          "state": "value",
+          "type": "INT"
+        }
+      ],
       "wire": {
         "root": {
-          "namespace": "http://www.nexacroplatform.com/platform/dataset",
-          "version": "4000"
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
         }
       }
     }

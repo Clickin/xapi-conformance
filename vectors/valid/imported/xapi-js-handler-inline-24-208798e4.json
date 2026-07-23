@@ -12,171 +12,159 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "test",
           "columns": [
             {
               "id": "intCol",
-              "type": "INT",
               "index": 0,
-              "size": "10"
+              "type": "INT"
             },
             {
               "id": "bigdecimalCol",
-              "type": "BIGDECIMAL",
               "index": 1,
-              "size": "10"
+              "type": "BIGDECIMAL"
             },
             {
               "id": "floatCol",
-              "type": "FLOAT",
               "index": 2,
-              "size": "10"
+              "type": "DOUBLE"
             },
             {
               "id": "decimalCol",
-              "type": "DECIMAL",
               "index": 3,
-              "size": "10"
+              "type": "UNDEFINED"
             },
             {
               "id": "dateCol",
-              "type": "DATE",
               "index": 4,
-              "size": "8"
+              "type": "DATE"
             },
             {
               "id": "datetimeCol",
-              "type": "DATETIME",
               "index": 5,
-              "size": "14"
+              "type": "DATETIME"
             },
             {
               "id": "timeCol",
-              "type": "TIME",
               "index": 6,
-              "size": "6"
+              "type": "TIME"
             },
             {
               "id": "blobCol",
-              "type": "BLOB",
               "index": 7,
-              "size": "100"
+              "type": "BLOB"
             },
             {
               "id": "stringCol",
-              "type": "STRING",
               "index": 8,
-              "size": "50"
+              "type": "STRING"
             },
             {
               "id": "defaultCol",
-              "type": "STRING",
               "index": 9,
-              "size": "255"
+              "type": "UNDEFINED"
             }
           ],
           "constColumns": [],
+          "id": "test",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "bigdecimalCol": {
-                  "state": "value",
-                  "lexical": "1234567890"
+                  "lexical": "1234567890",
+                  "state": "value"
                 },
                 "blobCol": {
-                  "state": "value",
-                  "lexical": "dGVzdA=="
+                  "lexical": "dGVzdA==",
+                  "state": "value"
                 },
                 "dateCol": {
-                  "state": "value",
-                  "lexical": "20230615"
+                  "lexical": "20230615",
+                  "state": "value"
                 },
                 "datetimeCol": {
-                  "state": "value",
-                  "lexical": "20230615120000"
+                  "lexical": "20230615120000000",
+                  "state": "value"
                 },
                 "decimalCol": {
-                  "state": "value",
-                  "lexical": "99.99"
+                  "lexical": "99.99",
+                  "state": "value"
                 },
                 "defaultCol": {
-                  "state": "value",
-                  "lexical": "default value"
+                  "lexical": "default value",
+                  "state": "value"
                 },
                 "floatCol": {
-                  "state": "value",
-                  "lexical": "3.14"
+                  "lexical": "3.14",
+                  "state": "value"
                 },
                 "intCol": {
-                  "state": "value",
-                  "lexical": "123"
+                  "lexical": "123",
+                  "state": "value"
                 },
                 "stringCol": {
-                  "state": "value",
-                  "lexical": "test"
+                  "lexical": "test",
+                  "state": "value"
                 },
                 "timeCol": {
-                  "state": "value",
-                  "lexical": "120000"
+                  "lexical": "120000000",
+                  "state": "value"
                 }
               }
             },
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "bigdecimalCol": {
-                  "state": "value",
-                  "lexical": "NaN"
+                  "state": "null"
                 },
                 "blobCol": {
-                  "state": "value",
-                  "lexical": "cannot-decode"
+                  "state": "null"
                 },
                 "dateCol": {
-                  "state": "value",
-                  "lexical": "not-a-date"
+                  "state": "null"
                 },
                 "datetimeCol": {
-                  "state": "value",
-                  "lexical": "not-a-datetime"
+                  "lexical": "690190220012803000",
+                  "state": "value"
                 },
                 "decimalCol": {
-                  "state": "value",
-                  "lexical": "NaN"
+                  "lexical": "NaN",
+                  "state": "value"
                 },
                 "defaultCol": {
+                  "lexical": "",
                   "state": "empty"
                 },
                 "floatCol": {
-                  "state": "value",
-                  "lexical": "NaN"
+                  "lexical": "NaN",
+                  "state": "value"
                 },
                 "intCol": {
-                  "state": "value",
-                  "lexical": "NaN"
+                  "lexical": "0",
+                  "state": "value"
                 },
                 "stringCol": {
+                  "lexical": "",
                   "state": "empty"
                 },
                 "timeCol": {
-                  "state": "value",
-                  "lexical": "not-a-time"
+                  "state": "null"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
-          "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
         }
       }
     }

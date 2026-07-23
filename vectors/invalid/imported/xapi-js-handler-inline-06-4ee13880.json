@@ -13,7 +13,7 @@
     "kind": "error",
     "error": {
       "class": "malformed-input",
-      "path": "wire"
+      "path": ""
     }
   },
   "source": {

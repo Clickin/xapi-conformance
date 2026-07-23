@@ -12,106 +12,59 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "ds_product",
           "columns": [
             {
               "id": "productId",
-              "type": "STRING",
               "index": 0,
-              "size": "10"
+              "type": "STRING"
             },
             {
               "id": "productName",
-              "type": "STRING",
               "index": 1,
-              "size": "100"
+              "type": "STRING"
             },
             {
               "id": "price",
-              "type": "DECIMAL",
               "index": 2,
-              "size": "10"
+              "type": "UNDEFINED"
             },
             {
               "id": "stock",
-              "type": "INT",
               "index": 3,
-              "size": "5"
+              "type": "INT"
             }
           ],
           "constColumns": [],
+          "id": "ds_product",
           "rows": [
             {
-              "type": "U",
-              "orgRow": {
-                "type": "O",
-                "orgRow": null,
-                "values": {
-                  "price": {
-                    "state": "value",
-                    "lexical": "149.99"
-                  },
-                  "productId": {
-                    "state": "value",
-                    "lexical": "P001"
-                  },
-                  "productName": {
-                    "state": "value",
-                    "lexical": "Original Product Name"
-                  },
-                  "stock": {
-                    "state": "value",
-                    "lexical": "100"
-                  }
-                }
-              },
-              "values": {
-                "price": {
-                  "state": "value",
-                  "lexical": "199.99"
-                },
-                "productId": {
-                  "state": "value",
-                  "lexical": "P001"
-                },
-                "productName": {
-                  "state": "value",
-                  "lexical": "Updated Product Name"
-                },
-                "stock": {
-                  "state": "value",
-                  "lexical": "50"
-                }
-              }
-            },
-            {
-              "type": "D",
               "orgRow": null,
+              "type": "U",
               "values": {
                 "price": {
-                  "state": "value",
-                  "lexical": "99.99"
+                  "lexical": "199.99",
+                  "state": "value"
                 },
                 "productId": {
-                  "state": "value",
-                  "lexical": "P002"
+                  "lexical": "P001",
+                  "state": "value"
                 },
                 "productName": {
-                  "state": "value",
-                  "lexical": "Deleted Product"
+                  "lexical": "Updated Product Name",
+                  "state": "value"
                 },
                 "stock": {
-                  "state": "value",
-                  "lexical": "0"
+                  "lexical": "50",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

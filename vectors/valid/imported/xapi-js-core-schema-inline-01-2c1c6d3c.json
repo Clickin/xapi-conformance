@@ -12,33 +12,38 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "values",
           "columns": [
             {
               "id": "amount",
-              "type": "DOUBLE",
               "index": 0,
-              "size": "20"
+              "type": "DOUBLE"
             }
           ],
           "constColumns": [],
+          "id": "values",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "amount": {
-                  "state": "value",
-                  "lexical": "67.00"
+                  "lexical": "67.0",
+                  "state": "value"
                 }
               }
             }
           ]
         }
-      ]
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
     }
   },
   "source": {

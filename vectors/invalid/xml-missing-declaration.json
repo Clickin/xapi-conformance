@@ -1,10 +1,32 @@
 {
-  "id":"nexacro-xml.missing-declaration.strict",
-  "operation":"decode",
-  "profile":"nexacro-xml-4000",
-  "options":{"strict":true},
-  "input":{"encoding":"base64","data":"PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXI9IjQwMDAiPjwvUm9vdD4="},
-  "expect":{"kind":"error","error":{"class":"malformed-input","path":"wire"}},
-  "source":{"repository":"xapi-conformance","commit":"working-tree","path":"vectors/invalid/xml-missing-declaration.json","license":"repository"},
-  "required":true
+  "id": "nexacro-xml.missing-declaration.strict",
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "options": {
+    "strict": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0IiB2ZXI9IjQwMDAiPjwvUm9vdD4="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/invalid/xml-missing-declaration.json",
+    "license": "repository"
+  },
+  "required": true
 }

@@ -29,8 +29,32 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "encoding": "base64",
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0icCIgdHlwZT0ic3RyaW5nIj54PC9QYXJhbWV0ZXI+PC9QYXJhbWV0ZXJzPjxEYXRhc2V0IGlkPSJkIj48Q29sdW1uSW5mbz48Q29sdW1uIGlkPSJhIiB0eXBlPSJzdHJpbmciLz48L0NvbHVtbkluZm8+PC9EYXRhc2V0PjwvUm9vdD4="
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzPgoJCTxQYXJhbWV0ZXIgaWQ9InAiIHR5cGU9InN0cmluZyI+eDwvUGFyYW1ldGVyPgoJPC9QYXJhbWV0ZXJzPgoJPERhdGFzZXQgaWQ9ImQiPgoJCTxDb2x1bW5JbmZvPgoJCQk8Q29sdW1uIGlkPSJhIiB0eXBlPSJzdHJpbmciIHNpemU9IjMyIi8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCTwvUm93cz4KCTwvRGF0YXNldD4KPC9Sb290Pgo=",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": []
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "x",
+          "state": "value",
+          "type": "STRING"
+        }
+      ]
     }
   },
   "source": {

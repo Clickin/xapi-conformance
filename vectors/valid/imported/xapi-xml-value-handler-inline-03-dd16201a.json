@@ -12,73 +12,68 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "mixed",
           "columns": [
             {
               "id": "intCol",
-              "type": "INT",
               "index": 0,
-              "size": "10"
+              "type": "INT"
             },
             {
               "id": "floatCol",
-              "type": "FLOAT",
               "index": 1,
-              "size": "20"
+              "type": "DOUBLE"
             },
             {
               "id": "stringCol",
-              "type": "STRING",
               "index": 2,
-              "size": "50"
+              "type": "STRING"
             },
             {
               "id": "dateCol",
-              "type": "DATE",
               "index": 3,
-              "size": "8"
+              "type": "DATE"
             },
             {
               "id": "datetimeCol",
-              "type": "DATETIME",
               "index": 4,
-              "size": "14"
+              "type": "DATETIME"
             }
           ],
           "constColumns": [],
+          "id": "mixed",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "dateCol": {
-                  "state": "value",
-                  "lexical": "20250104"
+                  "lexical": "20250104",
+                  "state": "value"
                 },
                 "datetimeCol": {
-                  "state": "value",
-                  "lexical": "20250104153045"
+                  "lexical": "20250104153045000",
+                  "state": "value"
                 },
                 "floatCol": {
-                  "state": "value",
-                  "lexical": "99.99"
+                  "lexical": "99.99",
+                  "state": "value"
                 },
                 "intCol": {
-                  "state": "value",
-                  "lexical": "123"
+                  "lexical": "123",
+                  "state": "value"
                 },
                 "stringCol": {
-                  "state": "value",
-                  "lexical": "text"
+                  "lexical": "text",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

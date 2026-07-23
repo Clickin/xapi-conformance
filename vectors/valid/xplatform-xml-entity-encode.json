@@ -48,8 +48,51 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJwIiB0eXBlPSJzdHJpbmciPmZpcnN0JiMxMDtzZWNvbmQ8L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0ic3RyaW5nIiB2YWx1ZT0iZml4ZWQiLz48Q29sdW1uIGlkPSJhIiB0eXBlPSJzdHJpbmciLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJhIj5hJiMxMDtiPC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycz4KCQk8UGFyYW1ldGVyIGlkPSJwIiB0eXBlPSJzdHJpbmciPmZpcnN0JiMxMDtzZWNvbmQ8L1BhcmFtZXRlcj4KCTwvUGFyYW1ldGVycz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbHVtbiBpZD0iYSIgdHlwZT0ic3RyaW5nIiBzaXplPSIzMiIvPgoJCQk8Q29uc3RDb2x1bW4gaWQ9ImMiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiIHZhbHVlPSJmaXhlZCIvPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9ImEiPmEmIzEwO2I8L0NvbD4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
       "encoding": "base64"
+    },
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "c",
+              "type": "STRING",
+              "value": {
+                "lexical": "fixed",
+                "state": "value"
+              }
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "a\nb",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "first\nsecond",
+          "state": "value",
+          "type": "STRING"
+        }
+      ]
     }
   },
   "source": {

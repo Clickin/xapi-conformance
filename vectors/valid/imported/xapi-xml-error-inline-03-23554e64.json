@@ -12,33 +12,32 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "ds_test",
           "columns": [
             {
               "id": "col1",
-              "type": "INT",
               "index": 0,
-              "size": "10"
+              "type": "INT"
             }
           ],
           "constColumns": [],
+          "id": "ds_test",
           "rows": [
             {
-              "type": "N",
               "orgRow": null,
+              "type": "N",
               "values": {
                 "col1": {
-                  "state": "value",
-                  "lexical": "not_a_number"
+                  "lexical": "0",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",

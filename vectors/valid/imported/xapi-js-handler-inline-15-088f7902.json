@@ -12,45 +12,36 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "test",
           "columns": [
             {
               "id": "testCol",
-              "type": "STRING",
               "index": 0,
-              "size": "10"
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "test",
           "rows": [
             {
+              "orgRow": null,
               "type": "U",
-              "orgRow": {
-                "type": "O",
-                "orgRow": null,
-                "values": {
-                  "testCol": {
-                    "state": "empty"
-                  }
-                }
-              },
               "values": {
                 "testCol": {
-                  "state": "value",
-                  "lexical": "newValue"
+                  "lexical": "newValue",
+                  "state": "value"
                 }
               }
             }
           ]
         }
       ],
+      "parameters": [],
       "wire": {
         "root": {
-          "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
         }
       }
     }

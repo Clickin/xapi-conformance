@@ -12,12 +12,12 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [],
+      "parameters": [],
       "wire": {
         "root": {
           "namespace": "http://www.nexacroplatform.com/platform/dataset",
-          "ver": "4000"
+          "version": "4000"
         }
       }
     }

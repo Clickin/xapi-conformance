@@ -10,23 +10,27 @@
     "data": "U1NWHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpTVFJJTkceHg=="
   },
   "expect": {
-    "kind": "canonical",
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpzdHJpbmcoMzIpHg==",
+      "encoding": "base64"
+    },
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "a",
-              "type": "STRING",
-              "index": 0
+              "index": 0,
+              "type": "STRING"
             }
           ],
           "constColumns": [],
+          "id": "d",
           "rows": []
         }
-      ]
+      ],
+      "parameters": []
     }
   },
   "source": {

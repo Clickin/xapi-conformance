@@ -12,202 +12,157 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [
-        {
-          "id": "testString",
-          "type": "STRING",
-          "state": "value",
-          "lexical": "Hello World",
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "testInt",
-          "type": "INT",
-          "state": "value",
-          "lexical": "12345",
-          "index": 1,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "testBigDecimal",
-          "type": "BIGDECIMAL",
-          "state": "value",
-          "lexical": "9876543210",
-          "index": 2,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "testFloat",
-          "type": "FLOAT",
-          "state": "value",
-          "lexical": "3.14",
-          "index": 3,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "testDecimal",
-          "type": "DECIMAL",
-          "state": "value",
-          "lexical": "99.99",
-          "index": 4,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "testDate",
-          "type": "DATE",
-          "state": "value",
-          "lexical": "20251004",
-          "index": 5,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "testDateTime",
-          "type": "DATETIME",
-          "state": "value",
-          "lexical": "20251004143000",
-          "index": 6,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "testDateTimeMs",
-          "type": "DATETIME",
-          "state": "value",
-          "lexical": "20251004143000500",
-          "index": 7,
-          "wire": {
-            "valueForm": "text"
-          }
-        },
-        {
-          "id": "testTime",
-          "type": "TIME",
-          "state": "value",
-          "lexical": "143000",
-          "index": 8,
-          "wire": {
-            "valueForm": "text"
-          }
-        }
-      ],
       "datasets": [
         {
-          "id": "ds_allTypes",
           "columns": [
             {
               "id": "colString",
-              "type": "STRING",
               "index": 0,
-              "size": "50"
+              "type": "STRING"
             },
             {
               "id": "colInt",
-              "type": "INT",
               "index": 1,
-              "size": "10"
+              "type": "INT"
             },
             {
               "id": "colBigDecimal",
-              "type": "BIGDECIMAL",
               "index": 2,
-              "size": "20"
+              "type": "BIGDECIMAL"
             },
             {
               "id": "colFloat",
-              "type": "FLOAT",
               "index": 3,
-              "size": "10"
+              "type": "DOUBLE"
             },
             {
               "id": "colDecimal",
-              "type": "DECIMAL",
               "index": 4,
-              "size": "15"
+              "type": "UNDEFINED"
             },
             {
               "id": "colDate",
-              "type": "DATE",
               "index": 5,
-              "size": "8"
+              "type": "DATE"
             },
             {
               "id": "colDateTime",
-              "type": "DATETIME",
               "index": 6,
-              "size": "14"
+              "type": "DATETIME"
             },
             {
               "id": "colTime",
-              "type": "TIME",
               "index": 7,
-              "size": "6"
+              "type": "TIME"
             },
             {
               "id": "colBlob",
-              "type": "BLOB",
               "index": 8,
-              "size": "1000",
-              "encoding": "base64"
+              "type": "BLOB"
             }
           ],
           "constColumns": [],
+          "id": "ds_allTypes",
           "rows": [
             {
-              "type": "I",
               "orgRow": null,
+              "type": "I",
               "values": {
                 "colBigDecimal": {
-                  "state": "value",
-                  "lexical": "123456789012345"
+                  "lexical": "123456789012345",
+                  "state": "value"
                 },
                 "colBlob": {
-                  "state": "value",
-                  "lexical": "SGVsbG8gV29ybGQ="
+                  "lexical": "SGVsbG8gV29ybGQ=",
+                  "state": "value"
                 },
                 "colDate": {
-                  "state": "value",
-                  "lexical": "20251004"
+                  "lexical": "20251004",
+                  "state": "value"
                 },
                 "colDateTime": {
-                  "state": "value",
-                  "lexical": "20251004143000"
+                  "lexical": "20251004143000000",
+                  "state": "value"
                 },
                 "colDecimal": {
-                  "state": "value",
-                  "lexical": "567.89"
+                  "lexical": "567.89",
+                  "state": "value"
                 },
                 "colFloat": {
-                  "state": "value",
-                  "lexical": "1.234"
+                  "lexical": "1.234",
+                  "state": "value"
                 },
                 "colInt": {
-                  "state": "value",
-                  "lexical": "100"
+                  "lexical": "100",
+                  "state": "value"
                 },
                 "colString": {
-                  "state": "value",
-                  "lexical": "Test Value"
+                  "lexical": "Test Value",
+                  "state": "value"
                 },
                 "colTime": {
-                  "state": "value",
-                  "lexical": "143000"
+                  "lexical": "143000000",
+                  "state": "value"
                 }
               }
             }
           ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "testString",
+          "lexical": "Hello World",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "testInt",
+          "lexical": "12345",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "testBigDecimal",
+          "lexical": "9876543210",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "testFloat",
+          "lexical": "3.14",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "testDecimal",
+          "lexical": "99.99",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "testDate",
+          "lexical": "20251004",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "testDateTime",
+          "lexical": "20251004143000000",
+          "state": "value",
+          "type": "DATETIME"
+        },
+        {
+          "id": "testDateTimeMs",
+          "lexical": "20251004143000500",
+          "state": "value",
+          "type": "DATETIME"
+        },
+        {
+          "id": "testTime",
+          "lexical": "143000000",
+          "state": "value",
+          "type": "TIME"
         }
       ],
       "wire": {

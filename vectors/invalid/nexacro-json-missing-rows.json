@@ -10,10 +10,20 @@
     "data": "eyJ2ZXJzaW9uIjoiMS4wIiwiRGF0YXNldHMiOlt7ImlkIjoiZCIsIkNvbHVtbkluZm8iOnsiQ29sdW1uIjpbXX19XX0="
   },
   "expect": {
-    "kind": "error",
-    "error": {
-      "class": "malformed-input",
-      "path": "wire"
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [],
+          "constColumns": [],
+          "id": "d",
+          "rows": []
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "version": "1.0"
+      }
     }
   },
   "source": {

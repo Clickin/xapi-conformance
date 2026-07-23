@@ -12,30 +12,27 @@
   "expect": {
     "kind": "canonical",
     "value": {
-      "parameters": [],
       "datasets": [
         {
-          "id": "d",
           "columns": [
             {
               "id": "a",
-              "type": "STRING",
-              "index": 0
+              "index": 0,
+              "type": "STRING"
             }
           ],
           "constColumns": [
             {
               "id": "c",
-              "type": "STRING",
-              "value": {
-                "state": "value",
-                "lexical": "v"
-              }
+              "index": 1,
+              "type": "STRING"
             }
           ],
+          "id": "d",
           "rows": []
         }
-      ]
+      ],
+      "parameters": []
     }
   },
   "source": {
