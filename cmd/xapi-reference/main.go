@@ -126,10 +126,6 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "invalid-request", "input", "input is required")
 			return
 		}
-		if msg := invalidDecodeSource(req.Options, req.Profile); msg != "" {
-			writeError(w, 400, "malformed-input", "", msg)
-			return
-		}
 		b, err := protocol.DecodeInput(*req.Input, false)
 		if err != nil {
 			writeError(w, 400, "malformed-input", "input.data", err.Error())
@@ -173,10 +169,6 @@ func operation(w http.ResponseWriter, r *http.Request) {
 	case "roundtrip":
 		if req.Input == nil {
 			writeError(w, 400, "invalid-request", "input", "input is required")
-			return
-		}
-		if msg := invalidDecodeSource(req.Options, req.Profile); msg != "" {
-			writeError(w, 400, "malformed-input", "", msg)
 			return
 		}
 		b, err := protocol.DecodeInput(*req.Input, false)
@@ -245,18 +237,6 @@ func invalidOption(options map[string]any, strict bool, profile string) string {
 			continue
 		}
 		return key
-	}
-	return ""
-}
-
-func invalidDecodeSource(options map[string]any, profile string) string {
-	if profile != "nexacro-ssv" && profile != "xplatform-ssv" {
-		return ""
-	}
-	for _, key := range []string{"ssvUnitSeparator", "ssvRecordSeparator"} {
-		if value, ok := options[key].(string); ok && value != "" {
-			return "custom SSV separators are not accepted for decode"
-		}
 	}
 	return ""
 }

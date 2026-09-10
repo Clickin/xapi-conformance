@@ -202,6 +202,12 @@ func normalizeSourceDecimal(value string) string {
 
 func jsonScalar(dataType string, cell protocol.Cell) (string, bool) {
 	dataType = strings.ToUpper(defaultType(dataType))
+	if cell.State == "empty" {
+		switch dataType {
+		case "STRING", "CHAR", "FILE", "BLOB":
+			return "", true
+		}
+	}
 	if cell.State != "value" {
 		if dataType == "BOOLEAN" {
 			return "0", true

@@ -123,6 +123,9 @@ func validateBlobCell(cell protocol.Cell) error {
 }
 
 func jsonValue(b []byte, strict bool) (protocol.Value, error) {
+	if err := protocol.RejectDuplicateKeys(b); err != nil {
+		return protocol.Value{}, err
+	}
 	var root map[string]json.RawMessage
 	if err := json.Unmarshal(b, &root); err != nil {
 		return protocol.Value{}, err
@@ -182,9 +185,22 @@ func jsonValue(b []byte, strict bool) (protocol.Value, error) {
 				continue
 			}
 			if row.Type == "O" {
-				if len(ds.Rows) == 0 {
-					return out, fmt.Errorf("orphan _RowType_ O")
+				if len(ds.Rows) == 0 || ds.Rows[len(ds.Rows)-1].Type != "U" {
+					if strict {
+						return out, fmt.Errorf("orphan original row")
+					}
+					continue
 				}
+				original := protocol.Row{Type: "O", Values: map[string]protocol.Cell{}}
+				for _, column := range ds.Columns {
+					original.Values[column.ID] = jsonCell(r[column.ID], column.Type)
+				}
+				for _, column := range ds.ConstColumns {
+					original.Values[column.ID] = constValues[column.ID]
+				}
+				original.MarkOrgRowPresent()
+				ds.Rows[len(ds.Rows)-1].OrgRow = &original
+				ds.Rows[len(ds.Rows)-1].MarkOrgRowPresent()
 				continue
 			}
 			if row.Type == "D" {
@@ -396,7 +412,7 @@ type xcolvalue struct {
 type xmlSyntax struct {
 	ParameterSelfClosing []bool
 	DatasetColumnIndexes []map[string]int
-	DatasetIDs            []string
+	DatasetIDs           []string
 }
 
 func xmlValue(b []byte, strict bool, profile string) (protocol.Value, error) {
@@ -508,9 +524,6 @@ func xmlValue(b []byte, strict bool, profile string) (protocol.Value, error) {
 			known[column.ID] = true
 		}
 		for _, itemRow := range item.Rows.Items {
-			if strings.EqualFold(itemRow.Type, "delete") {
-				continue
-			}
 			for _, cell := range itemRow.Cols {
 				if !known[cell.ID] {
 					return protocol.Value{}, fmt.Errorf("column %q is not declared", cell.ID)
@@ -703,7 +716,7 @@ func rejectDuplicateXMLAttrs(b []byte) error {
 }
 
 func xmlRow(r xrow, columns []protocol.Column, constValues map[string]protocol.Cell, wireTypes map[string]string) protocol.Row {
-	typ := map[string]string{"insert": "I", "update": "U", "normal": "N"}[strings.ToLower(r.Type)]
+	typ := map[string]string{"insert": "I", "update": "U", "delete": "D", "normal": "N"}[strings.ToLower(r.Type)]
 	if typ == "" {
 		typ = "N"
 	}
@@ -717,9 +730,32 @@ func xmlRow(r xrow, columns []protocol.Column, constValues map[string]protocol.C
 	for _, cell := range r.Cols {
 		row.Values[cell.ID] = normalizeXMLCell(xmlCell(cell.Text), wireTypes[cell.ID])
 	}
-	if r.OrgUnderscore != nil {
+	if r.Org == nil && r.OrgUnderscore != nil {
 		for _, cell := range r.OrgUnderscore.Cols {
 			row.Values[cell.ID] = normalizeXMLCell(xmlCell(cell.Text), wireTypes[cell.ID])
+		}
+		return row
+	}
+	original := r.Org
+	if typ == "U" && original != nil {
+		saved := protocol.Row{Type: "O", Values: map[string]protocol.Cell{}}
+		for _, column := range columns {
+			saved.Values[column.ID] = protocol.Cell{State: "null"}
+		}
+		for id, value := range constValues {
+			saved.Values[id] = value
+		}
+		meaningful := false
+		for _, cell := range original.Cols {
+			value := normalizeXMLCell(xmlCell(cell.Text), wireTypes[cell.ID])
+			saved.Values[cell.ID] = value
+			if value.State != "null" {
+				meaningful = true
+			}
+		}
+		if meaningful {
+			saved.MarkOrgRowPresent()
+			row.OrgRow = &saved
 		}
 	}
 	return row

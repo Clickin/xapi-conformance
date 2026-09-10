@@ -80,17 +80,9 @@ func TestPlatformBinaryInternalTypeEncoding(t *testing.T) {
 		},
 		Datasets: []protocol.Dataset{},
 	}
-	expected, err := base64.StdEncoding.DecodeString("/hATiAAcAAQAAXUAFQAAAAFuAAAAAWQAFQAAAAFpABUAAA==")
-	if err != nil {
-		t.Fatal(err)
-	}
 	for _, profile := range []string{nexacroBinaryProfile, xplatformBinaryProfile} {
-		wire, err := Encode(value, profile)
-		if err != nil {
-			t.Fatalf("encode %s: %v", profile, err)
-		}
-		if !bytes.Equal(wire, expected) {
-			t.Fatalf("%s internal type wire = %x, want %x", profile, wire, expected)
+		if _, err := Encode(value, profile); err == nil {
+			t.Fatalf("%s accepted public-unsupported internal types", profile)
 		}
 	}
 }

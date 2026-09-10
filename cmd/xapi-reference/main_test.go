@@ -91,27 +91,11 @@ func TestConfiguredResourceLimitsAreIgnored(t *testing.T) {
 	}
 }
 
-func TestDriverIgnoredDecodeOptionsDoNotRelaxSourceParsing(t *testing.T) {
-	tests := []struct {
-		name string
-		body string
-	}{
-		{
-			name: "base64 whitespace",
-			body: `{"operation":"decode","profile":"nexacro-json-1.0","options":{"strict":true,"base64Whitespace":true},"input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbXX0 ="}}`,
-		},
-		{
-			name: "SSV separators",
-			body: `{"operation":"decode","profile":"nexacro-ssv","options":{"strict":true,"ssvUnitSeparator":"|","ssvRecordSeparator":"~"},"input":{"encoding":"base64","data":"U1NWOnV0Zi04fkRhdGFzZXQ6ZH5fUm93VHlwZV98YTpTVFJJTkd+Tnx4fn4="}}`,
-		},
-	}
-	for _, test := range tests {
-		t.Run(test.name, func(t *testing.T) {
-			status, out := call(t, "/decode", test.body)
-			if status != 400 || out["error"].(map[string]any)["class"] != "malformed-input" {
-				t.Fatalf("status = %d, response = %+v", status, out)
-			}
-		})
+func TestDriverIgnoredDecodeOptionsDoNotRelaxBase64Parsing(t *testing.T) {
+	const body = `{"operation":"decode","profile":"nexacro-json-1.0","options":{"strict":true,"base64Whitespace":true},"input":{"encoding":"base64","data":"eyJ2ZXJzaW9uIjoiMS4wIiwiUGFyYW1ldGVycyI6W10sIkRhdGFzZXRzIjpbXX0 ="}}`
+	status, out := call(t, "/decode", body)
+	if status != 400 || out["error"].(map[string]any)["class"] != "malformed-input" {
+		t.Fatalf("status = %d, response = %+v", status, out)
 	}
 }
 

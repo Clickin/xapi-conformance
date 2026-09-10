@@ -25,7 +25,16 @@
           "id": "test",
           "rows": [
             {
-              "orgRow": null,
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "textCol": {
+                    "lexical": "original_cdata_value",
+                    "state": "value"
+                  }
+                }
+              },
               "type": "U",
               "values": {
                 "textCol": {

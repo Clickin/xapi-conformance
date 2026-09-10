@@ -33,7 +33,24 @@
           "id": "d",
           "rows": [
             {
-              "orgRow": null,
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "a": {
+                    "lexical": "old",
+                    "state": "value"
+                  },
+                  "b": {
+                    "lexical": "1",
+                    "state": "value"
+                  },
+                  "c": {
+                    "lexical": "fixed",
+                    "state": "value"
+                  }
+                }
+              },
               "type": "U",
               "values": {
                 "a": {

@@ -18,6 +18,9 @@ func validateValueTypes(value protocol.Value) error {
 		if !isKnownType(defaultType(parameter.Type)) {
 			return fmt.Errorf("unsupported parameter type %q", parameter.Type)
 		}
+		if isPublicUnsupportedType(parameter.Type) {
+			return fmt.Errorf("invalid public XAPI type %q", parameter.Type)
+		}
 	}
 	for _, dataset := range value.Datasets {
 		if dataset.SaveType < 0 || dataset.SaveType > 5 {
@@ -27,14 +30,29 @@ func validateValueTypes(value protocol.Value) error {
 			if !isKnownType(defaultType(column.Type)) {
 				return fmt.Errorf("unsupported column type %q", column.Type)
 			}
+			if isPublicUnsupportedType(column.Type) {
+				return fmt.Errorf("invalid public XAPI type %q", column.Type)
+			}
 		}
 		for _, column := range dataset.ConstColumns {
 			if !isKnownType(defaultType(column.Type)) {
 				return fmt.Errorf("unsupported constant column type %q", column.Type)
 			}
+			if isPublicUnsupportedType(column.Type) {
+				return fmt.Errorf("invalid public XAPI type %q", column.Type)
+			}
 		}
 	}
 	return nil
+}
+
+func isPublicUnsupportedType(dataType string) bool {
+	switch strings.ToUpper(defaultType(dataType)) {
+	case "DATASET", "INVALID":
+		return true
+	default:
+		return false
+	}
 }
 
 func applySaveTypes(value protocol.Value) protocol.Value {
@@ -260,19 +278,27 @@ func toJSON(v protocol.Value) jsonObject {
 	for _, dataset := range v.Datasets {
 		columns := make([]any, 0, len(dataset.Columns))
 		for _, column := range dataset.Columns {
+			size := column.Size
+			if size == "" {
+				size = defaultWireSize(column.Type)
+			}
 			columns = append(columns, orderedJSON(
 				jsonField{key: "id", value: column.ID},
 				jsonField{key: "type", value: wireType(column.Type)},
-				jsonField{key: "size", value: defaultWireSize(column.Type)},
+				jsonField{key: "size", value: size},
 			))
 		}
 
 		constants := make([]any, 0, len(dataset.ConstColumns))
 		for _, column := range dataset.ConstColumns {
+			size := column.Size
+			if size == "" {
+				size = defaultWireSize(column.Type)
+			}
 			fields := []jsonField{
 				{key: "id", value: column.ID},
 				{key: "type", value: wireType(column.Type)},
-				{key: "size", value: defaultWireSize(column.Type)},
+				{key: "size", value: size},
 			}
 			if column.Value.State == "value" {
 				fields = append(fields, jsonField{key: "value", value: column.Value.Lexical})

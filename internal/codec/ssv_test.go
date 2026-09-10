@@ -32,8 +32,8 @@ func TestDecodeNexacroSSVDocumentedLayout(t *testing.T) {
 	if dataset.ConstColumns[0].Index != 2 || dataset.ConstColumns[0].Value.State != "" {
 		t.Fatalf("constant metadata mismatch: %+v", dataset.ConstColumns[0])
 	}
-	if dataset.Rows[0].OrgRow != nil {
-		t.Fatalf("SSV original row leaked: %+v", dataset.Rows)
+	if dataset.Rows[0].OrgRow == nil || dataset.Rows[0].OrgRow.Values["a"].Lexical != "old" {
+		t.Fatalf("SSV original row lost: %+v", dataset.Rows)
 	}
 	if dataset.Rows[0].Values["c"].Lexical != "fixed" {
 		t.Fatalf("constant value missing from row: %+v", dataset.Rows[0].Values)
@@ -78,12 +78,13 @@ func TestDecodeXPlatformSSVPreservesLegacyCellStates(t *testing.T) {
 	}
 }
 
-func TestDecodeNexacroSSVRejectsCustomSeparators(t *testing.T) {
+func TestDecodeNexacroSSVIgnoresCustomSeparators(t *testing.T) {
 	wire := "SSV:utf-8~Dataset:d~_RowType_|a:STRING~N|x~~"
-	if _, err := DecodeProfile([]byte(wire), nexacroSSVProfile, DecodeOptions{
+	value, err := DecodeProfile([]byte(wire), nexacroSSVProfile, DecodeOptions{
 		Strict: true, SSVUnitSeparator: "|", SSVRecordSeparator: "~",
-	}); err == nil {
-		t.Fatal("custom SSV separators accepted")
+	})
+	if err != nil || len(value.Parameters) != 0 || len(value.Datasets) != 0 {
+		t.Fatalf("custom SSV separators changed parsing: %+v, %v", value, err)
 	}
 }
 
@@ -107,7 +108,7 @@ func TestEncodeSSVUsesProfileCellStatesAndFraming(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	nexacroExpected := []byte("SSV:UTF-8\x1eDataset:d\x1e_RowType_\x1fa:string(32)\x1fb:string(32)\x1fc:string(32)\x1eN\x1f\x03\x1f\x03\x1f\x03\x1e\x1e")
+	nexacroExpected := []byte("SSV:UTF-8\x1eDataset:d\x1e_RowType_\x1fa:string(32)\x1fb:string(32)\x1fc:string(32)\x1eN\x1f\x1f\x03\x1f\x03\x1e\x1e")
 	if !bytes.Equal(nexacro, nexacroExpected) {
 		t.Fatalf("Nexacro SSV:\nwant %q\n got %q", nexacroExpected, nexacro)
 	}
@@ -203,7 +204,7 @@ func TestEncodeSSVHeaderTypesAndXPlatformMissing(t *testing.T) {
 	}
 }
 
-func TestDecodeSSVDropsDeletedAndOriginalRows(t *testing.T) {
+func TestDecodeSSVPreservesOriginalAndDropsDeletedRows(t *testing.T) {
 	wire := []byte("SSV\x1eDataset:d\x1e_RowType_\x1fa:STRING\x1e" +
 		"U\x1fnew\x1eO\x1fold\x1eD\x1fdeleted\x1eN\x1fkept\x1e\x1e")
 	value, err := DecodeProfile(wire, nexacroSSVProfile, DecodeOptions{Strict: true})
@@ -211,7 +212,7 @@ func TestDecodeSSVDropsDeletedAndOriginalRows(t *testing.T) {
 		t.Fatal(err)
 	}
 	rows := value.Datasets[0].Rows
-	if len(rows) != 2 || rows[0].Type != "U" || rows[0].OrgRow != nil ||
+	if len(rows) != 2 || rows[0].Type != "U" || rows[0].OrgRow == nil || rows[0].OrgRow.Values["a"].Lexical != "old" ||
 		rows[1].Values["a"].Lexical != "kept" {
 		t.Fatalf("row forms mismatch: %+v", rows)
 	}

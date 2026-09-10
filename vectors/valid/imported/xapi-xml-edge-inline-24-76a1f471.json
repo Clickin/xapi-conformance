@@ -54,7 +54,24 @@
               }
             },
             {
-              "orgRow": null,
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "id": {
+                    "lexical": "2",
+                    "state": "value"
+                  },
+                  "name": {
+                    "lexical": "Bob",
+                    "state": "value"
+                  },
+                  "status": {
+                    "lexical": "active",
+                    "state": "value"
+                  }
+                }
+              },
               "type": "U",
               "values": {
                 "id": {

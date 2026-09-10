@@ -4,6 +4,7 @@
   "required": ["id", "operation", "profile", "expect", "source"],
   "properties": {
     "id": {"type": "string", "minLength": 1, "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"},
+    "suite": {"enum": ["vendor", "security", "limitation"]},
     "operation": {"enum": ["decode", "encode", "roundtrip"]},
     "profile": {"type": "string"},
     "input": {"type": "object", "required": ["encoding", "data"], "properties": {

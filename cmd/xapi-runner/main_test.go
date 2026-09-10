@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"os"
+	"path/filepath"
 	"testing"
 	"time"
 )
@@ -56,6 +57,27 @@ func TestHTTPClientSkipsUnsupportedOptionalVector(t *testing.T) {
 	}
 	if len(selected) != 0 {
 		t.Fatalf("selected = %+v", selected)
+	}
+}
+
+func TestLoadFiltersSuites(t *testing.T) {
+	dir := filepath.Join(t.TempDir(), "vectors")
+	if err := os.Mkdir(dir, 0o700); err != nil {
+		t.Fatal(err)
+	}
+	for name, suite := range map[string]string{"vendor.json": "", "limitation.json": "limitation", "security.json": "security"} {
+		body := `{"id":"` + name + `","operation":"decode","profile":"p","suite":"` + suite + `"}`
+		if err := os.WriteFile(filepath.Join(dir, name), []byte(body), 0o600); err != nil {
+			t.Fatal(err)
+		}
+	}
+	vendor, err := load(dir, "", "", "", "vendor")
+	if err != nil || len(vendor) != 2 {
+		t.Fatalf("vendor suite = %+v, %v", vendor, err)
+	}
+	security, err := load(dir, "", "", "", "security")
+	if err != nil || len(security) != 1 || security[0].Suite != "security" {
+		t.Fatalf("security suite = %+v, %v", security, err)
 	}
 }
 

@@ -23,6 +23,7 @@ import (
 
 type vector struct {
 	ID        string         `json:"id"`
+	Suite     string         `json:"suite,omitempty"`
 	Operation string         `json:"operation"`
 	Profile   string         `json:"profile"`
 	Input     map[string]any `json:"input,omitempty"`
@@ -80,13 +81,14 @@ func main() {
 	filter := flag.String("filter", "", "substring filter")
 	profile := flag.String("profile", "", "profile filter")
 	operation := flag.String("operation", "", "operation filter")
+	suite := flag.String("suite", "all", "suite filter: all, vendor, security, limitation")
 	parallel := flag.Int("parallel", 1, "concurrent requests")
 	command := flag.String("command", "", "adapter subprocess, e.g. 'go run ./cmd/xapi-reference stdio'")
 	timeout := flag.Duration("timeout", 10*time.Second, "request timeout")
 	jsonOut := flag.String("json", "", "JSON result path")
 	junit := flag.String("junit", "", "JUnit XML result path")
 	flag.Parse()
-	vs, err := load(*dir, *filter, *profile, *operation)
+	vs, err := load(*dir, *filter, *profile, *operation, *suite)
 	if err != nil {
 		fatal(err)
 	}
@@ -154,7 +156,7 @@ func anyFailed(rs []result) bool {
 	}
 	return false
 }
-func load(dir, filter, profile, operation string) ([]vector, error) {
+func load(dir, filter, profile, operation, suite string) ([]vector, error) {
 	var vs []vector
 	err := filepath.Walk(dir, func(path string, info os.FileInfo, err error) error {
 		if err != nil {
@@ -171,7 +173,15 @@ func load(dir, filter, profile, operation string) ([]vector, error) {
 		if e = json.Unmarshal(b, &v); e != nil {
 			return e
 		}
-		if (filter == "" || strings.Contains(v.ID, filter)) && (profile == "" || v.Profile == profile) && (operation == "" || v.Operation == operation) {
+		vectorSuite := v.Suite
+		if vectorSuite == "" {
+			vectorSuite = "vendor"
+		}
+		inSuite := suite == "all" || vectorSuite == suite || (suite == "vendor" && vectorSuite == "limitation")
+		if inSuite &&
+			(filter == "" || strings.Contains(v.ID, filter)) &&
+			(profile == "" || v.Profile == profile) &&
+			(operation == "" || v.Operation == operation) {
 			vs = append(vs, v)
 		}
 		return nil

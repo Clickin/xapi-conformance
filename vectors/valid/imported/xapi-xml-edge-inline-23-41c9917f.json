@@ -35,11 +35,30 @@
               }
             },
             {
-              "orgRow": null,
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "col1": {
+                    "lexical": "original",
+                    "state": "value"
+                  }
+                }
+              },
               "type": "U",
               "values": {
                 "col1": {
                   "lexical": "updated",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "D",
+              "values": {
+                "col1": {
+                  "lexical": "deleted",
                   "state": "value"
                 }
               }

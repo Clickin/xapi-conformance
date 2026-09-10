@@ -117,7 +117,7 @@ func TestDecodeXMLTreatsEmptyParameterFormsEqually(t *testing.T) {
 	}
 }
 
-func TestDecodeJSONRejectsOrphanOriginalRow(t *testing.T) {
+func TestDecodeJSONIgnoresOrphanOriginalRows(t *testing.T) {
 	wire := []byte(`{
 		"version":"1.0",
 		"Parameters":[{"id":"i","value":1},{"id":"f","value":1.5},{"id":"s","value":"1"}],
@@ -132,8 +132,16 @@ func TestDecodeJSONRejectsOrphanOriginalRow(t *testing.T) {
 			{"_RowType_":"O","a":"old"}
 		]}]
 	}`)
-	if _, err := DecodeProfile(wire, "nexacro-json-1.0", DecodeOptions{Strict: true}); err == nil {
-		t.Fatal("orphan original row was accepted")
+	value, err := DecodeProfile(wire, "nexacro-json-1.0", DecodeOptions{Strict: false})
+	if err != nil {
+		t.Fatal(err)
+	}
+	rows := value.Datasets[0].Rows
+	if len(rows) != 2 || rows[0].OrgRow != nil || rows[1].OrgRow == nil {
+		t.Fatalf("rows = %#v", rows)
+	}
+	if rows[1].OrgRow.Values["a"].Lexical != "old" {
+		t.Fatalf("original row = %#v", rows[1].OrgRow)
 	}
 }
 

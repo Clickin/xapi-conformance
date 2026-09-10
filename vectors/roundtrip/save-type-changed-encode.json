@@ -1,5 +1,6 @@
 {
   "id": "policy.save-type-changed.encode",
+  "suite": "security",
   "operation": "encode",
   "profile": "nexacro-json-1.0",
   "value": {

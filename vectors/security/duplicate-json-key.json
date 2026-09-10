@@ -1,5 +1,6 @@
 {
   "id": "security.duplicate-json-key",
+  "suite": "security",
   "operation": "decode",
   "profile": "nexacro-json-1.0",
   "input": {
@@ -7,13 +8,10 @@
     "data": "eyJwYXJhbWV0ZXJzIjpbXSwicGFyYW1ldGVycyI6W119"
   },
   "expect": {
-    "kind": "canonical",
-    "value": {
-      "datasets": [],
-      "parameters": [],
-      "wire": {
-        "version": "1.0"
-      }
+    "kind": "error",
+    "error": {
+      "class": "malformed-input",
+      "path": ""
     }
   },
   "source": {

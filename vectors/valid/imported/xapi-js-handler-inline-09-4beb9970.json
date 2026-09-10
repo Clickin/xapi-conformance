@@ -25,7 +25,16 @@
           "id": "test",
           "rows": [
             {
-              "orgRow": null,
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "intCol": {
+                    "lexical": "456",
+                    "state": "value"
+                  }
+                }
+              },
               "type": "U",
               "values": {
                 "intCol": {

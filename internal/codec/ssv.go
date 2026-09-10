@@ -41,15 +41,9 @@ func ssvValue(b []byte, profile string, strict bool, unitSeparator, recordSepara
 	if err != nil {
 		return protocol.Value{}, err
 	}
-	if unitSeparator == "" {
-		unitSeparator = defaultSSVUnitSeparator
-	}
-	if recordSeparator == "" {
-		recordSeparator = defaultSSVRecordSeparator
-	}
-	if unitSeparator != defaultSSVUnitSeparator || recordSeparator != defaultSSVRecordSeparator {
-		return protocol.Value{}, fmt.Errorf("custom SSV separators are unsupported")
-	}
+	// Vendor setProperty ignores custom separators; always parse its defaults.
+	unitSeparator = defaultSSVUnitSeparator
+	recordSeparator = defaultSSVRecordSeparator
 
 	records, tail := splitSSVRecords(text, recordSeparator)
 	if tail != "" {
@@ -183,7 +177,20 @@ func parseSSVDataset(records []string, start int, profile string, strict bool, u
 		if err != nil {
 			return protocol.Dataset{}, i, err
 		}
-		if !valid || row.Type == "D" || row.Type == "O" {
+		if !valid || row.Type == "D" {
+			continue
+		}
+		if row.Type == "O" {
+			if len(dataset.Rows) > 0 && dataset.Rows[len(dataset.Rows)-1].Type == "U" {
+				for _, constant := range dataset.ConstColumns {
+					row.Values[constant.ID] = constant.Value
+				}
+				original := row
+				original.OrgRow = nil
+				original.MarkOrgRowPresent()
+				dataset.Rows[len(dataset.Rows)-1].OrgRow = &original
+				dataset.Rows[len(dataset.Rows)-1].MarkOrgRowPresent()
+			}
 			continue
 		}
 		row.MarkOrgRowPresent()
@@ -458,7 +465,9 @@ func encodeSSVCell(cell protocol.Cell, profile, unitSeparator, recordSeparator s
 			return "", err
 		}
 		return cell.Lexical, nil
-	case "empty", "null":
+	case "empty":
+		return "", nil
+	case "null":
 		if profile == xplatformSSVProfile {
 			return "", nil
 		}

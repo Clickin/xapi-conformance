@@ -14,6 +14,7 @@ import (
 
 type vector struct {
 	ID        string `json:"id"`
+	Suite     string `json:"suite,omitempty"`
 	Operation string `json:"operation"`
 	Profile   string `json:"profile"`
 	Input     *struct {
@@ -45,6 +46,7 @@ func main() {
 	dir := flag.String("vectors", "vectors", "vector directory")
 	schemaDir := flag.String("schemas", "protocol", "schema directory")
 	checkSources := flag.Bool("check-sources", true, "verify source paths in pinned checkouts")
+	suite := flag.String("suite", "all", "suite filter: all, vendor, security, limitation")
 	flag.Parse()
 	if err := validateSchemas(*schemaDir); err != nil {
 		fmt.Fprintln(os.Stderr, err)
@@ -59,6 +61,7 @@ func main() {
 	})
 	sort.Strings(files)
 	errs := []string{}
+	validated := 0
 	for _, path := range files {
 		b, e := os.ReadFile(path)
 		if e != nil {
@@ -70,6 +73,15 @@ func main() {
 			errs = append(errs, path+": invalid JSON: "+e.Error())
 			continue
 		}
+		vectorSuite := v.Suite
+		if vectorSuite == "" {
+			vectorSuite = "vendor"
+		}
+		inSuite := *suite == "all" || vectorSuite == *suite || (*suite == "vendor" && vectorSuite == "limitation")
+		if !inSuite {
+			continue
+		}
+		validated++
 		for _, msg := range validate(v, *checkSources) {
 			errs = append(errs, path+": "+msg)
 		}
@@ -80,7 +92,7 @@ func main() {
 		}
 		os.Exit(1)
 	}
-	fmt.Printf("validated %d vectors\n", len(files))
+	fmt.Printf("validated %d vectors\n", validated)
 }
 
 func validateSchemas(dir string) error {
@@ -114,6 +126,9 @@ func validateSchemas(dir string) error {
 }
 func validate(v vector, checkSources bool) []string {
 	e := []string{}
+	if v.Suite != "" && v.Suite != "vendor" && v.Suite != "security" && v.Suite != "limitation" {
+		e = append(e, "suite must be vendor, security, or limitation")
+	}
 	if !idRE.MatchString(v.ID) {
 		e = append(e, "id must match [A-Za-z0-9][A-Za-z0-9._-]*")
 	}

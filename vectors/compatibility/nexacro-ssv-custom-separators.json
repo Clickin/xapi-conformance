@@ -12,10 +12,10 @@
     "data": "U1NWOnV0Zi04fkRhdGFzZXQ6ZH5fUm93VHlwZV98YTpTVFJJTkd+Tnx4fn4="
   },
   "expect": {
-    "kind": "error",
-    "error": {
-      "class": "malformed-input",
-      "path": ""
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": []
     }
   },
   "source": {

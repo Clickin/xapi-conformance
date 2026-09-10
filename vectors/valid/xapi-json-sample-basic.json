@@ -33,7 +33,24 @@
           "id": "indata",
           "rows": [
             {
-              "orgRow": null,
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "Column0": {
+                    "lexical": "1",
+                    "state": "value"
+                  },
+                  "Column1": {
+                    "lexical": "old",
+                    "state": "value"
+                  },
+                  "ConstCol1": {
+                    "lexical": "10",
+                    "state": "value"
+                  }
+                }
+              },
               "type": "U",
               "values": {
                 "Column0": {
