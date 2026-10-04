@@ -82,7 +82,7 @@ func capabilities(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	profiles := []any{}
-	for _, name := range []string{"nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000", "nexacro-ssv", "xplatform-ssv", "nexacro-binary-5000", "xplatform-binary-5000"} {
+	for _, name := range []string{"nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-5000", "nexacro-ssv", "xplatform-ssv", "nexacro-binary-5000", "xplatform-binary-5000"} {
 		options := []string{"strict", "base64Whitespace", "limits", "zlib"}
 		if name == "nexacro-ssv" {
 			options = append(options, "ssvUnitSeparator", "ssvRecordSeparator")
@@ -219,7 +219,7 @@ func decodeOptions(options map[string]any) codec.DecodeOptions {
 }
 func supportedProfile(profile string) bool {
 	switch profile {
-	case "nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-4000", "nexacro-ssv", "xplatform-ssv", "nexacro-binary-5000", "xplatform-binary-5000":
+	case "nexacro-json-1.0", "nexacro-xml-4000", "xplatform-xml-5000", "nexacro-ssv", "xplatform-ssv", "nexacro-binary-5000", "xplatform-binary-5000":
 		return true
 	default:
 		return false

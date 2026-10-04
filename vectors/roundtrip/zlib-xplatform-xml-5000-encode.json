@@ -1,7 +1,10 @@
 {
-  "id": "xplatform-xml-4000.optional-root-00.encode",
+  "id": "zlib.xplatform-xml-5000.encode",
   "operation": "encode",
-  "profile": "xplatform-xml-4000",
+  "profile": "xplatform-xml-5000",
+  "options": {
+    "zlib": true
+  },
   "value": {
     "parameters": [],
     "datasets": []
@@ -9,7 +12,7 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+CjwvUm9vdD4K",
+      "data": "/614nBXNQQ7CIBBA0bWcgsxehi5MjAG669o0egBsqTYpTAMT8fjS/c/7pv/FTX5DLislC53SIEOaaF7T28LzMZyv0DthRiKWLU3Fwod5vyHWWhXTKxRaWE0Ucd88L5Qjzp59CQyHa+GitQYnTubus4+B2wubiAfpxB/NwyoC",
       "encoding": "base64"
     },
     "value": {
@@ -20,7 +23,7 @@
   "source": {
     "repository": "xapi-conformance",
     "commit": "working-tree",
-    "path": "vectors/roundtrip/xplatform-xml-4000-optional-root-00-encode.json",
+    "path": "vectors/roundtrip/zlib-xplatform-xml-5000-encode.json",
     "license": "repository"
   },
   "required": true

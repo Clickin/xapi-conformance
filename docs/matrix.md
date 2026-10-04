@@ -11,13 +11,13 @@ profile별 기본값이 일치하지 않으므로 wire-level 값을 임의로 �
 
 | 영역 | 검증 조합 |
 |---|---|
-| Profile | XPLATFORM XML 4000; Nexacro XML 4000; Nexacro JSON 1.0; XPLATFORM/Nexacro SSV; XPLATFORM/Nexacro PlatformBinary 5000; PlatformZlib |
+| Profile | XPLATFORM XML 5000; Nexacro XML 4000; Nexacro JSON 1.0; XPLATFORM/Nexacro SSV; XPLATFORM/Nexacro PlatformBinary 5000; PlatformZlib |
 | Operation | 모든 profile의 encode/decode/roundtrip |
 | Scalar | STRING/CHAR; SHORT/USHORT/INT/UINT/LONG/ULONG; FLOAT/DOUBLE; DECIMAL/BIGDECIMAL; BOOLEAN; DATE/TIME/DATETIME; BLOB/FILE/NULL; 내부 UNDEFINED/DATASET/INVALID tag; type 대소문자 |
 | Shape | 빈 document/Dataset; 0/1/복수 row; 복수 Dataset; column 순서 변경; JSON property 순서 변경 |
 | Optionality | 모든 root-child mask; XML Parameter/Column/ConstColumn attribute mask; JSON Parameter/Column/ConstColumn property mask; SSV stream/variable/header optional form |
 | 의미 | parameter/type; lexical 정밀도; missing/null/empty; ConstColumn/value; N/I/U/D/O; 기본 N 생략; OrgRow; column ID mapping |
-| XML metadata | profile별 namespace/`ver`; declaration 위치; direct Dataset; optional Parameters/ColumnInfo/Rows; parameter text/attribute; ConstColumn 순서; CDATA/entity/control character |
+| XML metadata | profile별 namespace/`ver`; declaration 위치; direct Dataset; optional Parameters/ColumnInfo/Rows; parameter text/attribute; ConstColumn 순서; CDATA/entity/control character; XPLATFORM encode의 direct Dataset, 기본 `Row` 무속성, wire type case |
 | JSON metadata | 필수 version; optional Parameters/Datasets; Dataset/ColumnInfo/Column/Rows 필드; 기본 type; numeric lexical; 생략된 `_RowType_`; O row 인접성; entity-like literal text |
 | SSV framing | stream header/code page; variable/Dataset; RS/US; type/length/value form; packed variable; `_Const_`; `_RowType_`; state marker; null record; Latin-1/Windows-1252 |
 | BLOB metadata | XML `enc="base64"`; 대소문자; compatibility `encrypt="base64"`; canonical base64 |
@@ -58,8 +58,13 @@ profile별 기본값이 일치하지 않으므로 wire-level 값을 임의로 �
 | PlatformBinary 5000 framing/type/row/OrgRow/limit | `*.binary.*`, `internal/codec/binary_test.go` |
 | `saveType` 1–5, Dataset override, original/removed row | `policy.save-type-changed.encode`, saveType unit tests |
 | Encode/roundtrip root powerset | `*-optional-root-*-encode`, `*-optional-root-*-roundtrip` |
+| XPLATFORM XML exact wire shape | `xplatform-xml.wire-shape.encode` |
 
 필수 정책 차원은 모두 실행 vector로 표현합니다. 가져온 fixture는 provenance를
 유지합니다. Parser 내부 동작, framework middleware, 생성 진단처럼 wire를
 통과하지 않는 assertion은 protocol vector로 가장하지 않고 inventory에만
 기록합니다.
+
+Rust derive의 `Option<T>` 필드가 루트 `<Parameter>` 존재를 요구하는지는
+생성 코드/타입 바인딩 계약입니다. wire vector는 파라미터 없는 Dataset을
+이미 검증하지만 derive의 필드 필수성은 별도 crate 테스트로 검증해야 합니다.

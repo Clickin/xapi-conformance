@@ -1,7 +1,7 @@
 {
   "id": "xplatform-xml.commercial-framing.decode",
   "operation": "decode",
-  "profile": "xplatform-xml-4000",
+  "profile": "xplatform-xml-5000",
   "options": {
     "strict": false
   },
@@ -17,7 +17,7 @@
       "wire": {
         "root": {
           "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "ver": "5000"
         }
       }
     }

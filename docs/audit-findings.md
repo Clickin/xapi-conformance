@@ -17,13 +17,13 @@ encode, roundtrip별로 분리되어 있습니다.
 
 ## 실행 결과
 
-vector 501개를 유지합니다.
+vector 502개를 유지합니다.
 
-- decode 405, encode 53, roundtrip 43
-- canonical expectation 364, error expectation 43, exact-wire expectation 94
+- decode 405, encode 54, roundtrip 43
+- canonical expectation 364, error expectation 43, exact-wire expectation 95
 - 모든 vector는 필수 capability 대상입니다.
 - `go test ./...`: 4 package 통과, 2 package는 test 없음
-- `go run ./cmd/xapi-validate -vectors vectors`: 501 vector 검증
+- `go run ./cmd/xapi-validate -vectors vectors`: 502 vector 검증
 
 Profile별 operation 수:
 
@@ -31,7 +31,7 @@ Profile별 operation 수:
 |---|---:|---:|---:|
 | `nexacro-json-1.0` | 55 | 19 | 6 |
 | `nexacro-xml-4000` | 153 | 9 | 7 |
-| `xplatform-xml-4000` | 59 | 8 | 6 |
+| `xplatform-xml-5000` | 59 | 9 | 6 |
 | `nexacro-ssv` | 68 | 6 | 10 |
 | `xplatform-ssv` | 65 | 6 | 10 |
 | `nexacro-binary-5000` | 3 | 3 | 2 |
@@ -43,7 +43,7 @@ Profile별 operation 수:
 |---|---|
 | Nexacro Dataset JSON 1.0 | `nexacro-json-1.0` |
 | Nexacro Platform XML 4000 | `nexacro-xml-4000` |
-| XPLATFORM XML 4000 | `xplatform-xml-4000` |
+| XPLATFORM XML 5000 | `xplatform-xml-5000` |
 | Nexacro SSV | `nexacro-ssv` |
 | XPLATFORM SSV | `xplatform-ssv` |
 | Nexacro PlatformBinary 5000 | `nexacro-binary-5000` |

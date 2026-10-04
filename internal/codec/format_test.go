@@ -13,13 +13,15 @@ func TestDecodeXMLEntitiesForBothProfiles(t *testing.T) {
 	profiles := []struct {
 		name      string
 		namespace string
+		attribute string
+		version   string
 	}{
-		{name: "xplatform-xml-4000", namespace: "http://www.tobesoft.com/platform/Dataset"},
-		{name: "nexacro-xml-4000", namespace: "http://www.nexacroplatform.com/platform/dataset"},
+		{name: "xplatform-xml-5000", namespace: "http://www.tobesoft.com/platform/Dataset", attribute: "ver", version: "5000"},
+		{name: "nexacro-xml-4000", namespace: "http://www.nexacroplatform.com/platform/dataset", attribute: "version", version: "4000"},
 	}
 	for _, profile := range profiles {
 		t.Run(profile.name, func(t *testing.T) {
-			wire := fmt.Sprintf(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="%s" ver="4000"><Dataset id="d"><ColumnInfo><Column id="a" type="STRING"/></ColumnInfo><Rows><Row><Col id="a">first&#10;second &amp; third</Col></Row></Rows></Dataset></Root>`, profile.namespace)
+			wire := fmt.Sprintf(`<?xml version="1.0" encoding="utf-8"?><Root xmlns="%s" %s="%s"><Dataset id="d"><ColumnInfo><Column id="a" type="STRING"/></ColumnInfo><Rows><Row><Col id="a">first&#10;second &amp; third</Col></Row></Rows></Dataset></Root>`, profile.namespace, profile.attribute, profile.version)
 			value, err := DecodeProfile([]byte(wire), profile.name, DecodeOptions{Strict: true})
 			if err != nil {
 				t.Fatal(err)
@@ -41,7 +43,7 @@ func TestEncodeXMLUsesDocumentedLayoutAndEntities(t *testing.T) {
 			Rows:         []protocol.Row{{Type: "N", Values: map[string]protocol.Cell{"a": {State: "value", Lexical: "a\nb"}}}},
 		}},
 	}
-	for _, profile := range []string{"xplatform-xml-4000", "nexacro-xml-4000"} {
+	for _, profile := range []string{"xplatform-xml-5000", "nexacro-xml-4000"} {
 		wire, err := Encode(value, profile)
 		if err != nil {
 			t.Fatal(err)
@@ -157,7 +159,7 @@ func TestDecodeJSONDefaultsVersion(t *testing.T) {
 }
 
 func TestXMLEncodeTypeCaseBlobEncodingAndOptionalConstantValue(t *testing.T) {
-	for _, profile := range []string{"xplatform-xml-4000", "nexacro-xml-4000"} {
+	for _, profile := range []string{"xplatform-xml-5000", "nexacro-xml-4000"} {
 		t.Run(profile, func(t *testing.T) {
 			encoded, err := Encode(protocol.Value{Datasets: []protocol.Dataset{{
 				ID: "blob",

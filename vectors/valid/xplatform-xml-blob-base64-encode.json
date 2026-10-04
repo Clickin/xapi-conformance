@@ -1,7 +1,7 @@
 {
   "id": "xplatform-xml.blob-base64.encode",
   "operation": "encode",
-  "profile": "xplatform-xml-4000",
+  "profile": "xplatform-xml-5000",
   "value": {
     "parameters": [],
     "datasets": [

@@ -1,7 +1,7 @@
 {
-  "id": "xplatform-xml-4000.optional-root-01.encode",
+  "id": "xplatform-xml-5000.optional-root-01.encode",
   "operation": "encode",
-  "profile": "xplatform-xml-4000",
+  "profile": "xplatform-xml-5000",
   "value": {
     "parameters": [],
     "datasets": [
@@ -46,7 +46,7 @@
   "source": {
     "repository": "xapi-conformance",
     "commit": "working-tree",
-    "path": "vectors/roundtrip/xplatform-xml-4000-optional-root-01-encode.json",
+    "path": "vectors/roundtrip/xplatform-xml-5000-optional-root-01-encode.json",
     "license": "repository"
   },
   "required": true

@@ -16,14 +16,6 @@
       "testFileCount":2,
       "fixtureLikeFileCount":0,
       "relevantTests":["xplatform-xml-micronaut/src/test/java/io/clickin/xplatform/xml/runtime/examples/XplatformXmlSerdeTest.java","xplatform-xml-processor/src/test/java/io/clickin/xplatform/xml/processor/XplatformSerdeProcessorFrameworkGenerationTest.java"]
-    },
-    {
-      "name":"Clickin/xapi",
-      "commit":"e0d54759162bbb06aef8a1bc4c557f9fe7336991",
-      "license":"Apache-2.0",
-      "testFileCount":18,
-      "fixtureLikeFileCount":15,
-      "relevantTests":["xapi-json/src/test/java/io/github/clickin/xapi/json/XapiJsonReaderTest.java","xapi-json/src/test/java/io/github/clickin/xapi/json/XapiJsonWriterTest.java","xapi-xml/src/test/java/io/github/clickin/xapi/XapiEdgeCasesTest.java","xapi-xml/src/test/java/io/github/clickin/xapi/XapiErrorHandlingTest.java"]
     }
   ],
   "conversionStatus":{"sourceDerivedVectors":101,"representativeVectors":123,"remainingUpstreamFixtureConversion":false,"nonWireAssertionsExcluded":true}

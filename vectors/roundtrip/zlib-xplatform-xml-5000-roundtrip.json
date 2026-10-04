@@ -1,7 +1,7 @@
 {
-  "id": "zlib.xplatform-xml-4000.roundtrip",
+  "id": "zlib.xplatform-xml-5000.roundtrip",
   "operation": "roundtrip",
-  "profile": "xplatform-xml-4000",
+  "profile": "xplatform-xml-5000",
   "options": {
     "strict": false,
     "zlib": true
@@ -22,7 +22,7 @@
       "wire": {
         "root": {
           "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "ver": "5000"
         }
       }
     }
@@ -30,7 +30,7 @@
   "source": {
     "repository": "xapi-conformance",
     "commit": "working-tree",
-    "path": "vectors/roundtrip/zlib-xplatform-xml-4000-roundtrip.json",
+    "path": "vectors/roundtrip/zlib-xplatform-xml-5000-roundtrip.json",
     "license": "repository"
   },
   "required": true

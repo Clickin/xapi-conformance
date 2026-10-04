@@ -140,7 +140,7 @@ func validate(v vector, checkSources bool) []string {
 	}
 	if v.Source.Repository == "" || v.Source.Commit == "" || v.Source.Path == "" || v.Source.License == "" {
 		e = append(e, "source.repository, source.commit, source.path, and source.license are required")
-	} else if checkSources {
+	} else if checkSources && !retiredSource(v.Source.Repository) {
 		if root := sourceRoot(v.Source.Repository); root != "" {
 			if _, err := os.Stat(filepath.Join(root, v.Source.Path)); err != nil {
 				e = append(e, "source.path does not exist in pinned checkout: "+v.Source.Path)
@@ -192,9 +192,11 @@ func sourceRoot(repo string) string {
 		return "sources/xapi-js"
 	case "Clickin/xplatform-xml", "xplatform-xml":
 		return "sources/xplatform-xml"
-	case "Clickin/xapi", "xapi":
-		return "sources/xapi"
 	default:
 		return ""
 	}
+}
+
+func retiredSource(repo string) bool {
+	return repo == "Clickin/xapi" || repo == "xapi"
 }

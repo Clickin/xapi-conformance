@@ -1,13 +1,13 @@
 {
   "id": "isolated.xplatform-xml-dataset-children-11.decode",
   "operation": "decode",
-  "profile": "xplatform-xml-4000",
+  "profile": "xplatform-xml-5000",
   "options": {
     "strict": true
   },
   "input": {
     "encoding": "base64",
-    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8vPjxSb3dzLz48L0RhdGFzZXQ+PC9Sb290Pg=="
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI1MDAwIj48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8vPjxSb3dzLz48L0RhdGFzZXQ+PC9Sb290Pg=="
   },
   "expect": {
     "kind": "canonical",
@@ -24,7 +24,7 @@
       "wire": {
         "root": {
           "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "ver": "5000"
         }
       }
     }
