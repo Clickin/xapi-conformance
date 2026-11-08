@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
-	"encoding/xml"
 	"fmt"
 	"io"
 	"strconv"
@@ -12,6 +11,8 @@ import (
 	"time"
 
 	"github.com/Clickin/xapi-conformance/internal/protocol"
+
+	"github.com/go-xml-experiment/xml/xmltext"
 )
 
 type DecodeOptions struct {
@@ -361,52 +362,52 @@ func rawState(raw json.RawMessage) (string, string) {
 }
 
 type xroot struct {
-	XMLName    xml.Name
-	Attr       []xml.Attr `xml:",any,attr"`
+	XMLName    xmltext.Name
+	Attr       []xmltext.Attr
 	Parameters struct {
-		Items []xparam `xml:"Parameter"`
-	} `xml:"Parameters"`
+		Items []xparam
+	}
 	Datasets struct {
-		Items []xdataset `xml:"Dataset"`
-	} `xml:"Datasets"`
-	DirectDatasets []xdataset `xml:"Dataset"`
+		Items []xdataset
+	}
+	DirectDatasets []xdataset
 }
 type xparam struct {
-	Attr []xml.Attr `xml:",any,attr"`
-	Text string     `xml:",chardata"`
+	Attr []xmltext.Attr
+	Text string
 }
 type xdataset struct {
-	ID      string `xml:"id,attr"`
+	ID      string
 	Columns struct {
-		Items  []xcol `xml:"Column"`
-		Consts []xcol `xml:"ConstColumn"`
-	} `xml:"ColumnInfo"`
+		Items  []xcol
+		Consts []xcol
+	}
 	Rows struct {
-		Items []xrow `xml:"Row"`
-	} `xml:"Rows"`
+		Items []xrow
+	}
 }
 type xcol struct {
-	ID       string  `xml:"id,attr"`
-	Type     string  `xml:"type,attr"`
-	Size     string  `xml:"size,attr"`
-	Encoding string  `xml:"enc,attr"`
-	Value    *string `xml:"value,attr"`
-	Encrypt  string  `xml:"encrypt,attr"`
-	Prop     string  `xml:"prop,attr"`
-	SumText  string  `xml:"sumtext,attr"`
+	ID       string
+	Type     string
+	Size     string
+	Encoding string
+	Value    *string
+	Encrypt  string
+	Prop     string
+	SumText  string
 }
 type xrow struct {
-	Type          string      `xml:"type,attr"`
-	Cols          []xcolvalue `xml:"Col"`
-	Org           *xorgrow    `xml:"OrgRow"`
-	OrgUnderscore *xorgrow    `xml:"Org_Row"`
+	Type          string
+	Cols          []xcolvalue
+	Org           *xorgrow
+	OrgUnderscore *xorgrow
 }
 type xorgrow struct {
-	Cols []xcolvalue `xml:"Col"`
+	Cols []xcolvalue
 }
 type xcolvalue struct {
-	ID   string `xml:"id,attr"`
-	Text string `xml:",chardata"`
+	ID   string
+	Text string
 }
 
 type xmlSyntax struct {
@@ -429,10 +430,8 @@ func xmlValue(b []byte, strict bool, profile string) (protocol.Value, error) {
 	if err != nil {
 		return protocol.Value{}, err
 	}
-	var root xroot
-	decoder := xml.NewDecoder(bytes.NewReader(b))
-	decoder.Strict = true
-	if err := decoder.Decode(&root); err != nil {
+	root, err := parseXRoot(b)
+	if err != nil {
 		return protocol.Value{}, err
 	}
 
@@ -553,14 +552,14 @@ func xmlValue(b []byte, strict bool, profile string) (protocol.Value, error) {
 }
 
 func validateXMLStructure(b []byte, strict bool, profile string) (xmlSyntax, error) {
-	decoder := xml.NewDecoder(bytes.NewReader(b))
+	decoder := xmltext.NewDecoderBytes(b, xmlDecodeOptions...)
 	stack := []string{}
 	rootSeen := false
 	currentDataset := -1
 	syntax := xmlSyntax{}
 	for {
 		before := decoder.InputOffset()
-		token, err := decoder.Token()
+		token, err := readXMLToken(decoder)
 		if err == io.EOF {
 			if !rootSeen || len(stack) != 0 {
 				return syntax, fmt.Errorf("XML root is incomplete")
@@ -571,7 +570,7 @@ func validateXMLStructure(b []byte, strict bool, profile string) (xmlSyntax, err
 			return syntax, err
 		}
 		switch element := token.(type) {
-		case xml.StartElement:
+		case xmlStartToken:
 			if !rootSeen {
 				if element.Name.Local != "Root" {
 					return syntax, fmt.Errorf("root element must be Root")
@@ -610,7 +609,7 @@ func validateXMLStructure(b []byte, strict bool, profile string) (xmlSyntax, err
 				syntax.ParameterSelfClosing = append(syntax.ParameterSelfClosing, bytes.HasSuffix(segment, []byte("/>")))
 			}
 			stack = append(stack, element.Name.Local)
-		case xml.EndElement:
+		case xmlEndToken:
 			if len(stack) == 0 || stack[len(stack)-1] != element.Name.Local {
 				return syntax, fmt.Errorf("unexpected closing element %s", element.Name.Local)
 			}
@@ -693,16 +692,16 @@ func xmlAcceptedNamespaces(profile string) []string {
 }
 
 func rejectDuplicateXMLAttrs(b []byte) error {
-	d := xml.NewDecoder(bytes.NewReader(b))
+	d := xmltext.NewDecoderBytes(b, xmlDecodeOptions...)
 	for {
-		tok, err := d.Token()
+		tok, err := readXMLToken(d)
 		if err == io.EOF {
 			return nil
 		}
 		if err != nil {
 			return err
 		}
-		if start, ok := tok.(xml.StartElement); ok {
+		if start, ok := tok.(xmlStartToken); ok {
 			seen := map[string]bool{}
 			for _, a := range start.Attr {
 				key := a.Name.Space + ":" + a.Name.Local
@@ -889,4 +888,193 @@ func normalizeLenientDateTime(value string) string {
 	return fmt.Sprintf("%04d%02d%02d%02d%02d%02d000",
 		normalized.Year()+cycles*400, normalized.Month(), normalized.Day(),
 		normalized.Hour(), normalized.Minute(), normalized.Second())
+}
+
+// xmlDecodeOptions selects the decoder profile for wire documents.
+var xmlDecodeOptions []xmltext.Options
+
+type xmlStartToken struct {
+	Name xmltext.Name
+	Attr []xmltext.Attr
+}
+
+type xmlEndToken struct{ Name xmltext.Name }
+
+// readXMLToken returns the next element boundary, or nil for any other token.
+func readXMLToken(d *xmltext.Decoder) (any, error) {
+	t, err := d.ReadToken()
+	if err != nil {
+		return nil, err
+	}
+	switch t.Kind() {
+	case xmltext.StartElement:
+		return xmlStartToken{Name: t.Name(), Attr: copyXMLAttrs(t)}, nil
+	case xmltext.EndElement:
+		return xmlEndToken{Name: t.Name()}, nil
+	}
+	return nil, nil
+}
+
+func copyXMLAttrs(t xmltext.Token) []xmltext.Attr {
+	var attrs []xmltext.Attr
+	for it := t.Attrs(); it.Next(); {
+		attrs = append(attrs, xmltext.Attr{Name: it.Name(), Value: string(it.Value())})
+	}
+	return attrs
+}
+
+// xnode is an element of a wire document. Elements are matched by local name
+// because the wire namespace depends on the profile, and documents without one
+// are accepted too.
+type xnode struct {
+	name     xmltext.Name
+	attrs    []xmltext.Attr
+	text     strings.Builder
+	children []*xnode
+}
+
+func parseXMLTree(b []byte) (*xnode, error) {
+	d := xmltext.NewDecoderBytes(b, xmlDecodeOptions...)
+	var stack []*xnode
+	for {
+		t, err := d.ReadToken()
+		if err != nil {
+			return nil, err
+		}
+		switch t.Kind() {
+		case xmltext.StartElement:
+			n := &xnode{name: t.Name(), attrs: copyXMLAttrs(t)}
+			if len(stack) > 0 {
+				top := stack[len(stack)-1]
+				top.children = append(top.children, n)
+			}
+			stack = append(stack, n)
+		case xmltext.EndElement:
+			n := stack[len(stack)-1]
+			stack = stack[:len(stack)-1]
+			if len(stack) == 0 {
+				return n, nil
+			}
+		case xmltext.Text, xmltext.CData:
+			if len(stack) > 0 {
+				stack[len(stack)-1].text.Write(t.Text())
+			}
+		}
+	}
+}
+
+func (n *xnode) attr(local string) (value string, ok bool) {
+	for _, a := range n.attrs {
+		if a.Name.Local == local {
+			value, ok = a.Value, true
+		}
+	}
+	return value, ok
+}
+
+func (n *xnode) attrText(local string) string {
+	value, _ := n.attr(local)
+	return value
+}
+
+func parseXRoot(b []byte) (xroot, error) {
+	n, err := parseXMLTree(b)
+	if err != nil {
+		return xroot{}, err
+	}
+	root := xroot{XMLName: n.name, Attr: n.attrs}
+	for _, c := range n.children {
+		switch c.name.Local {
+		case "Parameters":
+			for _, p := range c.children {
+				if p.name.Local == "Parameter" {
+					root.Parameters.Items = append(root.Parameters.Items, xparam{Attr: p.attrs, Text: p.text.String()})
+				}
+			}
+		case "Dataset":
+			root.DirectDatasets = append(root.DirectDatasets, c.dataset())
+		case "Datasets":
+			for _, d := range c.children {
+				if d.name.Local == "Dataset" {
+					root.Datasets.Items = append(root.Datasets.Items, d.dataset())
+				}
+			}
+		}
+	}
+	return root, nil
+}
+
+func (n *xnode) dataset() xdataset {
+	d := xdataset{ID: n.attrText("id")}
+	for _, c := range n.children {
+		switch c.name.Local {
+		case "ColumnInfo":
+			for _, col := range c.children {
+				switch col.name.Local {
+				case "Column":
+					d.Columns.Items = append(d.Columns.Items, col.column())
+				case "ConstColumn":
+					d.Columns.Consts = append(d.Columns.Consts, col.column())
+				}
+			}
+		case "Rows":
+			for _, row := range c.children {
+				if row.name.Local == "Row" {
+					d.Rows.Items = append(d.Rows.Items, row.row())
+				}
+			}
+		}
+	}
+	return d
+}
+
+func (n *xnode) column() xcol {
+	c := xcol{
+		ID:       n.attrText("id"),
+		Type:     n.attrText("type"),
+		Size:     n.attrText("size"),
+		Encoding: n.attrText("enc"),
+		Encrypt:  n.attrText("encrypt"),
+		Prop:     n.attrText("prop"),
+		SumText:  n.attrText("sumtext"),
+	}
+	if value, ok := n.attr("value"); ok {
+		c.Value = &value
+	}
+	return c
+}
+
+func (n *xnode) row() xrow {
+	r := xrow{Type: n.attrText("type")}
+	for _, c := range n.children {
+		switch c.name.Local {
+		case "Col":
+			r.Cols = append(r.Cols, c.colValue())
+		case "OrgRow":
+			if r.Org == nil {
+				r.Org = &xorgrow{}
+			}
+			r.Org.Cols = append(r.Org.Cols, c.colValues()...)
+		case "Org_Row":
+			if r.OrgUnderscore == nil {
+				r.OrgUnderscore = &xorgrow{}
+			}
+			r.OrgUnderscore.Cols = append(r.OrgUnderscore.Cols, c.colValues()...)
+		}
+	}
+	return r
+}
+
+func (n *xnode) colValues() []xcolvalue {
+	var cols []xcolvalue
+	for _, c := range n.children {
+		if c.name.Local == "Col" {
+			cols = append(cols, c.colValue())
+		}
+	}
+	return cols
+}
+
+func (n *xnode) colValue() xcolvalue {
+	return xcolvalue{ID: n.attrText("id"), Text: n.text.String()}
 }

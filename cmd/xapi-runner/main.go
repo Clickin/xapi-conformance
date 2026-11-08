@@ -7,7 +7,6 @@ import (
 	"context"
 	"encoding/base64"
 	"encoding/json"
-	"encoding/xml"
 	"flag"
 	"fmt"
 	"io"
@@ -19,6 +18,9 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/go-xml-experiment/xml"
+	"github.com/go-xml-experiment/xml/xmltext"
 )
 
 type vector struct {
@@ -60,7 +62,7 @@ type result struct {
 	Diff     string `json:"diff,omitempty"`
 }
 type junitSuite struct {
-	XMLName  xml.Name    `xml:"testsuite"`
+	XMLName  struct{}    `xml:"testsuite"`
 	Name     string      `xml:"name,attr"`
 	Tests    int         `xml:"tests,attr"`
 	Failures int         `xml:"failures,attr"`
@@ -543,7 +545,7 @@ func writeJunit(path string, rs []result) {
 		}
 		s.Cases = append(s.Cases, c)
 	}
-	b, e := xml.MarshalIndent(s, "", "  ")
+	b, e := xml.Marshal(s, xmltext.WithIndent("", "  "))
 	if e == nil {
 		e = os.WriteFile(path, append(b, '\n'), 0644)
 	}
