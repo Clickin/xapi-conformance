@@ -891,7 +891,12 @@ func normalizeLenientDateTime(value string) string {
 }
 
 // xmlDecodeOptions selects the decoder profile for wire documents.
-var xmlDecodeOptions []xmltext.Options
+//
+// The declared encoding is not applied: wire documents are read as UTF-8
+// whatever the declaration names, and other bytes fail as invalid UTF-8.
+var xmlDecodeOptions = []xmltext.Options{
+	xmltext.WithCharsetReader(func(_ string, r io.Reader) (io.Reader, error) { return r, nil }),
+}
 
 type xmlStartToken struct {
 	Name xmltext.Name
@@ -931,6 +936,7 @@ type xnode struct {
 	attrs    []xmltext.Attr
 	text     strings.Builder
 	children []*xnode
+	inCol    bool // nested inside a Col
 }
 
 func parseXMLTree(b []byte) (*xnode, error) {
@@ -946,6 +952,7 @@ func parseXMLTree(b []byte) (*xnode, error) {
 			n := &xnode{name: t.Name(), attrs: copyXMLAttrs(t)}
 			if len(stack) > 0 {
 				top := stack[len(stack)-1]
+				n.inCol = top.name.Local == "Col" || top.inCol
 				top.children = append(top.children, n)
 			}
 			stack = append(stack, n)
@@ -954,6 +961,10 @@ func parseXMLTree(b []byte) (*xnode, error) {
 			stack = stack[:len(stack)-1]
 			if len(stack) == 0 {
 				return n, nil
+			}
+			// Markup inside a Col keeps its text in the Col's value.
+			if top := stack[len(stack)-1]; top.name.Local == "Col" || top.inCol {
+				top.text.WriteString(n.text.String())
 			}
 		case xmltext.Text, xmltext.CData:
 			if len(stack) > 0 {
