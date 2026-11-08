@@ -31,7 +31,7 @@ Profile별 operation 수:
 |---|---:|---:|---:|
 | `nexacro-json-1.0` | 55 | 19 | 6 |
 | `nexacro-xml-4000` | 153 | 9 | 7 |
-| `xplatform-xml-5000` | 59 | 9 | 6 |
+| `xplatform-xml-4000` | 59 | 9 | 6 |
 | `nexacro-ssv` | 68 | 6 | 10 |
 | `xplatform-ssv` | 65 | 6 | 10 |
 | `nexacro-binary-5000` | 3 | 3 | 2 |
@@ -43,7 +43,7 @@ Profile별 operation 수:
 |---|---|
 | Nexacro Dataset JSON 1.0 | `nexacro-json-1.0` |
 | Nexacro Platform XML 4000 | `nexacro-xml-4000` |
-| XPLATFORM XML 5000 | `xplatform-xml-5000` |
+| XPLATFORM XML 4000 | `xplatform-xml-4000` |
 | Nexacro SSV | `nexacro-ssv` |
 | XPLATFORM SSV | `xplatform-ssv` |
 | Nexacro PlatformBinary 5000 | `nexacro-binary-5000` |

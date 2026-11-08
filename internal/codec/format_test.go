@@ -16,7 +16,7 @@ func TestDecodeXMLEntitiesForBothProfiles(t *testing.T) {
 		attribute string
 		version   string
 	}{
-		{name: "xplatform-xml-5000", namespace: "http://www.tobesoft.com/platform/Dataset", attribute: "ver", version: "5000"},
+		{name: "xplatform-xml-4000", namespace: "http://www.tobesoft.com/platform/Dataset", attribute: "ver", version: "4000"},
 		{name: "nexacro-xml-4000", namespace: "http://www.nexacroplatform.com/platform/dataset", attribute: "version", version: "4000"},
 	}
 	for _, profile := range profiles {
@@ -43,7 +43,7 @@ func TestEncodeXMLUsesDocumentedLayoutAndEntities(t *testing.T) {
 			Rows:         []protocol.Row{{Type: "N", Values: map[string]protocol.Cell{"a": {State: "value", Lexical: "a\nb"}}}},
 		}},
 	}
-	for _, profile := range []string{"xplatform-xml-5000", "nexacro-xml-4000"} {
+	for _, profile := range []string{"xplatform-xml-4000", "nexacro-xml-4000"} {
 		wire, err := Encode(value, profile)
 		if err != nil {
 			t.Fatal(err)
@@ -159,7 +159,7 @@ func TestDecodeJSONDefaultsVersion(t *testing.T) {
 }
 
 func TestXMLEncodeTypeCaseBlobEncodingAndOptionalConstantValue(t *testing.T) {
-	for _, profile := range []string{"xplatform-xml-5000", "nexacro-xml-4000"} {
+	for _, profile := range []string{"xplatform-xml-4000", "nexacro-xml-4000"} {
 		t.Run(profile, func(t *testing.T) {
 			encoded, err := Encode(protocol.Value{Datasets: []protocol.Dataset{{
 				ID: "blob",

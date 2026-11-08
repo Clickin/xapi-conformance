@@ -11,7 +11,7 @@ profile별 기본값이 일치하지 않으므로 wire-level 값을 임의로 �
 
 | 영역 | 검증 조합 |
 |---|---|
-| Profile | XPLATFORM XML 5000; Nexacro XML 4000; Nexacro JSON 1.0; XPLATFORM/Nexacro SSV; XPLATFORM/Nexacro PlatformBinary 5000; PlatformZlib |
+| Profile | XPLATFORM XML 4000; Nexacro XML 4000; Nexacro JSON 1.0; XPLATFORM/Nexacro SSV; XPLATFORM/Nexacro PlatformBinary 5000; PlatformZlib |
 | Operation | 모든 profile의 encode/decode/roundtrip |
 | Scalar | STRING/CHAR; SHORT/USHORT/INT/UINT/LONG/ULONG; FLOAT/DOUBLE; DECIMAL/BIGDECIMAL; BOOLEAN; DATE/TIME/DATETIME; BLOB/FILE/NULL; 내부 UNDEFINED/DATASET/INVALID tag; type 대소문자 |
 | Shape | 빈 document/Dataset; 0/1/복수 row; 복수 Dataset; column 순서 변경; JSON property 순서 변경 |

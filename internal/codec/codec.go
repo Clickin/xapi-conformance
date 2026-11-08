@@ -51,7 +51,7 @@ func DecodeProfile(b []byte, profile string, options DecodeOptions) (protocol.Va
 	switch profile {
 	case "nexacro-json-1.0":
 		value, err = jsonValue(b, options.Strict)
-	case "xplatform-xml-5000", "nexacro-xml-4000":
+	case "xplatform-xml-4000", "nexacro-xml-4000":
 		value, err = xmlValue(b, options.Strict, profile)
 	case nexacroSSVProfile, xplatformSSVProfile:
 		value, err = ssvValue(b, profile, options.Strict, options.SSVUnitSeparator, options.SSVRecordSeparator)
@@ -442,8 +442,8 @@ func xmlValue(b []byte, strict bool, profile string) (protocol.Value, error) {
 		switch profile {
 		case "nexacro-xml-4000":
 			rootWire["version"] = "4000"
-		case "xplatform-xml-5000":
-			rootWire["ver"] = "5000"
+		case "xplatform-xml-4000":
+			rootWire["ver"] = "4000"
 		}
 	} else {
 		if root.XMLName.Space != "" {
@@ -653,7 +653,7 @@ func orderXMLDatasets(datasets []xdataset, ids []string) []xdataset {
 
 func xmlNamespace(profile string) string {
 	switch profile {
-	case "xplatform-xml-5000":
+	case "xplatform-xml-4000":
 		return "http://www.tobesoft.com/platform/Dataset"
 	case "nexacro-xml-4000":
 		return "http://www.nexacroplatform.com/platform/dataset"
@@ -682,8 +682,8 @@ func xmlAcceptedNamespace(profile, namespace string) bool {
 
 func xmlAcceptedNamespaces(profile string) []string {
 	switch profile {
-	case "xplatform-xml-5000":
-		return []string{"http://www.tobesoft.com/platform/Dataset", "http://www.tobesoft.com/platform/dataset"}
+	case "xplatform-xml-4000":
+		return []string{"http://www.tobesoft.com/platform/Dataset"}
 	case "nexacro-xml-4000":
 		return []string{"http://www.nexacroplatform.com/platform/dataset", "http://www.nexacro.com/platform/dataset"}
 	default:

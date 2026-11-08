@@ -66,8 +66,7 @@
     "repository": "xapi-conformance",
     "commit": "working-tree",
     "path": "vectors/compatibility/xml-reader-namespace-lowercase-tobesoft-nexacro-xml-4000.json",
-    "license": "repository",
-    "attribution": "Expected result observed from the original driver as a black box"
+    "license": "repository"
   },
   "required": true
 }

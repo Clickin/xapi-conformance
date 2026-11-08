@@ -117,7 +117,7 @@ func Encode(v protocol.Value, profile string) ([]byte, error) {
 			return nil, err
 		}
 		return bytes.ReplaceAll(encoded, []byte("/"), []byte(`\/`)), nil
-	case "xplatform-xml-5000", "nexacro-xml-4000":
+	case "xplatform-xml-4000", "nexacro-xml-4000":
 		return encodeXML(v, profile)
 	case nexacroSSVProfile, xplatformSSVProfile:
 		return encodeSSV(v, profile)
@@ -351,16 +351,16 @@ func toJSON(v protocol.Value) jsonObject {
 func encodeXML(value protocol.Value, profile string) ([]byte, error) {
 	var out strings.Builder
 	namespace := "http://www.nexacroplatform.com/platform/dataset"
-	if profile == "xplatform-xml-5000" {
-		namespace = "http://www.tobesoft.com/platform/dataset"
+	if profile == "xplatform-xml-4000" {
+		namespace = "http://www.tobesoft.com/platform/Dataset"
 	}
 	out.WriteString(`<?xml version="1.0" encoding="UTF-8"?>`)
 	out.WriteByte('\n')
 	out.WriteString(`<Root xmlns="`)
 	out.WriteString(namespace)
 	out.WriteByte('"')
-	if profile == "xplatform-xml-5000" {
-		out.WriteString(` ver="5000"`)
+	if profile == "xplatform-xml-4000" {
+		out.WriteString(` ver="4000"`)
 	}
 	out.WriteString(">\n")
 

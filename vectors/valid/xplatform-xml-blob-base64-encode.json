@@ -1,7 +1,7 @@
 {
   "id": "xplatform-xml.blob-base64.encode",
   "operation": "encode",
-  "profile": "xplatform-xml-5000",
+  "profile": "xplatform-xml-4000",
   "value": {
     "parameters": [],
     "datasets": [
@@ -41,7 +41,7 @@
   "expect": {
     "kind": "wire",
     "output": {
-      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImIiIHR5cGU9ImJsb2IiIHNpemU9IjI1NiIgZW5jcnlwdD0iYmFzZTY0Ii8+CgkJCTxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iYmxvYiIgc2l6ZT0iMjU2IiBlbmNyeXB0PSJiYXNlNjQiIHZhbHVlPSJlQT09Ij48L0NvbnN0Q29sdW1uPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9ImIiPmVRPT08L0NvbD4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImIiIHR5cGU9ImJsb2IiIHNpemU9IjI1NiIgZW5jcnlwdD0iYmFzZTY0Ii8+CgkJCTxDb25zdENvbHVtbiBpZD0iYyIgdHlwZT0iYmxvYiIgc2l6ZT0iMjU2IiBlbmNyeXB0PSJiYXNlNjQiIHZhbHVlPSJlQT09Ij48L0NvbnN0Q29sdW1uPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9ImIiPmVRPT08L0NvbD4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
       "encoding": "base64"
     },
     "value": {

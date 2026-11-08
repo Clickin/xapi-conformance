@@ -157,7 +157,7 @@ Protocol version: `1.0`
 |---|---|---|
 | `nexacro-json-1.0` | Nexacro Dataset JSON 1.0 | decode, encode, roundtrip |
 | `nexacro-xml-4000` | Nexacro Platform XML 4000 | decode, encode, roundtrip |
-| `xplatform-xml-5000` | XPLATFORM XML 5000 | decode, encode, roundtrip |
+| `xplatform-xml-4000` | XPLATFORM XML 4000 | decode, encode, roundtrip |
 | `nexacro-ssv` | Nexacro SSV | decode, encode, roundtrip |
 | `xplatform-ssv` | XPLATFORM SSV | decode, encode, roundtrip |
 | `nexacro-binary-5000` | Nexacro PlatformBinary 5000 | decode, encode, roundtrip |

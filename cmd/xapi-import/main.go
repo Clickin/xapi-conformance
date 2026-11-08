@@ -87,7 +87,7 @@ func importDelimitedXML(validOut, path, delimiter, idPrefix string) {
 		}
 		seen[hash] = true
 		ordinal++
-		f := fixture{ID: fmt.Sprintf("%s-%02d-%x.imported", idPrefix, ordinal, hash[:4]), Path: path, Profile: "xplatform-xml-5000"}
+		f := fixture{ID: fmt.Sprintf("%s-%02d-%x.imported", idPrefix, ordinal, hash[:4]), Path: path, Profile: "xplatform-xml-4000"}
 		if strings.HasPrefix(path, "sources/xapi-js/") {
 			f.Profile = "nexacro-xml-4000"
 		}

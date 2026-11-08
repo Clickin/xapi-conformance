@@ -1,0 +1,72 @@
+{
+  "id": "xml-reader.declared-encoding-ignored.xplatform-xml-4000",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "strict": false
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iRVVDLUtSIj8+PFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0ibXNnIiB0eXBlPSJzdHJpbmciPmhlbGxvPC9QYXJhbWV0ZXI+PC9QYXJhbWV0ZXJzPjxEYXRhc2V0IGlkPSJyb3dzIj48Q29sdW1uSW5mbz48Q29sdW1uIGlkPSJpZCIgdHlwZT0iaW50IiBzaXplPSIxMCIvPjxDb2x1bW4gaWQ9Im5hbWUiIHR5cGU9InN0cmluZyIgc2l6ZT0iNTAiLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJpZCI+MjwvQ29sPjxDb2wgaWQ9Im5hbWUiPm4xPC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+"
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "id",
+              "index": 0,
+              "type": "INT"
+            },
+            {
+              "id": "name",
+              "index": 1,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "rows",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "id": {
+                  "lexical": "2",
+                  "state": "value"
+                },
+                "name": {
+                  "lexical": "n1",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "msg",
+          "lexical": "hello",
+          "state": "value",
+          "type": "STRING"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/compatibility/xml-reader-declared-encoding-ignored-xplatform-xml-4000.json",
+    "license": "repository"
+  },
+  "required": true
+}

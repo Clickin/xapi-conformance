@@ -1,0 +1,30 @@
+{
+  "id": "zlib.xplatform-xml-4000.encode",
+  "operation": "encode",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "zlib": true
+  },
+  "value": {
+    "parameters": [],
+    "datasets": []
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/614AQCBAH7/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+Cgk8UGFyYW1ldGVycy8+CjwvUm9vdD4KAwDIJSnh",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": []
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-xplatform-xml-4000-encode.json",
+    "license": "repository"
+  },
+  "required": true
+}

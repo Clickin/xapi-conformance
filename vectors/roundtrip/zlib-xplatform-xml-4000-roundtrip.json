@@ -1,0 +1,37 @@
+{
+  "id": "zlib.xplatform-xml-4000.roundtrip",
+  "operation": "roundtrip",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "strict": false,
+    "zlib": true
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "/614AQCBAH7/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+Cgk8UGFyYW1ldGVycy8+CjwvUm9vdD4KAwDIJSnh"
+  },
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/614AQCBAH7/PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL0RhdGFzZXQiIHZlcj0iNDAwMCI+Cgk8UGFyYW1ldGVycy8+CjwvUm9vdD4KAwDIJSnh",
+      "encoding": "base64"
+    },
+    "value": {
+      "datasets": [],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/roundtrip/zlib-xplatform-xml-4000-roundtrip.json",
+    "license": "repository"
+  },
+  "required": true
+}

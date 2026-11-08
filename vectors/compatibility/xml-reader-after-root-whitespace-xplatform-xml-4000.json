@@ -1,0 +1,72 @@
+{
+  "id": "xml-reader.after-root-whitespace.xplatform-xml-4000",
+  "operation": "decode",
+  "profile": "xplatform-xml-4000",
+  "options": {
+    "strict": false
+  },
+  "input": {
+    "encoding": "base64",
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy50b2Jlc29mdC5jb20vcGxhdGZvcm0vRGF0YXNldCIgdmVyPSI0MDAwIj48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJtc2ciIHR5cGU9InN0cmluZyI+aGVsbG88L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9InJvd3MiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImlkIiB0eXBlPSJpbnQiIHNpemU9IjEwIi8+PENvbHVtbiBpZD0ibmFtZSIgdHlwZT0ic3RyaW5nIiBzaXplPSI1MCIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9ImlkIj4yPC9Db2w+PENvbCBpZD0ibmFtZSI+bjE8L0NvbD48L1Jvdz48L1Jvd3M+PC9EYXRhc2V0PjwvUm9vdD4KICA="
+  },
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "id",
+              "index": 0,
+              "type": "INT"
+            },
+            {
+              "id": "name",
+              "index": 1,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "rows",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "id": {
+                  "lexical": "2",
+                  "state": "value"
+                },
+                "name": {
+                  "lexical": "n1",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "msg",
+          "lexical": "hello",
+          "state": "value",
+          "type": "STRING"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "4000"
+        }
+      }
+    }
+  },
+  "source": {
+    "repository": "xapi-conformance",
+    "commit": "working-tree",
+    "path": "vectors/compatibility/xml-reader-after-root-whitespace-xplatform-xml-4000.json",
+    "license": "repository"
+  },
+  "required": true
+}

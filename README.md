@@ -8,7 +8,7 @@ XPLATFORM 및 Nexacro Dataset wire 프로토콜(XML, JSON, SSV, 바이너리) �
 
 ## 주요 특징
 
-- **표준 Wire 프로토콜 검증**: Nexacro XML 4000, XPLATFORM XML 5000, JSON 1.0, SSV, PlatformBinary 5000 및 zlib 압축 전송 지원
+- **표준 Wire 프로토콜 검증**: Nexacro XML 4000, XPLATFORM XML 4000, JSON 1.0, SSV, PlatformBinary 5000 및 zlib 압축 전송 지원
 - **언어 중립적 검증 아키텍처**: HTTP REST 엔드포인트 또는 stdio(JSONL 서브프로세스)를 통한 표준 어댑터 계약
 - **체계적인 검증 수준**:
   - `canonical`: 파싱 결과의 의미적 구조(Dataset, Column, Row, Type, State 등) 일치 검증
@@ -24,7 +24,7 @@ XPLATFORM 및 Nexacro Dataset wire 프로토콜(XML, JSON, SSV, 바이너리) �
 |---|---|---|
 | `nexacro-json-1.0` | Nexacro Dataset JSON 1.0 | decode, encode, roundtrip |
 | `nexacro-xml-4000` | Nexacro Platform XML 4000 | decode, encode, roundtrip |
-| `xplatform-xml-5000` | XPLATFORM XML 5000 | decode, encode, roundtrip |
+| `xplatform-xml-4000` | XPLATFORM XML 4000 | decode, encode, roundtrip |
 | `nexacro-ssv` | Nexacro SSV | decode, encode, roundtrip |
 | `xplatform-ssv` | XPLATFORM SSV | decode, encode, roundtrip |
 | `nexacro-binary-5000` | Nexacro PlatformBinary 5000 | decode, encode, roundtrip |
