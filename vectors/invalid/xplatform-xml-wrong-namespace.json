@@ -1,13 +1,13 @@
 {
   "id": "xplatform-xml.wrong-namespace.strict",
   "operation": "decode",
-  "profile": "xplatform-xml-4000",
+  "profile": "xplatform-xml-5000",
   "options": {
     "strict": true
   },
   "input": {
     "encoding": "base64",
-    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNDAwMCI+PC9Sb290Pg=="
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48Um9vdCB4bWxucz0iaHR0cDovL3d3dy5uZXhhY3JvcGxhdGZvcm0uY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+PC9Sb290Pg=="
   },
   "expect": {
     "kind": "canonical",
@@ -17,7 +17,7 @@
       "wire": {
         "root": {
           "namespace": "http://www.tobesoft.com/platform/Dataset",
-          "ver": "4000"
+          "ver": "5000"
         }
       }
     }
