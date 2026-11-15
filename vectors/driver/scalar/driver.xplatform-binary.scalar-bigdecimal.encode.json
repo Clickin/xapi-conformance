@@ -1,0 +1,323 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/hATiADsABMAAnAwACgABDEuMjAAAnAxACgABDEuNTAAAnAyACgAAzAuMAACcDMAKAAEMUUrMwACcDQAAAACcDUAAAACcDYAKAACMTAAAnA3ACgAAi03AAJwOAAoAAE1AAJwOQAoAAoyMTQ3NDgzNjQ4AANwMTAAAAADcDExACgABDEyMzQAA3AxMgAAAANwMTMAAAADcDE0ACgABy0wLjAwMTUAA3AxNQAoAAQxRSs3AANwMTYAKAAGMC4wMDAxAANwMTcAKAANMTIzNDU2Nzg5LjEyMwADcDE4ACgAEzkyMjMzNzIwMzY4NTQ3NzU4MDj+AROIANQAAWT+EBOIAAIAAAATAAJjMAAEABAAAQACYzEABAAQAAEAAmMyAAQAEAABAAJjMwAEABAAAQACYzQABAAQAAEAAmM1AAQAEAABAAJjNgAEABAAAQACYzcABAAQAAEAAmM4AAQAEAABAAJjOQAEABAAAQADYzEwAAQAEAABAANjMTEABAAQAAEAA2MxMgAEABAAAQADYzEzAAQAEAABAANjMTQABAAQAAEAA2MxNQAEABAAAQADYzE2AAQAEAABAANjMTcABAAQAAEAA2MxOAAEABAAAQCZAAEAEwAoAAQxLjIwACgABDEuNTAAKAADMC4wACgABDFFKzMAAAAAACgAAjEwACgAAi03ACgAATUAKAAKMjE0NzQ4MzY0OAAAACgABDEyMzQAAAAAACgABy0wLjAwMTUAKAAEMUUrNwAoAAYwLjAwMDEAKAANMTIzNDU2Nzg5LjEyMwAoABM5MjIzMzcyMDM2ODU0Nzc1ODA4AAAAAA==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-binary.scalar-bigdecimal.encode",
+  "operation": "encode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c5",
+            "index": 5,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c6",
+            "index": 6,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c7",
+            "index": 7,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c8",
+            "index": 8,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c9",
+            "index": 9,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c10",
+            "index": 10,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c11",
+            "index": 11,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c12",
+            "index": 12,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c13",
+            "index": 13,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c14",
+            "index": 14,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c15",
+            "index": 15,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c16",
+            "index": 16,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c17",
+            "index": 17,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c18",
+            "index": 18,
+            "type": "BIGDECIMAL"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "001.20",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "1.50",
+                "state": "value"
+              },
+              "c10": {
+                "lexical": "0x1F",
+                "state": "value"
+              },
+              "c11": {
+                "lexical": "1,234",
+                "state": "value"
+              },
+              "c12": {
+                "lexical": "NaN",
+                "state": "value"
+              },
+              "c13": {
+                "lexical": "Infinity",
+                "state": "value"
+              },
+              "c14": {
+                "lexical": "-1.5e-3",
+                "state": "value"
+              },
+              "c15": {
+                "lexical": "1E7",
+                "state": "value"
+              },
+              "c16": {
+                "lexical": "0.0001",
+                "state": "value"
+              },
+              "c17": {
+                "lexical": "123456789.123",
+                "state": "value"
+              },
+              "c18": {
+                "lexical": "9223372036854775808",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "-0.0",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "1e3",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "abc",
+                "state": "value"
+              },
+              "c5": {
+                "lexical": " 2 ",
+                "state": "value"
+              },
+              "c6": {
+                "lexical": "10",
+                "state": "value"
+              },
+              "c7": {
+                "lexical": "-7",
+                "state": "value"
+              },
+              "c8": {
+                "lexical": "+5",
+                "state": "value"
+              },
+              "c9": {
+                "lexical": "2147483648",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "001.20",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p1",
+        "lexical": "1.50",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p2",
+        "lexical": "-0.0",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p3",
+        "lexical": "1e3",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p4",
+        "lexical": "abc",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p5",
+        "lexical": " 2 ",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p6",
+        "lexical": "10",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p7",
+        "lexical": "-7",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p8",
+        "lexical": "+5",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p9",
+        "lexical": "2147483648",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p10",
+        "lexical": "0x1F",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p11",
+        "lexical": "1,234",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p12",
+        "lexical": "NaN",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p13",
+        "lexical": "Infinity",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p14",
+        "lexical": "-1.5e-3",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p15",
+        "lexical": "1E7",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p16",
+        "lexical": "0.0001",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p17",
+        "lexical": "123456789.123",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p18",
+        "lexical": "9223372036854775808",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      }
+    ]
+  }
+}

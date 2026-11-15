@@ -1,0 +1,135 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/gETiADPAAFk/hATiAC7AAsABnN0cmluZwAVAAFzAANpbnQAAwAAAAwABGxvbmcAKAANMTIzNDU2Nzg5MDEyMwAFZmxvYXQABD/4AAAAAAAAAAZkb3VibGUABEACAAAAAAAAAAdkZWNpbWFsACgABDMuNzUACmJpZ2RlY2ltYWwAKAAGMTIzLjQ1AAdib29sZWFuAAMAAAABAARkYXRlAClCeh4adMAAAAAIZGF0ZXRpbWUAKUJ6HkWniVAAAARibG9iABoAAwABAgABAAFhAAEAIAABAAkAAQABABUAAXgAAAAA",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-binary.types-constants.encode",
+  "operation": "encode",
+  "profile": "nexacro-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "string",
+            "type": "STRING",
+            "value": {
+              "lexical": "s",
+              "state": "value"
+            }
+          },
+          {
+            "id": "int",
+            "type": "INT",
+            "value": {
+              "lexical": "12",
+              "state": "value"
+            }
+          },
+          {
+            "id": "long",
+            "type": "LONG",
+            "value": {
+              "lexical": "1234567890123",
+              "state": "value"
+            }
+          },
+          {
+            "id": "float",
+            "type": "FLOAT",
+            "value": {
+              "lexical": "1.5",
+              "state": "value"
+            }
+          },
+          {
+            "id": "double",
+            "type": "DOUBLE",
+            "value": {
+              "lexical": "2.25",
+              "state": "value"
+            }
+          },
+          {
+            "id": "decimal",
+            "type": "DECIMAL",
+            "value": {
+              "lexical": "3.75",
+              "state": "value"
+            }
+          },
+          {
+            "id": "bigdecimal",
+            "type": "BIGDECIMAL",
+            "value": {
+              "lexical": "123.45",
+              "state": "value"
+            }
+          },
+          {
+            "id": "boolean",
+            "type": "BOOLEAN",
+            "value": {
+              "lexical": "1",
+              "state": "value"
+            }
+          },
+          {
+            "id": "date",
+            "type": "DATE",
+            "value": {
+              "lexical": "20261116",
+              "state": "value"
+            }
+          },
+          {
+            "id": "datetime",
+            "type": "DATETIME",
+            "value": {
+              "lexical": "20261116123456789",
+              "state": "value"
+            }
+          },
+          {
+            "id": "blob",
+            "type": "BLOB",
+            "value": {
+              "lexical": "AAEC",
+              "state": "value"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

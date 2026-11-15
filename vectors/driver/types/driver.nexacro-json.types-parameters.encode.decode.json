@@ -1,0 +1,99 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "string",
+          "lexical": "s",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "int",
+          "lexical": "12",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "long",
+          "lexical": "1234567890123",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "float",
+          "lexical": "1.5",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "double",
+          "lexical": "2.25",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "decimal",
+          "lexical": "3.75",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "bigdecimal",
+          "lexical": "123.45",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "boolean",
+          "lexical": "1",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "date",
+          "lexical": "20261116",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "time",
+          "lexical": "123456789",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "datetime",
+          "lexical": "20261116123456789",
+          "state": "value",
+          "type": "DATETIME"
+        },
+        {
+          "id": "blob",
+          "lexical": "QUFFQw==",
+          "state": "value",
+          "type": "BLOB"
+        }
+      ],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.types-parameters.encode.decode",
+  "input": {
+    "data": "eyJQYXJhbWV0ZXJzIjpbeyJpZCI6InN0cmluZyIsInR5cGUiOiJzdHJpbmciLCJ2YWx1ZSI6InMifSx7ImlkIjoiaW50IiwidHlwZSI6ImludCIsInZhbHVlIjoiMTIifSx7ImlkIjoibG9uZyIsInR5cGUiOiJiaWdkZWNpbWFsIiwidmFsdWUiOiIxMjM0NTY3ODkwMTIzIn0seyJpZCI6ImZsb2F0IiwidHlwZSI6ImZsb2F0IiwidmFsdWUiOiIxLjUifSx7ImlkIjoiZG91YmxlIiwidHlwZSI6ImZsb2F0IiwidmFsdWUiOiIyLjI1In0seyJpZCI6ImRlY2ltYWwiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiMy43NSJ9LHsiaWQiOiJiaWdkZWNpbWFsIiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6IjEyMy40NSJ9LHsiaWQiOiJib29sZWFuIiwidHlwZSI6ImludCIsInZhbHVlIjoiMSJ9LHsiaWQiOiJkYXRlIiwidHlwZSI6ImRhdGUiLCJ2YWx1ZSI6IjIwMjYxMTE2In0seyJpZCI6InRpbWUiLCJ0eXBlIjoidGltZSIsInZhbHVlIjoiMTIzNDU2Nzg5In0seyJpZCI6ImRhdGV0aW1lIiwidHlwZSI6ImRhdGV0aW1lIiwidmFsdWUiOiIyMDI2MTExNjEyMzQ1Njc4OSJ9LHsiaWQiOiJibG9iIiwidHlwZSI6ImJsb2IiLCJ2YWx1ZSI6IkFBRUMifV0sInZlcnNpb24iOiIxLjAifQ==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

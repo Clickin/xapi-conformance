@@ -1,0 +1,102 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "string",
+          "lexical": "s",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "int",
+          "lexical": "12",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "long",
+          "lexical": "1234567890123",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "float",
+          "lexical": "1.5",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "double",
+          "lexical": "2.25",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "decimal",
+          "lexical": "3.75",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "bigdecimal",
+          "lexical": "123.45",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "boolean",
+          "lexical": "1",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "date",
+          "lexical": "20261116",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "time",
+          "lexical": "123456789",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "datetime",
+          "lexical": "20261116123456789",
+          "state": "value",
+          "type": "DATETIME"
+        },
+        {
+          "id": "blob",
+          "lexical": "QUFFQw==",
+          "state": "value",
+          "type": "BLOB"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "5000"
+        }
+      }
+    }
+  },
+  "id": "driver.xplatform-xml.types-parameters.encode.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycz4KCQk8UGFyYW1ldGVyIGlkPSJzdHJpbmciIHR5cGU9InN0cmluZyI+czwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9ImludCIgdHlwZT0iaW50Ij4xMjwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9ImxvbmciIHR5cGU9ImJpZ2RlY2ltYWwiPjEyMzQ1Njc4OTAxMjM8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJmbG9hdCIgdHlwZT0iZmxvYXQiPjEuNTwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9ImRvdWJsZSIgdHlwZT0iZmxvYXQiPjIuMjU8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJkZWNpbWFsIiB0eXBlPSJiaWdkZWNpbWFsIj4zLjc1PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0iYmlnZGVjaW1hbCIgdHlwZT0iYmlnZGVjaW1hbCI+MTIzLjQ1PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0iYm9vbGVhbiIgdHlwZT0iaW50Ij4xPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0iZGF0ZSIgdHlwZT0iZGF0ZSI+MjAyNjExMTY8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJ0aW1lIiB0eXBlPSJ0aW1lIj4xMjM0NTY3ODk8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJkYXRldGltZSIgdHlwZT0iZGF0ZXRpbWUiPjIwMjYxMTE2MTIzNDU2Nzg5PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0iYmxvYiIgdHlwZT0iYmxvYiIgZW5jcnlwdD0iYmFzZTY0Ij5BQUVDPC9QYXJhbWV0ZXI+Cgk8L1BhcmFtZXRlcnM+CjwvUm9vdD4K",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

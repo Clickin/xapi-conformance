@@ -12,7 +12,8 @@ func TestDecodeJSONPreservesStatesAndRows(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if v.Parameters[0].Lexical != "001.20" || v.Parameters[0].Type != "BIGDECIMAL" {
+	// BigDecimal(String).toString drops the leading zeros.
+	if v.Parameters[0].Lexical != "1.20" || v.Parameters[0].Type != "BIGDECIMAL" {
 		t.Fatalf("parameter lexical/type lost: %+v", v.Parameters[0])
 	}
 	row := v.Datasets[0].Rows[0]
@@ -69,6 +70,8 @@ func TestEncodeXMLWritesOrgRowAndConstColumn(t *testing.T) {
 			},
 		}},
 	}}}
+	// OrgRow is written only for saveType ALL (1); the default NORMAL writes plain rows.
+	value.SaveType = 1
 	wire, err := Encode(value, "nexacro-xml-4000")
 	if err != nil {
 		t.Fatal(err)

@@ -149,10 +149,6 @@ func operation(w http.ResponseWriter, r *http.Request) {
 			writeError(w, 400, "invalid-request", "value", "value is required")
 			return
 		}
-		if msg := invalidEncodeSource(*req.Value); msg != "" {
-			writeError(w, 400, "malformed-input", "", msg)
-			return
-		}
 		b, err := codec.Encode(*req.Value, req.Profile)
 		if err != nil {
 			writeError(w, 400, "invalid-value", "value", err.Error())
@@ -237,13 +233,6 @@ func invalidOption(options map[string]any, strict bool, profile string) string {
 			continue
 		}
 		return key
-	}
-	return ""
-}
-
-func invalidEncodeSource(v protocol.Value) string {
-	if v.SaveType != 0 {
-		return "saveType is not accepted for encode"
 	}
 	return ""
 }

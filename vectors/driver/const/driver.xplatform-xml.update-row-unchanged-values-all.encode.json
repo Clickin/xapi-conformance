@@ -1,0 +1,73 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQkJPENvbHVtbiBpZD0iYiIgdHlwZT0iaW50IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImMiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQk8L0NvbHVtbkluZm8+CgkJPFJvd3M+CgkJCTxSb3cgdHlwZT0idXBkYXRlIj4KCQkJCTxDb2wgaWQ9ImEiPm5ldzwvQ29sPgoJCQkJPENvbCBpZD0iYiI+NTwvQ29sPgoJCQkJPE9yZ1Jvdz4KCQkJCQk8Q29sIGlkPSJhIj5vbGQ8L0NvbD4KCQkJCQk8Q29sIGlkPSJiIj41PC9Db2w+CgkJCQk8L09yZ1Jvdz4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-xml.update-row-unchanged-values-all.encode",
+  "operation": "encode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          },
+          {
+            "id": "b",
+            "index": 1,
+            "type": "INT"
+          },
+          {
+            "id": "c",
+            "index": 2,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "orgRow": {
+              "type": "O",
+              "values": {
+                "a": {
+                  "lexical": "old",
+                  "state": "value"
+                },
+                "b": {
+                  "lexical": "5",
+                  "state": "value"
+                },
+                "c": {
+                  "state": "null"
+                }
+              }
+            },
+            "type": "U",
+            "values": {
+              "a": {
+                "lexical": "new",
+                "state": "value"
+              }
+            }
+          }
+        ],
+        "saveType": 1
+      }
+    ],
+    "parameters": []
+  }
+}

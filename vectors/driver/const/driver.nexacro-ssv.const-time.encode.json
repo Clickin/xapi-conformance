@@ -1,0 +1,70 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2swOnRpbWUoOSk9MTIzNDU2Nzg5H2sxOnRpbWUoOSk9H2syOnRpbWUoOSk9Hl9Sb3dUeXBlXx9hOnN0cmluZygzMikeTh94Hh4=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-ssv.const-time.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "TIME",
+            "value": {
+              "lexical": "123456789",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "TIME",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "TIME",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

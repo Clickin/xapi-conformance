@@ -1,0 +1,53 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb2x1bW4iOlt7InNpemUiOiIzMiIsImlkIjoiYSIsInR5cGUiOiJzdHJpbmcifV19LCJpZCI6ImQiLCJSb3dzIjpbeyJhIjoiYV1dPmIiLCJfUm93VHlwZV8iOiJOIn1dfV0sIlBhcmFtZXRlcnMiOlt7ImlkIjoicCIsInR5cGUiOiJzdHJpbmciLCJ2YWx1ZSI6ImFdXT5iIn1dLCJ2ZXJzaW9uIjoiMS4wIn0=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-json.escape-cdata-end.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/escape.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "a]]\u003eb",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p",
+        "lexical": "a]]\u003eb",
+        "state": "value",
+        "type": "STRING"
+      }
+    ]
+  }
+}

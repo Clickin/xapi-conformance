@@ -1,0 +1,70 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2swOnN0cmluZygzMik9eB9rMTpzdHJpbmcoMzIpPR9rMjpzdHJpbmcoMzIpPR5fUm93VHlwZV8fYTpzdHJpbmcoMzIpHk4feB4e",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-ssv.const-string.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "STRING",
+            "value": {
+              "lexical": "x",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "STRING",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "STRING",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

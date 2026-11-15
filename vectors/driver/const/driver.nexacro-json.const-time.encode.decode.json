@@ -1,0 +1,77 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "k0",
+              "index": 1,
+              "type": "TIME"
+            },
+            {
+              "id": "k1",
+              "index": 2,
+              "type": "TIME"
+            },
+            {
+              "id": "k2",
+              "index": 3,
+              "type": "TIME"
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "x",
+                  "state": "value"
+                },
+                "k0": {
+                  "lexical": "123456789",
+                  "state": "value"
+                },
+                "k1": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "k2": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.const-time.encode.decode",
+  "input": {
+    "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb25zdENvbHVtbiI6W3sic2l6ZSI6IjkiLCJpZCI6ImswIiwidHlwZSI6InRpbWUiLCJ2YWx1ZSI6IjEyMzQ1Njc4OSJ9LHsic2l6ZSI6IjkiLCJpZCI6ImsxIiwidHlwZSI6InRpbWUiLCJ2YWx1ZSI6IiJ9LHsic2l6ZSI6IjkiLCJpZCI6ImsyIiwidHlwZSI6InRpbWUifV0sIkNvbHVtbiI6W3sic2l6ZSI6IjMyIiwiaWQiOiJhIiwidHlwZSI6InN0cmluZyJ9XX0sImlkIjoiZCIsIlJvd3MiOlt7ImEiOiJ4IiwiX1Jvd1R5cGVfIjoiTiJ9XX1dLCJ2ZXJzaW9uIjoiMS4wIn0=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

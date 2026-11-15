@@ -1,0 +1,69 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "s",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "b",
+              "index": 1,
+              "type": "BLOB"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "s": {
+                  "lexical": "",
+                  "state": "empty"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "s",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "b",
+          "lexical": "",
+          "state": "empty",
+          "type": "BLOB"
+        }
+      ]
+    }
+  },
+  "id": "driver.xplatform-ssv.empty-string-and-blob.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HnM6c3RyaW5nPR5iOmJsb2I9HkRhdGFzZXQ6ZB5fUm93VHlwZV8fczpzdHJpbmcoMzIpH2I6YmxvYigyNTYpHk4fHx4=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

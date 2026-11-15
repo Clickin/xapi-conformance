@@ -1,0 +1,22 @@
+{
+  "expect": {
+    "error": {
+      "class": "malformed-input"
+    },
+    "kind": "error"
+  },
+  "id": "driver.xplatform-binary.empty.encode.decode",
+  "input": {
+    "data": "",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/binary.json",
+    "repository": "xapi-conformance"
+  }
+}

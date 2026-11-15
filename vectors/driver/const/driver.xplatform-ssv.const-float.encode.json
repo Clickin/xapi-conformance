@@ -1,0 +1,78 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2swOmZsb2F0KDQpPTEyMzQ1Ni43ODkfazE6ZmxvYXQoNCk9YWJjH2syOmZsb2F0KDQpPR9rMzpmbG9hdCg0KT0eX1Jvd1R5cGVfH2E6c3RyaW5nKDMyKR5OH3ge",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-ssv.const-float.encode",
+  "operation": "encode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "FLOAT",
+            "value": {
+              "lexical": "123456.789",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "FLOAT",
+            "value": {
+              "lexical": "abc",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "FLOAT",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "FLOAT",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

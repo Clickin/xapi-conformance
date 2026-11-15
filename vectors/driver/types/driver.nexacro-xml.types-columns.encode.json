@@ -1,0 +1,186 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzLz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbHVtbiBpZD0ic3RyaW5nIiB0eXBlPSJzdHJpbmciIHNpemU9IjMyIi8+CgkJCTxDb2x1bW4gaWQ9ImludCIgdHlwZT0iaW50IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImxvbmciIHR5cGU9ImJpZ2RlY2ltYWwiIHNpemU9IjgiLz4KCQkJPENvbHVtbiBpZD0iZmxvYXQiIHR5cGU9ImZsb2F0IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImRvdWJsZSIgdHlwZT0iZmxvYXQiIHNpemU9IjgiLz4KCQkJPENvbHVtbiBpZD0iZGVjaW1hbCIgdHlwZT0iYmlnZGVjaW1hbCIgc2l6ZT0iMTYiLz4KCQkJPENvbHVtbiBpZD0iYmlnZGVjaW1hbCIgdHlwZT0iYmlnZGVjaW1hbCIgc2l6ZT0iMTYiLz4KCQkJPENvbHVtbiBpZD0iYm9vbGVhbiIgdHlwZT0iaW50IiBzaXplPSIyIi8+CgkJCTxDb2x1bW4gaWQ9ImRhdGUiIHR5cGU9ImRhdGUiIHNpemU9IjYiLz4KCQkJPENvbHVtbiBpZD0idGltZSIgdHlwZT0idGltZSIgc2l6ZT0iOSIvPgoJCQk8Q29sdW1uIGlkPSJkYXRldGltZSIgdHlwZT0iZGF0ZXRpbWUiIHNpemU9IjE3Ii8+CgkJCTxDb2x1bW4gaWQ9ImJsb2IiIHR5cGU9ImJsb2IiIHNpemU9IjI1NiIgZW5jcnlwdD0iYmFzZTY0Ii8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCQk8Um93PgoJCQkJPENvbCBpZD0ic3RyaW5nIj5zPC9Db2w+CgkJCQk8Q29sIGlkPSJpbnQiPjEyPC9Db2w+CgkJCQk8Q29sIGlkPSJsb25nIj4xMjM0NTY3ODkwMTIzPC9Db2w+CgkJCQk8Q29sIGlkPSJmbG9hdCI+MS41PC9Db2w+CgkJCQk8Q29sIGlkPSJkb3VibGUiPjIuMjU8L0NvbD4KCQkJCTxDb2wgaWQ9ImRlY2ltYWwiPjMuNzU8L0NvbD4KCQkJCTxDb2wgaWQ9ImJpZ2RlY2ltYWwiPjEyMy40NTwvQ29sPgoJCQkJPENvbCBpZD0iYm9vbGVhbiI+MTwvQ29sPgoJCQkJPENvbCBpZD0iZGF0ZSI+MjAyNjExMTY8L0NvbD4KCQkJCTxDb2wgaWQ9InRpbWUiPjEyMzQ1Njc4OTwvQ29sPgoJCQkJPENvbCBpZD0iZGF0ZXRpbWUiPjIwMjYxMTE2MTIzNDU2Nzg5PC9Db2w+CgkJCQk8Q29sIGlkPSJibG9iIj5BQUVDPC9Db2w+CgkJCTwvUm93PgoJCQk8Um93PgoJCQkJPENvbCBpZD0iYm9vbGVhbiI+MDwvQ29sPgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.types-columns.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "string",
+            "index": 0,
+            "type": "STRING"
+          },
+          {
+            "id": "int",
+            "index": 1,
+            "type": "INT"
+          },
+          {
+            "id": "long",
+            "index": 2,
+            "type": "LONG"
+          },
+          {
+            "id": "float",
+            "index": 3,
+            "type": "FLOAT"
+          },
+          {
+            "id": "double",
+            "index": 4,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "decimal",
+            "index": 5,
+            "type": "DECIMAL"
+          },
+          {
+            "id": "bigdecimal",
+            "index": 6,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "boolean",
+            "index": 7,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "date",
+            "index": 8,
+            "type": "DATE"
+          },
+          {
+            "id": "time",
+            "index": 9,
+            "type": "TIME"
+          },
+          {
+            "id": "datetime",
+            "index": 10,
+            "type": "DATETIME"
+          },
+          {
+            "id": "blob",
+            "index": 11,
+            "type": "BLOB"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "bigdecimal": {
+                "lexical": "123.45",
+                "state": "value"
+              },
+              "blob": {
+                "lexical": "AAEC",
+                "state": "value"
+              },
+              "boolean": {
+                "lexical": "1",
+                "state": "value"
+              },
+              "date": {
+                "lexical": "20261116",
+                "state": "value"
+              },
+              "datetime": {
+                "lexical": "20261116123456789",
+                "state": "value"
+              },
+              "decimal": {
+                "lexical": "3.75",
+                "state": "value"
+              },
+              "double": {
+                "lexical": "2.25",
+                "state": "value"
+              },
+              "float": {
+                "lexical": "1.5",
+                "state": "value"
+              },
+              "int": {
+                "lexical": "12",
+                "state": "value"
+              },
+              "long": {
+                "lexical": "1234567890123",
+                "state": "value"
+              },
+              "string": {
+                "lexical": "s",
+                "state": "value"
+              },
+              "time": {
+                "lexical": "123456789",
+                "state": "value"
+              }
+            }
+          },
+          {
+            "type": "N",
+            "values": {
+              "bigdecimal": {
+                "state": "null"
+              },
+              "blob": {
+                "state": "null"
+              },
+              "boolean": {
+                "state": "null"
+              },
+              "date": {
+                "state": "null"
+              },
+              "datetime": {
+                "state": "null"
+              },
+              "decimal": {
+                "state": "null"
+              },
+              "double": {
+                "state": "null"
+              },
+              "float": {
+                "state": "null"
+              },
+              "int": {
+                "state": "null"
+              },
+              "long": {
+                "state": "null"
+              },
+              "string": {
+                "state": "null"
+              },
+              "time": {
+                "state": "null"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

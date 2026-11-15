@@ -1,0 +1,23 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-binary.empty.encode",
+  "operation": "encode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/binary.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [],
+    "parameters": []
+  }
+}

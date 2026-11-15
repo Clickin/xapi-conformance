@@ -1,0 +1,22 @@
+{
+  "expect": {
+    "error": {
+      "class": "malformed-input"
+    },
+    "kind": "error"
+  },
+  "id": "driver.nexacro-binary.empty.encode.decode",
+  "input": {
+    "data": "",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/binary.json",
+    "repository": "xapi-conformance"
+  }
+}

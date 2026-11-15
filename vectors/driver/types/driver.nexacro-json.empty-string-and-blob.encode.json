@@ -1,0 +1,68 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb2x1bW4iOlt7InNpemUiOiIzMiIsImlkIjoicyIsInR5cGUiOiJzdHJpbmcifSx7InNpemUiOiIyNTYiLCJpZCI6ImIiLCJ0eXBlIjoiYmxvYiJ9XX0sImlkIjoiZCIsIlJvd3MiOlt7ImIiOiIiLCJzIjoiIiwiX1Jvd1R5cGVfIjoiTiJ9XX1dLCJQYXJhbWV0ZXJzIjpbeyJpZCI6InMiLCJ0eXBlIjoic3RyaW5nIiwidmFsdWUiOiIifSx7ImlkIjoiYiIsInR5cGUiOiJibG9iIiwidmFsdWUiOiIifV0sInZlcnNpb24iOiIxLjAifQ==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-json.empty-string-and-blob.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "s",
+            "index": 0,
+            "type": "STRING"
+          },
+          {
+            "id": "b",
+            "index": 1,
+            "type": "BLOB"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "b": {
+                "lexical": "",
+                "state": "empty"
+              },
+              "s": {
+                "lexical": "",
+                "state": "empty"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "s",
+        "lexical": "",
+        "state": "empty",
+        "type": "STRING"
+      },
+      {
+        "id": "b",
+        "lexical": "",
+        "state": "empty",
+        "type": "BLOB"
+      }
+    ]
+  }
+}

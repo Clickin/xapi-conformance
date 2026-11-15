@@ -1,0 +1,90 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "string",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "int",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "long",
+          "state": "null",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "float",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "double",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "decimal",
+          "state": "null",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "bigdecimal",
+          "state": "null",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "boolean",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "date",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "time",
+          "state": "null",
+          "type": "TIME"
+        },
+        {
+          "id": "datetime",
+          "state": "null",
+          "type": "DATETIME"
+        },
+        {
+          "id": "blob",
+          "lexical": "",
+          "state": "empty",
+          "type": "BLOB"
+        }
+      ]
+    }
+  },
+  "id": "driver.xplatform-ssv.types-null-parameters.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HnN0cmluZzpzdHJpbmc9HmludDppbnQ9Hmxvbmc6YmlnZGVjaW1hbD0eZmxvYXQ6ZmxvYXQ9HmRvdWJsZTpmbG9hdD0eZGVjaW1hbDpiaWdkZWNpbWFsPR5iaWdkZWNpbWFsOmJpZ2RlY2ltYWw9HmJvb2xlYW46aW50PTAeZGF0ZTpkYXRlPR50aW1lOnRpbWU9HmRhdGV0aW1lOmRhdGV0aW1lPR5ibG9iOmJsb2I9Hg==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/gETiAAoAAFk/hATiAACAAAAAwABcwABAAcAAQABaQACAAIAAQABYgAEAAUAAQAWAAEAAwAVAAF4AAMAAAABACgAAzEuNQAAAAA=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-binary.types-explicit-size.encode",
+  "operation": "encode",
+  "profile": "nexacro-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "s",
+            "index": 0,
+            "size": "7",
+            "type": "STRING"
+          },
+          {
+            "id": "i",
+            "index": 1,
+            "size": "2",
+            "type": "INT"
+          },
+          {
+            "id": "b",
+            "index": 2,
+            "size": "5",
+            "type": "BIGDECIMAL"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "b": {
+                "lexical": "1.5",
+                "state": "value"
+              },
+              "i": {
+                "lexical": "1",
+                "state": "value"
+              },
+              "s": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

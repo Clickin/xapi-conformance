@@ -1,0 +1,78 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/gETiAA+AAFk/hATiAAqAAQAAmswAAMAAAABAAJrMQADAAAAAAACazIAAwAAAAAAAmszAAMAAAAAAAEAAWEAAQAgAAEACQABAAEAFQABeAAAAAA=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-binary.const-boolean.encode",
+  "operation": "encode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "BOOLEAN",
+            "value": {
+              "lexical": "yes",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "BOOLEAN",
+            "value": {
+              "lexical": "abc",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "BOOLEAN",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "BOOLEAN",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

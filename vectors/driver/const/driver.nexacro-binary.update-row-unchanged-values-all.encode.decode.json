@@ -1,0 +1,80 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "b",
+              "index": 1,
+              "type": "INT"
+            },
+            {
+              "id": "c",
+              "index": 2,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "a": {
+                    "lexical": "old",
+                    "state": "value"
+                  },
+                  "b": {
+                    "lexical": "5",
+                    "state": "value"
+                  },
+                  "c": {
+                    "state": "null"
+                  }
+                }
+              },
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "new",
+                  "state": "value"
+                },
+                "b": {
+                  "lexical": "5",
+                  "state": "value"
+                },
+                "c": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "id": "driver.nexacro-binary.update-row-unchanged-values-all.encode.decode",
+  "input": {
+    "data": "/gETiAAoAAFk/hATiAACAAAAAwABYQABACAAAQABYgACAAQAAQABYwABACAAAQAkAAQAAwAVAANuZXcAAwAAAAUAAAADABUAA29sZAADAAAABQAAAAAAAA==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

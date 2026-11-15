@@ -1,0 +1,65 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "s",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "i",
+              "index": 1,
+              "type": "INT"
+            },
+            {
+              "id": "b",
+              "index": 2,
+              "type": "BIGDECIMAL"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "1.5",
+                  "state": "value"
+                },
+                "i": {
+                  "lexical": "1",
+                  "state": "value"
+                },
+                "s": {
+                  "lexical": "x",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "id": "driver.xplatform-ssv.types-explicit-size.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fUm93VHlwZV8fczpzdHJpbmcoNykfaTppbnQoMikfYjpiaWdkZWNpbWFsKDUpHk4feB8xHzEuNR4=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

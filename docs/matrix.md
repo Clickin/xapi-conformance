@@ -56,7 +56,8 @@ profile별 기본값이 일치하지 않으므로 wire-level 값을 임의로 �
 | Dataset/row/column/depth/scalar/blob/payload limit | `security.*-limit` |
 | Profile별 PlatformZlib | `zlib.*` |
 | PlatformBinary 5000 framing/type/row/OrgRow/limit | `*.binary.*`, `internal/codec/binary_test.go` |
-| `saveType` 1–5, Dataset override, original/removed row | `policy.save-type-changed.encode`, saveType unit tests |
+| `saveType` 0–5, Dataset override, original/removed row | `driver.*.savetype-*`, `driver.*.row-types-order.decode`, `driver.*.update-row-unchanged-values-*`, saveType unit tests |
+| 원본 driver 출력 (escape, type, empty, scalar 변환, constant, binary framing) | `vectors/driver/**` (`docs/driver-capture.md`) |
 | Encode/roundtrip root powerset | `*-optional-root-*-encode`, `*-optional-root-*-roundtrip` |
 | XPLATFORM XML exact wire shape | `xplatform-xml.wire-shape.encode` |
 

@@ -1,0 +1,53 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzPgoJCTxQYXJhbWV0ZXIgaWQ9InAiIHR5cGU9InN0cmluZyI+YQliPC9QYXJhbWV0ZXI+Cgk8L1BhcmFtZXRlcnM+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQk8L0NvbHVtbkluZm8+CgkJPFJvd3M+CgkJCTxSb3c+CgkJCQk8Q29sIGlkPSJhIj5hCWI8L0NvbD4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.escape-tab.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/escape.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "a\tb",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p",
+        "lexical": "a\tb",
+        "state": "value",
+        "type": "STRING"
+      }
+    ]
+  }
+}

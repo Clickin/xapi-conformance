@@ -1,0 +1,54 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "\b\f\u2028",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "\b\f\u2028",
+          "state": "value",
+          "type": "STRING"
+        }
+      ]
+    }
+  },
+  "id": "driver.xplatform-ssv.escape-json-escapes.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HnA6c3RyaW5nPQgM4oCoHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpzdHJpbmcoMzIpHk4fCAzigKge",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/escape.json",
+    "repository": "xapi-conformance"
+  }
+}

@@ -220,13 +220,19 @@ Canonical 모델은 프로그래밍 언어의 원시 타입으로 변환하는 �
 - **Row 타입**: `N` (Normal), `I` (Inserted), `U` (Updated), `D` (Deleted), `O` (Original).
   - XML의 생략된 `Row@type`과 JSON의 생략된 `_RowType_`은 `N`으로 디코딩됩니다.
   - JSON/SSV의 `O` 레코드는 직전 인접 행의 `orgRow`로 매핑됩니다.
-- **`saveType`**: 루트 또는 Dataset 단위의 저장 정책입니다 (Dataset 값이 우선):
-  - `0`: 루트 정책 상속 또는 기본 보존
-  - `1`: all (전체 행)
-  - `2`: normal (일반 행)
-  - `3`: updated (수정된 행)
-  - `4`: deleted (삭제된 행)
-  - `5`: changed (수정/삭제/추가된 행)
+- **`saveType`**: 루트 또는 Dataset 단위의 저장 정책입니다. encode에 적용되며
+  Dataset 값, 루트 값, `2` 순서로 정합니다. 동작은 원본 driver 출력
+  (`vectors/driver/savetype`)이 기준입니다.
+  - `0`: 지정하지 않음. Dataset이면 루트 값을, 루트도 0이면 `2`를 씁니다.
+  - `1`: all. `D`가 아닌 행을 원래 타입으로 쓰고 `U` 행에는 원본 행을 붙입니다.
+  - `2`: normal. `D`가 아닌 행을 모두 일반 행(`N`)으로 쓰고 원본 행은 쓰지 않습니다.
+  - `3`: update. `I`/`U` 행만 씁니다.
+  - `4`: delete. `D` 행만 씁니다.
+  - `5`: update + delete. `I`/`U`/`D` 행을 씁니다.
+  - `D` 행은 `1`/`4`/`5`에서만, 항상 Dataset 끝에 씁니다.
+  - 원본 행이 없는 `U` 행은 빈 원본 행과 함께 씁니다.
+  - 원본 행이 있는 `U` 행에서 현재 값이 `missing`인 셀은 원본 값을 씁니다.
+  - decode는 `D` 행을 보존하되 Dataset 끝으로 옮깁니다.
 
 ### 지원 스칼라 타입
 

@@ -6,9 +6,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"strconv"
 	"strings"
-	"time"
 
 	"github.com/Clickin/xapi-conformance/internal/protocol"
 
@@ -64,7 +62,69 @@ func DecodeProfile(b []byte, profile string, options DecodeOptions) (protocol.Va
 }
 
 func validateDecodedValue(value protocol.Value, decodeErr error, strict bool) (protocol.Value, error) {
-	return value, decodeErr
+	if decodeErr != nil {
+		return value, decodeErr
+	}
+	return finishDecodedValue(value), nil
+}
+
+// finishDecodedValue applies what every driver decode shares. Deleted rows go
+// to the driver's removed-row list, so they come after all live rows whatever
+// their wire position. Every "empty" or "value" cell carries its lexical, even
+// when that lexical is "".
+func finishDecodedValue(value protocol.Value) protocol.Value {
+	mark := func(cell protocol.Cell) protocol.Cell {
+		if cell.State == "empty" || cell.State == "value" {
+			cell.MarkLexicalPresent()
+		}
+		return cell
+	}
+	markAll := func(values map[string]protocol.Cell) {
+		for id, cell := range values {
+			values[id] = mark(cell)
+		}
+	}
+	for i := range value.Parameters {
+		if value.Parameters[i].State == "empty" || value.Parameters[i].State == "value" {
+			value.Parameters[i].MarkLexicalPresent()
+		}
+	}
+	for di := range value.Datasets {
+		dataset := &value.Datasets[di]
+		for ci := range dataset.ConstColumns {
+			if dataset.ConstColumns[ci].Value.State != "" {
+				dataset.ConstColumns[ci].Value = mark(dataset.ConstColumns[ci].Value)
+			}
+		}
+		live := make([]protocol.Row, 0, len(dataset.Rows))
+		var removed []protocol.Row
+		for _, row := range dataset.Rows {
+			markAll(row.Values)
+			if row.OrgRow != nil {
+				markAll(row.OrgRow.Values)
+				// The drivers report a saved row holding only nulls as no
+				// saved row.
+				meaningful := false
+				for _, cell := range row.OrgRow.Values {
+					if cell.State != "null" && cell.State != "missing" {
+						meaningful = true
+					}
+				}
+				if !meaningful {
+					row.OrgRow = nil
+				}
+			}
+			if row.Type == "D" {
+				removed = append(removed, row)
+			} else {
+				live = append(live, row)
+			}
+		}
+		if len(dataset.Rows) > 0 {
+			dataset.Rows = append(live, removed...)
+		}
+	}
+	return value
 }
 
 func validateBlobLexicals(value protocol.Value) error {
@@ -204,9 +264,6 @@ func jsonValue(b []byte, strict bool) (protocol.Value, error) {
 				ds.Rows[len(ds.Rows)-1].MarkOrgRowPresent()
 				continue
 			}
-			if row.Type == "D" {
-				continue
-			}
 			for _, column := range ds.Columns {
 				row.Values[column.ID] = jsonCell(r[column.ID], column.Type)
 			}
@@ -241,9 +298,18 @@ func parseJSONParameters(raw json.RawMessage, out *[]protocol.Parameter, strict 
 		} else {
 			parameter.State = "null"
 		}
-		if isBlobType(parameter.Type) && (parameter.State == "value" || parameter.State == "empty") {
-			parameter.Lexical = base64.StdEncoding.EncodeToString([]byte(parameter.Lexical))
+		if parameter.Type == "UNDEFINED" && parameter.State != "null" {
+			// Variable.set(String) gives an untyped variable the string type;
+			// a null value is never set, so the type stays undefined.
+			parameter.Type = "STRING"
 		}
+		cell := protocol.Cell{State: parameter.State, Lexical: parameter.Lexical}
+		if isBlobType(parameter.Type) {
+			cell = textBlobCell(cell)
+		} else {
+			cell = normalizeXMLCell(cell, parameter.Type)
+		}
+		parameter.State, parameter.Lexical = cell.State, cell.Lexical
 		if parameter.State == "empty" {
 			parameter.MarkLexicalPresent()
 		}
@@ -283,6 +349,13 @@ func parseJSONColumnArray(raw json.RawMessage, dataset *protocol.Dataset, isCons
 			return fmt.Errorf("column id is required")
 		}
 		_ = json.Unmarshal(item["type"], &dataType)
+		if size, ok := item["size"]; ok {
+			// The driver reads size as a JSON string and rejects a number.
+			var text string
+			if json.Unmarshal(size, &text) != nil {
+				return fmt.Errorf("column %q size must be a string", id)
+			}
+		}
 		if dataType == "" {
 			if isConst {
 				dataType = inferJSONType(item["value"])
@@ -294,7 +367,9 @@ func parseJSONColumnArray(raw json.RawMessage, dataset *protocol.Dataset, isCons
 		if isConst {
 			index := len(dataset.Columns) + len(dataset.ConstColumns)
 			dataset.ConstColumns = append(dataset.ConstColumns, protocol.ConstColumn{ID: id, Type: dataType, Index: index})
-			constValues[id] = jsonCell(item["value"], dataType)
+			// The JSON reader stores the constant value string as is, unlike
+			// the XML reader, which converts it to the column type.
+			constValues[id] = rawCell(item["value"])
 		} else {
 			dataset.Columns = append(dataset.Columns, protocol.Column{ID: id, Type: dataType, Index: len(dataset.Columns)})
 		}
@@ -340,12 +415,11 @@ func rawCell(raw json.RawMessage) protocol.Cell {
 	}
 	return cell
 }
+
+// jsonCell converts a column value as the driver's typed setter does; BLOB
+// column text is base64-decoded (see normalizeXMLCell).
 func jsonCell(raw json.RawMessage, dataType string) protocol.Cell {
-	cell := rawCell(raw)
-	if isBlobType(dataType) && (cell.State == "value" || cell.State == "empty") {
-		cell.Lexical = base64.StdEncoding.EncodeToString([]byte(cell.Lexical))
-	}
-	return cell
+	return normalizeXMLCell(rawCell(raw), strings.ToUpper(dataType))
 }
 func rawState(raw json.RawMessage) (string, string) {
 	if string(raw) == "null" {
@@ -474,6 +548,9 @@ func xmlValue(b []byte, strict bool, profile string) (protocol.Value, error) {
 		}
 		dataType = normalizeDecodedParameterType(dataType)
 		cell := normalizeXMLCell(xmlCell(item.Text), dataType)
+		if isBlobType(dataType) {
+			cell = textBlobCell(xmlCell(item.Text))
+		}
 		parameter := protocol.Parameter{
 			ID: id, Type: dataType, State: cell.State, Lexical: cell.Lexical,
 		}
@@ -509,6 +586,11 @@ func xmlValue(b []byte, strict bool, profile string) (protocol.Value, error) {
 			index := xmlColumnIndex(syntax, datasetIndex, "ConstColumn", column.ID, i)
 			dataset.ConstColumns = append(dataset.ConstColumns, protocol.ConstColumn{ID: column.ID, Type: dataType, Index: index})
 			value := protocol.Cell{State: "null"}
+			// The drivers fail on a BLOB constant without a value attribute,
+			// which they write themselves for a null BLOB constant.
+			if column.Value == nil && strings.EqualFold(dataType, "BLOB") {
+				return protocol.Value{}, fmt.Errorf("BLOB ConstColumn %q has no value", column.ID)
+			}
 			if column.Value != nil {
 				value = normalizeXMLCell(xmlCell(*column.Value), strings.ToUpper(column.Type))
 			}
@@ -783,70 +865,36 @@ func normalizeXMLCell(cell protocol.Cell, dataType string) protocol.Cell {
 	}
 	value := cell.Lexical
 	switch strings.ToUpper(dataType) {
-	case "CHAR", "SHORT", "USHORT", "INT", "UINT", "LONG", "ULONG":
-		if _, err := strconv.ParseInt(value, 10, 64); err != nil {
-			value = "0"
-		}
+	case "CHAR", "SHORT", "USHORT", "INT", "UINT":
+		value = javaInteger(value, 32)
+	case "LONG", "ULONG":
+		value = javaInteger(value, 64)
 	case "FLOAT", "DOUBLE":
-		switch strings.ToLower(value) {
-		case "nan":
-			value = "NaN"
-		case "inf", "+inf", "infinity", "+infinity":
-			value = "Infinity"
-		case "-inf", "-infinity":
-			value = "-Infinity"
-		default:
-			number, err := strconv.ParseFloat(value, 64)
-			if err != nil || value == "" {
-				value = "0.0"
-			} else {
-				value = strconv.FormatFloat(number, 'g', -1, 64)
-				if !strings.ContainsAny(value, ".eE") {
-					value += ".0"
-				}
-			}
-		}
+		// The drivers read a float column as a Java double.
+		value = javaFloating(value, 64)
 	case "BIGDECIMAL":
-		if _, err := strconv.ParseFloat(value, 64); err != nil || value == "" ||
-			strings.EqualFold(value, "nan") || strings.Contains(strings.ToLower(value), "inf") {
+		decimal, ok := javaBigDecimal(value)
+		if !ok {
 			return protocol.Cell{State: "null"}
 		}
-		if strings.IndexByte(value, '.') >= 0 {
-			value = strings.TrimRight(value, "0")
-			if strings.HasSuffix(value, ".") {
-				value += "0"
-			}
-		}
-	case "DATE":
-		if len(value) != 8 {
+		value = decimal
+	case "DATE", "TIME", "DATETIME":
+		date, ok := javaDateLexical(value, dataType)
+		if !ok {
 			return protocol.Cell{State: "null"}
 		}
-		if _, err := strconv.ParseUint(value, 10, 64); err != nil {
-			return protocol.Cell{State: "null"}
-		}
-	case "TIME":
-		if len(value) == 6 {
-			value += "000"
-		}
-		if len(value) != 9 {
-			return protocol.Cell{State: "null"}
-		}
-		if _, err := strconv.ParseUint(value, 10, 64); err != nil {
-			return protocol.Cell{State: "null"}
-		}
-	case "DATETIME":
-		if len(value) == 14 {
-			value = normalizeLenientDateTime(value)
+		value = date
+	case "BOOLEAN":
+		if sourceBoolean(value) {
+			value = "true"
 		} else {
-			if len(value) != 17 {
-				return protocol.Cell{State: "null"}
-			}
-			if _, err := strconv.ParseUint(value, 10, 64); err != nil {
-				return protocol.Cell{State: "null"}
-			}
+			value = "false"
 		}
 	case "BLOB", "FILE":
-		if _, err := base64.StdEncoding.DecodeString(value); err != nil || value == "" {
+		if value == "" {
+			return protocol.Cell{State: "empty"}
+		}
+		if _, err := base64.StdEncoding.DecodeString(value); err != nil {
 			return protocol.Cell{State: "null"}
 		}
 	}
@@ -858,6 +906,19 @@ func normalizeXMLCell(cell protocol.Cell, dataType string) protocol.Cell {
 	return cell
 }
 
+// textBlobCell is how the drivers read a BLOB parameter in the text formats:
+// Variable.set(String) converts the text to its bytes without decoding base64,
+// so the parameter holds the bytes of the wire text itself.
+func textBlobCell(cell protocol.Cell) protocol.Cell {
+	if cell.State != "value" && cell.State != "empty" {
+		return cell
+	}
+	if cell.Lexical == "" {
+		return protocol.Cell{State: "empty"}
+	}
+	return protocol.Cell{State: "value", Lexical: base64.StdEncoding.EncodeToString([]byte(cell.Lexical))}
+}
+
 func xmlCell(s string) protocol.Cell {
 	cell := protocol.Cell{State: "value", Lexical: s}
 	if s == "" {
@@ -865,29 +926,6 @@ func xmlCell(s string) protocol.Cell {
 		cell.MarkLexicalPresent()
 	}
 	return cell
-}
-
-func normalizeLenientDateTime(value string) string {
-	component := func(offset, length int) int {
-		number := 0
-		for i := offset; i < offset+length; i++ {
-			number = number*10 + int(value[i]) - int('0')
-		}
-		return number
-	}
-	year := component(0, 4)
-	cycles := (year - 2000) / 400
-	if year < 2000 && (year-2000)%400 != 0 {
-		cycles--
-	}
-	baseYear := year - cycles*400
-	normalized := time.Date(
-		baseYear, time.Month(component(4, 2)), component(6, 2),
-		component(8, 2), component(10, 2), component(12, 2), 0, time.UTC,
-	)
-	return fmt.Sprintf("%04d%02d%02d%02d%02d%02d000",
-		normalized.Year()+cycles*400, normalized.Month(), normalized.Day(),
-		normalized.Hour(), normalized.Minute(), normalized.Second())
 }
 
 // xmlDecodeOptions selects the decoder profile for wire documents.

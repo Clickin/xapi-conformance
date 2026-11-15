@@ -1,0 +1,128 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb2x1bW4iOlt7InNpemUiOiI2IiwiaWQiOiJjMCIsInR5cGUiOiJkYXRlIn0seyJzaXplIjoiNiIsImlkIjoiYzEiLCJ0eXBlIjoiZGF0ZSJ9LHsic2l6ZSI6IjYiLCJpZCI6ImMyIiwidHlwZSI6ImRhdGUifSx7InNpemUiOiI2IiwiaWQiOiJjMyIsInR5cGUiOiJkYXRlIn0seyJzaXplIjoiNiIsImlkIjoiYzQiLCJ0eXBlIjoiZGF0ZSJ9LHsic2l6ZSI6IjYiLCJpZCI6ImM1IiwidHlwZSI6ImRhdGUifV19LCJpZCI6ImQiLCJSb3dzIjpbeyJjMyI6IjU0NjEyMDMyOCIsIl9Sb3dUeXBlXyI6Ik4iLCJjMCI6IjIwMjYxMTE2IiwiYzIiOiIyMDI3MDIwOSJ9XX1dLCJQYXJhbWV0ZXJzIjpbeyJpZCI6InAwIiwidHlwZSI6ImRhdGUiLCJ2YWx1ZSI6IjIwMjYxMTE2In0seyJpZCI6InAxIiwidHlwZSI6ImRhdGUifSx7ImlkIjoicDIiLCJ0eXBlIjoiZGF0ZSIsInZhbHVlIjoiMjAyNzAyMDkifSx7ImlkIjoicDMiLCJ0eXBlIjoiZGF0ZSIsInZhbHVlIjoiNTQ2MTIwMzI4In0seyJpZCI6InA0IiwidHlwZSI6ImRhdGUifSx7ImlkIjoicDUiLCJ0eXBlIjoiZGF0ZSJ9XSwidmVyc2lvbiI6IjEuMCJ9",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-json.scalar-date.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "DATE"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "DATE"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "DATE"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "DATE"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "DATE"
+          },
+          {
+            "id": "c5",
+            "index": 5,
+            "type": "DATE"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "20261116",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "2026111",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "20261340",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "abcdefgh",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "2026-11-16",
+                "state": "value"
+              },
+              "c5": {
+                "lexical": "202611160000",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "20261116",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p1",
+        "lexical": "2026111",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p2",
+        "lexical": "20261340",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p3",
+        "lexical": "abcdefgh",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p4",
+        "lexical": "2026-11-16",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p5",
+        "lexical": "202611160000",
+        "state": "value",
+        "type": "DATE"
+      }
+    ]
+  }
+}

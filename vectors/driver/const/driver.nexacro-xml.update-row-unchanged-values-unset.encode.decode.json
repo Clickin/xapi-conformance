@@ -1,0 +1,70 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "b",
+              "index": 1,
+              "type": "INT"
+            },
+            {
+              "id": "c",
+              "index": 2,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "new",
+                  "state": "value"
+                },
+                "b": {
+                  "lexical": "5",
+                  "state": "value"
+                },
+                "c": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "id": "driver.nexacro-xml.update-row-unchanged-values-unset.encode.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzLz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbHVtbiBpZD0iYSIgdHlwZT0ic3RyaW5nIiBzaXplPSIzMiIvPgoJCQk8Q29sdW1uIGlkPSJiIiB0eXBlPSJpbnQiIHNpemU9IjQiLz4KCQkJPENvbHVtbiBpZD0iYyIgdHlwZT0ic3RyaW5nIiBzaXplPSIzMiIvPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9ImEiPm5ldzwvQ29sPgoJCQkJPENvbCBpZD0iYiI+NTwvQ29sPgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

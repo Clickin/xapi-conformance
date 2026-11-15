@@ -1,0 +1,118 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "TIME"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "TIME"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "TIME"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "TIME"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "TIME"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "123456789",
+                  "state": "value"
+                },
+                "c1": {
+                  "lexical": "123456000",
+                  "state": "value"
+                },
+                "c2": {
+                  "state": "null"
+                },
+                "c3": {
+                  "lexical": "010100000",
+                  "state": "value"
+                },
+                "c4": {
+                  "lexical": "000000000",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "123456789",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p1",
+          "lexical": "123456000",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p2",
+          "state": "null",
+          "type": "TIME"
+        },
+        {
+          "id": "p3",
+          "lexical": "010100000",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p4",
+          "lexical": "000000000",
+          "state": "value",
+          "type": "TIME"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "5000"
+        }
+      }
+    }
+  },
+  "id": "driver.xplatform-xml.scalar-time.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0icDAiIHR5cGU9InRpbWUiPjEyMzQ1Njc4OTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InAxIiB0eXBlPSJ0aW1lIj4xMjM0NTY8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMiIgdHlwZT0idGltZSI+MTIzNDwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InAzIiB0eXBlPSJ0aW1lIj4yNDYwNjAwMDA8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwNCIgdHlwZT0idGltZSI+MTI6MzQ6NTY8L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImMwIiB0eXBlPSJ0aW1lIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzEiIHR5cGU9InRpbWUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjMiIgdHlwZT0idGltZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImMzIiB0eXBlPSJ0aW1lIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzQiIHR5cGU9InRpbWUiIHNpemU9IjgiLz48L0NvbHVtbkluZm8+PFJvd3M+PFJvdz48Q29sIGlkPSJjMCI+MTIzNDU2Nzg5PC9Db2w+PENvbCBpZD0iYzEiPjEyMzQ1NjwvQ29sPjxDb2wgaWQ9ImMyIj4xMjM0PC9Db2w+PENvbCBpZD0iYzMiPjI0NjA2MDAwMDwvQ29sPjxDb2wgaWQ9ImM0Ij4xMjozNDo1NjwvQ29sPjwvUm93PjwvUm93cz48L0RhdGFzZXQ+PC9Sb290Pg==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

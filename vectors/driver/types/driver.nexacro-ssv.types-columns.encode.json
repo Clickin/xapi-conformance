@@ -1,0 +1,186 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fUm93VHlwZV8fc3RyaW5nOnN0cmluZygzMikfaW50OmludCg0KR9sb25nOmJpZ2RlY2ltYWwoOCkfZmxvYXQ6ZmxvYXQoNCkfZG91YmxlOmZsb2F0KDgpH2RlY2ltYWw6YmlnZGVjaW1hbCgxNikfYmlnZGVjaW1hbDpiaWdkZWNpbWFsKDE2KR9ib29sZWFuOmludCgyKR9kYXRlOmRhdGUoNikfdGltZTp0aW1lKDkpH2RhdGV0aW1lOmRhdGV0aW1lKDE3KR9ibG9iOmJsb2IoMjU2KR5OH3MfMTIfMTIzNDU2Nzg5MDEyMx8xLjUfMi4yNR8zLjc1HzEyMy40NR8xHzIwMjYxMTE2HzEyMzQ1Njc4OR8yMDI2MTExNjEyMzQ1Njc4OR9BQUVDHk4fAx8DHwMfAx8DHwMfAx8wHwMfAx8DHwMeHg==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-ssv.types-columns.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "string",
+            "index": 0,
+            "type": "STRING"
+          },
+          {
+            "id": "int",
+            "index": 1,
+            "type": "INT"
+          },
+          {
+            "id": "long",
+            "index": 2,
+            "type": "LONG"
+          },
+          {
+            "id": "float",
+            "index": 3,
+            "type": "FLOAT"
+          },
+          {
+            "id": "double",
+            "index": 4,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "decimal",
+            "index": 5,
+            "type": "DECIMAL"
+          },
+          {
+            "id": "bigdecimal",
+            "index": 6,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "boolean",
+            "index": 7,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "date",
+            "index": 8,
+            "type": "DATE"
+          },
+          {
+            "id": "time",
+            "index": 9,
+            "type": "TIME"
+          },
+          {
+            "id": "datetime",
+            "index": 10,
+            "type": "DATETIME"
+          },
+          {
+            "id": "blob",
+            "index": 11,
+            "type": "BLOB"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "bigdecimal": {
+                "lexical": "123.45",
+                "state": "value"
+              },
+              "blob": {
+                "lexical": "AAEC",
+                "state": "value"
+              },
+              "boolean": {
+                "lexical": "1",
+                "state": "value"
+              },
+              "date": {
+                "lexical": "20261116",
+                "state": "value"
+              },
+              "datetime": {
+                "lexical": "20261116123456789",
+                "state": "value"
+              },
+              "decimal": {
+                "lexical": "3.75",
+                "state": "value"
+              },
+              "double": {
+                "lexical": "2.25",
+                "state": "value"
+              },
+              "float": {
+                "lexical": "1.5",
+                "state": "value"
+              },
+              "int": {
+                "lexical": "12",
+                "state": "value"
+              },
+              "long": {
+                "lexical": "1234567890123",
+                "state": "value"
+              },
+              "string": {
+                "lexical": "s",
+                "state": "value"
+              },
+              "time": {
+                "lexical": "123456789",
+                "state": "value"
+              }
+            }
+          },
+          {
+            "type": "N",
+            "values": {
+              "bigdecimal": {
+                "state": "null"
+              },
+              "blob": {
+                "state": "null"
+              },
+              "boolean": {
+                "state": "null"
+              },
+              "date": {
+                "state": "null"
+              },
+              "datetime": {
+                "state": "null"
+              },
+              "decimal": {
+                "state": "null"
+              },
+              "double": {
+                "state": "null"
+              },
+              "float": {
+                "state": "null"
+              },
+              "int": {
+                "state": "null"
+              },
+              "long": {
+                "state": "null"
+              },
+              "string": {
+                "state": "null"
+              },
+              "time": {
+                "state": "null"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

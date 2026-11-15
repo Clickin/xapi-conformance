@@ -1,0 +1,53 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HnA6c3RyaW5nPWEJYh5EYXRhc2V0OmQeX1Jvd1R5cGVfH2E6c3RyaW5nKDMyKR5OH2EJYh4e",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-ssv.escape-tab.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/escape.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "a\tb",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p",
+        "lexical": "a\tb",
+        "state": "value",
+        "type": "STRING"
+      }
+    ]
+  }
+}

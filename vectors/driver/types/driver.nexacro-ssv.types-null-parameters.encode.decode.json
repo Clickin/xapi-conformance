@@ -1,0 +1,89 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "string",
+          "state": "null",
+          "type": "STRING"
+        },
+        {
+          "id": "int",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "long",
+          "state": "null",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "float",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "double",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "decimal",
+          "state": "null",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "bigdecimal",
+          "state": "null",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "boolean",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "date",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "time",
+          "state": "null",
+          "type": "TIME"
+        },
+        {
+          "id": "datetime",
+          "state": "null",
+          "type": "DATETIME"
+        },
+        {
+          "id": "blob",
+          "lexical": "",
+          "state": "empty",
+          "type": "BLOB"
+        }
+      ]
+    }
+  },
+  "id": "driver.nexacro-ssv.types-null-parameters.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HnN0cmluZzpzdHJpbmc9Ax5pbnQ6aW50PQMebG9uZzpiaWdkZWNpbWFsPQMeZmxvYXQ6ZmxvYXQ9Ax5kb3VibGU6ZmxvYXQ9Ax5kZWNpbWFsOmJpZ2RlY2ltYWw9Ax5iaWdkZWNpbWFsOmJpZ2RlY2ltYWw9Ax5ib29sZWFuOmludD0wHmRhdGU6ZGF0ZT0DHnRpbWU6dGltZT0DHmRhdGV0aW1lOmRhdGV0aW1lPQMeYmxvYjpibG9iPR4e",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

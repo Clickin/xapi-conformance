@@ -1,0 +1,78 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2swOmJpZ2RlY2ltYWwoMTYpPTAwMS41MB9rMTpiaWdkZWNpbWFsKDE2KT1hYmMfazI6YmlnZGVjaW1hbCgxNik9H2szOmJpZ2RlY2ltYWwoMTYpPR5fUm93VHlwZV8fYTpzdHJpbmcoMzIpHk4feB4e",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-ssv.const-bigdecimal.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "BIGDECIMAL",
+            "value": {
+              "lexical": "001.50",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "BIGDECIMAL",
+            "value": {
+              "lexical": "abc",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "BIGDECIMAL",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "BIGDECIMAL",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

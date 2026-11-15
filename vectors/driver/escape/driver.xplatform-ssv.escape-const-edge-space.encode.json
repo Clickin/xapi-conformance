@@ -1,0 +1,55 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2s6c3RyaW5nKDMyKT0gYSBiIB5fUm93VHlwZV8fYTpzdHJpbmcoMzIpHk4feB4=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-ssv.escape-const-edge-space.encode",
+  "operation": "encode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/escape.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k",
+            "type": "STRING",
+            "value": {
+              "lexical": " a b ",
+              "state": "value"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

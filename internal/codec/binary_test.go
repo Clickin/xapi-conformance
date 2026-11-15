@@ -63,9 +63,9 @@ func TestPlatformBinaryEmptyDocumentHasNoFraming(t *testing.T) {
 		if len(wire) != 0 {
 			t.Fatalf("%s empty wire = %x", profile, wire)
 		}
-		decoded, err := DecodeProfile(wire, profile, DecodeOptions{Strict: true})
-		if err != nil || len(decoded.Parameters) != 0 || len(decoded.Datasets) != 0 {
-			t.Fatalf("%s empty decode = %+v, %v", profile, decoded, err)
+		// The drivers reject an empty PlatformBinary payload on decode.
+		if decoded, err := DecodeProfile(wire, profile, DecodeOptions{Strict: true}); err == nil {
+			t.Fatalf("%s empty decode accepted: %+v", profile, decoded)
 		}
 	}
 }

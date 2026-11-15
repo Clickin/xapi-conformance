@@ -1,0 +1,323 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzPgoJCTxQYXJhbWV0ZXIgaWQ9InAwIiB0eXBlPSJmbG9hdCI+MS4yPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDEiIHR5cGU9ImZsb2F0Ij4xLjU8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwMiIgdHlwZT0iZmxvYXQiPi0wLjA8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwMyIgdHlwZT0iZmxvYXQiPjEwMDAuMDwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InA0IiB0eXBlPSJmbG9hdCI+MC4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDUiIHR5cGU9ImZsb2F0Ij4yLjA8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwNiIgdHlwZT0iZmxvYXQiPjEwLjA8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwNyIgdHlwZT0iZmxvYXQiPi03LjA8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwOCIgdHlwZT0iZmxvYXQiPjUuMDwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InA5IiB0eXBlPSJmbG9hdCI+Mi4xNDc0ODM2NDhFOTwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAxMCIgdHlwZT0iZmxvYXQiPjAuMDwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAxMSIgdHlwZT0iZmxvYXQiPjEyMzQuMDwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAxMiIgdHlwZT0iZmxvYXQiPk5hTjwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAxMyIgdHlwZT0iZmxvYXQiPkluZmluaXR5PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDE0IiB0eXBlPSJmbG9hdCI+LTAuMDAxNTwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAxNSIgdHlwZT0iZmxvYXQiPjEuMEU3PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDE2IiB0eXBlPSJmbG9hdCI+MS4wRS00PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDE3IiB0eXBlPSJmbG9hdCI+MS4yMzQ1Njc4OTEyM0U4PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDE4IiB0eXBlPSJmbG9hdCI+OS4yMjMzNzIwMzY4NTQ3NzZFMTg8L1BhcmFtZXRlcj4KCTwvUGFyYW1ldGVycz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbHVtbiBpZD0iYzAiIHR5cGU9ImZsb2F0IiBzaXplPSI4Ii8+CgkJCTxDb2x1bW4gaWQ9ImMxIiB0eXBlPSJmbG9hdCIgc2l6ZT0iOCIvPgoJCQk8Q29sdW1uIGlkPSJjMiIgdHlwZT0iZmxvYXQiIHNpemU9IjgiLz4KCQkJPENvbHVtbiBpZD0iYzMiIHR5cGU9ImZsb2F0IiBzaXplPSI4Ii8+CgkJCTxDb2x1bW4gaWQ9ImM0IiB0eXBlPSJmbG9hdCIgc2l6ZT0iOCIvPgoJCQk8Q29sdW1uIGlkPSJjNSIgdHlwZT0iZmxvYXQiIHNpemU9IjgiLz4KCQkJPENvbHVtbiBpZD0iYzYiIHR5cGU9ImZsb2F0IiBzaXplPSI4Ii8+CgkJCTxDb2x1bW4gaWQ9ImM3IiB0eXBlPSJmbG9hdCIgc2l6ZT0iOCIvPgoJCQk8Q29sdW1uIGlkPSJjOCIgdHlwZT0iZmxvYXQiIHNpemU9IjgiLz4KCQkJPENvbHVtbiBpZD0iYzkiIHR5cGU9ImZsb2F0IiBzaXplPSI4Ii8+CgkJCTxDb2x1bW4gaWQ9ImMxMCIgdHlwZT0iZmxvYXQiIHNpemU9IjgiLz4KCQkJPENvbHVtbiBpZD0iYzExIiB0eXBlPSJmbG9hdCIgc2l6ZT0iOCIvPgoJCQk8Q29sdW1uIGlkPSJjMTIiIHR5cGU9ImZsb2F0IiBzaXplPSI4Ii8+CgkJCTxDb2x1bW4gaWQ9ImMxMyIgdHlwZT0iZmxvYXQiIHNpemU9IjgiLz4KCQkJPENvbHVtbiBpZD0iYzE0IiB0eXBlPSJmbG9hdCIgc2l6ZT0iOCIvPgoJCQk8Q29sdW1uIGlkPSJjMTUiIHR5cGU9ImZsb2F0IiBzaXplPSI4Ii8+CgkJCTxDb2x1bW4gaWQ9ImMxNiIgdHlwZT0iZmxvYXQiIHNpemU9IjgiLz4KCQkJPENvbHVtbiBpZD0iYzE3IiB0eXBlPSJmbG9hdCIgc2l6ZT0iOCIvPgoJCQk8Q29sdW1uIGlkPSJjMTgiIHR5cGU9ImZsb2F0IiBzaXplPSI4Ii8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCQk8Um93PgoJCQkJPENvbCBpZD0iYzAiPjEuMjwvQ29sPgoJCQkJPENvbCBpZD0iYzEiPjEuNTwvQ29sPgoJCQkJPENvbCBpZD0iYzIiPi0wLjA8L0NvbD4KCQkJCTxDb2wgaWQ9ImMzIj4xMDAwLjA8L0NvbD4KCQkJCTxDb2wgaWQ9ImM0Ij4wLjA8L0NvbD4KCQkJCTxDb2wgaWQ9ImM1Ij4yLjA8L0NvbD4KCQkJCTxDb2wgaWQ9ImM2Ij4xMC4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjNyI+LTcuMDwvQ29sPgoJCQkJPENvbCBpZD0iYzgiPjUuMDwvQ29sPgoJCQkJPENvbCBpZD0iYzkiPjIuMTQ3NDgzNjQ4RTk8L0NvbD4KCQkJCTxDb2wgaWQ9ImMxMCI+MC4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjMTEiPjEyMzQuMDwvQ29sPgoJCQkJPENvbCBpZD0iYzEyIj5OYU48L0NvbD4KCQkJCTxDb2wgaWQ9ImMxMyI+SW5maW5pdHk8L0NvbD4KCQkJCTxDb2wgaWQ9ImMxNCI+LTAuMDAxNTwvQ29sPgoJCQkJPENvbCBpZD0iYzE1Ij4xLjBFNzwvQ29sPgoJCQkJPENvbCBpZD0iYzE2Ij4xLjBFLTQ8L0NvbD4KCQkJCTxDb2wgaWQ9ImMxNyI+MS4yMzQ1Njc4OTEyM0U4PC9Db2w+CgkJCQk8Q29sIGlkPSJjMTgiPjkuMjIzMzcyMDM2ODU0Nzc2RTE4PC9Db2w+CgkJCTwvUm93PgoJCTwvUm93cz4KCTwvRGF0YXNldD4KPC9Sb290Pgo=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.scalar-double.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c5",
+            "index": 5,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c6",
+            "index": 6,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c7",
+            "index": 7,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c8",
+            "index": 8,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c9",
+            "index": 9,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c10",
+            "index": 10,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c11",
+            "index": 11,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c12",
+            "index": 12,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c13",
+            "index": 13,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c14",
+            "index": 14,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c15",
+            "index": 15,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c16",
+            "index": 16,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c17",
+            "index": 17,
+            "type": "DOUBLE"
+          },
+          {
+            "id": "c18",
+            "index": 18,
+            "type": "DOUBLE"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "001.20",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "1.50",
+                "state": "value"
+              },
+              "c10": {
+                "lexical": "0x1F",
+                "state": "value"
+              },
+              "c11": {
+                "lexical": "1,234",
+                "state": "value"
+              },
+              "c12": {
+                "lexical": "NaN",
+                "state": "value"
+              },
+              "c13": {
+                "lexical": "Infinity",
+                "state": "value"
+              },
+              "c14": {
+                "lexical": "-1.5e-3",
+                "state": "value"
+              },
+              "c15": {
+                "lexical": "1E7",
+                "state": "value"
+              },
+              "c16": {
+                "lexical": "0.0001",
+                "state": "value"
+              },
+              "c17": {
+                "lexical": "123456789.123",
+                "state": "value"
+              },
+              "c18": {
+                "lexical": "9223372036854775808",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "-0.0",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "1e3",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "abc",
+                "state": "value"
+              },
+              "c5": {
+                "lexical": " 2 ",
+                "state": "value"
+              },
+              "c6": {
+                "lexical": "10",
+                "state": "value"
+              },
+              "c7": {
+                "lexical": "-7",
+                "state": "value"
+              },
+              "c8": {
+                "lexical": "+5",
+                "state": "value"
+              },
+              "c9": {
+                "lexical": "2147483648",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "001.20",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p1",
+        "lexical": "1.50",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p2",
+        "lexical": "-0.0",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p3",
+        "lexical": "1e3",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p4",
+        "lexical": "abc",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p5",
+        "lexical": " 2 ",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p6",
+        "lexical": "10",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p7",
+        "lexical": "-7",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p8",
+        "lexical": "+5",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p9",
+        "lexical": "2147483648",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p10",
+        "lexical": "0x1F",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p11",
+        "lexical": "1,234",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p12",
+        "lexical": "NaN",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p13",
+        "lexical": "Infinity",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p14",
+        "lexical": "-1.5e-3",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p15",
+        "lexical": "1E7",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p16",
+        "lexical": "0.0001",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p17",
+        "lexical": "123456789.123",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "p18",
+        "lexical": "9223372036854775808",
+        "state": "value",
+        "type": "DOUBLE"
+      }
+    ]
+  }
+}

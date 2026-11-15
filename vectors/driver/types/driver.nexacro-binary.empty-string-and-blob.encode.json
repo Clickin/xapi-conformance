@@ -1,0 +1,68 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/hATiAAQAAIAAXMAFQAAAAFiABoAAP4BE4gAHwABZP4QE4gAAgAAAAIAAXMAAQAgAAEAAWIACAEAAAEADAABAAIAFQAAABoAAAAAAAA=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-binary.empty-string-and-blob.encode",
+  "operation": "encode",
+  "profile": "nexacro-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "s",
+            "index": 0,
+            "type": "STRING"
+          },
+          {
+            "id": "b",
+            "index": 1,
+            "type": "BLOB"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "b": {
+                "lexical": "",
+                "state": "empty"
+              },
+              "s": {
+                "lexical": "",
+                "state": "empty"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "s",
+        "lexical": "",
+        "state": "empty",
+        "type": "STRING"
+      },
+      {
+        "id": "b",
+        "lexical": "",
+        "state": "empty",
+        "type": "BLOB"
+      }
+    ]
+  }
+}

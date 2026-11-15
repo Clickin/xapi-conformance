@@ -1,0 +1,53 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycz4KCQk8UGFyYW1ldGVyIGlkPSJwIiB0eXBlPSJzdHJpbmciPiZhbXA7YW1wOyZhbXA7bHQ7PC9QYXJhbWV0ZXI+Cgk8L1BhcmFtZXRlcnM+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQk8L0NvbHVtbkluZm8+CgkJPFJvd3M+CgkJCTxSb3c+CgkJCQk8Q29sIGlkPSJhIj4mYW1wO2FtcDsmYW1wO2x0OzwvQ29sPgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-xml.escape-entity-text.encode",
+  "operation": "encode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/escape.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "\u0026amp;\u0026lt;",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p",
+        "lexical": "\u0026amp;\u0026lt;",
+        "state": "value",
+        "type": "STRING"
+      }
+    ]
+  }
+}

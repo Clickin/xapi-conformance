@@ -1,0 +1,113 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/hATiABAAAUAAnAwAClBhZlkqAAAAAACcDEAKUGFmUwAAAAAAAJwMgAAAAJwMwApQUvscAAAAAAAAnA0ACkAAAAAAAAAAP4BE4gAPwABZP4QE4gAAgAAAAUAAmMwAAYACQABAAJjMQAGAAkAAQACYzIABgAJAAEAAmMzAAYACQABAAJjNAAGAAkAAQAuAAEABQApQYWZZKgAAAAAKUGFmUwAAAAAAAAAKUFL7HAAAAAAACkAAAAAAAAAAAAAAAA=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-binary.scalar-time.encode",
+  "operation": "encode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "TIME"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "TIME"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "TIME"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "TIME"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "TIME"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "123456789",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "123456",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "1234",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "246060000",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "12:34:56",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "123456789",
+        "state": "value",
+        "type": "TIME"
+      },
+      {
+        "id": "p1",
+        "lexical": "123456",
+        "state": "value",
+        "type": "TIME"
+      },
+      {
+        "id": "p2",
+        "lexical": "1234",
+        "state": "value",
+        "type": "TIME"
+      },
+      {
+        "id": "p3",
+        "lexical": "246060000",
+        "state": "value",
+        "type": "TIME"
+      },
+      {
+        "id": "p4",
+        "lexical": "12:34:56",
+        "state": "value",
+        "type": "TIME"
+      }
+    ]
+  }
+}

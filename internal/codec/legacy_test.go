@@ -15,16 +15,18 @@ func TestSaveTypeFiltersCanonicalRows(t *testing.T) {
 		{Type: "U", OrgRow: &protocol.Row{Type: "O", Values: map[string]protocol.Cell{"a": {State: "value", Lexical: "old"}}}, Values: map[string]protocol.Cell{"a": {State: "value", Lexical: "updated"}}},
 		{Type: "D", Values: map[string]protocol.Cell{"a": {State: "value", Lexical: "deleted"}}},
 	}
+	// Unset saveType means NORMAL (2): live rows written as plain rows.
+	// D rows are written last and only for ALL, DELETE and UPDATE_DELETE.
 	cases := []struct {
 		saveType int
 		want     []string
 	}{
-		{0, []string{"normal", "inserted", "updated", "deleted"}},
-		{1, []string{"normal", "inserted", "updated", "deleted"}},
-		{2, []string{"normal", "inserted", "updated"}},
-		{3, []string{"inserted", "updated"}},
-		{4, []string{"deleted"}},
-		{5, []string{"inserted", "updated", "deleted"}},
+		{0, []string{"N:normal", "N:inserted", "N:updated"}},
+		{1, []string{"N:normal", "I:inserted", "U:updated", "D:deleted"}},
+		{2, []string{"N:normal", "N:inserted", "N:updated"}},
+		{3, []string{"I:inserted", "U:updated"}},
+		{4, []string{"D:deleted"}},
+		{5, []string{"I:inserted", "U:updated", "D:deleted"}},
 	}
 	for _, tc := range cases {
 		value := protocol.Value{
@@ -47,11 +49,8 @@ func TestSaveTypeFiltersCanonicalRows(t *testing.T) {
 			t.Fatalf("saveType %d row count = %d, want %d; wire=%s", tc.saveType, len(rows), len(tc.want), wire)
 		}
 		for i, row := range rows {
-			if row.Type != "N" {
-				t.Fatalf("saveType %d row %d type = %q, want N; wire=%s", tc.saveType, i, row.Type, wire)
-			}
-			if got := row.Values["a"].Lexical; got != tc.want[i] {
-				t.Fatalf("saveType %d row %d value = %q, want %q; wire=%s", tc.saveType, i, got, tc.want[i], wire)
+			if got := row.Type + ":" + row.Values["a"].Lexical; got != tc.want[i] {
+				t.Fatalf("saveType %d row %d = %q, want %q; wire=%s", tc.saveType, i, got, tc.want[i], wire)
 			}
 		}
 	}

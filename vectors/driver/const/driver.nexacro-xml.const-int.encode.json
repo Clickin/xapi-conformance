@@ -1,0 +1,86 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzLz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMCIgdHlwZT0iaW50IiBzaXplPSI0IiB2YWx1ZT0iMSwwMDAiLz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMSIgdHlwZT0iaW50IiBzaXplPSI0IiB2YWx1ZT0iYWJjIi8+CgkJCTxDb25zdENvbHVtbiBpZD0iazIiIHR5cGU9ImludCIgc2l6ZT0iNCIgdmFsdWU9IjEuOSIvPgoJCQk8Q29uc3RDb2x1bW4gaWQ9ImszIiB0eXBlPSJpbnQiIHNpemU9IjQiIHZhbHVlPSIiLz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrNCIgdHlwZT0iaW50IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQk8L0NvbHVtbkluZm8+CgkJPFJvd3M+CgkJCTxSb3c+CgkJCQk8Q29sIGlkPSJhIj54PC9Db2w+CgkJCTwvUm93PgoJCTwvUm93cz4KCTwvRGF0YXNldD4KPC9Sb290Pgo=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.const-int.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "INT",
+            "value": {
+              "lexical": "1,000",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "INT",
+            "value": {
+              "lexical": "abc",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "INT",
+            "value": {
+              "lexical": "1.9",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "INT",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k4",
+            "type": "INT",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

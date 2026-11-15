@@ -1,0 +1,126 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "DATE"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "DATE"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "DATE"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "DATE"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "DATE"
+            },
+            {
+              "id": "c5",
+              "index": 5,
+              "type": "DATE"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "20261116",
+                  "state": "value"
+                },
+                "c1": {
+                  "state": "null"
+                },
+                "c2": {
+                  "lexical": "20270209",
+                  "state": "value"
+                },
+                "c3": {
+                  "lexical": "546120328",
+                  "state": "value"
+                },
+                "c4": {
+                  "state": "null"
+                },
+                "c5": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "20261116",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "p1",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "p2",
+          "lexical": "20270209",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "p3",
+          "lexical": "546120328",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "p4",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "p5",
+          "state": "null",
+          "type": "DATE"
+        }
+      ],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.scalar-date.decode",
+  "input": {
+    "data": "eyJ2ZXJzaW9uIjogIjEuMCIsICJQYXJhbWV0ZXJzIjogW3siaWQiOiAicDAiLCAidHlwZSI6ICJkYXRlIiwgInZhbHVlIjogIjIwMjYxMTE2In0sIHsiaWQiOiAicDEiLCAidHlwZSI6ICJkYXRlIiwgInZhbHVlIjogIjIwMjYxMTEifSwgeyJpZCI6ICJwMiIsICJ0eXBlIjogImRhdGUiLCAidmFsdWUiOiAiMjAyNjEzNDAifSwgeyJpZCI6ICJwMyIsICJ0eXBlIjogImRhdGUiLCAidmFsdWUiOiAiYWJjZGVmZ2gifSwgeyJpZCI6ICJwNCIsICJ0eXBlIjogImRhdGUiLCAidmFsdWUiOiAiMjAyNi0xMS0xNiJ9LCB7ImlkIjogInA1IiwgInR5cGUiOiAiZGF0ZSIsICJ2YWx1ZSI6ICIyMDI2MTExNjAwMDAifV0sICJEYXRhc2V0cyI6IFt7ImlkIjogImQiLCAiQ29sdW1uSW5mbyI6IHsiQ29sdW1uIjogW3siaWQiOiAiYzAiLCAidHlwZSI6ICJkYXRlIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxIiwgInR5cGUiOiAiZGF0ZSIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMiIsICJ0eXBlIjogImRhdGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzMiLCAidHlwZSI6ICJkYXRlIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImM0IiwgInR5cGUiOiAiZGF0ZSIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjNSIsICJ0eXBlIjogImRhdGUiLCAic2l6ZSI6ICI4In1dfSwgIlJvd3MiOiBbeyJjMCI6ICIyMDI2MTExNiIsICJjMSI6ICIyMDI2MTExIiwgImMyIjogIjIwMjYxMzQwIiwgImMzIjogImFiY2RlZmdoIiwgImM0IjogIjIwMjYtMTEtMTYiLCAiYzUiOiAiMjAyNjExMTYwMDAwIn1dfV19",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

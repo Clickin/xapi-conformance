@@ -198,13 +198,13 @@ func TestEncodeSSVHeaderTypesAndXPlatformMissing(t *testing.T) {
 	}
 	want := []byte("SSV:UTF-8\x1ep:float=1.0\x1eDataset:d\x1e" +
 		"_Const_\x1fc:blob(256)=eA==\x1e" +
-		"_RowType_\x1fa:float(8)\x1fb:int(2)\x1eN\x1f1.0\x1f\x1e")
+		"_RowType_\x1fa:float(8)\x1fb:int(2)\x1eN\x1f1.0\x1f0\x1e") // missing BOOLEAN is written as 0
 	if !bytes.Equal(got, want) {
 		t.Fatalf("XPlatform SSV:\nwant %q\n got %q", want, got)
 	}
 }
 
-func TestDecodeSSVPreservesOriginalAndDropsDeletedRows(t *testing.T) {
+func TestDecodeSSVPreservesOriginalAndMovesDeletedRowsLast(t *testing.T) {
 	wire := []byte("SSV\x1eDataset:d\x1e_RowType_\x1fa:STRING\x1e" +
 		"U\x1fnew\x1eO\x1fold\x1eD\x1fdeleted\x1eN\x1fkept\x1e\x1e")
 	value, err := DecodeProfile(wire, nexacroSSVProfile, DecodeOptions{Strict: true})
@@ -212,8 +212,8 @@ func TestDecodeSSVPreservesOriginalAndDropsDeletedRows(t *testing.T) {
 		t.Fatal(err)
 	}
 	rows := value.Datasets[0].Rows
-	if len(rows) != 2 || rows[0].Type != "U" || rows[0].OrgRow == nil || rows[0].OrgRow.Values["a"].Lexical != "old" ||
-		rows[1].Values["a"].Lexical != "kept" {
+	if len(rows) != 3 || rows[0].Type != "U" || rows[0].OrgRow == nil || rows[0].OrgRow.Values["a"].Lexical != "old" ||
+		rows[1].Values["a"].Lexical != "kept" || rows[2].Type != "D" || rows[2].Values["a"].Lexical != "deleted" {
 		t.Fatalf("row forms mismatch: %+v", rows)
 	}
 }

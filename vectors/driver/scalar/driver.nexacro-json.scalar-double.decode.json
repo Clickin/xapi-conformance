@@ -1,0 +1,327 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c5",
+              "index": 5,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c6",
+              "index": 6,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c7",
+              "index": 7,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c8",
+              "index": 8,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c9",
+              "index": 9,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c10",
+              "index": 10,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c11",
+              "index": 11,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c12",
+              "index": 12,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c13",
+              "index": 13,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c14",
+              "index": 14,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c15",
+              "index": 15,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c16",
+              "index": 16,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c17",
+              "index": 17,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c18",
+              "index": 18,
+              "type": "DOUBLE"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "1.2",
+                  "state": "value"
+                },
+                "c1": {
+                  "lexical": "1.5",
+                  "state": "value"
+                },
+                "c10": {
+                  "lexical": "0.0",
+                  "state": "value"
+                },
+                "c11": {
+                  "lexical": "1234.0",
+                  "state": "value"
+                },
+                "c12": {
+                  "lexical": "NaN",
+                  "state": "value"
+                },
+                "c13": {
+                  "lexical": "Infinity",
+                  "state": "value"
+                },
+                "c14": {
+                  "lexical": "-0.0015",
+                  "state": "value"
+                },
+                "c15": {
+                  "lexical": "1.0E7",
+                  "state": "value"
+                },
+                "c16": {
+                  "lexical": "1.0E-4",
+                  "state": "value"
+                },
+                "c17": {
+                  "lexical": "1.23456789123E8",
+                  "state": "value"
+                },
+                "c18": {
+                  "lexical": "9.223372036854776E18",
+                  "state": "value"
+                },
+                "c2": {
+                  "lexical": "-0.0",
+                  "state": "value"
+                },
+                "c3": {
+                  "lexical": "1000.0",
+                  "state": "value"
+                },
+                "c4": {
+                  "lexical": "0.0",
+                  "state": "value"
+                },
+                "c5": {
+                  "lexical": "2.0",
+                  "state": "value"
+                },
+                "c6": {
+                  "lexical": "10.0",
+                  "state": "value"
+                },
+                "c7": {
+                  "lexical": "-7.0",
+                  "state": "value"
+                },
+                "c8": {
+                  "lexical": "5.0",
+                  "state": "value"
+                },
+                "c9": {
+                  "lexical": "2.147483648E9",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "1.2",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p1",
+          "lexical": "1.5",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p2",
+          "lexical": "-0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p3",
+          "lexical": "1000.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p4",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p5",
+          "lexical": "2.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p6",
+          "lexical": "10.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p7",
+          "lexical": "-7.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p8",
+          "lexical": "5.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p9",
+          "lexical": "2.147483648E9",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p10",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p11",
+          "lexical": "1234.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p12",
+          "lexical": "NaN",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p13",
+          "lexical": "Infinity",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p14",
+          "lexical": "-0.0015",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p15",
+          "lexical": "1.0E7",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p16",
+          "lexical": "1.0E-4",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p17",
+          "lexical": "1.23456789123E8",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p18",
+          "lexical": "9.223372036854776E18",
+          "state": "value",
+          "type": "DOUBLE"
+        }
+      ],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.scalar-double.decode",
+  "input": {
+    "data": "eyJ2ZXJzaW9uIjogIjEuMCIsICJQYXJhbWV0ZXJzIjogW3siaWQiOiAicDAiLCAidHlwZSI6ICJkb3VibGUiLCAidmFsdWUiOiAiMDAxLjIwIn0sIHsiaWQiOiAicDEiLCAidHlwZSI6ICJkb3VibGUiLCAidmFsdWUiOiAiMS41MCJ9LCB7ImlkIjogInAyIiwgInR5cGUiOiAiZG91YmxlIiwgInZhbHVlIjogIi0wLjAifSwgeyJpZCI6ICJwMyIsICJ0eXBlIjogImRvdWJsZSIsICJ2YWx1ZSI6ICIxZTMifSwgeyJpZCI6ICJwNCIsICJ0eXBlIjogImRvdWJsZSIsICJ2YWx1ZSI6ICJhYmMifSwgeyJpZCI6ICJwNSIsICJ0eXBlIjogImRvdWJsZSIsICJ2YWx1ZSI6ICIgMiAifSwgeyJpZCI6ICJwNiIsICJ0eXBlIjogImRvdWJsZSIsICJ2YWx1ZSI6ICIxMCJ9LCB7ImlkIjogInA3IiwgInR5cGUiOiAiZG91YmxlIiwgInZhbHVlIjogIi03In0sIHsiaWQiOiAicDgiLCAidHlwZSI6ICJkb3VibGUiLCAidmFsdWUiOiAiKzUifSwgeyJpZCI6ICJwOSIsICJ0eXBlIjogImRvdWJsZSIsICJ2YWx1ZSI6ICIyMTQ3NDgzNjQ4In0sIHsiaWQiOiAicDEwIiwgInR5cGUiOiAiZG91YmxlIiwgInZhbHVlIjogIjB4MUYifSwgeyJpZCI6ICJwMTEiLCAidHlwZSI6ICJkb3VibGUiLCAidmFsdWUiOiAiMSwyMzQifSwgeyJpZCI6ICJwMTIiLCAidHlwZSI6ICJkb3VibGUiLCAidmFsdWUiOiAiTmFOIn0sIHsiaWQiOiAicDEzIiwgInR5cGUiOiAiZG91YmxlIiwgInZhbHVlIjogIkluZmluaXR5In0sIHsiaWQiOiAicDE0IiwgInR5cGUiOiAiZG91YmxlIiwgInZhbHVlIjogIi0xLjVlLTMifSwgeyJpZCI6ICJwMTUiLCAidHlwZSI6ICJkb3VibGUiLCAidmFsdWUiOiAiMUU3In0sIHsiaWQiOiAicDE2IiwgInR5cGUiOiAiZG91YmxlIiwgInZhbHVlIjogIjAuMDAwMSJ9LCB7ImlkIjogInAxNyIsICJ0eXBlIjogImRvdWJsZSIsICJ2YWx1ZSI6ICIxMjM0NTY3ODkuMTIzIn0sIHsiaWQiOiAicDE4IiwgInR5cGUiOiAiZG91YmxlIiwgInZhbHVlIjogIjkyMjMzNzIwMzY4NTQ3NzU4MDgifV0sICJEYXRhc2V0cyI6IFt7ImlkIjogImQiLCAiQ29sdW1uSW5mbyI6IHsiQ29sdW1uIjogW3siaWQiOiAiYzAiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzEiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzIiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzMiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzQiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzUiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzYiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzciLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzgiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzkiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzEwIiwgInR5cGUiOiAiZG91YmxlIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxMSIsICJ0eXBlIjogImRvdWJsZSIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMTIiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzEzIiwgInR5cGUiOiAiZG91YmxlIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxNCIsICJ0eXBlIjogImRvdWJsZSIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMTUiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzE2IiwgInR5cGUiOiAiZG91YmxlIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxNyIsICJ0eXBlIjogImRvdWJsZSIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMTgiLCAidHlwZSI6ICJkb3VibGUiLCAic2l6ZSI6ICI4In1dfSwgIlJvd3MiOiBbeyJjMCI6ICIwMDEuMjAiLCAiYzEiOiAiMS41MCIsICJjMiI6ICItMC4wIiwgImMzIjogIjFlMyIsICJjNCI6ICJhYmMiLCAiYzUiOiAiIDIgIiwgImM2IjogIjEwIiwgImM3IjogIi03IiwgImM4IjogIis1IiwgImM5IjogIjIxNDc0ODM2NDgiLCAiYzEwIjogIjB4MUYiLCAiYzExIjogIjEsMjM0IiwgImMxMiI6ICJOYU4iLCAiYzEzIjogIkluZmluaXR5IiwgImMxNCI6ICItMS41ZS0zIiwgImMxNSI6ICIxRTciLCAiYzE2IjogIjAuMDAwMSIsICJjMTciOiAiMTIzNDU2Nzg5LjEyMyIsICJjMTgiOiAiOTIyMzM3MjAzNjg1NDc3NTgwOCJ9XX1dfQ==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

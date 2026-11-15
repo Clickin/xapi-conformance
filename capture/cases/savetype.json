@@ -1,0 +1,4963 @@
+{
+ "description": "Row types written for each saveType, and the row order the original driver reads.",
+ "cases": [
+  {
+   "id": "driver.nexacro-xml.savetype-unset.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.savetype-dataset-1.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 1
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.savetype-dataset-2.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 2
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.savetype-dataset-3.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.savetype-dataset-4.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 4
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.savetype-dataset-5.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 5
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.savetype-root-1.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.savetype-dataset-overrides-root.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.savetype-unset.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.savetype-dataset-1.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 1
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.savetype-dataset-2.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 2
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.savetype-dataset-3.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.savetype-dataset-4.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 4
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.savetype-dataset-5.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 5
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.savetype-root-1.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.savetype-dataset-overrides-root.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.savetype-unset.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.savetype-dataset-1.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 1
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.savetype-dataset-2.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 2
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.savetype-dataset-3.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.savetype-dataset-4.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 4
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.savetype-dataset-5.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 5
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.savetype-root-1.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.savetype-dataset-overrides-root.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.savetype-unset.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.savetype-dataset-1.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 1
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.savetype-dataset-2.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 2
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.savetype-dataset-3.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.savetype-dataset-4.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 4
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.savetype-dataset-5.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 5
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.savetype-root-1.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.savetype-dataset-overrides-root.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.savetype-unset.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.savetype-dataset-1.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 1
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.savetype-dataset-2.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 2
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.savetype-dataset-3.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.savetype-dataset-4.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 4
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.savetype-dataset-5.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 5
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.savetype-root-1.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.savetype-dataset-overrides-root.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.savetype-unset.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.savetype-dataset-1.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 1
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.savetype-dataset-2.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 2
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.savetype-dataset-3.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.savetype-dataset-4.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 4
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.savetype-dataset-5.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 5
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.savetype-root-1.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.savetype-dataset-overrides-root.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.savetype-unset.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.savetype-dataset-1.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 1
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.savetype-dataset-2.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 2
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.savetype-dataset-3.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.savetype-dataset-4.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 4
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.savetype-dataset-5.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 5
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.savetype-root-1.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.savetype-dataset-overrides-root.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "saveType": 1,
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n1"
+         }
+        }
+       },
+       {
+        "type": "I",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "i1"
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u1"
+         }
+        },
+        "orgRow": {
+         "type": "O",
+         "values": {
+          "a": {
+           "state": "value",
+           "lexical": "o1"
+          }
+         }
+        }
+       },
+       {
+        "type": "U",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "u2"
+         }
+        }
+       },
+       {
+        "type": "D",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "d1"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "n2"
+         }
+        }
+       }
+      ],
+      "saveType": 3
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.row-types-order.decode",
+   "profile": "nexacro-xml-4000",
+   "operation": "decode",
+   "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Root xmlns=\"http://www.nexacroplatform.com/platform/dataset\"><Dataset id=\"d\"><ColumnInfo><Column id=\"a\" type=\"string\" size=\"32\"/></ColumnInfo><Rows><Row><Col id=\"a\">n1</Col></Row><Row type=\"delete\"><Col id=\"a\">d1</Col></Row><Row type=\"update\"><Col id=\"a\">u1</Col><OrgRow><Col id=\"a\">o1</Col></OrgRow></Row><Row type=\"insert\"><Col id=\"a\">i1</Col></Row><Row><Col id=\"a\">n2</Col></Row></Rows></Dataset></Root>"
+  },
+  {
+   "id": "driver.xplatform-xml.row-types-order.decode",
+   "profile": "xplatform-xml-5000",
+   "operation": "decode",
+   "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Root xmlns=\"http://www.tobesoft.com/platform/dataset\" ver=\"5000\"><Dataset id=\"d\"><ColumnInfo><Column id=\"a\" type=\"string\" size=\"32\"/></ColumnInfo><Rows><Row><Col id=\"a\">n1</Col></Row><Row type=\"delete\"><Col id=\"a\">d1</Col></Row><Row type=\"update\"><Col id=\"a\">u1</Col><OrgRow><Col id=\"a\">o1</Col></OrgRow></Row><Row type=\"insert\"><Col id=\"a\">i1</Col></Row><Row><Col id=\"a\">n2</Col></Row></Rows></Dataset></Root>"
+  },
+  {
+   "id": "driver.nexacro-ssv.row-types-order.decode",
+   "profile": "nexacro-ssv",
+   "operation": "decode",
+   "text": "SSV:UTF-8\u001eDataset:d\u001e_RowType_\u001fa:string(32)\u001eN\u001fn1\u001eD\u001fd1\u001eU\u001fu1\u001eO\u001fo1\u001eI\u001fi1\u001eN\u001fn2\u001e\u001e"
+  },
+  {
+   "id": "driver.xplatform-ssv.row-types-order.decode",
+   "profile": "xplatform-ssv",
+   "operation": "decode",
+   "text": "SSV:UTF-8\u001eDataset:d\u001e_RowType_\u001fa:string(32)\u001eN\u001fn1\u001eD\u001fd1\u001eU\u001fu1\u001eO\u001fo1\u001eI\u001fi1\u001eN\u001fn2\u001e\u001e"
+  },
+  {
+   "id": "driver.nexacro-json.row-types-order.decode",
+   "profile": "nexacro-json-1.0",
+   "operation": "decode",
+   "text": "{\"version\": \"1.0\", \"Datasets\": [{\"id\": \"d\", \"ColumnInfo\": {\"Column\": [{\"id\": \"a\", \"type\": \"string\", \"size\": \"32\"}]}, \"Rows\": [{\"_RowType_\": \"N\", \"a\": \"n1\"}, {\"_RowType_\": \"D\", \"a\": \"d1\"}, {\"_RowType_\": \"U\", \"a\": \"u1\"}, {\"_RowType_\": \"O\", \"a\": \"o1\"}, {\"_RowType_\": \"I\", \"a\": \"i1\"}, {\"_RowType_\": \"N\", \"a\": \"n2\"}]}]}"
+  }
+ ]
+}

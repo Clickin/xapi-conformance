@@ -1,0 +1,84 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "k0",
+              "index": 1,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "k1",
+              "index": 2,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "k2",
+              "index": 3,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "k3",
+              "index": 4,
+              "type": "DOUBLE"
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "x",
+                  "state": "value"
+                },
+                "k0": {
+                  "lexical": "123456.789",
+                  "state": "value"
+                },
+                "k1": {
+                  "lexical": "abc",
+                  "state": "value"
+                },
+                "k2": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "k3": {
+                  "lexical": "",
+                  "state": "empty"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "id": "driver.nexacro-ssv.const-double.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2swOmZsb2F0KDgpPTEyMzQ1Ni43ODkfazE6ZmxvYXQoOCk9YWJjH2syOmZsb2F0KDgpPR9rMzpmbG9hdCg4KT0eX1Jvd1R5cGVfH2E6c3RyaW5nKDMyKR5OH3geHg==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

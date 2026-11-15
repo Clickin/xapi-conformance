@@ -1,0 +1,192 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c5",
+              "index": 5,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c6",
+              "index": 6,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c7",
+              "index": 7,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c8",
+              "index": 8,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "c9",
+              "index": 9,
+              "type": "BOOLEAN"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "true",
+                  "state": "value"
+                },
+                "c1": {
+                  "lexical": "true",
+                  "state": "value"
+                },
+                "c2": {
+                  "lexical": "true",
+                  "state": "value"
+                },
+                "c3": {
+                  "lexical": "false",
+                  "state": "value"
+                },
+                "c4": {
+                  "lexical": "true",
+                  "state": "value"
+                },
+                "c5": {
+                  "lexical": "true",
+                  "state": "value"
+                },
+                "c6": {
+                  "lexical": "false",
+                  "state": "value"
+                },
+                "c7": {
+                  "lexical": "false",
+                  "state": "value"
+                },
+                "c8": {
+                  "lexical": "false",
+                  "state": "value"
+                },
+                "c9": {
+                  "lexical": "false",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "true",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p1",
+          "lexical": "true",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p2",
+          "lexical": "true",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p3",
+          "lexical": "false",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p4",
+          "lexical": "true",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p5",
+          "lexical": "true",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p6",
+          "lexical": "false",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p7",
+          "lexical": "false",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p8",
+          "lexical": "false",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "p9",
+          "lexical": "false",
+          "state": "value",
+          "type": "BOOLEAN"
+        }
+      ],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.scalar-boolean.decode",
+  "input": {
+    "data": "eyJ2ZXJzaW9uIjogIjEuMCIsICJQYXJhbWV0ZXJzIjogW3siaWQiOiAicDAiLCAidHlwZSI6ICJib29sZWFuIiwgInZhbHVlIjogInRydWUifSwgeyJpZCI6ICJwMSIsICJ0eXBlIjogImJvb2xlYW4iLCAidmFsdWUiOiAiVFJVRSJ9LCB7ImlkIjogInAyIiwgInR5cGUiOiAiYm9vbGVhbiIsICJ2YWx1ZSI6ICIxIn0sIHsiaWQiOiAicDMiLCAidHlwZSI6ICJib29sZWFuIiwgInZhbHVlIjogIjAifSwgeyJpZCI6ICJwNCIsICJ0eXBlIjogImJvb2xlYW4iLCAidmFsdWUiOiAieWVzIn0sIHsiaWQiOiAicDUiLCAidHlwZSI6ICJib29sZWFuIiwgInZhbHVlIjogIlkifSwgeyJpZCI6ICJwNiIsICJ0eXBlIjogImJvb2xlYW4iLCAidmFsdWUiOiAiZmFsc2UifSwgeyJpZCI6ICJwNyIsICJ0eXBlIjogImJvb2xlYW4iLCAidmFsdWUiOiAiYWJjIn0sIHsiaWQiOiAicDgiLCAidHlwZSI6ICJib29sZWFuIiwgInZhbHVlIjogIiB0cnVlIn0sIHsiaWQiOiAicDkiLCAidHlwZSI6ICJib29sZWFuIiwgInZhbHVlIjogIjIifV0sICJEYXRhc2V0cyI6IFt7ImlkIjogImQiLCAiQ29sdW1uSW5mbyI6IHsiQ29sdW1uIjogW3siaWQiOiAiYzAiLCAidHlwZSI6ICJib29sZWFuIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxIiwgInR5cGUiOiAiYm9vbGVhbiIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMiIsICJ0eXBlIjogImJvb2xlYW4iLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzMiLCAidHlwZSI6ICJib29sZWFuIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImM0IiwgInR5cGUiOiAiYm9vbGVhbiIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjNSIsICJ0eXBlIjogImJvb2xlYW4iLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzYiLCAidHlwZSI6ICJib29sZWFuIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImM3IiwgInR5cGUiOiAiYm9vbGVhbiIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjOCIsICJ0eXBlIjogImJvb2xlYW4iLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzkiLCAidHlwZSI6ICJib29sZWFuIiwgInNpemUiOiAiOCJ9XX0sICJSb3dzIjogW3siYzAiOiAidHJ1ZSIsICJjMSI6ICJUUlVFIiwgImMyIjogIjEiLCAiYzMiOiAiMCIsICJjNCI6ICJ5ZXMiLCAiYzUiOiAiWSIsICJjNiI6ICJmYWxzZSIsICJjNyI6ICJhYmMiLCAiYzgiOiAiIHRydWUiLCAiYzkiOiAiMiJ9XX1dfQ==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

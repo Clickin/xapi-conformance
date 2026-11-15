@@ -1,0 +1,96 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzPgoJCTxQYXJhbWV0ZXIgaWQ9InN0cmluZyIgdHlwZT0ic3RyaW5nIj5zPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0iaW50IiB0eXBlPSJpbnQiPjEyPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0ibG9uZyIgdHlwZT0iYmlnZGVjaW1hbCI+MTIzNDU2Nzg5MDEyMzwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9ImZsb2F0IiB0eXBlPSJmbG9hdCI+MS41PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0iZG91YmxlIiB0eXBlPSJmbG9hdCI+Mi4yNTwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9ImRlY2ltYWwiIHR5cGU9ImJpZ2RlY2ltYWwiPjMuNzU8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJiaWdkZWNpbWFsIiB0eXBlPSJiaWdkZWNpbWFsIj4xMjMuNDU8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJib29sZWFuIiB0eXBlPSJpbnQiPjE8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJkYXRlIiB0eXBlPSJkYXRlIj4yMDI2MTExNjwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InRpbWUiIHR5cGU9InRpbWUiPjEyMzQ1Njc4OTwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9ImRhdGV0aW1lIiB0eXBlPSJkYXRldGltZSI+MjAyNjExMTYxMjM0NTY3ODk8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJibG9iIiB0eXBlPSJibG9iIiBlbmNyeXB0PSJiYXNlNjQiPkFBRUM8L1BhcmFtZXRlcj4KCTwvUGFyYW1ldGVycz4KPC9Sb290Pgo=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.types-parameters.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [],
+    "parameters": [
+      {
+        "id": "string",
+        "lexical": "s",
+        "state": "value",
+        "type": "STRING"
+      },
+      {
+        "id": "int",
+        "lexical": "12",
+        "state": "value",
+        "type": "INT"
+      },
+      {
+        "id": "long",
+        "lexical": "1234567890123",
+        "state": "value",
+        "type": "LONG"
+      },
+      {
+        "id": "float",
+        "lexical": "1.5",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "double",
+        "lexical": "2.25",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "decimal",
+        "lexical": "3.75",
+        "state": "value",
+        "type": "DECIMAL"
+      },
+      {
+        "id": "bigdecimal",
+        "lexical": "123.45",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "boolean",
+        "lexical": "1",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "date",
+        "lexical": "20261116",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "time",
+        "lexical": "123456789",
+        "state": "value",
+        "type": "TIME"
+      },
+      {
+        "id": "datetime",
+        "lexical": "20261116123456789",
+        "state": "value",
+        "type": "DATETIME"
+      },
+      {
+        "id": "blob",
+        "lexical": "AAEC",
+        "state": "value",
+        "type": "BLOB"
+      }
+    ]
+  }
+}

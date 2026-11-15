@@ -1,0 +1,70 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/gETiAAtAAFk/hATiAAZAAMAAmswABUAAXgAAmsxABUAAAACazIAAAABAAFhAAEAIAABAAkAAQABABUAAXgAAAAA",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-binary.const-string.encode",
+  "operation": "encode",
+  "profile": "nexacro-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "STRING",
+            "value": {
+              "lexical": "x",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "STRING",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "STRING",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

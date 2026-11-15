@@ -1,0 +1,22 @@
+{
+  "expect": {
+    "error": {
+      "class": "malformed-input"
+    },
+    "kind": "error"
+  },
+  "id": "driver.xplatform-xml.const-blob.encode.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMCIgdHlwZT0iYmxvYiIgc2l6ZT0iMjU2IiBlbmNyeXB0PSJiYXNlNjQiIHZhbHVlPSJlQT09Ij48L0NvbnN0Q29sdW1uPgoJCQk8Q29uc3RDb2x1bW4gaWQ9ImsxIiB0eXBlPSJibG9iIiBzaXplPSIyNTYiIGVuY3J5cHQ9ImJhc2U2NCIgdmFsdWU9IiI+PC9Db25zdENvbHVtbj4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMiIgdHlwZT0iYmxvYiIgc2l6ZT0iMjU2Ii8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCQk8Um93PgoJCQkJPENvbCBpZD0iYSI+eDwvQ29sPgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

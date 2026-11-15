@@ -1,0 +1,129 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "DATE"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "DATE"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "DATE"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "DATE"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "DATE"
+            },
+            {
+              "id": "c5",
+              "index": 5,
+              "type": "DATE"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "20261116",
+                  "state": "value"
+                },
+                "c1": {
+                  "state": "null"
+                },
+                "c2": {
+                  "lexical": "20270209",
+                  "state": "value"
+                },
+                "c3": {
+                  "lexical": "546120328",
+                  "state": "value"
+                },
+                "c4": {
+                  "state": "null"
+                },
+                "c5": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "20261116",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "p1",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "p2",
+          "lexical": "20270209",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "p3",
+          "lexical": "546120328",
+          "state": "value",
+          "type": "DATE"
+        },
+        {
+          "id": "p4",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "p5",
+          "state": "null",
+          "type": "DATE"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "5000"
+        }
+      }
+    }
+  },
+  "id": "driver.xplatform-xml.scalar-date.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0icDAiIHR5cGU9ImRhdGUiPjIwMjYxMTE2PC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0icDEiIHR5cGU9ImRhdGUiPjIwMjYxMTE8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMiIgdHlwZT0iZGF0ZSI+MjAyNjEzNDA8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMyIgdHlwZT0iZGF0ZSI+YWJjZGVmZ2g8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwNCIgdHlwZT0iZGF0ZSI+MjAyNi0xMS0xNjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InA1IiB0eXBlPSJkYXRlIj4yMDI2MTExNjAwMDA8L1BhcmFtZXRlcj48L1BhcmFtZXRlcnM+PERhdGFzZXQgaWQ9ImQiPjxDb2x1bW5JbmZvPjxDb2x1bW4gaWQ9ImMwIiB0eXBlPSJkYXRlIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzEiIHR5cGU9ImRhdGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjMiIgdHlwZT0iZGF0ZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImMzIiB0eXBlPSJkYXRlIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzQiIHR5cGU9ImRhdGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjNSIgdHlwZT0iZGF0ZSIgc2l6ZT0iOCIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9ImMwIj4yMDI2MTExNjwvQ29sPjxDb2wgaWQ9ImMxIj4yMDI2MTExPC9Db2w+PENvbCBpZD0iYzIiPjIwMjYxMzQwPC9Db2w+PENvbCBpZD0iYzMiPmFiY2RlZmdoPC9Db2w+PENvbCBpZD0iYzQiPjIwMjYtMTEtMTY8L0NvbD48Q29sIGlkPSJjNSI+MjAyNjExMTYwMDAwPC9Db2w+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

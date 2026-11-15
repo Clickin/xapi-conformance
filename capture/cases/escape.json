@@ -1,0 +1,8825 @@
+{
+ "description": "Escaping of text, ids and separators; expected bytes are the original driver's.",
+ "cases": [
+  {
+   "id": "driver.nexacro-xml.escape-amp.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a&b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a&b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-amp.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a&b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-lt.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a<b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a<b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-lt.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a<b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-gt.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-gt.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-quot.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\"b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\"b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-quot.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\"b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-apos.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a'b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a'b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-apos.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a'b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-tab.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\tb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\tb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-tab.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\tb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-cr.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\rb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\rb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-cr.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\rb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-lf.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-lf.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-crlf.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\r\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\r\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-crlf.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\r\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-edge-space.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": " a b "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": " a b "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-edge-space.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": " a b "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-only-space.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "   "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "   "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-only-space.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "   "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-cdata-end.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a]]>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a]]>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-cdata-end.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a]]>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-entity-text.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&amp;&lt;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&amp;&lt;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-entity-text.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&amp;&lt;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-charref-text.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&#10;&#x41;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&#10;&#x41;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-charref-text.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&#10;&#x41;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-korean.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "한글"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "한글"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-korean.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "한글"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-emoji.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "😀"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "😀"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-emoji.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "😀"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-control.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u0001b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u0001b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-control.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u0001b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-ssv-separators.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u001eb\u001fc"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u001eb\u001fc"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-ssv-separators.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u001eb\u001fc"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-ssv-undefined.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\u0003"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\u0003"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-ssv-undefined.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\u0003"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-backslash.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\\b/c"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\\b/c"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-backslash.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\\b/c"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-json-escapes.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\b\f "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\b\f "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-xml.escape-const-json-escapes.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\b\f "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-amp.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a&b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a&b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-amp.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a&b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-lt.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a<b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a<b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-lt.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a<b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-gt.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-gt.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-quot.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\"b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\"b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-quot.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\"b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-apos.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a'b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a'b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-apos.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a'b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-tab.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\tb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\tb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-tab.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\tb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-cr.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\rb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\rb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-cr.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\rb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-lf.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-lf.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-crlf.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\r\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\r\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-crlf.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\r\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-edge-space.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": " a b "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": " a b "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-edge-space.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": " a b "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-only-space.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "   "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "   "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-only-space.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "   "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-cdata-end.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a]]>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a]]>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-cdata-end.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a]]>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-entity-text.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&amp;&lt;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&amp;&lt;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-entity-text.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&amp;&lt;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-charref-text.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&#10;&#x41;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&#10;&#x41;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-charref-text.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&#10;&#x41;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-korean.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "한글"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "한글"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-korean.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "한글"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-emoji.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "😀"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "😀"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-emoji.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "😀"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-control.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u0001b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u0001b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-control.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u0001b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-ssv-separators.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u001eb\u001fc"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u001eb\u001fc"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-ssv-separators.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u001eb\u001fc"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-ssv-undefined.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\u0003"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\u0003"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-ssv-undefined.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\u0003"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-backslash.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\\b/c"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\\b/c"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-backslash.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\\b/c"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-json-escapes.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\b\f "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\b\f "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-xml.escape-const-json-escapes.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\b\f "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-amp.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a&b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a&b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-amp.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a&b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-lt.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a<b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a<b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-lt.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a<b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-gt.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-gt.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-quot.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\"b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\"b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-quot.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\"b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-apos.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a'b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a'b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-apos.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a'b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-tab.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\tb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\tb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-tab.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\tb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-cr.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\rb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\rb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-cr.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\rb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-lf.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-lf.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-crlf.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\r\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\r\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-crlf.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\r\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-edge-space.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": " a b "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": " a b "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-edge-space.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": " a b "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-only-space.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "   "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "   "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-only-space.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "   "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-cdata-end.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a]]>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a]]>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-cdata-end.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a]]>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-entity-text.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&amp;&lt;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&amp;&lt;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-entity-text.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&amp;&lt;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-charref-text.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&#10;&#x41;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&#10;&#x41;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-charref-text.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&#10;&#x41;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-korean.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "한글"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "한글"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-korean.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "한글"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-emoji.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "😀"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "😀"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-emoji.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "😀"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-control.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u0001b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u0001b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-control.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u0001b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-ssv-separators.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u001eb\u001fc"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u001eb\u001fc"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-ssv-separators.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u001eb\u001fc"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-ssv-undefined.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\u0003"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\u0003"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-ssv-undefined.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\u0003"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-backslash.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\\b/c"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\\b/c"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-backslash.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\\b/c"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-json-escapes.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\b\f "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\b\f "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-ssv.escape-const-json-escapes.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\b\f "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-amp.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a&b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a&b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-amp.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a&b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-lt.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a<b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a<b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-lt.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a<b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-gt.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-gt.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-quot.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\"b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\"b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-quot.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\"b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-apos.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a'b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a'b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-apos.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a'b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-tab.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\tb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\tb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-tab.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\tb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-cr.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\rb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\rb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-cr.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\rb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-lf.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-lf.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-crlf.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\r\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\r\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-crlf.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\r\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-edge-space.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": " a b "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": " a b "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-edge-space.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": " a b "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-only-space.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "   "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "   "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-only-space.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "   "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-cdata-end.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a]]>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a]]>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-cdata-end.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a]]>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-entity-text.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&amp;&lt;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&amp;&lt;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-entity-text.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&amp;&lt;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-charref-text.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&#10;&#x41;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&#10;&#x41;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-charref-text.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&#10;&#x41;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-korean.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "한글"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "한글"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-korean.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "한글"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-emoji.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "😀"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "😀"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-emoji.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "😀"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-control.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u0001b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u0001b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-control.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u0001b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-ssv-separators.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u001eb\u001fc"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u001eb\u001fc"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-ssv-separators.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u001eb\u001fc"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-ssv-undefined.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\u0003"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\u0003"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-ssv-undefined.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\u0003"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-backslash.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\\b/c"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\\b/c"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-backslash.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\\b/c"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-json-escapes.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\b\f "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\b\f "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.xplatform-ssv.escape-const-json-escapes.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\b\f "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-amp.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a&b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a&b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-amp.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a&b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-lt.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a<b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a<b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-lt.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a<b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-gt.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-gt.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-quot.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\"b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\"b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-quot.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\"b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-apos.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a'b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a'b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-apos.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a'b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-tab.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\tb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\tb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-tab.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\tb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-cr.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\rb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\rb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-cr.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\rb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-lf.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-lf.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-crlf.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\r\nb"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\r\nb"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-crlf.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\r\nb"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-edge-space.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": " a b "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": " a b "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-edge-space.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": " a b "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-only-space.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "   "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "   "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-only-space.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "   "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-cdata-end.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a]]>b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a]]>b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-cdata-end.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a]]>b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-entity-text.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&amp;&lt;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&amp;&lt;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-entity-text.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&amp;&lt;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-charref-text.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "&#10;&#x41;"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "&#10;&#x41;"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-charref-text.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "&#10;&#x41;"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-korean.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "한글"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "한글"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-korean.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "한글"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-emoji.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "😀"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "😀"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-emoji.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "😀"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-control.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u0001b"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u0001b"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-control.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u0001b"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-ssv-separators.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\u001eb\u001fc"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\u001eb\u001fc"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-ssv-separators.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\u001eb\u001fc"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-ssv-undefined.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\u0003"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\u0003"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-ssv-undefined.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\u0003"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-backslash.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "a\\b/c"
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "a\\b/c"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-backslash.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "a\\b/c"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-json-escapes.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "p",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "\b\f "
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "\b\f "
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  },
+  {
+   "id": "driver.nexacro-json.escape-const-json-escapes.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "k",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "\b\f "
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true,
+   "faithful": true
+  }
+ ]
+}

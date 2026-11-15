@@ -1,0 +1,78 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzLz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMCIgdHlwZT0iYmlnZGVjaW1hbCIgc2l6ZT0iMTYiIHZhbHVlPSIwMDEuNTAiLz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMSIgdHlwZT0iYmlnZGVjaW1hbCIgc2l6ZT0iMTYiIHZhbHVlPSJhYmMiLz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMiIgdHlwZT0iYmlnZGVjaW1hbCIgc2l6ZT0iMTYiIHZhbHVlPSIiLz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMyIgdHlwZT0iYmlnZGVjaW1hbCIgc2l6ZT0iMTYiLz4KCQkJPENvbHVtbiBpZD0iYSIgdHlwZT0ic3RyaW5nIiBzaXplPSIzMiIvPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9ImEiPng8L0NvbD4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.const-bigdecimal.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "BIGDECIMAL",
+            "value": {
+              "lexical": "001.50",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "BIGDECIMAL",
+            "value": {
+              "lexical": "abc",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "BIGDECIMAL",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "BIGDECIMAL",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

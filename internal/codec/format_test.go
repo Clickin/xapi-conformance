@@ -90,7 +90,8 @@ func TestJSONDoesNotApplyXMLEntities(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	if bytes.Contains(encoded, []byte("&#10;")) || bytes.Contains(encoded, []byte("&amp;")) {
+	// Entity-like text stays literal; real newlines use JSON escapes.
+	if !bytes.Contains(encoded, []byte(`"first\nsecond & third"`)) || !bytes.Contains(encoded, []byte(`"x&#10;y &lt;z&gt;"`)) {
 		t.Fatalf("JSON used XML entity encoding: %s", encoded)
 	}
 	if !bytes.Contains(encoded, []byte(`"_RowType_":"N"`)) {

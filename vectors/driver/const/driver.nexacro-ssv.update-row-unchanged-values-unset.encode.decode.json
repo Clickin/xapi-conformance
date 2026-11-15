@@ -1,0 +1,64 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "b",
+              "index": 1,
+              "type": "INT"
+            },
+            {
+              "id": "c",
+              "index": 2,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "new",
+                  "state": "value"
+                },
+                "b": {
+                  "lexical": "5",
+                  "state": "value"
+                },
+                "c": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "id": "driver.nexacro-ssv.update-row-unchanged-values-unset.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpzdHJpbmcoMzIpH2I6aW50KDQpH2M6c3RyaW5nKDMyKR5OH25ldx81HwMeHg==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "n1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "I",
+              "values": {
+                "a": {
+                  "lexical": "i1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "a": {
+                    "lexical": "o1",
+                    "state": "value"
+                  }
+                }
+              },
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u2",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "n2",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "D",
+              "values": {
+                "a": {
+                  "lexical": "d1",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "5000"
+        }
+      }
+    }
+  },
+  "id": "driver.xplatform-xml.savetype-dataset-1.encode.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQk8L0NvbHVtbkluZm8+CgkJPFJvd3M+CgkJCTxSb3c+CgkJCQk8Q29sIGlkPSJhIj5uMTwvQ29sPgoJCQk8L1Jvdz4KCQkJPFJvdyB0eXBlPSJpbnNlcnQiPgoJCQkJPENvbCBpZD0iYSI+aTE8L0NvbD4KCQkJPC9Sb3c+CgkJCTxSb3cgdHlwZT0idXBkYXRlIj4KCQkJCTxDb2wgaWQ9ImEiPnUxPC9Db2w+CgkJCQk8T3JnUm93PgoJCQkJCTxDb2wgaWQ9ImEiPm8xPC9Db2w+CgkJCQk8L09yZ1Jvdz4KCQkJPC9Sb3c+CgkJCTxSb3cgdHlwZT0idXBkYXRlIj4KCQkJCTxDb2wgaWQ9ImEiPnUyPC9Db2w+CgkJCQk8T3JnUm93PgoJCQkJPC9PcmdSb3c+CgkJCTwvUm93PgoJCQk8Um93PgoJCQkJPENvbCBpZD0iYSI+bjI8L0NvbD4KCQkJPC9Sb3c+CgkJCTxSb3cgdHlwZT0iZGVsZXRlIj4KCQkJCTxDb2wgaWQ9ImEiPmQxPC9Db2w+CgkJCTwvUm93PgoJCTwvUm93cz4KCTwvRGF0YXNldD4KPC9Sb290Pgo=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/savetype.json",
+    "repository": "xapi-conformance"
+  }
+}

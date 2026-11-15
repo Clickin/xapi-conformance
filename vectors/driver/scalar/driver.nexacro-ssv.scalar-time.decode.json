@@ -1,0 +1,112 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "TIME"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "TIME"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "TIME"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "TIME"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "TIME"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "123456789",
+                  "state": "value"
+                },
+                "c1": {
+                  "lexical": "123456000",
+                  "state": "value"
+                },
+                "c2": {
+                  "state": "null"
+                },
+                "c3": {
+                  "lexical": "010100000",
+                  "state": "value"
+                },
+                "c4": {
+                  "lexical": "000000000",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "123456789",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p1",
+          "lexical": "123456000",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p2",
+          "state": "null",
+          "type": "TIME"
+        },
+        {
+          "id": "p3",
+          "lexical": "010100000",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p4",
+          "lexical": "000000000",
+          "state": "value",
+          "type": "TIME"
+        }
+      ]
+    }
+  },
+  "id": "driver.nexacro-ssv.scalar-time.decode",
+  "input": {
+    "data": "U1NWOlVURi04HnAwOnRpbWU9MTIzNDU2Nzg5HnAxOnRpbWU9MTIzNDU2HnAyOnRpbWU9MTIzNB5wMzp0aW1lPTI0NjA2MDAwMB5wNDp0aW1lPTEyOjM0OjU2HkRhdGFzZXQ6ZB5fUm93VHlwZV8fYzA6dGltZSg4KR9jMTp0aW1lKDgpH2MyOnRpbWUoOCkfYzM6dGltZSg4KR9jNDp0aW1lKDgpHk4fMTIzNDU2Nzg5HzEyMzQ1Nh8xMjM0HzI0NjA2MDAwMB8xMjozNDo1Nh4e",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HnAwOmRhdGV0aW1lPTIwMjYxMTE2MTIzNDU2Nzg5HnAxOmRhdGV0aW1lPTIwMjYxMTE2MTIzNDU2MDAwHnAyOmRhdGV0aW1lPQMecDM6ZGF0ZXRpbWU9MjAyNjExMTcwMTAwMDAwMDAecDQ6ZGF0ZXRpbWU9Ax5EYXRhc2V0OmQeX1Jvd1R5cGVfH2MwOmRhdGV0aW1lKDE3KR9jMTpkYXRldGltZSgxNykfYzI6ZGF0ZXRpbWUoMTcpH2MzOmRhdGV0aW1lKDE3KR9jNDpkYXRldGltZSgxNykeTh8yMDI2MTExNjEyMzQ1Njc4OR8yMDI2MTExNjEyMzQ1NjAwMB8DHzIwMjYxMTE3MDEwMDAwMDAwHwMeHg==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-ssv.scalar-datetime.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "DATETIME"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "DATETIME"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "DATETIME"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "DATETIME"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "DATETIME"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "20261116123456789",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "20261116123456",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "2026",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "20261116250000000",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "2026-11-16 12:34:56",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "20261116123456789",
+        "state": "value",
+        "type": "DATETIME"
+      },
+      {
+        "id": "p1",
+        "lexical": "20261116123456",
+        "state": "value",
+        "type": "DATETIME"
+      },
+      {
+        "id": "p2",
+        "lexical": "2026",
+        "state": "value",
+        "type": "DATETIME"
+      },
+      {
+        "id": "p3",
+        "lexical": "20261116250000000",
+        "state": "value",
+        "type": "DATETIME"
+      },
+      {
+        "id": "p4",
+        "lexical": "2026-11-16 12:34:56",
+        "state": "value",
+        "type": "DATETIME"
+      }
+    ]
+  }
+}

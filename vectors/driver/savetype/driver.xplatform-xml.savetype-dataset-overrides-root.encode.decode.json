@@ -1,0 +1,82 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "I",
+              "values": {
+                "a": {
+                  "lexical": "i1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "a": {
+                    "lexical": "o1",
+                    "state": "value"
+                  }
+                }
+              },
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u2",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "5000"
+        }
+      }
+    }
+  },
+  "id": "driver.xplatform-xml.savetype-dataset-overrides-root.encode.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImEiIHR5cGU9InN0cmluZyIgc2l6ZT0iMzIiLz4KCQk8L0NvbHVtbkluZm8+CgkJPFJvd3M+CgkJCTxSb3cgdHlwZT0iaW5zZXJ0Ij4KCQkJCTxDb2wgaWQ9ImEiPmkxPC9Db2w+CgkJCTwvUm93PgoJCQk8Um93IHR5cGU9InVwZGF0ZSI+CgkJCQk8Q29sIGlkPSJhIj51MTwvQ29sPgoJCQkJPE9yZ1Jvdz4KCQkJCQk8Q29sIGlkPSJhIj5vMTwvQ29sPgoJCQkJPC9PcmdSb3c+CgkJCTwvUm93PgoJCQk8Um93IHR5cGU9InVwZGF0ZSI+CgkJCQk8Q29sIGlkPSJhIj51MjwvQ29sPgoJCQkJPE9yZ1Jvdz4KCQkJCTwvT3JnUm93PgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/savetype.json",
+    "repository": "xapi-conformance"
+  }
+}

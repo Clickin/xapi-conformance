@@ -1,0 +1,109 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "n1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "I",
+              "values": {
+                "a": {
+                  "lexical": "i1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "a": {
+                    "lexical": "o1",
+                    "state": "value"
+                  }
+                }
+              },
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u2",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "n2",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "D",
+              "values": {
+                "a": {
+                  "lexical": "d1",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.savetype-dataset-1.encode.decode",
+  "input": {
+    "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb2x1bW4iOlt7InNpemUiOiIzMiIsImlkIjoiYSIsInR5cGUiOiJzdHJpbmcifV19LCJpZCI6ImQiLCJSb3dzIjpbeyJhIjoibjEiLCJfUm93VHlwZV8iOiJOIn0seyJhIjoiaTEiLCJfUm93VHlwZV8iOiJJIn0seyJhIjoidTEiLCJfUm93VHlwZV8iOiJVIn0seyJhIjoibzEiLCJfUm93VHlwZV8iOiJPIn0seyJhIjoidTIiLCJfUm93VHlwZV8iOiJVIn0seyJfUm93VHlwZV8iOiJPIn0seyJhIjoibjIiLCJfUm93VHlwZV8iOiJOIn0seyJhIjoiZDEiLCJfUm93VHlwZV8iOiJEIn1dfV0sInZlcnNpb24iOiIxLjAifQ==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/savetype.json",
+    "repository": "xapi-conformance"
+  }
+}

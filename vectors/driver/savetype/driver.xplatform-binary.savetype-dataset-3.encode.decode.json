@@ -1,0 +1,76 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "I",
+              "values": {
+                "a": {
+                  "lexical": "i1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "a": {
+                    "lexical": "o1",
+                    "state": "value"
+                  }
+                }
+              },
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u2",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "id": "driver.xplatform-binary.savetype-dataset-3.encode.decode",
+  "input": {
+    "data": "/gETiAAWAAFk/hATiAACAAAAAQABYQABACAAAQAKAAIAAQAVAAJpMQASAAQAAQAVAAJ1MQABABUAAm8xAA4ABAABABUAAnUyAAEAAAAAAAA=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/savetype.json",
+    "repository": "xapi-conformance"
+  }
+}

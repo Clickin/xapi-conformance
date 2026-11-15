@@ -1,0 +1,96 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "n1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "a": {
+                    "lexical": "o1",
+                    "state": "value"
+                  }
+                }
+              },
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "I",
+              "values": {
+                "a": {
+                  "lexical": "i1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "n2",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "D",
+              "values": {
+                "a": {
+                  "lexical": "d1",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "id": "driver.xplatform-ssv.row-types-order.decode",
+  "input": {
+    "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpzdHJpbmcoMzIpHk4fbjEeRB9kMR5VH3UxHk8fbzEeSR9pMR5OH24yHh4=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/savetype.json",
+    "repository": "xapi-conformance"
+  }
+}

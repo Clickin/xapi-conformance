@@ -55,20 +55,13 @@ func isPublicUnsupportedType(dataType string) bool {
 	}
 }
 
+// applySaveTypes reproduces the original drivers' row selection. A Dataset
+// without saveType inherits the root's; with neither, the drivers use NORMAL
+// (2), which writes every live row as a plain row. Deleted rows live in the
+// driver's removed-row list, so they are always written after the live rows,
+// and only for ALL (1), DELETED (4) and CHANGED (5). An updated row written
+// with its saved row but without a known original gets an empty one.
 func applySaveTypes(value protocol.Value) protocol.Value {
-	needsFiltering := value.SaveType != 0
-	if !needsFiltering {
-		for _, dataset := range value.Datasets {
-			if dataset.SaveType != 0 {
-				needsFiltering = true
-				break
-			}
-		}
-	}
-	if !needsFiltering {
-		return value
-	}
-
 	datasets := make([]protocol.Dataset, len(value.Datasets))
 	copy(datasets, value.Datasets)
 	value.Datasets = datasets
@@ -77,27 +70,59 @@ func applySaveTypes(value protocol.Value) protocol.Value {
 		if saveType == 0 {
 			saveType = value.SaveType
 		}
-		if saveType == 0 || saveType == 1 {
-			continue
+		if saveType == 0 {
+			saveType = 2
 		}
-		rows := make([]protocol.Row, 0, len(value.Datasets[i].Rows))
+		var live, removed []protocol.Row
 		for _, row := range value.Datasets[i].Rows {
 			rowType := strings.ToUpper(row.Type)
-			include := saveType == 2 && rowType != "D" ||
-				saveType == 3 && (rowType == "I" || rowType == "U") ||
-				saveType == 4 && rowType == "D" ||
-				saveType == 5 && rowType != "N" && rowType != ""
+			if rowType == "" {
+				rowType = "N"
+			}
+			row.Type = rowType
+			switch rowType {
+			case "O":
+				continue
+			case "D":
+				if saveType == 1 || saveType == 4 || saveType == 5 {
+					row.OrgRow = nil
+					removed = append(removed, row)
+				}
+				continue
+			}
+			include := saveType == 1 || saveType == 2 ||
+				saveType == 3 && rowType != "N" ||
+				saveType == 5 && rowType != "N"
 			if !include {
 				continue
 			}
-			if saveType == 2 {
+			// An updated row starts as a copy of its original row, so a
+			// value the current row leaves out keeps the original value.
+			if rowType == "U" && row.OrgRow != nil {
+				values := make(map[string]protocol.Cell, len(row.Values))
+				for id, cell := range row.OrgRow.Values {
+					values[id] = cell
+				}
+				for id, cell := range row.Values {
+					values[id] = cell
+				}
+				row.Values = values
+			}
+			switch {
+			case saveType == 2:
 				row.Type = "N"
 				row.OrgRow = nil
+			case rowType == "U" && row.OrgRow == nil:
+				row.OrgRow = &protocol.Row{Type: "O", Values: map[string]protocol.Cell{}}
+			case rowType != "U":
+				row.OrgRow = nil
 			}
-			rows = append(rows, row)
+			live = append(live, row)
 		}
-		value.Datasets[i].Rows = rows
+		value.Datasets[i].Rows = append(live, removed...)
+		value.Datasets[i].SaveType = 0
 	}
+	value.SaveType = 0
 	return value
 }
 
@@ -112,11 +137,7 @@ func Encode(v protocol.Value, profile string) ([]byte, error) {
 	v = applySaveTypes(v)
 	switch profile {
 	case "nexacro-json-1.0":
-		encoded, err := json.Marshal(toJSON(v))
-		if err != nil {
-			return nil, err
-		}
-		return bytes.ReplaceAll(encoded, []byte("/"), []byte(`\/`)), nil
+		return marshalJSONValue(toJSON(v))
 	case "xplatform-xml-5000", "nexacro-xml-4000":
 		return encodeXML(v, profile)
 	case nexacroSSVProfile, xplatformSSVProfile:
@@ -213,15 +234,55 @@ func (object jsonObject) MarshalJSON() ([]byte, error) {
 	return []byte(out.String()), nil
 }
 
+// marshalJSONValue never HTML-escapes: json.Marshal would rewrite '<', '>'
+// and '&' inside jsonObject output, which the driver writes as they are.
 func marshalJSONValue(value any) ([]byte, error) {
 	if text, ok := value.(string); ok {
 		return marshalJSONString(text)
 	}
-	return json.Marshal(value)
+	var out bytes.Buffer
+	encoder := json.NewEncoder(&out)
+	encoder.SetEscapeHTML(false)
+	if err := encoder.Encode(value); err != nil {
+		return nil, err
+	}
+	return bytes.TrimSuffix(out.Bytes(), []byte("\n")), nil
 }
 
+// marshalJSONString escapes like json-simple's JSONValue.escape, which the
+// Nexacro driver uses: '/' is escaped, U+0000-U+001F, U+007F-U+009F and
+// U+2000-U+20FF become \uXXXX with upper-case hex, and nothing else is.
 func marshalJSONString(value string) ([]byte, error) {
-	return json.Marshal(value)
+	var out strings.Builder
+	out.WriteByte('"')
+	for _, r := range value {
+		switch r {
+		case '"':
+			out.WriteString(`\"`)
+		case '\\':
+			out.WriteString(`\\`)
+		case '\b':
+			out.WriteString(`\b`)
+		case '\f':
+			out.WriteString(`\f`)
+		case '\n':
+			out.WriteString(`\n`)
+		case '\r':
+			out.WriteString(`\r`)
+		case '\t':
+			out.WriteString(`\t`)
+		case '/':
+			out.WriteString(`\/`)
+		default:
+			if r <= 0x1f || r >= 0x7f && r <= 0x9f || r >= 0x2000 && r <= 0x20ff {
+				fmt.Fprintf(&out, `\u%04X`, r)
+			} else {
+				out.WriteRune(r)
+			}
+		}
+	}
+	out.WriteByte('"')
+	return []byte(out.String()), nil
 }
 
 func defaultWireSize(dataType string) string {
@@ -230,7 +291,9 @@ func defaultWireSize(dataType string) string {
 		return "32"
 	case "SHORT", "USHORT", "INT", "UINT":
 		return "4"
-	case "LONG", "ULONG", "DECIMAL", "BIGDECIMAL":
+	case "LONG", "ULONG":
+		return "8"
+	case "DECIMAL", "BIGDECIMAL":
 		return "16"
 	case "FLOAT":
 		return "4"
@@ -300,7 +363,7 @@ func toJSON(v protocol.Value) jsonObject {
 				{key: "type", value: wireType(column.Type)},
 				{key: "size", value: size},
 			}
-			if column.Value.State == "value" {
+			if column.Value.State == "value" || column.Value.State == "empty" {
 				fields = append(fields, jsonField{key: "value", value: column.Value.Lexical})
 			} else if strings.EqualFold(defaultType(column.Type), "BOOLEAN") {
 				fields = append(fields, jsonField{key: "value", value: "0"})
@@ -309,21 +372,27 @@ func toJSON(v protocol.Value) jsonObject {
 		}
 
 		rows := make([]any, 0, len(dataset.Rows))
-		for _, row := range dataset.Rows {
-			if strings.EqualFold(row.Type, "O") {
-				continue
-			}
-			fields := []jsonField{{key: "_RowType_", value: "N"}}
+		jsonRow := func(rowType string, values map[string]protocol.Cell, saved bool) jsonObject {
+			fields := []jsonField{{key: "_RowType_", value: rowType}}
 			for _, column := range dataset.Columns {
-				cell, ok := row.Values[column.ID]
+				cell, ok := values[column.ID]
 				if !ok {
+					if saved {
+						continue
+					}
 					cell.State = "missing"
 				}
 				if scalar, include := jsonScalar(column.Type, cell); include {
 					fields = append(fields, jsonField{key: column.ID, value: scalar})
 				}
 			}
-			rows = append(rows, orderedJSON(fields...))
+			return orderedJSON(fields...)
+		}
+		for _, row := range dataset.Rows {
+			rows = append(rows, jsonRow(row.Type, row.Values, false))
+			if row.OrgRow != nil {
+				rows = append(rows, jsonRow("O", row.OrgRow.Values, true))
+			}
 		}
 
 		fields := []jsonField{{key: "id", value: dataset.ID}}
@@ -369,7 +438,7 @@ func encodeXML(value protocol.Value, profile string) ([]byte, error) {
 	} else {
 		out.WriteString("\t<Parameters>\n")
 		for _, parameter := range value.Parameters {
-			if err := writeXMLParameter(&out, parameter, profile == "nexacro-xml-4000"); err != nil {
+			if err := writeXMLParameter(&out, parameter, profile == "xplatform-xml-5000"); err != nil {
 				return nil, err
 			}
 		}
@@ -384,12 +453,12 @@ func encodeXML(value protocol.Value, profile string) ([]byte, error) {
 	return []byte(out.String()), nil
 }
 
-func writeXMLParameter(out *strings.Builder, parameter protocol.Parameter, rawText bool) error {
-	id, err := escapeXMLScalar(parameter.ID)
+func writeXMLParameter(out *strings.Builder, parameter protocol.Parameter, xp bool) error {
+	id, err := escapeXML(parameter.ID, xp)
 	if err != nil {
 		return err
 	}
-	dataType, err := escapeXMLScalar(wireType(parameter.Type))
+	dataType, err := escapeXML(wireType(parameter.Type), xp)
 	if err != nil {
 		return err
 	}
@@ -407,7 +476,7 @@ func writeXMLParameter(out *strings.Builder, parameter protocol.Parameter, rawTe
 		return nil
 	}
 	out.WriteByte('>')
-	escaped, err := escapeXMLText(scalar, rawText)
+	escaped, err := escapeXML(scalar, xp)
 	if err != nil {
 		return err
 	}
@@ -416,8 +485,16 @@ func writeXMLParameter(out *strings.Builder, parameter protocol.Parameter, rawTe
 	return nil
 }
 
+func columnSize(size, dataType string) string {
+	if size != "" {
+		return size
+	}
+	return defaultWireSize(dataType)
+}
+
 func writeXMLDataset(out *strings.Builder, dataset protocol.Dataset, profile string) error {
-	id, err := escapeXMLScalar(dataset.ID)
+	xp := profile == "xplatform-xml-5000"
+	id, err := escapeXML(dataset.ID, xp)
 	if err != nil {
 		return err
 	}
@@ -427,23 +504,23 @@ func writeXMLDataset(out *strings.Builder, dataset protocol.Dataset, profile str
 	out.WriteString("\t\t<ColumnInfo>\n")
 	if profile == "nexacro-xml-4000" {
 		for _, column := range dataset.ConstColumns {
-			if err := writeXMLConstColumn(out, column); err != nil {
+			if err := writeXMLConstColumn(out, column, xp); err != nil {
 				return err
 			}
 		}
 		for _, column := range dataset.Columns {
-			if err := writeXMLColumn(out, column); err != nil {
+			if err := writeXMLColumn(out, column, xp); err != nil {
 				return err
 			}
 		}
 	} else {
 		for _, column := range dataset.Columns {
-			if err := writeXMLColumn(out, column); err != nil {
+			if err := writeXMLColumn(out, column, xp); err != nil {
 				return err
 			}
 		}
 		for _, column := range dataset.ConstColumns {
-			if err := writeXMLConstColumn(out, column); err != nil {
+			if err := writeXMLConstColumn(out, column, xp); err != nil {
 				return err
 			}
 		}
@@ -454,7 +531,7 @@ func writeXMLDataset(out *strings.Builder, dataset protocol.Dataset, profile str
 		if strings.EqualFold(row.Type, "O") {
 			continue
 		}
-		if err := writeXMLRow(out, row, dataset.Columns, profile == "nexacro-xml-4000"); err != nil {
+		if err := writeXMLRow(out, row, dataset.Columns, profile == "xplatform-xml-5000"); err != nil {
 			return err
 		}
 	}
@@ -463,16 +540,16 @@ func writeXMLDataset(out *strings.Builder, dataset protocol.Dataset, profile str
 	return nil
 }
 
-func writeXMLConstColumn(out *strings.Builder, column protocol.ConstColumn) error {
-	id, err := escapeXMLScalar(column.ID)
+func writeXMLConstColumn(out *strings.Builder, column protocol.ConstColumn, xp bool) error {
+	id, err := escapeXML(column.ID, xp)
 	if err != nil {
 		return err
 	}
-	dataType, err := escapeXMLScalar(wireType(column.Type))
+	dataType, err := escapeXML(wireType(column.Type), xp)
 	if err != nil {
 		return err
 	}
-	size, err := escapeXMLScalar(defaultWireSize(column.Type))
+	size, err := escapeXML(columnSize(column.Size, column.Type), xp)
 	if err != nil {
 		return err
 	}
@@ -483,14 +560,14 @@ func writeXMLConstColumn(out *strings.Builder, column protocol.ConstColumn) erro
 	out.WriteString(`" size="`)
 	out.WriteString(size)
 	out.WriteByte('"')
-	if strings.EqualFold(defaultType(column.Type), "BLOB") {
-		out.WriteString(` encrypt="base64"`)
-	}
-	if column.Value.State != "value" {
+	if column.Value.State != "value" && column.Value.State != "empty" {
 		out.WriteString("/>\n")
 		return nil
 	}
-	value, err := escapeXMLScalar(column.Value.Lexical)
+	if strings.EqualFold(defaultType(column.Type), "BLOB") {
+		out.WriteString(` encrypt="base64"`)
+	}
+	value, err := escapeXML(column.Value.Lexical, xp)
 	if err != nil {
 		return err
 	}
@@ -505,16 +582,16 @@ func writeXMLConstColumn(out *strings.Builder, column protocol.ConstColumn) erro
 	return nil
 }
 
-func writeXMLColumn(out *strings.Builder, column protocol.Column) error {
-	id, err := escapeXMLScalar(column.ID)
+func writeXMLColumn(out *strings.Builder, column protocol.Column, xp bool) error {
+	id, err := escapeXML(column.ID, xp)
 	if err != nil {
 		return err
 	}
-	dataType, err := escapeXMLScalar(wireType(column.Type))
+	dataType, err := escapeXML(wireType(column.Type), xp)
 	if err != nil {
 		return err
 	}
-	size, err := escapeXMLScalar(defaultWireSize(column.Type))
+	size, err := escapeXML(columnSize(column.Size, column.Type), xp)
 	if err != nil {
 		return err
 	}
@@ -532,7 +609,7 @@ func writeXMLColumn(out *strings.Builder, column protocol.Column) error {
 	return nil
 }
 
-func writeXMLRow(out *strings.Builder, row protocol.Row, columns []protocol.Column, rawText bool) error {
+func writeXMLRow(out *strings.Builder, row protocol.Row, columns []protocol.Column, xp bool) error {
 	rowType := map[string]string{"N": "", "I": "insert", "U": "update", "D": "delete"}[strings.ToUpper(row.Type)]
 	if rowType == "" && !strings.EqualFold(row.Type, "N") {
 		return fmt.Errorf("invalid XML row type %q", row.Type)
@@ -544,12 +621,12 @@ func writeXMLRow(out *strings.Builder, row protocol.Row, columns []protocol.Colu
 		out.WriteByte('"')
 	}
 	out.WriteString(">\n")
-	if err := writeXMLCells(out, row.Values, columns, "\t\t\t\t", rawText); err != nil {
+	if err := writeXMLCells(out, row.Values, columns, "\t\t\t\t", xp, false); err != nil {
 		return err
 	}
 	if row.OrgRow != nil {
 		out.WriteString("\t\t\t\t<OrgRow>\n")
-		if err := writeXMLCells(out, row.OrgRow.Values, columns, "\t\t\t\t\t", rawText); err != nil {
+		if err := writeXMLCells(out, row.OrgRow.Values, columns, "\t\t\t\t\t", xp, true); err != nil {
 			return err
 		}
 		out.WriteString("\t\t\t\t</OrgRow>\n")
@@ -558,17 +635,22 @@ func writeXMLRow(out *strings.Builder, row protocol.Row, columns []protocol.Colu
 	return nil
 }
 
-func writeXMLCells(out *strings.Builder, cells map[string]protocol.Cell, columns []protocol.Column, indent string, rawText bool) error {
+func writeXMLCells(out *strings.Builder, cells map[string]protocol.Cell, columns []protocol.Column, indent string, xp, saved bool) error {
 	for _, column := range columns {
 		cell, ok := cells[column.ID]
 		if !ok || cell.State == "missing" || cell.State == "null" {
-			continue
+			// The drivers hold an unset BOOLEAN as false and write it as 0;
+			// a saved row the driver never filled has no cells at all.
+			if saved || !strings.EqualFold(defaultType(column.Type), "BOOLEAN") {
+				continue
+			}
+			cell = protocol.Cell{State: "value", Lexical: "0"}
 		}
-		id, err := escapeXMLScalar(column.ID)
+		id, err := escapeXML(column.ID, xp)
 		if err != nil {
 			return err
 		}
-		value, err := escapeXMLText(cell.Lexical, rawText)
+		value, err := escapeXML(cell.Lexical, xp)
 		if err != nil {
 			return err
 		}
@@ -582,15 +664,12 @@ func writeXMLCells(out *strings.Builder, cells map[string]protocol.Cell, columns
 	return nil
 }
 
-func escapeXMLScalar(value string) (string, error) {
-	return escapeXML(value, true)
-}
-
-func escapeXMLText(value string, rawWhitespace bool) (string, error) {
-	return escapeXML(value, !rawWhitespace)
-}
-
-func escapeXML(value string, escapeWhitespace bool) (string, error) {
+// escapeXML follows the drivers' XmlCodec. XPLATFORM writes every character
+// below U+0020 as a decimal reference and a space as &#32;; Nexacro escapes
+// only the five predefined entities and writes tab, LF and CR as they are.
+// Nexacro would also write other control characters raw, which no XML parser
+// (the driver's included) reads back, so they are rejected here.
+func escapeXML(value string, xplatform bool) (string, error) {
 	var out strings.Builder
 	for _, r := range value {
 		switch r {
@@ -604,29 +683,21 @@ func escapeXML(value string, escapeWhitespace bool) (string, error) {
 			out.WriteString("&quot;")
 		case '\'':
 			out.WriteString("&apos;")
-		case '\t':
-			if escapeWhitespace {
-				out.WriteString("&#9;")
+		case ' ':
+			if xplatform {
+				out.WriteString("&#32;")
 			} else {
-				out.WriteRune(r)
-			}
-		case '\n':
-			if escapeWhitespace {
-				out.WriteString("&#10;")
-			} else {
-				out.WriteRune(r)
-			}
-		case '\r':
-			if escapeWhitespace {
-				out.WriteString("&#13;")
-			} else {
-				out.WriteRune(r)
+				out.WriteByte(' ')
 			}
 		default:
-			if r < 0x20 {
+			switch {
+			case r < 0x20 && xplatform:
+				fmt.Fprintf(&out, "&#%d;", r)
+			case r < 0x20 && r != '\t' && r != '\n' && r != '\r':
 				return "", fmt.Errorf("character U+%04X is not valid XML 1.0", r)
+			default:
+				out.WriteRune(r)
 			}
-			out.WriteRune(r)
 		}
 	}
 	return out.String(), nil

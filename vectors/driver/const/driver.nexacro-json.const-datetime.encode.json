@@ -1,0 +1,78 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb25zdENvbHVtbiI6W3sic2l6ZSI6IjE3IiwiaWQiOiJrMCIsInR5cGUiOiJkYXRldGltZSIsInZhbHVlIjoiMjAyNjExMTYxMjM0NTY3ODkifSx7InNpemUiOiIxNyIsImlkIjoiazEiLCJ0eXBlIjoiZGF0ZXRpbWUiLCJ2YWx1ZSI6ImFiYyJ9LHsic2l6ZSI6IjE3IiwiaWQiOiJrMiIsInR5cGUiOiJkYXRldGltZSIsInZhbHVlIjoiIn0seyJzaXplIjoiMTciLCJpZCI6ImszIiwidHlwZSI6ImRhdGV0aW1lIn1dLCJDb2x1bW4iOlt7InNpemUiOiIzMiIsImlkIjoiYSIsInR5cGUiOiJzdHJpbmcifV19LCJpZCI6ImQiLCJSb3dzIjpbeyJhIjoieCIsIl9Sb3dUeXBlXyI6Ik4ifV19XSwidmVyc2lvbiI6IjEuMCJ9",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-json.const-datetime.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "DATETIME",
+            "value": {
+              "lexical": "20261116123456789",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "DATETIME",
+            "value": {
+              "lexical": "abc",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "DATETIME",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "DATETIME",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

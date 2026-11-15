@@ -1,0 +1,96 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "string",
+          "lexical": "s",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "int",
+          "lexical": "12",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "long",
+          "lexical": "1234567890123",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "float",
+          "lexical": "1.5",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "double",
+          "lexical": "2.25",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "decimal",
+          "lexical": "3.75",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "bigdecimal",
+          "lexical": "123.45",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "boolean",
+          "lexical": "1",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "date",
+          "lexical": "20261116000000000",
+          "state": "value",
+          "type": "DATETIME"
+        },
+        {
+          "id": "time",
+          "lexical": "19700101123456789",
+          "state": "value",
+          "type": "DATETIME"
+        },
+        {
+          "id": "datetime",
+          "lexical": "20261116123456789",
+          "state": "value",
+          "type": "DATETIME"
+        },
+        {
+          "id": "blob",
+          "lexical": "AAEC",
+          "state": "value",
+          "type": "BLOB"
+        }
+      ]
+    }
+  },
+  "id": "driver.xplatform-binary.types-parameters.encode.decode",
+  "input": {
+    "data": "/hATiADLAAwABnN0cmluZwAVAAFzAANpbnQAAwAAAAwABGxvbmcAKAANMTIzNDU2Nzg5MDEyMwAFZmxvYXQABD/4AAAAAAAAAAZkb3VibGUABEACAAAAAAAAAAdkZWNpbWFsACgABDMuNzUACmJpZ2RlY2ltYWwAKAAGMTIzLjQ1AAdib29sZWFuAAMAAAABAARkYXRlAClCeh4adMAAAAAEdGltZQApQYWZZKgAAAAACGRhdGV0aW1lAClCeh5Fp4lQAAAEYmxvYgAaAAMAAQI=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

@@ -1,0 +1,330 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c5",
+              "index": 5,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c6",
+              "index": 6,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c7",
+              "index": 7,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c8",
+              "index": 8,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c9",
+              "index": 9,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c10",
+              "index": 10,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c11",
+              "index": 11,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c12",
+              "index": 12,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c13",
+              "index": 13,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c14",
+              "index": 14,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c15",
+              "index": 15,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c16",
+              "index": 16,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c17",
+              "index": 17,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "c18",
+              "index": 18,
+              "type": "DOUBLE"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "1.2",
+                  "state": "value"
+                },
+                "c1": {
+                  "lexical": "1.5",
+                  "state": "value"
+                },
+                "c10": {
+                  "lexical": "0.0",
+                  "state": "value"
+                },
+                "c11": {
+                  "lexical": "1234.0",
+                  "state": "value"
+                },
+                "c12": {
+                  "lexical": "NaN",
+                  "state": "value"
+                },
+                "c13": {
+                  "lexical": "Infinity",
+                  "state": "value"
+                },
+                "c14": {
+                  "lexical": "-0.0015",
+                  "state": "value"
+                },
+                "c15": {
+                  "lexical": "1.0E7",
+                  "state": "value"
+                },
+                "c16": {
+                  "lexical": "1.0E-4",
+                  "state": "value"
+                },
+                "c17": {
+                  "lexical": "1.23456789123E8",
+                  "state": "value"
+                },
+                "c18": {
+                  "lexical": "9.223372036854776E18",
+                  "state": "value"
+                },
+                "c2": {
+                  "lexical": "-0.0",
+                  "state": "value"
+                },
+                "c3": {
+                  "lexical": "1000.0",
+                  "state": "value"
+                },
+                "c4": {
+                  "lexical": "0.0",
+                  "state": "value"
+                },
+                "c5": {
+                  "lexical": "2.0",
+                  "state": "value"
+                },
+                "c6": {
+                  "lexical": "10.0",
+                  "state": "value"
+                },
+                "c7": {
+                  "lexical": "-7.0",
+                  "state": "value"
+                },
+                "c8": {
+                  "lexical": "5.0",
+                  "state": "value"
+                },
+                "c9": {
+                  "lexical": "2.147483648E9",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "1.2",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p1",
+          "lexical": "1.5",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p2",
+          "lexical": "-0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p3",
+          "lexical": "1000.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p4",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p5",
+          "lexical": "2.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p6",
+          "lexical": "10.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p7",
+          "lexical": "-7.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p8",
+          "lexical": "5.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p9",
+          "lexical": "2.147483648E9",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p10",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p11",
+          "lexical": "1234.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p12",
+          "lexical": "NaN",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p13",
+          "lexical": "Infinity",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p14",
+          "lexical": "-0.0015",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p15",
+          "lexical": "1.0E7",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p16",
+          "lexical": "1.0E-4",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p17",
+          "lexical": "1.23456789123E8",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "p18",
+          "lexical": "9.223372036854776E18",
+          "state": "value",
+          "type": "DOUBLE"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "id": "driver.nexacro-xml.scalar-double.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJwMCIgdHlwZT0iZG91YmxlIj4wMDEuMjA8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMSIgdHlwZT0iZG91YmxlIj4xLjUwPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0icDIiIHR5cGU9ImRvdWJsZSI+LTAuMDwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InAzIiB0eXBlPSJkb3VibGUiPjFlMzwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InA0IiB0eXBlPSJkb3VibGUiPmFiYzwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InA1IiB0eXBlPSJkb3VibGUiPiAyIDwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InA2IiB0eXBlPSJkb3VibGUiPjEwPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0icDciIHR5cGU9ImRvdWJsZSI+LTc8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwOCIgdHlwZT0iZG91YmxlIj4rNTwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InA5IiB0eXBlPSJkb3VibGUiPjIxNDc0ODM2NDg8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMTAiIHR5cGU9ImRvdWJsZSI+MHgxRjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InAxMSIgdHlwZT0iZG91YmxlIj4xLDIzNDwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InAxMiIgdHlwZT0iZG91YmxlIj5OYU48L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMTMiIHR5cGU9ImRvdWJsZSI+SW5maW5pdHk8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMTQiIHR5cGU9ImRvdWJsZSI+LTEuNWUtMzwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9InAxNSIgdHlwZT0iZG91YmxlIj4xRTc8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMTYiIHR5cGU9ImRvdWJsZSI+MC4wMDAxPC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0icDE3IiB0eXBlPSJkb3VibGUiPjEyMzQ1Njc4OS4xMjM8L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJwMTgiIHR5cGU9ImRvdWJsZSI+OTIyMzM3MjAzNjg1NDc3NTgwODwvUGFyYW1ldGVyPjwvUGFyYW1ldGVycz48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbHVtbiBpZD0iYzAiIHR5cGU9ImRvdWJsZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImMxIiB0eXBlPSJkb3VibGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjMiIgdHlwZT0iZG91YmxlIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzMiIHR5cGU9ImRvdWJsZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImM0IiB0eXBlPSJkb3VibGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjNSIgdHlwZT0iZG91YmxlIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzYiIHR5cGU9ImRvdWJsZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImM3IiB0eXBlPSJkb3VibGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjOCIgdHlwZT0iZG91YmxlIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzkiIHR5cGU9ImRvdWJsZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImMxMCIgdHlwZT0iZG91YmxlIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzExIiB0eXBlPSJkb3VibGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjMTIiIHR5cGU9ImRvdWJsZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImMxMyIgdHlwZT0iZG91YmxlIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzE0IiB0eXBlPSJkb3VibGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjMTUiIHR5cGU9ImRvdWJsZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImMxNiIgdHlwZT0iZG91YmxlIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYzE3IiB0eXBlPSJkb3VibGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJjMTgiIHR5cGU9ImRvdWJsZSIgc2l6ZT0iOCIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9ImMwIj4wMDEuMjA8L0NvbD48Q29sIGlkPSJjMSI+MS41MDwvQ29sPjxDb2wgaWQ9ImMyIj4tMC4wPC9Db2w+PENvbCBpZD0iYzMiPjFlMzwvQ29sPjxDb2wgaWQ9ImM0Ij5hYmM8L0NvbD48Q29sIGlkPSJjNSI+IDIgPC9Db2w+PENvbCBpZD0iYzYiPjEwPC9Db2w+PENvbCBpZD0iYzciPi03PC9Db2w+PENvbCBpZD0iYzgiPis1PC9Db2w+PENvbCBpZD0iYzkiPjIxNDc0ODM2NDg8L0NvbD48Q29sIGlkPSJjMTAiPjB4MUY8L0NvbD48Q29sIGlkPSJjMTEiPjEsMjM0PC9Db2w+PENvbCBpZD0iYzEyIj5OYU48L0NvbD48Q29sIGlkPSJjMTMiPkluZmluaXR5PC9Db2w+PENvbCBpZD0iYzE0Ij4tMS41ZS0zPC9Db2w+PENvbCBpZD0iYzE1Ij4xRTc8L0NvbD48Q29sIGlkPSJjMTYiPjAuMDAwMTwvQ29sPjxDb2wgaWQ9ImMxNyI+MTIzNDU2Nzg5LjEyMzwvQ29sPjxDb2wgaWQ9ImMxOCI+OTIyMzM3MjAzNjg1NDc3NTgwODwvQ29sPjwvUm93PjwvUm93cz48L0RhdGFzZXQ+PC9Sb290Pg==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

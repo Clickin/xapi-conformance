@@ -1,0 +1,82 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "x",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "한글",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "columns": [
+            {
+              "id": "b",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "e",
+          "rows": []
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "v",
+          "state": "value",
+          "type": "STRING"
+        },
+        {
+          "id": "q",
+          "lexical": "7",
+          "state": "value",
+          "type": "INT"
+        }
+      ]
+    }
+  },
+  "id": "driver.xplatform-binary.parameters-and-datasets.encode.decode",
+  "input": {
+    "data": "/hATiAATAAIAAXAAFQABdgABcQADAAAAB/4BE4gAFgABZP4QE4gAAgAAAAEAAWEAAQAgAAEACQABAAEAFQABeAAOAAEAAQAVAAbtlZzquIAAAAAA/gETiAAWAAFl/hATiAACAAAAAQABYgABACAAAQAAAAA=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/binary.json",
+    "repository": "xapi-conformance"
+  }
+}

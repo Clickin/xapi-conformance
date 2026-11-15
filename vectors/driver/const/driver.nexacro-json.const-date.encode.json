@@ -1,0 +1,78 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb25zdENvbHVtbiI6W3sic2l6ZSI6IjYiLCJpZCI6ImswIiwidHlwZSI6ImRhdGUiLCJ2YWx1ZSI6IjIwMjYxMTE2In0seyJzaXplIjoiNiIsImlkIjoiazEiLCJ0eXBlIjoiZGF0ZSIsInZhbHVlIjoiMjAyNi0xMS0xNiJ9LHsic2l6ZSI6IjYiLCJpZCI6ImsyIiwidHlwZSI6ImRhdGUiLCJ2YWx1ZSI6IiJ9LHsic2l6ZSI6IjYiLCJpZCI6ImszIiwidHlwZSI6ImRhdGUifV0sIkNvbHVtbiI6W3sic2l6ZSI6IjMyIiwiaWQiOiJhIiwidHlwZSI6InN0cmluZyJ9XX0sImlkIjoiZCIsIlJvd3MiOlt7ImEiOiJ4IiwiX1Jvd1R5cGVfIjoiTiJ9XX1dLCJ2ZXJzaW9uIjoiMS4wIn0=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-json.const-date.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "DATE",
+            "value": {
+              "lexical": "20261116",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "DATE",
+            "value": {
+              "lexical": "2026-11-16",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "DATE",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "DATE",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

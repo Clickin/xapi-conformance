@@ -1,0 +1,86 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/gETiABIAAFk/hATiAA0AAUAAmswAAMAAAPoAAJrMQADAAAAAAACazIAAwAAAAEAAmszAAMAAAAAAAJrNAADAAAAAAABAAFhAAEAIAABAAkAAQABABUAAXgAAAAA",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-binary.const-int.encode",
+  "operation": "encode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "INT",
+            "value": {
+              "lexical": "1,000",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "INT",
+            "value": {
+              "lexical": "abc",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "INT",
+            "value": {
+              "lexical": "1.9",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "INT",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k4",
+            "type": "INT",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

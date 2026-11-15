@@ -1,0 +1,188 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzPgoJCTxQYXJhbWV0ZXIgaWQ9InAwIiB0eXBlPSJpbnQiPjE8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwMSIgdHlwZT0iaW50Ij4xPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDIiIHR5cGU9ImludCI+MTwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAzIiB0eXBlPSJpbnQiPjA8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwNCIgdHlwZT0iaW50Ij4xPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDUiIHR5cGU9ImludCI+MTwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InA2IiB0eXBlPSJpbnQiPjA8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwNyIgdHlwZT0iaW50Ij4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDgiIHR5cGU9ImludCI+MDwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InA5IiB0eXBlPSJpbnQiPjA8L1BhcmFtZXRlcj4KCTwvUGFyYW1ldGVycz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbHVtbiBpZD0iYzAiIHR5cGU9ImludCIgc2l6ZT0iMiIvPgoJCQk8Q29sdW1uIGlkPSJjMSIgdHlwZT0iaW50IiBzaXplPSIyIi8+CgkJCTxDb2x1bW4gaWQ9ImMyIiB0eXBlPSJpbnQiIHNpemU9IjIiLz4KCQkJPENvbHVtbiBpZD0iYzMiIHR5cGU9ImludCIgc2l6ZT0iMiIvPgoJCQk8Q29sdW1uIGlkPSJjNCIgdHlwZT0iaW50IiBzaXplPSIyIi8+CgkJCTxDb2x1bW4gaWQ9ImM1IiB0eXBlPSJpbnQiIHNpemU9IjIiLz4KCQkJPENvbHVtbiBpZD0iYzYiIHR5cGU9ImludCIgc2l6ZT0iMiIvPgoJCQk8Q29sdW1uIGlkPSJjNyIgdHlwZT0iaW50IiBzaXplPSIyIi8+CgkJCTxDb2x1bW4gaWQ9ImM4IiB0eXBlPSJpbnQiIHNpemU9IjIiLz4KCQkJPENvbHVtbiBpZD0iYzkiIHR5cGU9ImludCIgc2l6ZT0iMiIvPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9ImMwIj4xPC9Db2w+CgkJCQk8Q29sIGlkPSJjMSI+MTwvQ29sPgoJCQkJPENvbCBpZD0iYzIiPjE8L0NvbD4KCQkJCTxDb2wgaWQ9ImMzIj4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjNCI+MTwvQ29sPgoJCQkJPENvbCBpZD0iYzUiPjE8L0NvbD4KCQkJCTxDb2wgaWQ9ImM2Ij4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjNyI+MDwvQ29sPgoJCQkJPENvbCBpZD0iYzgiPjA8L0NvbD4KCQkJCTxDb2wgaWQ9ImM5Ij4wPC9Db2w+CgkJCTwvUm93PgoJCTwvUm93cz4KCTwvRGF0YXNldD4KPC9Sb290Pgo=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.scalar-boolean.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c5",
+            "index": 5,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c6",
+            "index": 6,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c7",
+            "index": 7,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c8",
+            "index": 8,
+            "type": "BOOLEAN"
+          },
+          {
+            "id": "c9",
+            "index": 9,
+            "type": "BOOLEAN"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "true",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "TRUE",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "1",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "0",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "yes",
+                "state": "value"
+              },
+              "c5": {
+                "lexical": "Y",
+                "state": "value"
+              },
+              "c6": {
+                "lexical": "false",
+                "state": "value"
+              },
+              "c7": {
+                "lexical": "abc",
+                "state": "value"
+              },
+              "c8": {
+                "lexical": " true",
+                "state": "value"
+              },
+              "c9": {
+                "lexical": "2",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "true",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p1",
+        "lexical": "TRUE",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p2",
+        "lexical": "1",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p3",
+        "lexical": "0",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p4",
+        "lexical": "yes",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p5",
+        "lexical": "Y",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p6",
+        "lexical": "false",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p7",
+        "lexical": "abc",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p8",
+        "lexical": " true",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "p9",
+        "lexical": "2",
+        "state": "value",
+        "type": "BOOLEAN"
+      }
+    ]
+  }
+}

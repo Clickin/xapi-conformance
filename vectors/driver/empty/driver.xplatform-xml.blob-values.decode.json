@@ -1,0 +1,66 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "b",
+              "index": 0,
+              "type": "BLOB"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "AAEC",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "b",
+          "lexical": "QUFFQw==",
+          "state": "value",
+          "type": "BLOB"
+        },
+        {
+          "id": "e",
+          "lexical": "",
+          "state": "empty",
+          "type": "BLOB"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "5000"
+        }
+      }
+    }
+  },
+  "id": "driver.xplatform-xml.blob-values.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+PFBhcmFtZXRlcnM+PFBhcmFtZXRlciBpZD0iYiIgdHlwZT0iYmxvYiI+QUFFQzwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9ImUiIHR5cGU9ImJsb2IiPjwvUGFyYW1ldGVyPjwvUGFyYW1ldGVycz48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbHVtbiBpZD0iYiIgdHlwZT0iYmxvYiIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9ImIiPkFBRUM8L0NvbD48L1Jvdz48L1Jvd3M+PC9EYXRhc2V0PjwvUm9vdD4=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/empty.json",
+    "repository": "xapi-conformance"
+  }
+}

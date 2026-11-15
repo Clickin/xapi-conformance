@@ -1,0 +1,101 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/gETiAAWAAFk/hATiAACAAAAAQABYQABACAAAQAKAAIAAQAVAAJpMQASAAQAAQAVAAJ1MQABABUAAm8xAA4ABAABABUAAnUyAAEAAAAAAAA=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-binary.savetype-dataset-3.encode",
+  "operation": "encode",
+  "profile": "nexacro-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/savetype.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "n1",
+                "state": "value"
+              }
+            }
+          },
+          {
+            "type": "I",
+            "values": {
+              "a": {
+                "lexical": "i1",
+                "state": "value"
+              }
+            }
+          },
+          {
+            "orgRow": {
+              "type": "O",
+              "values": {
+                "a": {
+                  "lexical": "o1",
+                  "state": "value"
+                }
+              }
+            },
+            "type": "U",
+            "values": {
+              "a": {
+                "lexical": "u1",
+                "state": "value"
+              }
+            }
+          },
+          {
+            "type": "U",
+            "values": {
+              "a": {
+                "lexical": "u2",
+                "state": "value"
+              }
+            }
+          },
+          {
+            "type": "D",
+            "values": {
+              "a": {
+                "lexical": "d1",
+                "state": "value"
+              }
+            }
+          },
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "n2",
+                "state": "value"
+              }
+            }
+          }
+        ],
+        "saveType": 3
+      }
+    ],
+    "parameters": []
+  }
+}

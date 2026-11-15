@@ -1,0 +1,55 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "/gETiAAfAAFk/hATiAACAAAAAgABYQABACAAAQABYgACAAQAAQAPAAEAAgAVAAF4AAMAAAABAAAAAA==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-binary.dataset-without-parameters.encode",
+  "operation": "encode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/binary.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          },
+          {
+            "id": "b",
+            "index": 1,
+            "type": "INT"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              },
+              "b": {
+                "lexical": "1",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

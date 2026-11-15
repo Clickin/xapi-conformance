@@ -1,0 +1,71 @@
+{
+ "description": "How the original driver reads empty values and BLOB text.",
+ "cases": [
+  {
+   "id": "driver.nexacro-xml.empty-values.decode",
+   "profile": "nexacro-xml-4000",
+   "operation": "decode",
+   "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Root xmlns=\"http://www.nexacroplatform.com/platform/dataset\"><Parameters><Parameter id=\"string\" type=\"string\"></Parameter><Parameter id=\"string2\" type=\"string\"/><Parameter id=\"int\" type=\"int\"></Parameter><Parameter id=\"int2\" type=\"int\"/><Parameter id=\"long\" type=\"long\"></Parameter><Parameter id=\"long2\" type=\"long\"/><Parameter id=\"float\" type=\"float\"></Parameter><Parameter id=\"float2\" type=\"float\"/><Parameter id=\"double\" type=\"double\"></Parameter><Parameter id=\"double2\" type=\"double\"/><Parameter id=\"decimal\" type=\"decimal\"></Parameter><Parameter id=\"decimal2\" type=\"decimal\"/><Parameter id=\"bigdecimal\" type=\"bigdecimal\"></Parameter><Parameter id=\"bigdecimal2\" type=\"bigdecimal\"/><Parameter id=\"boolean\" type=\"boolean\"></Parameter><Parameter id=\"boolean2\" type=\"boolean\"/><Parameter id=\"date\" type=\"date\"></Parameter><Parameter id=\"date2\" type=\"date\"/><Parameter id=\"time\" type=\"time\"></Parameter><Parameter id=\"time2\" type=\"time\"/><Parameter id=\"datetime\" type=\"datetime\"></Parameter><Parameter id=\"datetime2\" type=\"datetime\"/><Parameter id=\"blob\" type=\"blob\"></Parameter><Parameter id=\"blob2\" type=\"blob\"/></Parameters><Dataset id=\"d\"><ColumnInfo><Column id=\"string\" type=\"string\" size=\"8\"/><Column id=\"int\" type=\"int\" size=\"8\"/><Column id=\"long\" type=\"long\" size=\"8\"/><Column id=\"float\" type=\"float\" size=\"8\"/><Column id=\"double\" type=\"double\" size=\"8\"/><Column id=\"decimal\" type=\"decimal\" size=\"8\"/><Column id=\"bigdecimal\" type=\"bigdecimal\" size=\"8\"/><Column id=\"boolean\" type=\"boolean\" size=\"8\"/><Column id=\"date\" type=\"date\" size=\"8\"/><Column id=\"time\" type=\"time\" size=\"8\"/><Column id=\"datetime\" type=\"datetime\" size=\"8\"/><Column id=\"blob\" type=\"blob\" size=\"8\"/></ColumnInfo><Rows><Row><Col id=\"string\"></Col><Col id=\"int\"></Col><Col id=\"long\"></Col><Col id=\"float\"></Col><Col id=\"double\"></Col><Col id=\"decimal\"></Col><Col id=\"bigdecimal\"></Col><Col id=\"boolean\"></Col><Col id=\"date\"></Col><Col id=\"time\"></Col><Col id=\"datetime\"></Col><Col id=\"blob\"></Col></Row><Row><Col id=\"string\"/><Col id=\"int\"/><Col id=\"long\"/><Col id=\"float\"/><Col id=\"double\"/><Col id=\"decimal\"/><Col id=\"bigdecimal\"/><Col id=\"boolean\"/><Col id=\"date\"/><Col id=\"time\"/><Col id=\"datetime\"/><Col id=\"blob\"/></Row><Row></Row></Rows></Dataset></Root>"
+  },
+  {
+   "id": "driver.nexacro-xml.blob-values.decode",
+   "profile": "nexacro-xml-4000",
+   "operation": "decode",
+   "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Root xmlns=\"http://www.nexacroplatform.com/platform/dataset\"><Parameters><Parameter id=\"b\" type=\"blob\">AAEC</Parameter><Parameter id=\"e\" type=\"blob\"></Parameter></Parameters><Dataset id=\"d\"><ColumnInfo><Column id=\"b\" type=\"blob\"/></ColumnInfo><Rows><Row><Col id=\"b\">AAEC</Col></Row></Rows></Dataset></Root>"
+  },
+  {
+   "id": "driver.xplatform-xml.empty-values.decode",
+   "profile": "xplatform-xml-5000",
+   "operation": "decode",
+   "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Root xmlns=\"http://www.tobesoft.com/platform/dataset\" ver=\"5000\"><Parameters><Parameter id=\"string\" type=\"string\"></Parameter><Parameter id=\"string2\" type=\"string\"/><Parameter id=\"int\" type=\"int\"></Parameter><Parameter id=\"int2\" type=\"int\"/><Parameter id=\"long\" type=\"long\"></Parameter><Parameter id=\"long2\" type=\"long\"/><Parameter id=\"float\" type=\"float\"></Parameter><Parameter id=\"float2\" type=\"float\"/><Parameter id=\"double\" type=\"double\"></Parameter><Parameter id=\"double2\" type=\"double\"/><Parameter id=\"decimal\" type=\"decimal\"></Parameter><Parameter id=\"decimal2\" type=\"decimal\"/><Parameter id=\"bigdecimal\" type=\"bigdecimal\"></Parameter><Parameter id=\"bigdecimal2\" type=\"bigdecimal\"/><Parameter id=\"boolean\" type=\"boolean\"></Parameter><Parameter id=\"boolean2\" type=\"boolean\"/><Parameter id=\"date\" type=\"date\"></Parameter><Parameter id=\"date2\" type=\"date\"/><Parameter id=\"time\" type=\"time\"></Parameter><Parameter id=\"time2\" type=\"time\"/><Parameter id=\"datetime\" type=\"datetime\"></Parameter><Parameter id=\"datetime2\" type=\"datetime\"/><Parameter id=\"blob\" type=\"blob\"></Parameter><Parameter id=\"blob2\" type=\"blob\"/></Parameters><Dataset id=\"d\"><ColumnInfo><Column id=\"string\" type=\"string\" size=\"8\"/><Column id=\"int\" type=\"int\" size=\"8\"/><Column id=\"long\" type=\"long\" size=\"8\"/><Column id=\"float\" type=\"float\" size=\"8\"/><Column id=\"double\" type=\"double\" size=\"8\"/><Column id=\"decimal\" type=\"decimal\" size=\"8\"/><Column id=\"bigdecimal\" type=\"bigdecimal\" size=\"8\"/><Column id=\"boolean\" type=\"boolean\" size=\"8\"/><Column id=\"date\" type=\"date\" size=\"8\"/><Column id=\"time\" type=\"time\" size=\"8\"/><Column id=\"datetime\" type=\"datetime\" size=\"8\"/><Column id=\"blob\" type=\"blob\" size=\"8\"/></ColumnInfo><Rows><Row><Col id=\"string\"></Col><Col id=\"int\"></Col><Col id=\"long\"></Col><Col id=\"float\"></Col><Col id=\"double\"></Col><Col id=\"decimal\"></Col><Col id=\"bigdecimal\"></Col><Col id=\"boolean\"></Col><Col id=\"date\"></Col><Col id=\"time\"></Col><Col id=\"datetime\"></Col><Col id=\"blob\"></Col></Row><Row><Col id=\"string\"/><Col id=\"int\"/><Col id=\"long\"/><Col id=\"float\"/><Col id=\"double\"/><Col id=\"decimal\"/><Col id=\"bigdecimal\"/><Col id=\"boolean\"/><Col id=\"date\"/><Col id=\"time\"/><Col id=\"datetime\"/><Col id=\"blob\"/></Row><Row></Row></Rows></Dataset></Root>"
+  },
+  {
+   "id": "driver.xplatform-xml.blob-values.decode",
+   "profile": "xplatform-xml-5000",
+   "operation": "decode",
+   "text": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Root xmlns=\"http://www.tobesoft.com/platform/dataset\" ver=\"5000\"><Parameters><Parameter id=\"b\" type=\"blob\">AAEC</Parameter><Parameter id=\"e\" type=\"blob\"></Parameter></Parameters><Dataset id=\"d\"><ColumnInfo><Column id=\"b\" type=\"blob\"/></ColumnInfo><Rows><Row><Col id=\"b\">AAEC</Col></Row></Rows></Dataset></Root>"
+  },
+  {
+   "id": "driver.nexacro-ssv.empty-values.decode",
+   "profile": "nexacro-ssv",
+   "operation": "decode",
+   "text": "SSV:UTF-8\u001estring:string=\u001eint:int=\u001elong:long=\u001efloat:float=\u001edouble:double=\u001edecimal:decimal=\u001ebigdecimal:bigdecimal=\u001eboolean:boolean=\u001edate:date=\u001etime:time=\u001edatetime:datetime=\u001eblob:blob=\u001eDataset:d\u001e_RowType_\u001fstring:string(8)\u001fint:int(8)\u001flong:long(8)\u001ffloat:float(8)\u001fdouble:double(8)\u001fdecimal:decimal(8)\u001fbigdecimal:bigdecimal(8)\u001fboolean:boolean(8)\u001fdate:date(8)\u001ftime:time(8)\u001fdatetime:datetime(8)\u001fblob:blob(8)\u001eN\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001eN\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001e\u001e"
+  },
+  {
+   "id": "driver.nexacro-ssv.blob-values.decode",
+   "profile": "nexacro-ssv",
+   "operation": "decode",
+   "text": "SSV:UTF-8\u001eb:blob=AAEC\u001ee:blob=\u001eDataset:d\u001e_RowType_\u001fb:blob(8)\u001eN\u001fAAEC\u001e\u001e"
+  },
+  {
+   "id": "driver.xplatform-ssv.empty-values.decode",
+   "profile": "xplatform-ssv",
+   "operation": "decode",
+   "text": "SSV:UTF-8\u001estring:string=\u001eint:int=\u001elong:long=\u001efloat:float=\u001edouble:double=\u001edecimal:decimal=\u001ebigdecimal:bigdecimal=\u001eboolean:boolean=\u001edate:date=\u001etime:time=\u001edatetime:datetime=\u001eblob:blob=\u001eDataset:d\u001e_RowType_\u001fstring:string(8)\u001fint:int(8)\u001flong:long(8)\u001ffloat:float(8)\u001fdouble:double(8)\u001fdecimal:decimal(8)\u001fbigdecimal:bigdecimal(8)\u001fboolean:boolean(8)\u001fdate:date(8)\u001ftime:time(8)\u001fdatetime:datetime(8)\u001fblob:blob(8)\u001eN\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001f\u001eN\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001f\u0003\u001e\u001e"
+  },
+  {
+   "id": "driver.xplatform-ssv.blob-values.decode",
+   "profile": "xplatform-ssv",
+   "operation": "decode",
+   "text": "SSV:UTF-8\u001eb:blob=AAEC\u001ee:blob=\u001eDataset:d\u001e_RowType_\u001fb:blob(8)\u001eN\u001fAAEC\u001e\u001e"
+  },
+  {
+   "id": "driver.nexacro-json.empty-values.decode",
+   "profile": "nexacro-json-1.0",
+   "operation": "decode",
+   "text": "{\"version\": \"1.0\", \"Parameters\": [{\"id\": \"string\", \"type\": \"string\", \"value\": \"\"}, {\"id\": \"int\", \"type\": \"int\", \"value\": \"\"}, {\"id\": \"long\", \"type\": \"long\", \"value\": \"\"}, {\"id\": \"float\", \"type\": \"float\", \"value\": \"\"}, {\"id\": \"double\", \"type\": \"double\", \"value\": \"\"}, {\"id\": \"decimal\", \"type\": \"decimal\", \"value\": \"\"}, {\"id\": \"bigdecimal\", \"type\": \"bigdecimal\", \"value\": \"\"}, {\"id\": \"boolean\", \"type\": \"boolean\", \"value\": \"\"}, {\"id\": \"date\", \"type\": \"date\", \"value\": \"\"}, {\"id\": \"time\", \"type\": \"time\", \"value\": \"\"}, {\"id\": \"datetime\", \"type\": \"datetime\", \"value\": \"\"}, {\"id\": \"blob\", \"type\": \"blob\", \"value\": \"\"}, {\"id\": \"string2\", \"type\": \"string\", \"value\": null}, {\"id\": \"int2\", \"type\": \"int\", \"value\": null}, {\"id\": \"long2\", \"type\": \"long\", \"value\": null}, {\"id\": \"float2\", \"type\": \"float\", \"value\": null}, {\"id\": \"double2\", \"type\": \"double\", \"value\": null}, {\"id\": \"decimal2\", \"type\": \"decimal\", \"value\": null}, {\"id\": \"bigdecimal2\", \"type\": \"bigdecimal\", \"value\": null}, {\"id\": \"boolean2\", \"type\": \"boolean\", \"value\": null}, {\"id\": \"date2\", \"type\": \"date\", \"value\": null}, {\"id\": \"time2\", \"type\": \"time\", \"value\": null}, {\"id\": \"datetime2\", \"type\": \"datetime\", \"value\": null}, {\"id\": \"blob2\", \"type\": \"blob\", \"value\": null}], \"Datasets\": [{\"id\": \"d\", \"ColumnInfo\": {\"Column\": [{\"id\": \"string\", \"type\": \"string\", \"size\": \"8\"}, {\"id\": \"int\", \"type\": \"int\", \"size\": \"8\"}, {\"id\": \"long\", \"type\": \"long\", \"size\": \"8\"}, {\"id\": \"float\", \"type\": \"float\", \"size\": \"8\"}, {\"id\": \"double\", \"type\": \"double\", \"size\": \"8\"}, {\"id\": \"decimal\", \"type\": \"decimal\", \"size\": \"8\"}, {\"id\": \"bigdecimal\", \"type\": \"bigdecimal\", \"size\": \"8\"}, {\"id\": \"boolean\", \"type\": \"boolean\", \"size\": \"8\"}, {\"id\": \"date\", \"type\": \"date\", \"size\": \"8\"}, {\"id\": \"time\", \"type\": \"time\", \"size\": \"8\"}, {\"id\": \"datetime\", \"type\": \"datetime\", \"size\": \"8\"}, {\"id\": \"blob\", \"type\": \"blob\", \"size\": \"8\"}]}, \"Rows\": [{\"string\": \"\", \"int\": \"\", \"long\": \"\", \"float\": \"\", \"double\": \"\", \"decimal\": \"\", \"bigdecimal\": \"\", \"boolean\": \"\", \"date\": \"\", \"time\": \"\", \"datetime\": \"\", \"blob\": \"\"}, {\"string\": null, \"int\": null, \"long\": null, \"float\": null, \"double\": null, \"decimal\": null, \"bigdecimal\": null, \"boolean\": null, \"date\": null, \"time\": null, \"datetime\": null, \"blob\": null}, {}]}]}"
+  },
+  {
+   "id": "driver.nexacro-json.blob-values.decode",
+   "profile": "nexacro-json-1.0",
+   "operation": "decode",
+   "text": "{\"version\": \"1.0\", \"Parameters\": [{\"id\": \"b\", \"type\": \"blob\", \"value\": \"AAEC\"}, {\"id\": \"e\", \"type\": \"blob\", \"value\": \"\"}], \"Datasets\": [{\"id\": \"d\", \"ColumnInfo\": {\"Column\": [{\"id\": \"b\", \"type\": \"blob\"}]}, \"Rows\": [{\"b\": \"AAEC\"}]}]}"
+  },
+  {
+   "id": "driver.nexacro-json.numeric-size.decode",
+   "profile": "nexacro-json-1.0",
+   "operation": "decode",
+   "text": "{\"version\": \"1.0\", \"Datasets\": [{\"id\": \"d\", \"ColumnInfo\": {\"Column\": [{\"id\": \"a\", \"type\": \"string\", \"size\": 32}]}, \"Rows\": [{\"a\": \"x\"}]}]}"
+  }
+ ]
+}

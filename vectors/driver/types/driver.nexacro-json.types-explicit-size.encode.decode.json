@@ -1,0 +1,68 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "s",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "i",
+              "index": 1,
+              "type": "INT"
+            },
+            {
+              "id": "b",
+              "index": 2,
+              "type": "BIGDECIMAL"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "1.5",
+                  "state": "value"
+                },
+                "i": {
+                  "lexical": "1",
+                  "state": "value"
+                },
+                "s": {
+                  "lexical": "x",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.types-explicit-size.encode.decode",
+  "input": {
+    "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb2x1bW4iOlt7InNpemUiOiI3IiwiaWQiOiJzIiwidHlwZSI6InN0cmluZyJ9LHsic2l6ZSI6IjIiLCJpZCI6ImkiLCJ0eXBlIjoiaW50In0seyJzaXplIjoiNSIsImlkIjoiYiIsInR5cGUiOiJiaWdkZWNpbWFsIn1dfSwiaWQiOiJkIiwiUm93cyI6W3siYiI6IjEuNSIsInMiOiJ4IiwiX1Jvd1R5cGVfIjoiTiIsImkiOiIxIn1dfV0sInZlcnNpb24iOiIxLjAifQ==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "b",
+              "index": 0,
+              "type": "BLOB"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "AAEC",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "b",
+          "lexical": "QUFFQw==",
+          "state": "value",
+          "type": "BLOB"
+        },
+        {
+          "id": "e",
+          "lexical": "",
+          "state": "empty",
+          "type": "BLOB"
+        }
+      ]
+    }
+  },
+  "id": "driver.nexacro-ssv.blob-values.decode",
+  "input": {
+    "data": "U1NWOlVURi04HmI6YmxvYj1BQUVDHmU6YmxvYj0eRGF0YXNldDpkHl9Sb3dUeXBlXx9iOmJsb2IoOCkeTh9BQUVDHh4=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/empty.json",
+    "repository": "xapi-conformance"
+  }
+}

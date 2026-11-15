@@ -1,0 +1,115 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "TIME"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "TIME"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "TIME"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "TIME"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "TIME"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "123456789",
+                  "state": "value"
+                },
+                "c1": {
+                  "lexical": "123456000",
+                  "state": "value"
+                },
+                "c2": {
+                  "state": "null"
+                },
+                "c3": {
+                  "lexical": "010100000",
+                  "state": "value"
+                },
+                "c4": {
+                  "lexical": "000000000",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "123456789",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p1",
+          "lexical": "123456000",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p2",
+          "state": "null",
+          "type": "TIME"
+        },
+        {
+          "id": "p3",
+          "lexical": "010100000",
+          "state": "value",
+          "type": "TIME"
+        },
+        {
+          "id": "p4",
+          "lexical": "000000000",
+          "state": "value",
+          "type": "TIME"
+        }
+      ],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.scalar-time.decode",
+  "input": {
+    "data": "eyJ2ZXJzaW9uIjogIjEuMCIsICJQYXJhbWV0ZXJzIjogW3siaWQiOiAicDAiLCAidHlwZSI6ICJ0aW1lIiwgInZhbHVlIjogIjEyMzQ1Njc4OSJ9LCB7ImlkIjogInAxIiwgInR5cGUiOiAidGltZSIsICJ2YWx1ZSI6ICIxMjM0NTYifSwgeyJpZCI6ICJwMiIsICJ0eXBlIjogInRpbWUiLCAidmFsdWUiOiAiMTIzNCJ9LCB7ImlkIjogInAzIiwgInR5cGUiOiAidGltZSIsICJ2YWx1ZSI6ICIyNDYwNjAwMDAifSwgeyJpZCI6ICJwNCIsICJ0eXBlIjogInRpbWUiLCAidmFsdWUiOiAiMTI6MzQ6NTYifV0sICJEYXRhc2V0cyI6IFt7ImlkIjogImQiLCAiQ29sdW1uSW5mbyI6IHsiQ29sdW1uIjogW3siaWQiOiAiYzAiLCAidHlwZSI6ICJ0aW1lIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxIiwgInR5cGUiOiAidGltZSIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMiIsICJ0eXBlIjogInRpbWUiLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzMiLCAidHlwZSI6ICJ0aW1lIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImM0IiwgInR5cGUiOiAidGltZSIsICJzaXplIjogIjgifV19LCAiUm93cyI6IFt7ImMwIjogIjEyMzQ1Njc4OSIsICJjMSI6ICIxMjM0NTYiLCAiYzIiOiAiMTIzNCIsICJjMyI6ICIyNDYwNjAwMDAiLCAiYzQiOiAiMTI6MzQ6NTYifV19XX0=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

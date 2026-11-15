@@ -1,0 +1,323 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycz4KCQk8UGFyYW1ldGVyIGlkPSJwMCIgdHlwZT0iZmxvYXQiPjEuMjwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAxIiB0eXBlPSJmbG9hdCI+MS41PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDIiIHR5cGU9ImZsb2F0Ij4tMC4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDMiIHR5cGU9ImZsb2F0Ij4xMDAwLjA8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwNCIgdHlwZT0iZmxvYXQiPjAuMDwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InA1IiB0eXBlPSJmbG9hdCI+Mi4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDYiIHR5cGU9ImZsb2F0Ij4xMC4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDciIHR5cGU9ImZsb2F0Ij4tNy4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDgiIHR5cGU9ImZsb2F0Ij41LjA8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwOSIgdHlwZT0iZmxvYXQiPjIuMTQ3NDgzNkU5PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDEwIiB0eXBlPSJmbG9hdCI+MC4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDExIiB0eXBlPSJmbG9hdCI+MTIzNC4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDEyIiB0eXBlPSJmbG9hdCI+TmFOPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDEzIiB0eXBlPSJmbG9hdCI+SW5maW5pdHk8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwMTQiIHR5cGU9ImZsb2F0Ij4tMC4wMDE1PC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0icDE1IiB0eXBlPSJmbG9hdCI+MS4wRTc8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwMTYiIHR5cGU9ImZsb2F0Ij4xLjBFLTQ8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwMTciIHR5cGU9ImZsb2F0Ij4xLjIzNDU2NzlFODwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAxOCIgdHlwZT0iZmxvYXQiPjkuMjIzMzcyRTE4PC9QYXJhbWV0ZXI+Cgk8L1BhcmFtZXRlcnM+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImMwIiB0eXBlPSJmbG9hdCIgc2l6ZT0iNCIvPgoJCQk8Q29sdW1uIGlkPSJjMSIgdHlwZT0iZmxvYXQiIHNpemU9IjQiLz4KCQkJPENvbHVtbiBpZD0iYzIiIHR5cGU9ImZsb2F0IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImMzIiB0eXBlPSJmbG9hdCIgc2l6ZT0iNCIvPgoJCQk8Q29sdW1uIGlkPSJjNCIgdHlwZT0iZmxvYXQiIHNpemU9IjQiLz4KCQkJPENvbHVtbiBpZD0iYzUiIHR5cGU9ImZsb2F0IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImM2IiB0eXBlPSJmbG9hdCIgc2l6ZT0iNCIvPgoJCQk8Q29sdW1uIGlkPSJjNyIgdHlwZT0iZmxvYXQiIHNpemU9IjQiLz4KCQkJPENvbHVtbiBpZD0iYzgiIHR5cGU9ImZsb2F0IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImM5IiB0eXBlPSJmbG9hdCIgc2l6ZT0iNCIvPgoJCQk8Q29sdW1uIGlkPSJjMTAiIHR5cGU9ImZsb2F0IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImMxMSIgdHlwZT0iZmxvYXQiIHNpemU9IjQiLz4KCQkJPENvbHVtbiBpZD0iYzEyIiB0eXBlPSJmbG9hdCIgc2l6ZT0iNCIvPgoJCQk8Q29sdW1uIGlkPSJjMTMiIHR5cGU9ImZsb2F0IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImMxNCIgdHlwZT0iZmxvYXQiIHNpemU9IjQiLz4KCQkJPENvbHVtbiBpZD0iYzE1IiB0eXBlPSJmbG9hdCIgc2l6ZT0iNCIvPgoJCQk8Q29sdW1uIGlkPSJjMTYiIHR5cGU9ImZsb2F0IiBzaXplPSI0Ii8+CgkJCTxDb2x1bW4gaWQ9ImMxNyIgdHlwZT0iZmxvYXQiIHNpemU9IjQiLz4KCQkJPENvbHVtbiBpZD0iYzE4IiB0eXBlPSJmbG9hdCIgc2l6ZT0iNCIvPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9ImMwIj4xLjI8L0NvbD4KCQkJCTxDb2wgaWQ9ImMxIj4xLjU8L0NvbD4KCQkJCTxDb2wgaWQ9ImMyIj4tMC4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjMyI+MTAwMC4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjNCI+MC4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjNSI+Mi4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjNiI+MTAuMDwvQ29sPgoJCQkJPENvbCBpZD0iYzciPi03LjA8L0NvbD4KCQkJCTxDb2wgaWQ9ImM4Ij41LjA8L0NvbD4KCQkJCTxDb2wgaWQ9ImM5Ij4yLjE0NzQ4MzZFOTwvQ29sPgoJCQkJPENvbCBpZD0iYzEwIj4wLjA8L0NvbD4KCQkJCTxDb2wgaWQ9ImMxMSI+MTIzNC4wPC9Db2w+CgkJCQk8Q29sIGlkPSJjMTIiPk5hTjwvQ29sPgoJCQkJPENvbCBpZD0iYzEzIj5JbmZpbml0eTwvQ29sPgoJCQkJPENvbCBpZD0iYzE0Ij4tMC4wMDE1PC9Db2w+CgkJCQk8Q29sIGlkPSJjMTUiPjEuMEU3PC9Db2w+CgkJCQk8Q29sIGlkPSJjMTYiPjEuMEUtNDwvQ29sPgoJCQkJPENvbCBpZD0iYzE3Ij4xLjIzNDU2NzlFODwvQ29sPgoJCQkJPENvbCBpZD0iYzE4Ij45LjIyMzM3MkUxODwvQ29sPgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-xml.scalar-float.encode",
+  "operation": "encode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c5",
+            "index": 5,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c6",
+            "index": 6,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c7",
+            "index": 7,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c8",
+            "index": 8,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c9",
+            "index": 9,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c10",
+            "index": 10,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c11",
+            "index": 11,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c12",
+            "index": 12,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c13",
+            "index": 13,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c14",
+            "index": 14,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c15",
+            "index": 15,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c16",
+            "index": 16,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c17",
+            "index": 17,
+            "type": "FLOAT"
+          },
+          {
+            "id": "c18",
+            "index": 18,
+            "type": "FLOAT"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "001.20",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "1.50",
+                "state": "value"
+              },
+              "c10": {
+                "lexical": "0x1F",
+                "state": "value"
+              },
+              "c11": {
+                "lexical": "1,234",
+                "state": "value"
+              },
+              "c12": {
+                "lexical": "NaN",
+                "state": "value"
+              },
+              "c13": {
+                "lexical": "Infinity",
+                "state": "value"
+              },
+              "c14": {
+                "lexical": "-1.5e-3",
+                "state": "value"
+              },
+              "c15": {
+                "lexical": "1E7",
+                "state": "value"
+              },
+              "c16": {
+                "lexical": "0.0001",
+                "state": "value"
+              },
+              "c17": {
+                "lexical": "123456789.123",
+                "state": "value"
+              },
+              "c18": {
+                "lexical": "9223372036854775808",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "-0.0",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "1e3",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "abc",
+                "state": "value"
+              },
+              "c5": {
+                "lexical": " 2 ",
+                "state": "value"
+              },
+              "c6": {
+                "lexical": "10",
+                "state": "value"
+              },
+              "c7": {
+                "lexical": "-7",
+                "state": "value"
+              },
+              "c8": {
+                "lexical": "+5",
+                "state": "value"
+              },
+              "c9": {
+                "lexical": "2147483648",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "001.20",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p1",
+        "lexical": "1.50",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p2",
+        "lexical": "-0.0",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p3",
+        "lexical": "1e3",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p4",
+        "lexical": "abc",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p5",
+        "lexical": " 2 ",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p6",
+        "lexical": "10",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p7",
+        "lexical": "-7",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p8",
+        "lexical": "+5",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p9",
+        "lexical": "2147483648",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p10",
+        "lexical": "0x1F",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p11",
+        "lexical": "1,234",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p12",
+        "lexical": "NaN",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p13",
+        "lexical": "Infinity",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p14",
+        "lexical": "-1.5e-3",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p15",
+        "lexical": "1E7",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p16",
+        "lexical": "0.0001",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p17",
+        "lexical": "123456789.123",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "p18",
+        "lexical": "9223372036854775808",
+        "state": "value",
+        "type": "FLOAT"
+      }
+    ]
+  }
+}

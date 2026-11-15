@@ -56,11 +56,14 @@ Profile별 operation 수:
 ### Row와 saveType
 
 - JSON/SSV의 `O` row는 바로 앞 materialized row의 `orgRow`가 됩니다.
-- Root와 Dataset에 `saveType`을 표현하며 Dataset 값이 우선합니다.
-- 정책 1–5는 all, normal, updated, deleted, changed를 선택합니다.
-- Updated row의 원본 값과 deleted/removed row를 보존합니다.
-- `policy.save-type-changed.encode`와 unit test가 filtering 및 Dataset override를
-  검증합니다.
+- Root와 Dataset에 `saveType`을 표현하며 Dataset 값이 우선합니다. 둘 다 없으면
+  `2`(normal)입니다.
+- encode는 `saveType`을 거부하지 않고 적용합니다. 이전의
+  `policy.save-type-changed.encode`(encode 거부)는 원본 driver 동작과 달라
+  삭제했습니다.
+- 행 선택, `D` 행 위치, 원본 행 처리는 `vectors/driver/savetype`과
+  `vectors/driver/const`의 `update-row-unchanged-values-*`가 검증합니다
+  (`protocol/README.md` 참조).
 
 ### Scalar와 BLOB
 

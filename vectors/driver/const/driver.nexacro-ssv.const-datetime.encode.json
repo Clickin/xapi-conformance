@@ -1,0 +1,78 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2swOmRhdGV0aW1lKDE3KT0yMDI2MTExNjEyMzQ1Njc4OR9rMTpkYXRldGltZSgxNyk9YWJjH2syOmRhdGV0aW1lKDE3KT0fazM6ZGF0ZXRpbWUoMTcpPR5fUm93VHlwZV8fYTpzdHJpbmcoMzIpHk4feB4e",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-ssv.const-datetime.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "DATETIME",
+            "value": {
+              "lexical": "20261116123456789",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "DATETIME",
+            "value": {
+              "lexical": "abc",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "DATETIME",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "DATETIME",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

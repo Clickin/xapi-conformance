@@ -1,0 +1,96 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HnN0cmluZzpzdHJpbmc9cx5pbnQ6aW50PTEyHmxvbmc6YmlnZGVjaW1hbD0xMjM0NTY3ODkwMTIzHmZsb2F0OmZsb2F0PTEuNR5kb3VibGU6ZmxvYXQ9Mi4yNR5kZWNpbWFsOmJpZ2RlY2ltYWw9My43NR5iaWdkZWNpbWFsOmJpZ2RlY2ltYWw9MTIzLjQ1HmJvb2xlYW46aW50PTEeZGF0ZTpkYXRlPTIwMjYxMTE2HnRpbWU6dGltZT0xMjM0NTY3ODkeZGF0ZXRpbWU6ZGF0ZXRpbWU9MjAyNjExMTYxMjM0NTY3ODkeYmxvYjpibG9iPUFBRUMe",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-ssv.types-parameters.encode",
+  "operation": "encode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [],
+    "parameters": [
+      {
+        "id": "string",
+        "lexical": "s",
+        "state": "value",
+        "type": "STRING"
+      },
+      {
+        "id": "int",
+        "lexical": "12",
+        "state": "value",
+        "type": "INT"
+      },
+      {
+        "id": "long",
+        "lexical": "1234567890123",
+        "state": "value",
+        "type": "LONG"
+      },
+      {
+        "id": "float",
+        "lexical": "1.5",
+        "state": "value",
+        "type": "FLOAT"
+      },
+      {
+        "id": "double",
+        "lexical": "2.25",
+        "state": "value",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "decimal",
+        "lexical": "3.75",
+        "state": "value",
+        "type": "DECIMAL"
+      },
+      {
+        "id": "bigdecimal",
+        "lexical": "123.45",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "boolean",
+        "lexical": "1",
+        "state": "value",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "date",
+        "lexical": "20261116",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "time",
+        "lexical": "123456789",
+        "state": "value",
+        "type": "TIME"
+      },
+      {
+        "id": "datetime",
+        "lexical": "20261116123456789",
+        "state": "value",
+        "type": "DATETIME"
+      },
+      {
+        "id": "blob",
+        "lexical": "AAEC",
+        "state": "value",
+        "type": "BLOB"
+      }
+    ]
+  }
+}

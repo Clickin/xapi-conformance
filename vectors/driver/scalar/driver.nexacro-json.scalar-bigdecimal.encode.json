@@ -1,0 +1,323 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb2x1bW4iOlt7InNpemUiOiIxNiIsImlkIjoiYzAiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMSIsInR5cGUiOiJiaWdkZWNpbWFsIn0seyJzaXplIjoiMTYiLCJpZCI6ImMyIiwidHlwZSI6ImJpZ2RlY2ltYWwifSx7InNpemUiOiIxNiIsImlkIjoiYzMiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjNCIsInR5cGUiOiJiaWdkZWNpbWFsIn0seyJzaXplIjoiMTYiLCJpZCI6ImM1IiwidHlwZSI6ImJpZ2RlY2ltYWwifSx7InNpemUiOiIxNiIsImlkIjoiYzYiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjNyIsInR5cGUiOiJiaWdkZWNpbWFsIn0seyJzaXplIjoiMTYiLCJpZCI6ImM4IiwidHlwZSI6ImJpZ2RlY2ltYWwifSx7InNpemUiOiIxNiIsImlkIjoiYzkiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTAiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTEiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTIiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTMiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTQiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTUiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTYiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTciLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJjMTgiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9XX0sImlkIjoiZCIsIlJvd3MiOlt7ImMxMSI6IjEyMzQiLCJjMTUiOiIxRSs3IiwiYzE0IjoiLTAuMDAxNSIsIl9Sb3dUeXBlXyI6Ik4iLCJjMTciOiIxMjM0NTY3ODkuMTIzIiwiYzE2IjoiMC4wMDAxIiwiYzE4IjoiOTIyMzM3MjAzNjg1NDc3NTgwOCIsImMwIjoiMS4yMCIsImMxIjoiMS41MCIsImMyIjoiMC4wIiwiYzMiOiIxRSszIiwiYzYiOiIxMCIsImM3IjoiLTciLCJjOCI6IjUiLCJjOSI6IjIxNDc0ODM2NDgifV19XSwiUGFyYW1ldGVycyI6W3siaWQiOiJwMCIsInR5cGUiOiJiaWdkZWNpbWFsIiwidmFsdWUiOiIxLjIwIn0seyJpZCI6InAxIiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6IjEuNTAifSx7ImlkIjoicDIiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiMC4wIn0seyJpZCI6InAzIiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6IjFFKzMifSx7ImlkIjoicDQiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsiaWQiOiJwNSIsInR5cGUiOiJiaWdkZWNpbWFsIn0seyJpZCI6InA2IiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6IjEwIn0seyJpZCI6InA3IiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6Ii03In0seyJpZCI6InA4IiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6IjUifSx7ImlkIjoicDkiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiMjE0NzQ4MzY0OCJ9LHsiaWQiOiJwMTAiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsiaWQiOiJwMTEiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiMTIzNCJ9LHsiaWQiOiJwMTIiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsiaWQiOiJwMTMiLCJ0eXBlIjoiYmlnZGVjaW1hbCJ9LHsiaWQiOiJwMTQiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiLTAuMDAxNSJ9LHsiaWQiOiJwMTUiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiMUUrNyJ9LHsiaWQiOiJwMTYiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiMC4wMDAxIn0seyJpZCI6InAxNyIsInR5cGUiOiJiaWdkZWNpbWFsIiwidmFsdWUiOiIxMjM0NTY3ODkuMTIzIn0seyJpZCI6InAxOCIsInR5cGUiOiJiaWdkZWNpbWFsIiwidmFsdWUiOiI5MjIzMzcyMDM2ODU0Nzc1ODA4In1dLCJ2ZXJzaW9uIjoiMS4wIn0=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-json.scalar-bigdecimal.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c5",
+            "index": 5,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c6",
+            "index": 6,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c7",
+            "index": 7,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c8",
+            "index": 8,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c9",
+            "index": 9,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c10",
+            "index": 10,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c11",
+            "index": 11,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c12",
+            "index": 12,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c13",
+            "index": 13,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c14",
+            "index": 14,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c15",
+            "index": 15,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c16",
+            "index": 16,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c17",
+            "index": 17,
+            "type": "BIGDECIMAL"
+          },
+          {
+            "id": "c18",
+            "index": 18,
+            "type": "BIGDECIMAL"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "001.20",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "1.50",
+                "state": "value"
+              },
+              "c10": {
+                "lexical": "0x1F",
+                "state": "value"
+              },
+              "c11": {
+                "lexical": "1,234",
+                "state": "value"
+              },
+              "c12": {
+                "lexical": "NaN",
+                "state": "value"
+              },
+              "c13": {
+                "lexical": "Infinity",
+                "state": "value"
+              },
+              "c14": {
+                "lexical": "-1.5e-3",
+                "state": "value"
+              },
+              "c15": {
+                "lexical": "1E7",
+                "state": "value"
+              },
+              "c16": {
+                "lexical": "0.0001",
+                "state": "value"
+              },
+              "c17": {
+                "lexical": "123456789.123",
+                "state": "value"
+              },
+              "c18": {
+                "lexical": "9223372036854775808",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "-0.0",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "1e3",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "abc",
+                "state": "value"
+              },
+              "c5": {
+                "lexical": " 2 ",
+                "state": "value"
+              },
+              "c6": {
+                "lexical": "10",
+                "state": "value"
+              },
+              "c7": {
+                "lexical": "-7",
+                "state": "value"
+              },
+              "c8": {
+                "lexical": "+5",
+                "state": "value"
+              },
+              "c9": {
+                "lexical": "2147483648",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "001.20",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p1",
+        "lexical": "1.50",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p2",
+        "lexical": "-0.0",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p3",
+        "lexical": "1e3",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p4",
+        "lexical": "abc",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p5",
+        "lexical": " 2 ",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p6",
+        "lexical": "10",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p7",
+        "lexical": "-7",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p8",
+        "lexical": "+5",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p9",
+        "lexical": "2147483648",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p10",
+        "lexical": "0x1F",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p11",
+        "lexical": "1,234",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p12",
+        "lexical": "NaN",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p13",
+        "lexical": "Infinity",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p14",
+        "lexical": "-1.5e-3",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p15",
+        "lexical": "1E7",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p16",
+        "lexical": "0.0001",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p17",
+        "lexical": "123456789.123",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "p18",
+        "lexical": "9223372036854775808",
+        "state": "value",
+        "type": "BIGDECIMAL"
+      }
+    ]
+  }
+}

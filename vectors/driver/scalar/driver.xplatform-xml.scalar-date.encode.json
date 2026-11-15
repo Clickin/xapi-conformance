@@ -1,0 +1,128 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycz4KCQk8UGFyYW1ldGVyIGlkPSJwMCIgdHlwZT0iZGF0ZSI+MjAyNjExMTY8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwMSIgdHlwZT0iZGF0ZSIvPgoJCTxQYXJhbWV0ZXIgaWQ9InAyIiB0eXBlPSJkYXRlIj4yMDI3MDIwOTwvUGFyYW1ldGVyPgoJCTxQYXJhbWV0ZXIgaWQ9InAzIiB0eXBlPSJkYXRlIj41NDYxMjAzMjg8L1BhcmFtZXRlcj4KCQk8UGFyYW1ldGVyIGlkPSJwNCIgdHlwZT0iZGF0ZSIvPgoJCTxQYXJhbWV0ZXIgaWQ9InA1IiB0eXBlPSJkYXRlIi8+Cgk8L1BhcmFtZXRlcnM+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9ImMwIiB0eXBlPSJkYXRlIiBzaXplPSI2Ii8+CgkJCTxDb2x1bW4gaWQ9ImMxIiB0eXBlPSJkYXRlIiBzaXplPSI2Ii8+CgkJCTxDb2x1bW4gaWQ9ImMyIiB0eXBlPSJkYXRlIiBzaXplPSI2Ii8+CgkJCTxDb2x1bW4gaWQ9ImMzIiB0eXBlPSJkYXRlIiBzaXplPSI2Ii8+CgkJCTxDb2x1bW4gaWQ9ImM0IiB0eXBlPSJkYXRlIiBzaXplPSI2Ii8+CgkJCTxDb2x1bW4gaWQ9ImM1IiB0eXBlPSJkYXRlIiBzaXplPSI2Ii8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCQk8Um93PgoJCQkJPENvbCBpZD0iYzAiPjIwMjYxMTE2PC9Db2w+CgkJCQk8Q29sIGlkPSJjMiI+MjAyNzAyMDk8L0NvbD4KCQkJCTxDb2wgaWQ9ImMzIj41NDYxMjAzMjg8L0NvbD4KCQkJPC9Sb3c+CgkJPC9Sb3dzPgoJPC9EYXRhc2V0Pgo8L1Jvb3Q+Cg==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-xml.scalar-date.encode",
+  "operation": "encode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "DATE"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "DATE"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "DATE"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "DATE"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "DATE"
+          },
+          {
+            "id": "c5",
+            "index": 5,
+            "type": "DATE"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "20261116",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "2026111",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "20261340",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "abcdefgh",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "2026-11-16",
+                "state": "value"
+              },
+              "c5": {
+                "lexical": "202611160000",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "20261116",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p1",
+        "lexical": "2026111",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p2",
+        "lexical": "20261340",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p3",
+        "lexical": "abcdefgh",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p4",
+        "lexical": "2026-11-16",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p5",
+        "lexical": "202611160000",
+        "state": "value",
+        "type": "DATE"
+      }
+    ]
+  }
+}

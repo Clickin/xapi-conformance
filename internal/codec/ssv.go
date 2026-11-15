@@ -117,9 +117,17 @@ func parseSSVParameter(record, profile string) (protocol.Parameter, bool, error)
 	if !hasValue {
 		return protocol.Parameter{}, false, nil
 	}
-	state, lexical := ssvCell(value, profile)
-	parameter := protocol.Parameter{ID: name, Type: dataType, State: state, Lexical: lexical}
-	if state == "empty" {
+	if dataType == "UNDEFINED" {
+		dataType = "STRING"
+	}
+	cell := parsedSSVCell(value, profile)
+	if cell.State == "null" && isSSVNumericParameter(dataType) {
+		// Variable.set converts the null marker like an empty number: 0.
+		cell = protocol.Cell{State: "empty"}
+	}
+	cell = ssvTypedCell(cell, dataType, profile, true)
+	parameter := protocol.Parameter{ID: name, Type: dataType, State: cell.State, Lexical: cell.Lexical}
+	if cell.State == "empty" {
 		parameter.MarkLexicalPresent()
 	}
 	return parameter, true, nil
@@ -177,7 +185,7 @@ func parseSSVDataset(records []string, start int, profile string, strict bool, u
 		if err != nil {
 			return protocol.Dataset{}, i, err
 		}
-		if !valid || row.Type == "D" {
+		if !valid {
 			continue
 		}
 		if row.Type == "O" {
@@ -222,7 +230,12 @@ func parseSSVConstants(record, profile, unitSeparator string) ([]protocol.ConstC
 		if err != nil || name == "" {
 			return nil, fmt.Errorf("invalid SSV constant column %q", field)
 		}
-		cell := parsedSSVCell(value, profile)
+		// A constant has no null marker: \x03 here is the character itself.
+		cell := protocol.Cell{State: "value", Lexical: value}
+		if value == "" {
+			cell = protocol.Cell{State: "empty"}
+			cell.MarkLexicalPresent()
+		}
 		constants = append(constants, protocol.ConstColumn{ID: name, Type: dataType, Value: cell})
 	}
 	return constants, nil
@@ -294,9 +307,29 @@ func parseSSVRow(record string, columns []protocol.Column, profile string, stric
 			row.Values[column.ID] = protocol.Cell{State: "missing"}
 			continue
 		}
-		row.Values[column.ID] = parsedSSVCell(fields[i+1], profile)
+		row.Values[column.ID] = ssvTypedCell(parsedSSVCell(fields[i+1], profile), column.Type, profile, false)
 	}
 	return row, true, nil
+}
+
+func isSSVNumericParameter(dataType string) bool {
+	switch strings.ToUpper(dataType) {
+	case "SHORT", "USHORT", "INT", "UINT", "LONG", "ULONG", "FLOAT", "DOUBLE":
+		return true
+	}
+	return false
+}
+
+// ssvTypedCell converts a cell the way the drivers' typed setters do: an
+// empty number reads as 0, an empty date or bigdecimal as null (see
+// normalizeXMLCell). BLOB text is base64-decoded only for Nexacro SSV
+// columns; parameters, and every XPLATFORM SSV BLOB, keep the bytes of the
+// text itself.
+func ssvTypedCell(cell protocol.Cell, dataType, profile string, parameter bool) protocol.Cell {
+	if isBlobType(dataType) && (parameter || profile == xplatformSSVProfile) {
+		return textBlobCell(cell)
+	}
+	return normalizeXMLCell(cell, strings.ToUpper(dataType))
 }
 
 func ssvCell(value, profile string) (string, string) {
@@ -375,6 +408,15 @@ func encodeSSV(value protocol.Value, profile string) ([]byte, error) {
 				return nil, err
 			}
 			writeRecord(record)
+			if row.OrgRow != nil {
+				org := *row.OrgRow
+				org.Type = "O"
+				record, err := encodeSSVRow(org, dataset.Columns, profile, unitSeparator, recordSeparator)
+				if err != nil {
+					return nil, err
+				}
+				writeRecord(record)
+			}
 		}
 		if ssvProfileUsesNexacroFraming(profile) || i+1 < len(value.Datasets) {
 			writeRecord("")
@@ -394,7 +436,12 @@ func encodeSSVParameter(parameter protocol.Parameter, profile, unitSeparator, re
 	if parameter.State == "missing" {
 		return header, nil
 	}
-	encoded, err := encodeSSVCell(protocol.Cell{State: parameter.State, Lexical: parameter.Lexical}, profile, unitSeparator, recordSeparator)
+	cell := protocol.Cell{State: parameter.State, Lexical: parameter.Lexical}
+	if cell.State == "null" && strings.EqualFold(defaultType(parameter.Type), "BLOB") {
+		// The drivers write a null BLOB variable as an empty value.
+		cell = protocol.Cell{State: "empty"}
+	}
+	encoded, err := encodeSSVTypedCell(parameter.Type, cell, profile, unitSeparator, recordSeparator)
 	if err != nil {
 		return "", err
 	}
@@ -412,6 +459,10 @@ func encodeSSVConstant(column protocol.ConstColumn, profile, unitSeparator, reco
 	field := column.ID + ":" + ssvWireType(column.Type) + "(" + size + ")"
 	if column.Value.State == "missing" {
 		return field, nil
+	}
+	// A constant has no null marker: null is written as an empty value.
+	if column.Value.State == "null" {
+		return field + "=", nil
 	}
 	encoded, err := encodeSSVCell(column.Value, profile, unitSeparator, recordSeparator)
 	if err != nil {
@@ -436,26 +487,37 @@ func encodeSSVColumn(column protocol.Column, unitSeparator, recordSeparator stri
 }
 
 func encodeSSVRow(row protocol.Row, columns []protocol.Column, profile, unitSeparator, recordSeparator string) (string, error) {
-	if row.Type == "D" {
-		return "", fmt.Errorf("deleted SSV rows cannot be encoded")
-	}
-	if len(row.Type) != 1 || !strings.Contains("NIUO", row.Type) {
+	if len(row.Type) != 1 || !strings.Contains("NIUDO", row.Type) {
 		return "", fmt.Errorf("invalid SSV row type %q", row.Type)
 	}
 	fields := make([]string, 1, len(columns)+1)
-	fields[0] = "N"
+	fields[0] = row.Type
 	for _, column := range columns {
 		cell, ok := row.Values[column.ID]
 		if !ok {
 			cell = protocol.Cell{State: "missing"}
 		}
-		encoded, err := encodeSSVCell(cell, profile, unitSeparator, recordSeparator)
+		dataType := column.Type
+		if row.Type == "O" {
+			// A saved row keeps no BOOLEAN default.
+			dataType = "STRING"
+		}
+		encoded, err := encodeSSVTypedCell(dataType, cell, profile, unitSeparator, recordSeparator)
 		if err != nil {
 			return "", fmt.Errorf("column %q: %w", column.ID, err)
 		}
 		fields = append(fields, encoded)
 	}
 	return strings.Join(fields, unitSeparator), nil
+}
+
+// encodeSSVTypedCell writes an unset BOOLEAN as 0, as the drivers hold it as
+// false.
+func encodeSSVTypedCell(dataType string, cell protocol.Cell, profile, unitSeparator, recordSeparator string) (string, error) {
+	if (cell.State == "null" || cell.State == "missing") && strings.EqualFold(defaultType(dataType), "BOOLEAN") {
+		return "0", nil
+	}
+	return encodeSSVCell(cell, profile, unitSeparator, recordSeparator)
 }
 
 func encodeSSVCell(cell protocol.Cell, profile, unitSeparator, recordSeparator string) (string, error) {
@@ -486,11 +548,11 @@ func ssvWireType(dataType string) string {
 	switch strings.ToUpper(defaultType(dataType)) {
 	case "CHAR", "STRING":
 		return "string"
-	case "SHORT", "USHORT", "INT", "UINT", "LONG", "ULONG", "BOOLEAN":
+	case "SHORT", "USHORT", "INT", "UINT", "BOOLEAN":
 		return "int"
 	case "FLOAT", "DOUBLE":
 		return "float"
-	case "DECIMAL", "BIGDECIMAL":
+	case "LONG", "ULONG", "DECIMAL", "BIGDECIMAL":
 		return "bigdecimal"
 	case "DATE":
 		return "date"

@@ -1,0 +1,102 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "n1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": {
+                "orgRow": null,
+                "type": "O",
+                "values": {
+                  "a": {
+                    "lexical": "o1",
+                    "state": "value"
+                  }
+                }
+              },
+              "type": "U",
+              "values": {
+                "a": {
+                  "lexical": "u1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "I",
+              "values": {
+                "a": {
+                  "lexical": "i1",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "n2",
+                  "state": "value"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "D",
+              "values": {
+                "a": {
+                  "lexical": "d1",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "id": "driver.nexacro-xml.row-types-order.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbHVtbiBpZD0iYSIgdHlwZT0ic3RyaW5nIiBzaXplPSIzMiIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9ImEiPm4xPC9Db2w+PC9Sb3c+PFJvdyB0eXBlPSJkZWxldGUiPjxDb2wgaWQ9ImEiPmQxPC9Db2w+PC9Sb3c+PFJvdyB0eXBlPSJ1cGRhdGUiPjxDb2wgaWQ9ImEiPnUxPC9Db2w+PE9yZ1Jvdz48Q29sIGlkPSJhIj5vMTwvQ29sPjwvT3JnUm93PjwvUm93PjxSb3cgdHlwZT0iaW5zZXJ0Ij48Q29sIGlkPSJhIj5pMTwvQ29sPjwvUm93PjxSb3c+PENvbCBpZD0iYSI+bjI8L0NvbD48L1Jvdz48L1Jvd3M+PC9EYXRhc2V0PjwvUm9vdD4=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/savetype.json",
+    "repository": "xapi-conformance"
+  }
+}

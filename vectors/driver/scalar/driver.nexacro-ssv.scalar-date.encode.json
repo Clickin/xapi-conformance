@@ -1,0 +1,128 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HnAwOmRhdGU9MjAyNjExMTYecDE6ZGF0ZT0DHnAyOmRhdGU9MjAyNzAyMDkecDM6ZGF0ZT01NDYxMjAzMjgecDQ6ZGF0ZT0DHnA1OmRhdGU9Ax5EYXRhc2V0OmQeX1Jvd1R5cGVfH2MwOmRhdGUoNikfYzE6ZGF0ZSg2KR9jMjpkYXRlKDYpH2MzOmRhdGUoNikfYzQ6ZGF0ZSg2KR9jNTpkYXRlKDYpHk4fMjAyNjExMTYfAx8yMDI3MDIwOR81NDYxMjAzMjgfAx8DHh4=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-ssv.scalar-date.encode",
+  "operation": "encode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "c0",
+            "index": 0,
+            "type": "DATE"
+          },
+          {
+            "id": "c1",
+            "index": 1,
+            "type": "DATE"
+          },
+          {
+            "id": "c2",
+            "index": 2,
+            "type": "DATE"
+          },
+          {
+            "id": "c3",
+            "index": 3,
+            "type": "DATE"
+          },
+          {
+            "id": "c4",
+            "index": 4,
+            "type": "DATE"
+          },
+          {
+            "id": "c5",
+            "index": 5,
+            "type": "DATE"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "c0": {
+                "lexical": "20261116",
+                "state": "value"
+              },
+              "c1": {
+                "lexical": "2026111",
+                "state": "value"
+              },
+              "c2": {
+                "lexical": "20261340",
+                "state": "value"
+              },
+              "c3": {
+                "lexical": "abcdefgh",
+                "state": "value"
+              },
+              "c4": {
+                "lexical": "2026-11-16",
+                "state": "value"
+              },
+              "c5": {
+                "lexical": "202611160000",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": [
+      {
+        "id": "p0",
+        "lexical": "20261116",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p1",
+        "lexical": "2026111",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p2",
+        "lexical": "20261340",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p3",
+        "lexical": "abcdefgh",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p4",
+        "lexical": "2026-11-16",
+        "state": "value",
+        "type": "DATE"
+      },
+      {
+        "id": "p5",
+        "lexical": "202611160000",
+        "state": "value",
+        "type": "DATE"
+      }
+    ]
+  }
+}

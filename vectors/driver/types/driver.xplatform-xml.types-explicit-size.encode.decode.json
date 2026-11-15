@@ -1,0 +1,71 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "s",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "i",
+              "index": 1,
+              "type": "INT"
+            },
+            {
+              "id": "b",
+              "index": 2,
+              "type": "BIGDECIMAL"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "b": {
+                  "lexical": "1.5",
+                  "state": "value"
+                },
+                "i": {
+                  "lexical": "1",
+                  "state": "value"
+                },
+                "s": {
+                  "lexical": "x",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.tobesoft.com/platform/Dataset",
+          "ver": "5000"
+        }
+      }
+    }
+  },
+  "id": "driver.xplatform-xml.types-explicit-size.encode.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cudG9iZXNvZnQuY29tL3BsYXRmb3JtL2RhdGFzZXQiIHZlcj0iNTAwMCI+Cgk8UGFyYW1ldGVycy8+Cgk8RGF0YXNldCBpZD0iZCI+CgkJPENvbHVtbkluZm8+CgkJCTxDb2x1bW4gaWQ9InMiIHR5cGU9InN0cmluZyIgc2l6ZT0iNyIvPgoJCQk8Q29sdW1uIGlkPSJpIiB0eXBlPSJpbnQiIHNpemU9IjIiLz4KCQkJPENvbHVtbiBpZD0iYiIgdHlwZT0iYmlnZGVjaW1hbCIgc2l6ZT0iNSIvPgoJCTwvQ29sdW1uSW5mbz4KCQk8Um93cz4KCQkJPFJvdz4KCQkJCTxDb2wgaWQ9InMiPng8L0NvbD4KCQkJCTxDb2wgaWQ9ImkiPjE8L0NvbD4KCQkJCTxDb2wgaWQ9ImIiPjEuNTwvQ29sPgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-xml-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

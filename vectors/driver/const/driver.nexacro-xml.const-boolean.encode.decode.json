@@ -1,0 +1,90 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 4,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "k0",
+              "index": 0,
+              "type": "INT"
+            },
+            {
+              "id": "k1",
+              "index": 1,
+              "type": "INT"
+            },
+            {
+              "id": "k2",
+              "index": 2,
+              "type": "INT"
+            },
+            {
+              "id": "k3",
+              "index": 3,
+              "type": "INT"
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "x",
+                  "state": "value"
+                },
+                "k0": {
+                  "lexical": "1",
+                  "state": "value"
+                },
+                "k1": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "k2": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "k3": {
+                  "lexical": "0",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "id": "driver.nexacro-xml.const-boolean.encode.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzLz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMCIgdHlwZT0iaW50IiBzaXplPSIyIiB2YWx1ZT0iMSIvPgoJCQk8Q29uc3RDb2x1bW4gaWQ9ImsxIiB0eXBlPSJpbnQiIHNpemU9IjIiIHZhbHVlPSIwIi8+CgkJCTxDb25zdENvbHVtbiBpZD0iazIiIHR5cGU9ImludCIgc2l6ZT0iMiIgdmFsdWU9IjAiLz4KCQkJPENvbnN0Q29sdW1uIGlkPSJrMyIgdHlwZT0iaW50IiBzaXplPSIyIiB2YWx1ZT0iMCIvPgoJCQk8Q29sdW1uIGlkPSJhIiB0eXBlPSJzdHJpbmciIHNpemU9IjMyIi8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCQk8Um93PgoJCQkJPENvbCBpZD0iYSI+eDwvQ29sPgoJCQk8L1Jvdz4KCQk8L1Jvd3M+Cgk8L0RhdGFzZXQ+CjwvUm9vdD4K",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "k0",
+              "index": 1,
+              "type": "TIME"
+            },
+            {
+              "id": "k1",
+              "index": 2,
+              "type": "TIME"
+            },
+            {
+              "id": "k2",
+              "index": 3,
+              "type": "TIME"
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "x",
+                  "state": "value"
+                },
+                "k0": {
+                  "lexical": "123456789",
+                  "state": "value"
+                },
+                "k1": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "k2": {
+                  "lexical": "",
+                  "state": "empty"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "id": "driver.nexacro-ssv.const-time.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2swOnRpbWUoOSk9MTIzNDU2Nzg5H2sxOnRpbWUoOSk9H2syOnRpbWUoOSk9Hl9Sb3dUeXBlXx9hOnN0cmluZygzMikeTh94Hh4=",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

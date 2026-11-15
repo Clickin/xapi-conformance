@@ -1,0 +1,143 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "eyJEYXRhc2V0cyI6W3siQ29sdW1uSW5mbyI6eyJDb25zdENvbHVtbiI6W3sic2l6ZSI6IjMyIiwiaWQiOiJzdHJpbmciLCJ0eXBlIjoic3RyaW5nIiwidmFsdWUiOiJzIn0seyJzaXplIjoiNCIsImlkIjoiaW50IiwidHlwZSI6ImludCIsInZhbHVlIjoiMTIifSx7InNpemUiOiI4IiwiaWQiOiJsb25nIiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6IjEyMzQ1Njc4OTAxMjMifSx7InNpemUiOiI0IiwiaWQiOiJmbG9hdCIsInR5cGUiOiJmbG9hdCIsInZhbHVlIjoiMS41In0seyJzaXplIjoiOCIsImlkIjoiZG91YmxlIiwidHlwZSI6ImZsb2F0IiwidmFsdWUiOiIyLjI1In0seyJzaXplIjoiMTYiLCJpZCI6ImRlY2ltYWwiLCJ0eXBlIjoiYmlnZGVjaW1hbCIsInZhbHVlIjoiMy43NSJ9LHsic2l6ZSI6IjE2IiwiaWQiOiJiaWdkZWNpbWFsIiwidHlwZSI6ImJpZ2RlY2ltYWwiLCJ2YWx1ZSI6IjEyMy40NSJ9LHsic2l6ZSI6IjIiLCJpZCI6ImJvb2xlYW4iLCJ0eXBlIjoiaW50IiwidmFsdWUiOiIxIn0seyJzaXplIjoiNiIsImlkIjoiZGF0ZSIsInR5cGUiOiJkYXRlIiwidmFsdWUiOiIyMDI2MTExNiJ9LHsic2l6ZSI6IjkiLCJpZCI6InRpbWUiLCJ0eXBlIjoidGltZSIsInZhbHVlIjoiMTIzNDU2Nzg5In0seyJzaXplIjoiMTciLCJpZCI6ImRhdGV0aW1lIiwidHlwZSI6ImRhdGV0aW1lIiwidmFsdWUiOiIyMDI2MTExNjEyMzQ1Njc4OSJ9LHsic2l6ZSI6IjI1NiIsImlkIjoiYmxvYiIsInR5cGUiOiJibG9iIiwidmFsdWUiOiJBQUVDIn1dLCJDb2x1bW4iOlt7InNpemUiOiIzMiIsImlkIjoiYSIsInR5cGUiOiJzdHJpbmcifV19LCJpZCI6ImQiLCJSb3dzIjpbeyJhIjoieCIsIl9Sb3dUeXBlXyI6Ik4ifV19XSwidmVyc2lvbiI6IjEuMCJ9",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-json.types-constants.encode",
+  "operation": "encode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "string",
+            "type": "STRING",
+            "value": {
+              "lexical": "s",
+              "state": "value"
+            }
+          },
+          {
+            "id": "int",
+            "type": "INT",
+            "value": {
+              "lexical": "12",
+              "state": "value"
+            }
+          },
+          {
+            "id": "long",
+            "type": "LONG",
+            "value": {
+              "lexical": "1234567890123",
+              "state": "value"
+            }
+          },
+          {
+            "id": "float",
+            "type": "FLOAT",
+            "value": {
+              "lexical": "1.5",
+              "state": "value"
+            }
+          },
+          {
+            "id": "double",
+            "type": "DOUBLE",
+            "value": {
+              "lexical": "2.25",
+              "state": "value"
+            }
+          },
+          {
+            "id": "decimal",
+            "type": "DECIMAL",
+            "value": {
+              "lexical": "3.75",
+              "state": "value"
+            }
+          },
+          {
+            "id": "bigdecimal",
+            "type": "BIGDECIMAL",
+            "value": {
+              "lexical": "123.45",
+              "state": "value"
+            }
+          },
+          {
+            "id": "boolean",
+            "type": "BOOLEAN",
+            "value": {
+              "lexical": "1",
+              "state": "value"
+            }
+          },
+          {
+            "id": "date",
+            "type": "DATE",
+            "value": {
+              "lexical": "20261116",
+              "state": "value"
+            }
+          },
+          {
+            "id": "time",
+            "type": "TIME",
+            "value": {
+              "lexical": "123456789",
+              "state": "value"
+            }
+          },
+          {
+            "id": "datetime",
+            "type": "DATETIME",
+            "value": {
+              "lexical": "20261116123456789",
+              "state": "value"
+            }
+          },
+          {
+            "id": "blob",
+            "type": "BLOB",
+            "value": {
+              "lexical": "AAEC",
+              "state": "value"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

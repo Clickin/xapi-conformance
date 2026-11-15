@@ -1,0 +1,22 @@
+{
+  "expect": {
+    "error": {
+      "class": "malformed-input"
+    },
+    "kind": "error"
+  },
+  "id": "driver.nexacro-json.numeric-size.decode",
+  "input": {
+    "data": "eyJ2ZXJzaW9uIjogIjEuMCIsICJEYXRhc2V0cyI6IFt7ImlkIjogImQiLCAiQ29sdW1uSW5mbyI6IHsiQ29sdW1uIjogW3siaWQiOiAiYSIsICJ0eXBlIjogInN0cmluZyIsICJzaXplIjogMzJ9XX0sICJSb3dzIjogW3siYSI6ICJ4In1dfV19",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/empty.json",
+    "repository": "xapi-conformance"
+  }
+}

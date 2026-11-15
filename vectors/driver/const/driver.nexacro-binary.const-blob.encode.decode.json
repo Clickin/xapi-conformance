@@ -1,0 +1,74 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 3,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [
+            {
+              "id": "k0",
+              "index": 0,
+              "type": "BLOB"
+            },
+            {
+              "id": "k1",
+              "index": 1,
+              "type": "BLOB"
+            },
+            {
+              "id": "k2",
+              "index": 2,
+              "type": "UNDEFINED"
+            }
+          ],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "x",
+                  "state": "value"
+                },
+                "k0": {
+                  "lexical": "eA==",
+                  "state": "value"
+                },
+                "k1": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "k2": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    }
+  },
+  "id": "driver.nexacro-binary.const-blob.encode.decode",
+  "input": {
+    "data": "/gETiAAtAAFk/hATiAAZAAMAAmswABoAAXgAAmsxABoAAAACazIAAAABAAFhAAEAIAABAAkAAQABABUAAXgAAAAA",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  }
+}

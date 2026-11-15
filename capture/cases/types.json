@@ -1,0 +1,3951 @@
+{
+ "description": "Type names, default sizes, null and empty representation; expected result is the original driver's.",
+ "cases": [
+  {
+   "id": "driver.nexacro-xml.types-columns.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "index": 1
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "index": 2
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "index": 3
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "index": 4
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "index": 5
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "index": 6
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "index": 7
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "index": 8
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "index": 9
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "index": 10
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "index": 11
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "value",
+          "lexical": "s"
+         },
+         "int": {
+          "state": "value",
+          "lexical": "12"
+         },
+         "long": {
+          "state": "value",
+          "lexical": "1234567890123"
+         },
+         "float": {
+          "state": "value",
+          "lexical": "1.5"
+         },
+         "double": {
+          "state": "value",
+          "lexical": "2.25"
+         },
+         "decimal": {
+          "state": "value",
+          "lexical": "3.75"
+         },
+         "bigdecimal": {
+          "state": "value",
+          "lexical": "123.45"
+         },
+         "boolean": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "date": {
+          "state": "value",
+          "lexical": "20261116"
+         },
+         "time": {
+          "state": "value",
+          "lexical": "123456789"
+         },
+         "datetime": {
+          "state": "value",
+          "lexical": "20261116123456789"
+         },
+         "blob": {
+          "state": "value",
+          "lexical": "AAEC"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "null"
+         },
+         "int": {
+          "state": "null"
+         },
+         "long": {
+          "state": "null"
+         },
+         "float": {
+          "state": "null"
+         },
+         "double": {
+          "state": "null"
+         },
+         "decimal": {
+          "state": "null"
+         },
+         "bigdecimal": {
+          "state": "null"
+         },
+         "boolean": {
+          "state": "null"
+         },
+         "date": {
+          "state": "null"
+         },
+         "time": {
+          "state": "null"
+         },
+         "datetime": {
+          "state": "null"
+         },
+         "blob": {
+          "state": "null"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.types-parameters.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "s"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "value",
+      "lexical": "12"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "value",
+      "lexical": "1234567890123"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "value",
+      "lexical": "1.5"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "value",
+      "lexical": "2.25"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "value",
+      "lexical": "3.75"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "value",
+      "lexical": "123.45"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "value",
+      "lexical": "1"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "value",
+      "lexical": "20261116"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "value",
+      "lexical": "123456789"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "value",
+      "lexical": "20261116123456789"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "value",
+      "lexical": "AAEC"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.types-null-parameters.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "null"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "null"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "null"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "null"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "null"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "null"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "null"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "null"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "null"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "null"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.types-constants.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "s"
+        }
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "value": {
+         "state": "value",
+         "lexical": "12"
+        }
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "value": {
+         "state": "value",
+         "lexical": "1234567890123"
+        }
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "value": {
+         "state": "value",
+         "lexical": "1.5"
+        }
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "value": {
+         "state": "value",
+         "lexical": "2.25"
+        }
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "3.75"
+        }
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "123.45"
+        }
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "value": {
+         "state": "value",
+         "lexical": "1"
+        }
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "value": {
+         "state": "value",
+         "lexical": "20261116"
+        }
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "value": {
+         "state": "value",
+         "lexical": "123456789"
+        }
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "value": {
+         "state": "value",
+         "lexical": "20261116123456789"
+        }
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "value": {
+         "state": "value",
+         "lexical": "AAEC"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.types-explicit-size.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0,
+        "size": "7"
+       },
+       {
+        "id": "i",
+        "type": "INT",
+        "index": 1,
+        "size": "2"
+       },
+       {
+        "id": "b",
+        "type": "BIGDECIMAL",
+        "index": 2,
+        "size": "5"
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "value",
+          "lexical": "x"
+         },
+         "i": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "b": {
+          "state": "value",
+          "lexical": "1.5"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-xml.empty-string-and-blob.encode",
+   "profile": "nexacro-xml-4000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "s",
+      "type": "STRING",
+      "state": "empty",
+      "lexical": ""
+     },
+     {
+      "id": "b",
+      "type": "BLOB",
+      "state": "empty",
+      "lexical": ""
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "b",
+        "type": "BLOB",
+        "index": 1
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "empty",
+          "lexical": ""
+         },
+         "b": {
+          "state": "empty",
+          "lexical": ""
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.types-columns.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "index": 1
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "index": 2
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "index": 3
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "index": 4
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "index": 5
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "index": 6
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "index": 7
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "index": 8
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "index": 9
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "index": 10
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "index": 11
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "value",
+          "lexical": "s"
+         },
+         "int": {
+          "state": "value",
+          "lexical": "12"
+         },
+         "long": {
+          "state": "value",
+          "lexical": "1234567890123"
+         },
+         "float": {
+          "state": "value",
+          "lexical": "1.5"
+         },
+         "double": {
+          "state": "value",
+          "lexical": "2.25"
+         },
+         "decimal": {
+          "state": "value",
+          "lexical": "3.75"
+         },
+         "bigdecimal": {
+          "state": "value",
+          "lexical": "123.45"
+         },
+         "boolean": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "date": {
+          "state": "value",
+          "lexical": "20261116"
+         },
+         "time": {
+          "state": "value",
+          "lexical": "123456789"
+         },
+         "datetime": {
+          "state": "value",
+          "lexical": "20261116123456789"
+         },
+         "blob": {
+          "state": "value",
+          "lexical": "AAEC"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "null"
+         },
+         "int": {
+          "state": "null"
+         },
+         "long": {
+          "state": "null"
+         },
+         "float": {
+          "state": "null"
+         },
+         "double": {
+          "state": "null"
+         },
+         "decimal": {
+          "state": "null"
+         },
+         "bigdecimal": {
+          "state": "null"
+         },
+         "boolean": {
+          "state": "null"
+         },
+         "date": {
+          "state": "null"
+         },
+         "time": {
+          "state": "null"
+         },
+         "datetime": {
+          "state": "null"
+         },
+         "blob": {
+          "state": "null"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.types-parameters.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "s"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "value",
+      "lexical": "12"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "value",
+      "lexical": "1234567890123"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "value",
+      "lexical": "1.5"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "value",
+      "lexical": "2.25"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "value",
+      "lexical": "3.75"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "value",
+      "lexical": "123.45"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "value",
+      "lexical": "1"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "value",
+      "lexical": "20261116"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "value",
+      "lexical": "123456789"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "value",
+      "lexical": "20261116123456789"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "value",
+      "lexical": "AAEC"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.types-null-parameters.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "null"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "null"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "null"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "null"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "null"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "null"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "null"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "null"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "null"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "null"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.types-constants.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "s"
+        }
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "value": {
+         "state": "value",
+         "lexical": "12"
+        }
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "value": {
+         "state": "value",
+         "lexical": "1234567890123"
+        }
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "value": {
+         "state": "value",
+         "lexical": "1.5"
+        }
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "value": {
+         "state": "value",
+         "lexical": "2.25"
+        }
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "3.75"
+        }
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "123.45"
+        }
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "value": {
+         "state": "value",
+         "lexical": "1"
+        }
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "value": {
+         "state": "value",
+         "lexical": "20261116"
+        }
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "value": {
+         "state": "value",
+         "lexical": "123456789"
+        }
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "value": {
+         "state": "value",
+         "lexical": "20261116123456789"
+        }
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "value": {
+         "state": "value",
+         "lexical": "AAEC"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.types-explicit-size.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0,
+        "size": "7"
+       },
+       {
+        "id": "i",
+        "type": "INT",
+        "index": 1,
+        "size": "2"
+       },
+       {
+        "id": "b",
+        "type": "BIGDECIMAL",
+        "index": 2,
+        "size": "5"
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "value",
+          "lexical": "x"
+         },
+         "i": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "b": {
+          "state": "value",
+          "lexical": "1.5"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-xml.empty-string-and-blob.encode",
+   "profile": "xplatform-xml-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "s",
+      "type": "STRING",
+      "state": "empty",
+      "lexical": ""
+     },
+     {
+      "id": "b",
+      "type": "BLOB",
+      "state": "empty",
+      "lexical": ""
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "b",
+        "type": "BLOB",
+        "index": 1
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "empty",
+          "lexical": ""
+         },
+         "b": {
+          "state": "empty",
+          "lexical": ""
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.types-columns.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "index": 1
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "index": 2
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "index": 3
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "index": 4
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "index": 5
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "index": 6
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "index": 7
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "index": 8
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "index": 9
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "index": 10
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "index": 11
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "value",
+          "lexical": "s"
+         },
+         "int": {
+          "state": "value",
+          "lexical": "12"
+         },
+         "long": {
+          "state": "value",
+          "lexical": "1234567890123"
+         },
+         "float": {
+          "state": "value",
+          "lexical": "1.5"
+         },
+         "double": {
+          "state": "value",
+          "lexical": "2.25"
+         },
+         "decimal": {
+          "state": "value",
+          "lexical": "3.75"
+         },
+         "bigdecimal": {
+          "state": "value",
+          "lexical": "123.45"
+         },
+         "boolean": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "date": {
+          "state": "value",
+          "lexical": "20261116"
+         },
+         "time": {
+          "state": "value",
+          "lexical": "123456789"
+         },
+         "datetime": {
+          "state": "value",
+          "lexical": "20261116123456789"
+         },
+         "blob": {
+          "state": "value",
+          "lexical": "AAEC"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "null"
+         },
+         "int": {
+          "state": "null"
+         },
+         "long": {
+          "state": "null"
+         },
+         "float": {
+          "state": "null"
+         },
+         "double": {
+          "state": "null"
+         },
+         "decimal": {
+          "state": "null"
+         },
+         "bigdecimal": {
+          "state": "null"
+         },
+         "boolean": {
+          "state": "null"
+         },
+         "date": {
+          "state": "null"
+         },
+         "time": {
+          "state": "null"
+         },
+         "datetime": {
+          "state": "null"
+         },
+         "blob": {
+          "state": "null"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.types-parameters.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "s"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "value",
+      "lexical": "12"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "value",
+      "lexical": "1234567890123"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "value",
+      "lexical": "1.5"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "value",
+      "lexical": "2.25"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "value",
+      "lexical": "3.75"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "value",
+      "lexical": "123.45"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "value",
+      "lexical": "1"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "value",
+      "lexical": "20261116"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "value",
+      "lexical": "123456789"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "value",
+      "lexical": "20261116123456789"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "value",
+      "lexical": "AAEC"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.types-null-parameters.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "null"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "null"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "null"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "null"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "null"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "null"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "null"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "null"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "null"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "null"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.types-constants.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "s"
+        }
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "value": {
+         "state": "value",
+         "lexical": "12"
+        }
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "value": {
+         "state": "value",
+         "lexical": "1234567890123"
+        }
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "value": {
+         "state": "value",
+         "lexical": "1.5"
+        }
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "value": {
+         "state": "value",
+         "lexical": "2.25"
+        }
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "3.75"
+        }
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "123.45"
+        }
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "value": {
+         "state": "value",
+         "lexical": "1"
+        }
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "value": {
+         "state": "value",
+         "lexical": "20261116"
+        }
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "value": {
+         "state": "value",
+         "lexical": "123456789"
+        }
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "value": {
+         "state": "value",
+         "lexical": "20261116123456789"
+        }
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "value": {
+         "state": "value",
+         "lexical": "AAEC"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.types-explicit-size.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0,
+        "size": "7"
+       },
+       {
+        "id": "i",
+        "type": "INT",
+        "index": 1,
+        "size": "2"
+       },
+       {
+        "id": "b",
+        "type": "BIGDECIMAL",
+        "index": 2,
+        "size": "5"
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "value",
+          "lexical": "x"
+         },
+         "i": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "b": {
+          "state": "value",
+          "lexical": "1.5"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-ssv.empty-string-and-blob.encode",
+   "profile": "nexacro-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "s",
+      "type": "STRING",
+      "state": "empty",
+      "lexical": ""
+     },
+     {
+      "id": "b",
+      "type": "BLOB",
+      "state": "empty",
+      "lexical": ""
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "b",
+        "type": "BLOB",
+        "index": 1
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "empty",
+          "lexical": ""
+         },
+         "b": {
+          "state": "empty",
+          "lexical": ""
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.types-columns.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "index": 1
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "index": 2
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "index": 3
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "index": 4
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "index": 5
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "index": 6
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "index": 7
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "index": 8
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "index": 9
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "index": 10
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "index": 11
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "value",
+          "lexical": "s"
+         },
+         "int": {
+          "state": "value",
+          "lexical": "12"
+         },
+         "long": {
+          "state": "value",
+          "lexical": "1234567890123"
+         },
+         "float": {
+          "state": "value",
+          "lexical": "1.5"
+         },
+         "double": {
+          "state": "value",
+          "lexical": "2.25"
+         },
+         "decimal": {
+          "state": "value",
+          "lexical": "3.75"
+         },
+         "bigdecimal": {
+          "state": "value",
+          "lexical": "123.45"
+         },
+         "boolean": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "date": {
+          "state": "value",
+          "lexical": "20261116"
+         },
+         "time": {
+          "state": "value",
+          "lexical": "123456789"
+         },
+         "datetime": {
+          "state": "value",
+          "lexical": "20261116123456789"
+         },
+         "blob": {
+          "state": "value",
+          "lexical": "AAEC"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "null"
+         },
+         "int": {
+          "state": "null"
+         },
+         "long": {
+          "state": "null"
+         },
+         "float": {
+          "state": "null"
+         },
+         "double": {
+          "state": "null"
+         },
+         "decimal": {
+          "state": "null"
+         },
+         "bigdecimal": {
+          "state": "null"
+         },
+         "boolean": {
+          "state": "null"
+         },
+         "date": {
+          "state": "null"
+         },
+         "time": {
+          "state": "null"
+         },
+         "datetime": {
+          "state": "null"
+         },
+         "blob": {
+          "state": "null"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.types-parameters.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "s"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "value",
+      "lexical": "12"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "value",
+      "lexical": "1234567890123"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "value",
+      "lexical": "1.5"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "value",
+      "lexical": "2.25"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "value",
+      "lexical": "3.75"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "value",
+      "lexical": "123.45"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "value",
+      "lexical": "1"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "value",
+      "lexical": "20261116"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "value",
+      "lexical": "123456789"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "value",
+      "lexical": "20261116123456789"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "value",
+      "lexical": "AAEC"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.types-null-parameters.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "null"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "null"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "null"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "null"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "null"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "null"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "null"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "null"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "null"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "null"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.types-constants.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "s"
+        }
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "value": {
+         "state": "value",
+         "lexical": "12"
+        }
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "value": {
+         "state": "value",
+         "lexical": "1234567890123"
+        }
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "value": {
+         "state": "value",
+         "lexical": "1.5"
+        }
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "value": {
+         "state": "value",
+         "lexical": "2.25"
+        }
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "3.75"
+        }
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "123.45"
+        }
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "value": {
+         "state": "value",
+         "lexical": "1"
+        }
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "value": {
+         "state": "value",
+         "lexical": "20261116"
+        }
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "value": {
+         "state": "value",
+         "lexical": "123456789"
+        }
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "value": {
+         "state": "value",
+         "lexical": "20261116123456789"
+        }
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "value": {
+         "state": "value",
+         "lexical": "AAEC"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.types-explicit-size.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0,
+        "size": "7"
+       },
+       {
+        "id": "i",
+        "type": "INT",
+        "index": 1,
+        "size": "2"
+       },
+       {
+        "id": "b",
+        "type": "BIGDECIMAL",
+        "index": 2,
+        "size": "5"
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "value",
+          "lexical": "x"
+         },
+         "i": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "b": {
+          "state": "value",
+          "lexical": "1.5"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-ssv.empty-string-and-blob.encode",
+   "profile": "xplatform-ssv",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "s",
+      "type": "STRING",
+      "state": "empty",
+      "lexical": ""
+     },
+     {
+      "id": "b",
+      "type": "BLOB",
+      "state": "empty",
+      "lexical": ""
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "b",
+        "type": "BLOB",
+        "index": 1
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "empty",
+          "lexical": ""
+         },
+         "b": {
+          "state": "empty",
+          "lexical": ""
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.types-columns.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "index": 1
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "index": 2
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "index": 3
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "index": 4
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "index": 5
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "index": 6
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "index": 7
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "index": 8
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "index": 9
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "index": 10
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "index": 11
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "value",
+          "lexical": "s"
+         },
+         "int": {
+          "state": "value",
+          "lexical": "12"
+         },
+         "long": {
+          "state": "value",
+          "lexical": "1234567890123"
+         },
+         "float": {
+          "state": "value",
+          "lexical": "1.5"
+         },
+         "double": {
+          "state": "value",
+          "lexical": "2.25"
+         },
+         "decimal": {
+          "state": "value",
+          "lexical": "3.75"
+         },
+         "bigdecimal": {
+          "state": "value",
+          "lexical": "123.45"
+         },
+         "boolean": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "date": {
+          "state": "value",
+          "lexical": "20261116"
+         },
+         "time": {
+          "state": "value",
+          "lexical": "123456789"
+         },
+         "datetime": {
+          "state": "value",
+          "lexical": "20261116123456789"
+         },
+         "blob": {
+          "state": "value",
+          "lexical": "AAEC"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "null"
+         },
+         "int": {
+          "state": "null"
+         },
+         "long": {
+          "state": "null"
+         },
+         "float": {
+          "state": "null"
+         },
+         "double": {
+          "state": "null"
+         },
+         "decimal": {
+          "state": "null"
+         },
+         "bigdecimal": {
+          "state": "null"
+         },
+         "boolean": {
+          "state": "null"
+         },
+         "date": {
+          "state": "null"
+         },
+         "time": {
+          "state": "null"
+         },
+         "datetime": {
+          "state": "null"
+         },
+         "blob": {
+          "state": "null"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.types-parameters.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "s"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "value",
+      "lexical": "12"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "value",
+      "lexical": "1234567890123"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "value",
+      "lexical": "1.5"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "value",
+      "lexical": "2.25"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "value",
+      "lexical": "3.75"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "value",
+      "lexical": "123.45"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "value",
+      "lexical": "1"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "value",
+      "lexical": "20261116"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "value",
+      "lexical": "123456789"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "value",
+      "lexical": "20261116123456789"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "value",
+      "lexical": "AAEC"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.types-null-parameters.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "null"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "null"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "null"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "null"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "null"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "null"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "null"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "null"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "null"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "null"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.types-constants.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "s"
+        }
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "value": {
+         "state": "value",
+         "lexical": "12"
+        }
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "value": {
+         "state": "value",
+         "lexical": "1234567890123"
+        }
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "value": {
+         "state": "value",
+         "lexical": "1.5"
+        }
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "value": {
+         "state": "value",
+         "lexical": "2.25"
+        }
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "3.75"
+        }
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "123.45"
+        }
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "value": {
+         "state": "value",
+         "lexical": "1"
+        }
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "value": {
+         "state": "value",
+         "lexical": "20261116"
+        }
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "value": {
+         "state": "value",
+         "lexical": "123456789"
+        }
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "value": {
+         "state": "value",
+         "lexical": "20261116123456789"
+        }
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "value": {
+         "state": "value",
+         "lexical": "AAEC"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.types-explicit-size.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0,
+        "size": "7"
+       },
+       {
+        "id": "i",
+        "type": "INT",
+        "index": 1,
+        "size": "2"
+       },
+       {
+        "id": "b",
+        "type": "BIGDECIMAL",
+        "index": 2,
+        "size": "5"
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "value",
+          "lexical": "x"
+         },
+         "i": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "b": {
+          "state": "value",
+          "lexical": "1.5"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-json.empty-string-and-blob.encode",
+   "profile": "nexacro-json-1.0",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "s",
+      "type": "STRING",
+      "state": "empty",
+      "lexical": ""
+     },
+     {
+      "id": "b",
+      "type": "BLOB",
+      "state": "empty",
+      "lexical": ""
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "b",
+        "type": "BLOB",
+        "index": 1
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "empty",
+          "lexical": ""
+         },
+         "b": {
+          "state": "empty",
+          "lexical": ""
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.types-columns.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "index": 1
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "index": 2
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "index": 3
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "index": 4
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "index": 5
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "index": 6
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "index": 7
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "index": 8
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "index": 9
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "index": 10
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "index": 11
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "value",
+          "lexical": "s"
+         },
+         "int": {
+          "state": "value",
+          "lexical": "12"
+         },
+         "long": {
+          "state": "value",
+          "lexical": "1234567890123"
+         },
+         "float": {
+          "state": "value",
+          "lexical": "1.5"
+         },
+         "double": {
+          "state": "value",
+          "lexical": "2.25"
+         },
+         "decimal": {
+          "state": "value",
+          "lexical": "3.75"
+         },
+         "bigdecimal": {
+          "state": "value",
+          "lexical": "123.45"
+         },
+         "boolean": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "date": {
+          "state": "value",
+          "lexical": "20261116"
+         },
+         "time": {
+          "state": "value",
+          "lexical": "123456789"
+         },
+         "datetime": {
+          "state": "value",
+          "lexical": "20261116123456789"
+         },
+         "blob": {
+          "state": "value",
+          "lexical": "AAEC"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "null"
+         },
+         "int": {
+          "state": "null"
+         },
+         "long": {
+          "state": "null"
+         },
+         "float": {
+          "state": "null"
+         },
+         "double": {
+          "state": "null"
+         },
+         "decimal": {
+          "state": "null"
+         },
+         "bigdecimal": {
+          "state": "null"
+         },
+         "boolean": {
+          "state": "null"
+         },
+         "date": {
+          "state": "null"
+         },
+         "time": {
+          "state": "null"
+         },
+         "datetime": {
+          "state": "null"
+         },
+         "blob": {
+          "state": "null"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.types-parameters.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "s"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "value",
+      "lexical": "12"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "value",
+      "lexical": "1234567890123"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "value",
+      "lexical": "1.5"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "value",
+      "lexical": "2.25"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "value",
+      "lexical": "3.75"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "value",
+      "lexical": "123.45"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "value",
+      "lexical": "1"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "value",
+      "lexical": "20261116"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "value",
+      "lexical": "123456789"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "value",
+      "lexical": "20261116123456789"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "value",
+      "lexical": "AAEC"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.types-null-parameters.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "null"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "null"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "null"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "null"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "null"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "null"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "null"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "null"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "null"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "null"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.types-constants.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "s"
+        }
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "value": {
+         "state": "value",
+         "lexical": "12"
+        }
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "value": {
+         "state": "value",
+         "lexical": "1234567890123"
+        }
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "value": {
+         "state": "value",
+         "lexical": "1.5"
+        }
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "value": {
+         "state": "value",
+         "lexical": "2.25"
+        }
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "3.75"
+        }
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "123.45"
+        }
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "value": {
+         "state": "value",
+         "lexical": "1"
+        }
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "value": {
+         "state": "value",
+         "lexical": "20261116"
+        }
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "value": {
+         "state": "value",
+         "lexical": "20261116123456789"
+        }
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "value": {
+         "state": "value",
+         "lexical": "AAEC"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.types-explicit-size.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0,
+        "size": "7"
+       },
+       {
+        "id": "i",
+        "type": "INT",
+        "index": 1,
+        "size": "2"
+       },
+       {
+        "id": "b",
+        "type": "BIGDECIMAL",
+        "index": 2,
+        "size": "5"
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "value",
+          "lexical": "x"
+         },
+         "i": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "b": {
+          "state": "value",
+          "lexical": "1.5"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.nexacro-binary.empty-string-and-blob.encode",
+   "profile": "nexacro-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "s",
+      "type": "STRING",
+      "state": "empty",
+      "lexical": ""
+     },
+     {
+      "id": "b",
+      "type": "BLOB",
+      "state": "empty",
+      "lexical": ""
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "b",
+        "type": "BLOB",
+        "index": 1
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "empty",
+          "lexical": ""
+         },
+         "b": {
+          "state": "empty",
+          "lexical": ""
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.types-columns.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "index": 1
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "index": 2
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "index": 3
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "index": 4
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "index": 5
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "index": 6
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "index": 7
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "index": 8
+       },
+       {
+        "id": "time",
+        "type": "TIME",
+        "index": 9
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "index": 10
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "index": 11
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "value",
+          "lexical": "s"
+         },
+         "int": {
+          "state": "value",
+          "lexical": "12"
+         },
+         "long": {
+          "state": "value",
+          "lexical": "1234567890123"
+         },
+         "float": {
+          "state": "value",
+          "lexical": "1.5"
+         },
+         "double": {
+          "state": "value",
+          "lexical": "2.25"
+         },
+         "decimal": {
+          "state": "value",
+          "lexical": "3.75"
+         },
+         "bigdecimal": {
+          "state": "value",
+          "lexical": "123.45"
+         },
+         "boolean": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "date": {
+          "state": "value",
+          "lexical": "20261116"
+         },
+         "time": {
+          "state": "value",
+          "lexical": "123456789"
+         },
+         "datetime": {
+          "state": "value",
+          "lexical": "20261116123456789"
+         },
+         "blob": {
+          "state": "value",
+          "lexical": "AAEC"
+         }
+        }
+       },
+       {
+        "type": "N",
+        "values": {
+         "string": {
+          "state": "null"
+         },
+         "int": {
+          "state": "null"
+         },
+         "long": {
+          "state": "null"
+         },
+         "float": {
+          "state": "null"
+         },
+         "double": {
+          "state": "null"
+         },
+         "decimal": {
+          "state": "null"
+         },
+         "bigdecimal": {
+          "state": "null"
+         },
+         "boolean": {
+          "state": "null"
+         },
+         "date": {
+          "state": "null"
+         },
+         "time": {
+          "state": "null"
+         },
+         "datetime": {
+          "state": "null"
+         },
+         "blob": {
+          "state": "null"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.types-parameters.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "value",
+      "lexical": "s"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "value",
+      "lexical": "12"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "value",
+      "lexical": "1234567890123"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "value",
+      "lexical": "1.5"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "value",
+      "lexical": "2.25"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "value",
+      "lexical": "3.75"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "value",
+      "lexical": "123.45"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "value",
+      "lexical": "1"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "value",
+      "lexical": "20261116"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "value",
+      "lexical": "123456789"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "value",
+      "lexical": "20261116123456789"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "value",
+      "lexical": "AAEC"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.types-null-parameters.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "string",
+      "type": "STRING",
+      "state": "null"
+     },
+     {
+      "id": "int",
+      "type": "INT",
+      "state": "null"
+     },
+     {
+      "id": "long",
+      "type": "LONG",
+      "state": "null"
+     },
+     {
+      "id": "float",
+      "type": "FLOAT",
+      "state": "null"
+     },
+     {
+      "id": "double",
+      "type": "DOUBLE",
+      "state": "null"
+     },
+     {
+      "id": "decimal",
+      "type": "DECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "bigdecimal",
+      "type": "BIGDECIMAL",
+      "state": "null"
+     },
+     {
+      "id": "boolean",
+      "type": "BOOLEAN",
+      "state": "null"
+     },
+     {
+      "id": "date",
+      "type": "DATE",
+      "state": "null"
+     },
+     {
+      "id": "time",
+      "type": "TIME",
+      "state": "null"
+     },
+     {
+      "id": "datetime",
+      "type": "DATETIME",
+      "state": "null"
+     },
+     {
+      "id": "blob",
+      "type": "BLOB",
+      "state": "null"
+     }
+    ],
+    "datasets": []
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.types-constants.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "a",
+        "type": "STRING",
+        "index": 0
+       }
+      ],
+      "constColumns": [
+       {
+        "id": "string",
+        "type": "STRING",
+        "value": {
+         "state": "value",
+         "lexical": "s"
+        }
+       },
+       {
+        "id": "int",
+        "type": "INT",
+        "value": {
+         "state": "value",
+         "lexical": "12"
+        }
+       },
+       {
+        "id": "long",
+        "type": "LONG",
+        "value": {
+         "state": "value",
+         "lexical": "1234567890123"
+        }
+       },
+       {
+        "id": "float",
+        "type": "FLOAT",
+        "value": {
+         "state": "value",
+         "lexical": "1.5"
+        }
+       },
+       {
+        "id": "double",
+        "type": "DOUBLE",
+        "value": {
+         "state": "value",
+         "lexical": "2.25"
+        }
+       },
+       {
+        "id": "decimal",
+        "type": "DECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "3.75"
+        }
+       },
+       {
+        "id": "bigdecimal",
+        "type": "BIGDECIMAL",
+        "value": {
+         "state": "value",
+         "lexical": "123.45"
+        }
+       },
+       {
+        "id": "boolean",
+        "type": "BOOLEAN",
+        "value": {
+         "state": "value",
+         "lexical": "1"
+        }
+       },
+       {
+        "id": "date",
+        "type": "DATE",
+        "value": {
+         "state": "value",
+         "lexical": "20261116"
+        }
+       },
+       {
+        "id": "datetime",
+        "type": "DATETIME",
+        "value": {
+         "state": "value",
+         "lexical": "20261116123456789"
+        }
+       },
+       {
+        "id": "blob",
+        "type": "BLOB",
+        "value": {
+         "state": "value",
+         "lexical": "AAEC"
+        }
+       }
+      ],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "a": {
+          "state": "value",
+          "lexical": "x"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.types-explicit-size.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0,
+        "size": "7"
+       },
+       {
+        "id": "i",
+        "type": "INT",
+        "index": 1,
+        "size": "2"
+       },
+       {
+        "id": "b",
+        "type": "BIGDECIMAL",
+        "index": 2,
+        "size": "5"
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "value",
+          "lexical": "x"
+         },
+         "i": {
+          "state": "value",
+          "lexical": "1"
+         },
+         "b": {
+          "state": "value",
+          "lexical": "1.5"
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  },
+  {
+   "id": "driver.xplatform-binary.empty-string-and-blob.encode",
+   "profile": "xplatform-binary-5000",
+   "operation": "encode",
+   "value": {
+    "parameters": [
+     {
+      "id": "s",
+      "type": "STRING",
+      "state": "empty",
+      "lexical": ""
+     },
+     {
+      "id": "b",
+      "type": "BLOB",
+      "state": "empty",
+      "lexical": ""
+     }
+    ],
+    "datasets": [
+     {
+      "id": "d",
+      "columns": [
+       {
+        "id": "s",
+        "type": "STRING",
+        "index": 0
+       },
+       {
+        "id": "b",
+        "type": "BLOB",
+        "index": 1
+       }
+      ],
+      "constColumns": [],
+      "rows": [
+       {
+        "type": "N",
+        "values": {
+         "s": {
+          "state": "empty",
+          "lexical": ""
+         },
+         "b": {
+          "state": "empty",
+          "lexical": ""
+         }
+        }
+       }
+      ]
+     }
+    ]
+   },
+   "alsoDecode": true
+  }
+ ]
+}

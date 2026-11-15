@@ -1,0 +1,54 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "a",
+              "index": 0,
+              "type": "STRING"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "a": {
+                  "lexical": "a\\b/c",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p",
+          "lexical": "a\\b/c",
+          "state": "value",
+          "type": "STRING"
+        }
+      ]
+    }
+  },
+  "id": "driver.nexacro-ssv.escape-backslash.encode.decode",
+  "input": {
+    "data": "U1NWOlVURi04HnA6c3RyaW5nPWFcYi9jHkRhdGFzZXQ6ZB5fUm93VHlwZV8fYTpzdHJpbmcoMzIpHk4fYVxiL2MeHg==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/escape.json",
+    "repository": "xapi-conformance"
+  }
+}

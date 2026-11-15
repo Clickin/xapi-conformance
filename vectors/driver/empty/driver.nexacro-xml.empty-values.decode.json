@@ -1,0 +1,377 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "string",
+              "index": 0,
+              "type": "STRING"
+            },
+            {
+              "id": "int",
+              "index": 1,
+              "type": "INT"
+            },
+            {
+              "id": "long",
+              "index": 2,
+              "type": "LONG"
+            },
+            {
+              "id": "float",
+              "index": 3,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "double",
+              "index": 4,
+              "type": "DOUBLE"
+            },
+            {
+              "id": "decimal",
+              "index": 5,
+              "type": "UNDEFINED"
+            },
+            {
+              "id": "bigdecimal",
+              "index": 6,
+              "type": "BIGDECIMAL"
+            },
+            {
+              "id": "boolean",
+              "index": 7,
+              "type": "BOOLEAN"
+            },
+            {
+              "id": "date",
+              "index": 8,
+              "type": "DATE"
+            },
+            {
+              "id": "time",
+              "index": 9,
+              "type": "TIME"
+            },
+            {
+              "id": "datetime",
+              "index": 10,
+              "type": "DATETIME"
+            },
+            {
+              "id": "blob",
+              "index": 11,
+              "type": "BLOB"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "bigdecimal": {
+                  "state": "null"
+                },
+                "blob": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "boolean": {
+                  "lexical": "false",
+                  "state": "value"
+                },
+                "date": {
+                  "state": "null"
+                },
+                "datetime": {
+                  "state": "null"
+                },
+                "decimal": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "double": {
+                  "lexical": "0.0",
+                  "state": "value"
+                },
+                "float": {
+                  "lexical": "0.0",
+                  "state": "value"
+                },
+                "int": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "long": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "string": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "time": {
+                  "state": "null"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "bigdecimal": {
+                  "state": "null"
+                },
+                "blob": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "boolean": {
+                  "lexical": "false",
+                  "state": "value"
+                },
+                "date": {
+                  "state": "null"
+                },
+                "datetime": {
+                  "state": "null"
+                },
+                "decimal": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "double": {
+                  "lexical": "0.0",
+                  "state": "value"
+                },
+                "float": {
+                  "lexical": "0.0",
+                  "state": "value"
+                },
+                "int": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "long": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "string": {
+                  "lexical": "",
+                  "state": "empty"
+                },
+                "time": {
+                  "state": "null"
+                }
+              }
+            },
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "bigdecimal": {
+                  "state": "null"
+                },
+                "blob": {
+                  "state": "null"
+                },
+                "boolean": {
+                  "state": "null"
+                },
+                "date": {
+                  "state": "null"
+                },
+                "datetime": {
+                  "state": "null"
+                },
+                "decimal": {
+                  "state": "null"
+                },
+                "double": {
+                  "state": "null"
+                },
+                "float": {
+                  "state": "null"
+                },
+                "int": {
+                  "state": "null"
+                },
+                "long": {
+                  "state": "null"
+                },
+                "string": {
+                  "state": "null"
+                },
+                "time": {
+                  "state": "null"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "string",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "string2",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "int",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "int2",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "long",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "long2",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "float",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "float2",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "double",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "double2",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "decimal",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "decimal2",
+          "lexical": "",
+          "state": "empty",
+          "type": "STRING"
+        },
+        {
+          "id": "bigdecimal",
+          "state": "null",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "bigdecimal2",
+          "state": "null",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "boolean",
+          "lexical": "false",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "boolean2",
+          "lexical": "false",
+          "state": "value",
+          "type": "BOOLEAN"
+        },
+        {
+          "id": "date",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "date2",
+          "state": "null",
+          "type": "DATE"
+        },
+        {
+          "id": "time",
+          "state": "null",
+          "type": "TIME"
+        },
+        {
+          "id": "time2",
+          "state": "null",
+          "type": "TIME"
+        },
+        {
+          "id": "datetime",
+          "state": "null",
+          "type": "DATETIME"
+        },
+        {
+          "id": "datetime2",
+          "state": "null",
+          "type": "DATETIME"
+        },
+        {
+          "id": "blob",
+          "lexical": "",
+          "state": "empty",
+          "type": "BLOB"
+        },
+        {
+          "id": "blob2",
+          "lexical": "",
+          "state": "empty",
+          "type": "BLOB"
+        }
+      ],
+      "wire": {
+        "root": {
+          "namespace": "http://www.nexacroplatform.com/platform/dataset",
+          "version": "4000"
+        }
+      }
+    }
+  },
+  "id": "driver.nexacro-xml.empty-values.decode",
+  "input": {
+    "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij48UGFyYW1ldGVycz48UGFyYW1ldGVyIGlkPSJzdHJpbmciIHR5cGU9InN0cmluZyI+PC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0ic3RyaW5nMiIgdHlwZT0ic3RyaW5nIi8+PFBhcmFtZXRlciBpZD0iaW50IiB0eXBlPSJpbnQiPjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9ImludDIiIHR5cGU9ImludCIvPjxQYXJhbWV0ZXIgaWQ9ImxvbmciIHR5cGU9ImxvbmciPjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9ImxvbmcyIiB0eXBlPSJsb25nIi8+PFBhcmFtZXRlciBpZD0iZmxvYXQiIHR5cGU9ImZsb2F0Ij48L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJmbG9hdDIiIHR5cGU9ImZsb2F0Ii8+PFBhcmFtZXRlciBpZD0iZG91YmxlIiB0eXBlPSJkb3VibGUiPjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9ImRvdWJsZTIiIHR5cGU9ImRvdWJsZSIvPjxQYXJhbWV0ZXIgaWQ9ImRlY2ltYWwiIHR5cGU9ImRlY2ltYWwiPjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9ImRlY2ltYWwyIiB0eXBlPSJkZWNpbWFsIi8+PFBhcmFtZXRlciBpZD0iYmlnZGVjaW1hbCIgdHlwZT0iYmlnZGVjaW1hbCI+PC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0iYmlnZGVjaW1hbDIiIHR5cGU9ImJpZ2RlY2ltYWwiLz48UGFyYW1ldGVyIGlkPSJib29sZWFuIiB0eXBlPSJib29sZWFuIj48L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJib29sZWFuMiIgdHlwZT0iYm9vbGVhbiIvPjxQYXJhbWV0ZXIgaWQ9ImRhdGUiIHR5cGU9ImRhdGUiPjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9ImRhdGUyIiB0eXBlPSJkYXRlIi8+PFBhcmFtZXRlciBpZD0idGltZSIgdHlwZT0idGltZSI+PC9QYXJhbWV0ZXI+PFBhcmFtZXRlciBpZD0idGltZTIiIHR5cGU9InRpbWUiLz48UGFyYW1ldGVyIGlkPSJkYXRldGltZSIgdHlwZT0iZGF0ZXRpbWUiPjwvUGFyYW1ldGVyPjxQYXJhbWV0ZXIgaWQ9ImRhdGV0aW1lMiIgdHlwZT0iZGF0ZXRpbWUiLz48UGFyYW1ldGVyIGlkPSJibG9iIiB0eXBlPSJibG9iIj48L1BhcmFtZXRlcj48UGFyYW1ldGVyIGlkPSJibG9iMiIgdHlwZT0iYmxvYiIvPjwvUGFyYW1ldGVycz48RGF0YXNldCBpZD0iZCI+PENvbHVtbkluZm8+PENvbHVtbiBpZD0ic3RyaW5nIiB0eXBlPSJzdHJpbmciIHNpemU9IjgiLz48Q29sdW1uIGlkPSJpbnQiIHR5cGU9ImludCIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImxvbmciIHR5cGU9ImxvbmciIHNpemU9IjgiLz48Q29sdW1uIGlkPSJmbG9hdCIgdHlwZT0iZmxvYXQiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJkb3VibGUiIHR5cGU9ImRvdWJsZSIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImRlY2ltYWwiIHR5cGU9ImRlY2ltYWwiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJiaWdkZWNpbWFsIiB0eXBlPSJiaWdkZWNpbWFsIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYm9vbGVhbiIgdHlwZT0iYm9vbGVhbiIgc2l6ZT0iOCIvPjxDb2x1bW4gaWQ9ImRhdGUiIHR5cGU9ImRhdGUiIHNpemU9IjgiLz48Q29sdW1uIGlkPSJ0aW1lIiB0eXBlPSJ0aW1lIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iZGF0ZXRpbWUiIHR5cGU9ImRhdGV0aW1lIiBzaXplPSI4Ii8+PENvbHVtbiBpZD0iYmxvYiIgdHlwZT0iYmxvYiIgc2l6ZT0iOCIvPjwvQ29sdW1uSW5mbz48Um93cz48Um93PjxDb2wgaWQ9InN0cmluZyI+PC9Db2w+PENvbCBpZD0iaW50Ij48L0NvbD48Q29sIGlkPSJsb25nIj48L0NvbD48Q29sIGlkPSJmbG9hdCI+PC9Db2w+PENvbCBpZD0iZG91YmxlIj48L0NvbD48Q29sIGlkPSJkZWNpbWFsIj48L0NvbD48Q29sIGlkPSJiaWdkZWNpbWFsIj48L0NvbD48Q29sIGlkPSJib29sZWFuIj48L0NvbD48Q29sIGlkPSJkYXRlIj48L0NvbD48Q29sIGlkPSJ0aW1lIj48L0NvbD48Q29sIGlkPSJkYXRldGltZSI+PC9Db2w+PENvbCBpZD0iYmxvYiI+PC9Db2w+PC9Sb3c+PFJvdz48Q29sIGlkPSJzdHJpbmciLz48Q29sIGlkPSJpbnQiLz48Q29sIGlkPSJsb25nIi8+PENvbCBpZD0iZmxvYXQiLz48Q29sIGlkPSJkb3VibGUiLz48Q29sIGlkPSJkZWNpbWFsIi8+PENvbCBpZD0iYmlnZGVjaW1hbCIvPjxDb2wgaWQ9ImJvb2xlYW4iLz48Q29sIGlkPSJkYXRlIi8+PENvbCBpZD0idGltZSIvPjxDb2wgaWQ9ImRhdGV0aW1lIi8+PENvbCBpZD0iYmxvYiIvPjwvUm93PjxSb3c+PC9Sb3c+PC9Sb3dzPjwvRGF0YXNldD48L1Jvb3Q+",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/empty.json",
+    "repository": "xapi-conformance"
+  }
+}

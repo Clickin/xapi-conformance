@@ -1,0 +1,78 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HkRhdGFzZXQ6ZB5fQ29uc3RfH2swOmRhdGUoNik9MjAyNjExMTYfazE6ZGF0ZSg2KT0yMDI2LTExLTE2H2syOmRhdGUoNik9H2szOmRhdGUoNik9Hl9Sb3dUeXBlXx9hOnN0cmluZygzMikeTh94Hg==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-ssv.const-date.encode",
+  "operation": "encode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/const.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "a",
+            "index": 0,
+            "type": "STRING"
+          }
+        ],
+        "constColumns": [
+          {
+            "id": "k0",
+            "type": "DATE",
+            "value": {
+              "lexical": "20261116",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k1",
+            "type": "DATE",
+            "value": {
+              "lexical": "2026-11-16",
+              "state": "value"
+            }
+          },
+          {
+            "id": "k2",
+            "type": "DATE",
+            "value": {
+              "lexical": "",
+              "state": "empty"
+            }
+          },
+          {
+            "id": "k3",
+            "type": "DATE",
+            "value": {
+              "state": "null"
+            }
+          }
+        ],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "a": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzLz4KCTxEYXRhc2V0IGlkPSJkIj4KCQk8Q29sdW1uSW5mbz4KCQkJPENvbHVtbiBpZD0icyIgdHlwZT0ic3RyaW5nIiBzaXplPSI3Ii8+CgkJCTxDb2x1bW4gaWQ9ImkiIHR5cGU9ImludCIgc2l6ZT0iMiIvPgoJCQk8Q29sdW1uIGlkPSJiIiB0eXBlPSJiaWdkZWNpbWFsIiBzaXplPSI1Ii8+CgkJPC9Db2x1bW5JbmZvPgoJCTxSb3dzPgoJCQk8Um93PgoJCQkJPENvbCBpZD0icyI+eDwvQ29sPgoJCQkJPENvbCBpZD0iaSI+MTwvQ29sPgoJCQkJPENvbCBpZD0iYiI+MS41PC9Db2w+CgkJCTwvUm93PgoJCTwvUm93cz4KCTwvRGF0YXNldD4KPC9Sb290Pgo=",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.types-explicit-size.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [
+      {
+        "columns": [
+          {
+            "id": "s",
+            "index": 0,
+            "size": "7",
+            "type": "STRING"
+          },
+          {
+            "id": "i",
+            "index": 1,
+            "size": "2",
+            "type": "INT"
+          },
+          {
+            "id": "b",
+            "index": 2,
+            "size": "5",
+            "type": "BIGDECIMAL"
+          }
+        ],
+        "constColumns": [],
+        "id": "d",
+        "rows": [
+          {
+            "type": "N",
+            "values": {
+              "b": {
+                "lexical": "1.5",
+                "state": "value"
+              },
+              "i": {
+                "lexical": "1",
+                "state": "value"
+              },
+              "s": {
+                "lexical": "x",
+                "state": "value"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "parameters": []
+  }
+}

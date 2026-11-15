@@ -1,0 +1,327 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [
+        {
+          "columns": [
+            {
+              "id": "c0",
+              "index": 0,
+              "type": "LONG"
+            },
+            {
+              "id": "c1",
+              "index": 1,
+              "type": "LONG"
+            },
+            {
+              "id": "c2",
+              "index": 2,
+              "type": "LONG"
+            },
+            {
+              "id": "c3",
+              "index": 3,
+              "type": "LONG"
+            },
+            {
+              "id": "c4",
+              "index": 4,
+              "type": "LONG"
+            },
+            {
+              "id": "c5",
+              "index": 5,
+              "type": "LONG"
+            },
+            {
+              "id": "c6",
+              "index": 6,
+              "type": "LONG"
+            },
+            {
+              "id": "c7",
+              "index": 7,
+              "type": "LONG"
+            },
+            {
+              "id": "c8",
+              "index": 8,
+              "type": "LONG"
+            },
+            {
+              "id": "c9",
+              "index": 9,
+              "type": "LONG"
+            },
+            {
+              "id": "c10",
+              "index": 10,
+              "type": "LONG"
+            },
+            {
+              "id": "c11",
+              "index": 11,
+              "type": "LONG"
+            },
+            {
+              "id": "c12",
+              "index": 12,
+              "type": "LONG"
+            },
+            {
+              "id": "c13",
+              "index": 13,
+              "type": "LONG"
+            },
+            {
+              "id": "c14",
+              "index": 14,
+              "type": "LONG"
+            },
+            {
+              "id": "c15",
+              "index": 15,
+              "type": "LONG"
+            },
+            {
+              "id": "c16",
+              "index": 16,
+              "type": "LONG"
+            },
+            {
+              "id": "c17",
+              "index": 17,
+              "type": "LONG"
+            },
+            {
+              "id": "c18",
+              "index": 18,
+              "type": "LONG"
+            }
+          ],
+          "constColumns": [],
+          "id": "d",
+          "rows": [
+            {
+              "orgRow": null,
+              "type": "N",
+              "values": {
+                "c0": {
+                  "lexical": "1",
+                  "state": "value"
+                },
+                "c1": {
+                  "lexical": "1",
+                  "state": "value"
+                },
+                "c10": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c11": {
+                  "lexical": "1234",
+                  "state": "value"
+                },
+                "c12": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c13": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c14": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c15": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c16": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c17": {
+                  "lexical": "123456789",
+                  "state": "value"
+                },
+                "c18": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c2": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c3": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c4": {
+                  "lexical": "0",
+                  "state": "value"
+                },
+                "c5": {
+                  "lexical": "2",
+                  "state": "value"
+                },
+                "c6": {
+                  "lexical": "10",
+                  "state": "value"
+                },
+                "c7": {
+                  "lexical": "-7",
+                  "state": "value"
+                },
+                "c8": {
+                  "lexical": "5",
+                  "state": "value"
+                },
+                "c9": {
+                  "lexical": "2147483648",
+                  "state": "value"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "p0",
+          "lexical": "1",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p1",
+          "lexical": "1",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p2",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p3",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p4",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p5",
+          "lexical": "2",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p6",
+          "lexical": "10",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p7",
+          "lexical": "-7",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p8",
+          "lexical": "5",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p9",
+          "lexical": "2147483648",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p10",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p11",
+          "lexical": "1234",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p12",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p13",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p14",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p15",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p16",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p17",
+          "lexical": "123456789",
+          "state": "value",
+          "type": "LONG"
+        },
+        {
+          "id": "p18",
+          "lexical": "0",
+          "state": "value",
+          "type": "LONG"
+        }
+      ],
+      "wire": {
+        "version": "1.0"
+      }
+    }
+  },
+  "id": "driver.nexacro-json.scalar-long.decode",
+  "input": {
+    "data": "eyJ2ZXJzaW9uIjogIjEuMCIsICJQYXJhbWV0ZXJzIjogW3siaWQiOiAicDAiLCAidHlwZSI6ICJsb25nIiwgInZhbHVlIjogIjAwMS4yMCJ9LCB7ImlkIjogInAxIiwgInR5cGUiOiAibG9uZyIsICJ2YWx1ZSI6ICIxLjUwIn0sIHsiaWQiOiAicDIiLCAidHlwZSI6ICJsb25nIiwgInZhbHVlIjogIi0wLjAifSwgeyJpZCI6ICJwMyIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiMWUzIn0sIHsiaWQiOiAicDQiLCAidHlwZSI6ICJsb25nIiwgInZhbHVlIjogImFiYyJ9LCB7ImlkIjogInA1IiwgInR5cGUiOiAibG9uZyIsICJ2YWx1ZSI6ICIgMiAifSwgeyJpZCI6ICJwNiIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiMTAifSwgeyJpZCI6ICJwNyIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiLTcifSwgeyJpZCI6ICJwOCIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiKzUifSwgeyJpZCI6ICJwOSIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiMjE0NzQ4MzY0OCJ9LCB7ImlkIjogInAxMCIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiMHgxRiJ9LCB7ImlkIjogInAxMSIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiMSwyMzQifSwgeyJpZCI6ICJwMTIiLCAidHlwZSI6ICJsb25nIiwgInZhbHVlIjogIk5hTiJ9LCB7ImlkIjogInAxMyIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiSW5maW5pdHkifSwgeyJpZCI6ICJwMTQiLCAidHlwZSI6ICJsb25nIiwgInZhbHVlIjogIi0xLjVlLTMifSwgeyJpZCI6ICJwMTUiLCAidHlwZSI6ICJsb25nIiwgInZhbHVlIjogIjFFNyJ9LCB7ImlkIjogInAxNiIsICJ0eXBlIjogImxvbmciLCAidmFsdWUiOiAiMC4wMDAxIn0sIHsiaWQiOiAicDE3IiwgInR5cGUiOiAibG9uZyIsICJ2YWx1ZSI6ICIxMjM0NTY3ODkuMTIzIn0sIHsiaWQiOiAicDE4IiwgInR5cGUiOiAibG9uZyIsICJ2YWx1ZSI6ICI5MjIzMzcyMDM2ODU0Nzc1ODA4In1dLCAiRGF0YXNldHMiOiBbeyJpZCI6ICJkIiwgIkNvbHVtbkluZm8iOiB7IkNvbHVtbiI6IFt7ImlkIjogImMwIiwgInR5cGUiOiAibG9uZyIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMSIsICJ0eXBlIjogImxvbmciLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzIiLCAidHlwZSI6ICJsb25nIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMzIiwgInR5cGUiOiAibG9uZyIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjNCIsICJ0eXBlIjogImxvbmciLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzUiLCAidHlwZSI6ICJsb25nIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImM2IiwgInR5cGUiOiAibG9uZyIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjNyIsICJ0eXBlIjogImxvbmciLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzgiLCAidHlwZSI6ICJsb25nIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImM5IiwgInR5cGUiOiAibG9uZyIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMTAiLCAidHlwZSI6ICJsb25nIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxMSIsICJ0eXBlIjogImxvbmciLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzEyIiwgInR5cGUiOiAibG9uZyIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMTMiLCAidHlwZSI6ICJsb25nIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxNCIsICJ0eXBlIjogImxvbmciLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzE1IiwgInR5cGUiOiAibG9uZyIsICJzaXplIjogIjgifSwgeyJpZCI6ICJjMTYiLCAidHlwZSI6ICJsb25nIiwgInNpemUiOiAiOCJ9LCB7ImlkIjogImMxNyIsICJ0eXBlIjogImxvbmciLCAic2l6ZSI6ICI4In0sIHsiaWQiOiAiYzE4IiwgInR5cGUiOiAibG9uZyIsICJzaXplIjogIjgifV19LCAiUm93cyI6IFt7ImMwIjogIjAwMS4yMCIsICJjMSI6ICIxLjUwIiwgImMyIjogIi0wLjAiLCAiYzMiOiAiMWUzIiwgImM0IjogImFiYyIsICJjNSI6ICIgMiAiLCAiYzYiOiAiMTAiLCAiYzciOiAiLTciLCAiYzgiOiAiKzUiLCAiYzkiOiAiMjE0NzQ4MzY0OCIsICJjMTAiOiAiMHgxRiIsICJjMTEiOiAiMSwyMzQiLCAiYzEyIjogIk5hTiIsICJjMTMiOiAiSW5maW5pdHkiLCAiYzE0IjogIi0xLjVlLTMiLCAiYzE1IjogIjFFNyIsICJjMTYiOiAiMC4wMDAxIiwgImMxNyI6ICIxMjM0NTY3ODkuMTIzIiwgImMxOCI6ICI5MjIzMzcyMDM2ODU0Nzc1ODA4In1dfV19",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "nexacro-json-1.0",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/scalar.json",
+    "repository": "xapi-conformance"
+  }
+}

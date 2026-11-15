@@ -1,0 +1,84 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPFJvb3QgeG1sbnM9Imh0dHA6Ly93d3cubmV4YWNyb3BsYXRmb3JtLmNvbS9wbGF0Zm9ybS9kYXRhc2V0Ij4KCTxQYXJhbWV0ZXJzPgoJCTxQYXJhbWV0ZXIgaWQ9InN0cmluZyIgdHlwZT0ic3RyaW5nIi8+CgkJPFBhcmFtZXRlciBpZD0iaW50IiB0eXBlPSJpbnQiLz4KCQk8UGFyYW1ldGVyIGlkPSJsb25nIiB0eXBlPSJiaWdkZWNpbWFsIi8+CgkJPFBhcmFtZXRlciBpZD0iZmxvYXQiIHR5cGU9ImZsb2F0Ii8+CgkJPFBhcmFtZXRlciBpZD0iZG91YmxlIiB0eXBlPSJmbG9hdCIvPgoJCTxQYXJhbWV0ZXIgaWQ9ImRlY2ltYWwiIHR5cGU9ImJpZ2RlY2ltYWwiLz4KCQk8UGFyYW1ldGVyIGlkPSJiaWdkZWNpbWFsIiB0eXBlPSJiaWdkZWNpbWFsIi8+CgkJPFBhcmFtZXRlciBpZD0iYm9vbGVhbiIgdHlwZT0iaW50Ij4wPC9QYXJhbWV0ZXI+CgkJPFBhcmFtZXRlciBpZD0iZGF0ZSIgdHlwZT0iZGF0ZSIvPgoJCTxQYXJhbWV0ZXIgaWQ9InRpbWUiIHR5cGU9InRpbWUiLz4KCQk8UGFyYW1ldGVyIGlkPSJkYXRldGltZSIgdHlwZT0iZGF0ZXRpbWUiLz4KCQk8UGFyYW1ldGVyIGlkPSJibG9iIiB0eXBlPSJibG9iIi8+Cgk8L1BhcmFtZXRlcnM+CjwvUm9vdD4K",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.nexacro-xml.types-null-parameters.encode",
+  "operation": "encode",
+  "profile": "nexacro-xml-4000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [],
+    "parameters": [
+      {
+        "id": "string",
+        "state": "null",
+        "type": "STRING"
+      },
+      {
+        "id": "int",
+        "state": "null",
+        "type": "INT"
+      },
+      {
+        "id": "long",
+        "state": "null",
+        "type": "LONG"
+      },
+      {
+        "id": "float",
+        "state": "null",
+        "type": "FLOAT"
+      },
+      {
+        "id": "double",
+        "state": "null",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "decimal",
+        "state": "null",
+        "type": "DECIMAL"
+      },
+      {
+        "id": "bigdecimal",
+        "state": "null",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "boolean",
+        "state": "null",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "date",
+        "state": "null",
+        "type": "DATE"
+      },
+      {
+        "id": "time",
+        "state": "null",
+        "type": "TIME"
+      },
+      {
+        "id": "datetime",
+        "state": "null",
+        "type": "DATETIME"
+      },
+      {
+        "id": "blob",
+        "state": "null",
+        "type": "BLOB"
+      }
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "expect": {
+    "kind": "canonical",
+    "value": {
+      "datasets": [],
+      "parameters": [
+        {
+          "id": "string",
+          "state": "null",
+          "type": "UNDEFINED"
+        },
+        {
+          "id": "int",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "long",
+          "lexical": "0",
+          "state": "value",
+          "type": "BIGDECIMAL"
+        },
+        {
+          "id": "float",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "double",
+          "lexical": "0.0",
+          "state": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "id": "decimal",
+          "state": "null",
+          "type": "UNDEFINED"
+        },
+        {
+          "id": "bigdecimal",
+          "state": "null",
+          "type": "UNDEFINED"
+        },
+        {
+          "id": "boolean",
+          "lexical": "0",
+          "state": "value",
+          "type": "INT"
+        },
+        {
+          "id": "date",
+          "state": "null",
+          "type": "UNDEFINED"
+        },
+        {
+          "id": "time",
+          "state": "null",
+          "type": "UNDEFINED"
+        },
+        {
+          "id": "datetime",
+          "state": "null",
+          "type": "UNDEFINED"
+        },
+        {
+          "id": "blob",
+          "state": "null",
+          "type": "UNDEFINED"
+        }
+      ]
+    }
+  },
+  "id": "driver.xplatform-binary.types-null-parameters.encode.decode",
+  "input": {
+    "data": "/hATiACRAAwABnN0cmluZwAAAANpbnQAAwAAAAAABGxvbmcAKAABMAAFZmxvYXQABAAAAAAAAAAAAAZkb3VibGUABAAAAAAAAAAAAAdkZWNpbWFsAAAACmJpZ2RlY2ltYWwAAAAHYm9vbGVhbgADAAAAAAAEZGF0ZQAAAAR0aW1lAAAACGRhdGV0aW1lAAAABGJsb2IAAA==",
+    "encoding": "base64"
+  },
+  "operation": "decode",
+  "profile": "xplatform-binary-5000",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  }
+}

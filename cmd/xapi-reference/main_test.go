@@ -99,10 +99,11 @@ func TestDriverIgnoredDecodeOptionsDoNotRelaxBase64Parsing(t *testing.T) {
 	}
 }
 
-func TestSaveTypeEncodeSourceRejection(t *testing.T) {
+// The drivers honor saveType on encode, so the reference accepts it.
+func TestSaveTypeEncodeSourceAccepted(t *testing.T) {
 	const body = `{"operation":"encode","profile":"nexacro-json-1.0","value":{"saveType":5,"parameters":[],"datasets":[]}}`
 	status, out := call(t, "/encode", body)
-	if status != 400 || out["error"].(map[string]any)["class"] != "malformed-input" {
+	if status != 200 || out["ok"] != true {
 		t.Fatalf("status = %d, response = %+v", status, out)
 	}
 }

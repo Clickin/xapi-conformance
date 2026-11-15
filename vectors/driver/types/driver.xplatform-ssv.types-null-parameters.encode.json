@@ -1,0 +1,84 @@
+{
+  "expect": {
+    "kind": "wire",
+    "output": {
+      "data": "U1NWOlVURi04HnN0cmluZzpzdHJpbmc9HmludDppbnQ9Hmxvbmc6YmlnZGVjaW1hbD0eZmxvYXQ6ZmxvYXQ9HmRvdWJsZTpmbG9hdD0eZGVjaW1hbDpiaWdkZWNpbWFsPR5iaWdkZWNpbWFsOmJpZ2RlY2ltYWw9HmJvb2xlYW46aW50PTAeZGF0ZTpkYXRlPR50aW1lOnRpbWU9HmRhdGV0aW1lOmRhdGV0aW1lPR5ibG9iOmJsb2I9Hg==",
+      "encoding": "base64"
+    }
+  },
+  "id": "driver.xplatform-ssv.types-null-parameters.encode",
+  "operation": "encode",
+  "profile": "xplatform-ssv",
+  "required": true,
+  "source": {
+    "commit": "working-tree",
+    "license": "repository",
+    "path": "capture/cases/types.json",
+    "repository": "xapi-conformance"
+  },
+  "value": {
+    "datasets": [],
+    "parameters": [
+      {
+        "id": "string",
+        "state": "null",
+        "type": "STRING"
+      },
+      {
+        "id": "int",
+        "state": "null",
+        "type": "INT"
+      },
+      {
+        "id": "long",
+        "state": "null",
+        "type": "LONG"
+      },
+      {
+        "id": "float",
+        "state": "null",
+        "type": "FLOAT"
+      },
+      {
+        "id": "double",
+        "state": "null",
+        "type": "DOUBLE"
+      },
+      {
+        "id": "decimal",
+        "state": "null",
+        "type": "DECIMAL"
+      },
+      {
+        "id": "bigdecimal",
+        "state": "null",
+        "type": "BIGDECIMAL"
+      },
+      {
+        "id": "boolean",
+        "state": "null",
+        "type": "BOOLEAN"
+      },
+      {
+        "id": "date",
+        "state": "null",
+        "type": "DATE"
+      },
+      {
+        "id": "time",
+        "state": "null",
+        "type": "TIME"
+      },
+      {
+        "id": "datetime",
+        "state": "null",
+        "type": "DATETIME"
+      },
+      {
+        "id": "blob",
+        "state": "null",
+        "type": "BLOB"
+      }
+    ]
+  }
+}
